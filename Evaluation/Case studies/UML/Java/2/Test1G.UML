@@ -1,0 +1,338 @@
+[
+    {
+        "ClassInterface": "Interface",
+        "name": "ArticleScoreBehaviour",
+        "Visibility": "public",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "variables": [],
+        "methods": [
+            {
+                "name": "articleScore",
+                "Visibility": "",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "float",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Interface",
+        "name": "ProjectScoreBehaviour",
+        "Visibility": "public",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "variables": [],
+        "methods": [
+            {
+                "name": "projectScore",
+                "Visibility": "",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "float",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Interface",
+        "name": "ConferenceScoreBehaviour",
+        "Visibility": "public",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "variables": [],
+        "methods": [
+            {
+                "name": "conferenceScore",
+                "Visibility": "",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "float",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Student",
+        "Visibility": "public",
+        "IsStatic": "",
+        "IsAbstract": "abstract",
+        "constructors": [
+            {
+                "name": "Student",
+                "Visibility": "",
+                "parameters": [
+                    {
+                        "typeprint": "Integer",
+                        "name": "id"
+                    },
+                    {
+                        "typeprint": "Float",
+                        "name": "mid"
+                    },
+                    {
+                        "typeprint": "Float",
+                        "name": "fin"
+                    }
+                ]
+            }
+        ],
+        "variables": [
+            {
+                "name": "id",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": ""
+            },
+            {
+                "name": "mid",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Float",
+                "Visibility": ""
+            },
+            {
+                "name": "fin",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Float",
+                "Visibility": ""
+            }
+        ],
+        "methods": [
+            {
+                "name": "computeTotalScore",
+                "Visibility": "",
+                "IsStatic": "",
+                "IsAbstract": "abstract",
+                "returnType": "float",
+                "parameters": []
+            },
+            {
+                "name": "computeBaseScore",
+                "Visibility": "",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "float",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "BachelourStudent",
+        "Visibility": "public",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "BachelourStudent",
+                "Visibility": "",
+                "parameters": [
+                    {
+                        "typeprint": "Integer",
+                        "name": "id"
+                    },
+                    {
+                        "typeprint": "Float",
+                        "name": "mid"
+                    },
+                    {
+                        "typeprint": "Float",
+                        "name": "fin"
+                    }
+                ]
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "computeTotalScore",
+                "Visibility": "",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "float",
+                "parameters": []
+            },
+            {
+                "name": "projectScore",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "float",
+                "parameters": []
+            },
+            {
+                "name": "toString",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "MasterStudent",
+        "Visibility": "public",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "MasterStudent",
+                "Visibility": "",
+                "parameters": [
+                    {
+                        "typeprint": "Integer",
+                        "name": "id"
+                    },
+                    {
+                        "typeprint": "Float",
+                        "name": "mid"
+                    },
+                    {
+                        "typeprint": "Float",
+                        "name": "fin"
+                    },
+                    {
+                        "typeprint": "Integer",
+                        "name": "numberOfConf"
+                    }
+                ]
+            }
+        ],
+        "variables": [
+            {
+                "name": "numberOfConf",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": ""
+            }
+        ],
+        "methods": [
+            {
+                "name": "computeTotalScore",
+                "Visibility": "",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "float",
+                "parameters": []
+            },
+            {
+                "name": "conferenceScore",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "float",
+                "parameters": []
+            },
+            {
+                "name": "toString",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "PhDStudent",
+        "Visibility": "public",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "PhDStudent",
+                "Visibility": "",
+                "parameters": [
+                    {
+                        "typeprint": "Integer",
+                        "name": "id"
+                    },
+                    {
+                        "typeprint": "Float",
+                        "name": "mid"
+                    },
+                    {
+                        "typeprint": "Float",
+                        "name": "fin"
+                    },
+                    {
+                        "typeprint": "Integer",
+                        "name": "numberOfConf"
+                    },
+                    {
+                        "typeprint": "Integer",
+                        "name": "numberOfArticles"
+                    }
+                ]
+            }
+        ],
+        "variables": [
+            {
+                "name": "numberOfArticles",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": ""
+            }
+        ],
+        "methods": [
+            {
+                "name": "computeTotalScore",
+                "Visibility": "",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "float",
+                "parameters": []
+            },
+            {
+                "name": "articleScore",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "float",
+                "parameters": []
+            },
+            {
+                "name": "toString",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Main",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [],
+        "variables": [],
+        "methods": [
+            {
+                "name": "main",
+                "Visibility": "public",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "void",
+                "parameters": [
+                    {
+                        "name": "args",
+                        "typeprint": "String"
+                    }
+                ]
+            }
+        ]
+    }
+]

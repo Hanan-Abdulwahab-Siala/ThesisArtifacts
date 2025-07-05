@@ -1,0 +1,11 @@
+Type,Tool_OCL,GroundTruth_OCL
+TP,interface Bean {,interface Bean {
+TP,"static attribute ASDF : String := ""ASDF"";","static     attribute ASDF : String := ""ASDF"";"
+TP,},}
+TP,class AnnoName<T> {,class AnnoName<T> {
+TP,static   operation fn1<T>( p : Bar<T>) : Bar<T>,static   operation fn1<T>( p : Bar<T>) : Bar<T>
+TP,pre: true,pre: true
+TP,post: true,post: true
+TP,activity: (     return null );,activity: (     return null );
+TP,static   operation fn2<T>( p : Bar<T>) : Bar<T>,static   operation fn2<T>( p : Bar<T>) : Bar<T>
+TP,static   operation fn3<T>( p : Bar<T>) : Bar<T>,static   operation fn3<T>( p : Bar<T>) : Bar<T>

@@ -1,0 +1,29 @@
+Type,Tool_OCL,GroundTruth_OCL
+TP,static   operation main( args : Sequence(String)) : void,static   operation main( args : Sequence(String)) : void
+TP,pre: true,pre: true
+TP,post: true,post: true
+TP,activity: (     var creditCardNumber : long ; creditCardNumber := 1234_5678_9012_3456L ;,activity: (     var creditCardNumber : long ; creditCardNumber := 1234_5678_9012_3456L ;
+TP,var socialSecurityNumber : long ; socialSecurityNumber := 999_99_9999L ;,var socialSecurityNumber : long ; socialSecurityNumber := 999_99_9999L ;
+TP,var pi : double ; pi := 3.14_15F ;,var pi : double ; pi := 3.14_15F ;
+TP,var hexBytes : long ; hexBytes := 0xFF_EC_DE_5E ;,var hexBytes : long ; hexBytes := 0xFF_EC_DE_5E ;
+TP,var hexWords : long ; hexWords := 0xCAFE_BABE ;,var hexWords : long ; hexWords := 0xCAFE_BABE ;
+TP,var maxLong : long ; maxLong := 0x7fff_ffff_ffff_ffffL ;,var maxLong : long ; maxLong := 0x7fff_ffff_ffff_ffffL ;
+TP,var nybbles : int ; nybbles := 0b0010_0101 ;,var nybbles : int ; nybbles := 0b0010_0101 ;
+TP,var bytes : long ; bytes := 0b11010010_01101001_10010100_10010010 ;,var bytes : long ; bytes := 0b11010010_01101001_10010100_10010010 ;
+TP,var lastReceivedMessageId : long ; lastReceivedMessageId := 0L ;,var lastReceivedMessageId : long ; lastReceivedMessageId := 0L ;
+TP,var hexDouble1 : double ; hexDouble1 := 0x1.0p0 ;,var hexDouble1 : double ; hexDouble1 := 0x1.0p0 ;
+TP,var hexDouble2 : double ; hexDouble2 := 0x1.956ad0aae33a4p117 ;,var hexDouble2 : double ; hexDouble2 := 0x1.956ad0aae33a4p117 ;
+TP,var octal : int ; octal := 01234567 ;,var octal : int ; octal := 01234567 ;
+TP,var hexUpper : long ; hexUpper := 0x1234567890ABCDEFL ;,var hexUpper : long ; hexUpper := 0x1234567890ABCDEFL ;
+TP,var hexLower : long ; hexLower := 0x1234567890abcedfl ;,var hexLower : long ; hexLower := 0x1234567890abcedfl ;
+TP,var x1 : int ; x1 := _52 ;,var x1 : int ; x1 := _52 ;
+TP,var x2 : int ; x2 := 5_2 ;,var x2 : int ; x2 := 5_2 ;
+TP,var x4 : int ; x4 := 5_______2 ;,var x4 : int ; x4 := 5_______2 ;
+TP,var x7 : int ; x7 := 0x5_2 ;,var x7 : int ; x7 := 0x5_2 ;
+TP,var x9 : int ; x9 := 0_52 ;,var x9 : int ; x9 := 0_52 ;
+TP,var x10 : int ; x10 := 05_2 ;,var x10 : int ; x10 := 05_2 ;
+TP,);,);
+TP,},}
+FP,class LexerTest {,
+FN,,enumeration ColorName {  literal RED;  literal BLUE;  literal GREEN }
+FN,,;class LexerTest {

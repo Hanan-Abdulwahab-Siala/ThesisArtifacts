@@ -1,0 +1,81 @@
+class LexerTest {
+  static   operation main( args : Sequence(String)) : void
+  pre: true
+  post: true
+  activity: (     var x : int ;
+    var y : int ;
+    var result : int ;
+    result := x + y ;
+    result := x - y ;
+    result := x * y ;
+    result := y / x ;
+    result := x mod 3 ;
+    result := +x ;
+    result := -y ;
+    result := x + 1 ;
+    result := x ;
+    result := y - 1 ;
+    var ok : boolean ; ok := false ;
+    var not_ok : boolean ; not_ok := not(ok) ;
+    OclType["System"].getName() ;
+    x := x + 1 ;
+    x := x + 1 ;
+    y := y - 1 ;
+    y := y - 1 ;
+    LexerTest.prePost := LexerTest.prePost + 1 ;
+    LexerTest.prePost := LexerTest.prePost - 1 ;
+    myapplication.mylibrary.LexerTest.prePost := myapplication.mylibrary.LexerTest.prePost + 1 ;
+    myapplication.mylibrary.LexerTest.prePost := myapplication.mylibrary.LexerTest.prePost - 1 ;
+    self.prePost := self.prePost + 1 ;
+    self.prePost := self.prePost - 1 ;
+    super.prePost := super.prePost + 1 ;
+    super.prePost := super.prePost - 1 ;
+    someMethod()[0+1] := someMethod()[0+1] + 1 ;
+    someMethod()[0+1] := someMethod()[0+1] - 1 ;
+    x := x + 1 ;
+    x := x + 1 ;
+    result := x = y ;
+    result := x /= y ;
+    result := x > y ;
+    result := x >= y ;
+    result := x < y ;
+    result := x <= y ;
+    if ((x > 8) & (y > 8)) then skip else skip ;
+    if ((x > 10) or (y > 10)) then skip else skip ;
+    result := if (x > 10) then x else y endif ;
+    var f : int ; f := if b1 then b2 else if b3 then 3 else 4 endif endif ;
+    result := -(x + 1) ;
+    result := (1*(2->pow(x)))->oclAsType(long) ;
+    result := (1*(2->pow(x)))->oclAsType(long)>>((x*(2->log(2)))->oclAsType(int)) ;
+    result := (1*(2->pow(x)))->oclAsType(long)>>>((x*(2->log(2)))->oclAsType(int)) ;
+    result := MathLib.bitwiseAnd(x,4) ;
+    result := MathLib.bitwiseXor(x,5) ;
+    result := MathLib.bitwiseOr(x,6) ;
+    result := x ;
+    result := result+(x) ;
+    result := result-(x) ;
+    result := result*(x) ;
+    result := result/(x) ;
+    result := result mod x ;
+    result := MathLib.bitwiseAnd(result, x) ;
+    result := MathLib.bitwiseXor(result, x) ;
+    result := MathLib.bitwiseOr(result, x) ;
+    result := result*(2->pow(x)) ;
+    result := result/(2->pow(x)) ;
+    result := result/(2->pow(x)) ;
+ );
+  static   operation methodCalls() : void
+  pre: true
+  post: true
+  activity: (     OclAny.newOclAny().oclType().hashCode() ;
+     new String[] { "test" }[0+1].subrange(0,0)->size() ;
+    var strings : Sequence(String) ;
+    strings := Sequence{"test"} ;
+    strings[0+1]->at(0+1) ;
+    strings[0+1]->size() ;
+    var foo : Foo ; foo := Foo.newFoo().newBar() ;
+    foo.hashCode() ;
+    OclType["Foo"].hashCode() ;
+    Map{}->at(null+1) ;
+ );
+}

@@ -1,0 +1,155 @@
+
+ class FromPython {
+
+
+
+
+  operation initialise()
+  pre: true post: true
+  activity:     skip ;
+    skip ;
+    skip ;
+    skip ;
+    skip ;
+    skip ;
+    skip ;
+    skip ;
+    skip ;
+    skip ;
+    execute (calculate_days_between_dates("31/07/2020", "31/08/2020"))->display() ;
+    execute (acc("31/07/2020", "31/08/2020", 2, 0.02, "Actual/360", "31/07/2024"))->display() ;
+    var t1 : OclAny := time.time() ;
+    for yr : Integer.subrange(1800, 4024-1) do (    for mnt : Integer.subrange(10, 13-1) do (    for dd : Integer.subrange(10, 31-1) do (    acc("01/" + ("" + ((mnt))) + "/" + ("" + ((yr - 1))), ("" + ((dd))) + "/" + ("" + ((mnt))) + "/" + ("" + ((yr))), 2, 0.02, "Actual/ActualISDA", "31/07/2024")))) ;
+    var t2 : OclAny := time.time() ;
+    execute (1000 * (t2 - t1))->display();
+
+
+  operation comp(date_str : OclAny) : OclAny
+  pre: true post: true
+  activity:
+    return date_str.split('/');
+
+  operation year(date_str : OclAny) : OclAny
+  pre: true post: true
+  activity:
+    return ("" + ((comp(date_str)->last())))->toInteger();
+
+  operation month(date_str : OclAny) : OclAny
+  pre: true post: true
+  activity:
+    return ("" + ((comp(date_str)->front()->last())))->toInteger();
+
+  operation day(date_str : OclAny) : OclAny
+  pre: true post: true
+  activity:
+    return ("" + ((comp(date_str)->reverse()->at(-(-3)))))->toInteger();
+
+  operation is_leap_year(year : OclAny) : OclAny
+  pre: true post: true
+  activity:
+    if (year mod 4 = 0 & year mod 100 /= 0) or (year mod 400 = 0) then (
+      return true
+    ) else skip ;
+    return false;
+
+  operation calculate_days_between_dates(start_date_str : OclAny, end_date_str : OclAny) : OclAny
+  pre: true post: true
+  activity:
+    var start_day : OclAny := day(start_date_str) ;
+    var start_month : OclAny := month(start_date_str) ;
+    var start_year : OclAny := year(start_date_str) ;
+    var end_day : OclAny := day(end_date_str) ;
+    var end_month : OclAny := month(end_date_str) ;
+    var end_year : OclAny := year(end_date_str) ;
+    var days : int := 0 ;
+    while (start_year->compareTo(end_year)) < 0 or (start_year = end_year & (start_month->compareTo(end_month)) < 0) do (    var days_in_month : int := 30 ;
+    if start_month = 2 then  (
+      if is_leap_year(start_year) then  (
+      days_in_month := 29
+    )
+    else (
+      days_in_month := 28
+      )
+    )
+    else (if (Sequence{4}->union(Sequence{6}->union(Sequence{9}->union(Sequence{ 11 }))))->includes(start_month) then
+   (
+      days_in_month := 30    
+)
+    else (
+      days_in_month := 31
+      )    )
+ ;
+    days := days + days_in_month - start_day + 1 ;
+    start_day := 1 ;
+    start_month := start_month + 1 ;
+    if start_month > 12 then (
+      start_month := 1 ;
+    start_year := start_year + 1
+    ) else skip) ;
+    days := days + end_day - start_day ;
+    return days;
+
+  operation days360(I : OclAny, S : OclAny, dc : OclAny, M : OclAny) : OclAny
+  pre: true post: true
+  activity:
+    return calculate_days_between_dates(I, S);
+
+  operation straddle(I : OclAny, S : OclAny, p : OclAny) : OclAny
+  pre: true post: true
+  activity:
+    return Sequence{I}->union(Sequence{ S });
+
+  operation acc(I : OclAny, S : OclAny, f : OclAny, c : OclAny, dc : OclAny, M : OclAny) : OclAny
+  pre: true post: true
+  activity:
+    p := ("" + ((12 / f)))->toInteger() ;
+    var st : OclAny := straddle(I, S, p) ;
+    if (dc = "Actual/365F") then  (
+      var aif : double := (calculate_days_between_dates(st->first(), S) / 365) * c
+    )
+    else (if (dc = "Actual/ActualISDA") then
+   (
+      if (is_leap_year(year(st->first())) & is_leap_year(year(S))) then  (
+      aif := (calculate_days_between_dates(st->first(), S) / 366) * c
+    )
+    else (if (not((is_leap_year(year(st->first())))) & not((is_leap_year(year(S))))) then
+   (
+      aif := (calculate_days_between_dates(st->first(), S) / 365) * c    
+)
+    else (if (is_leap_year(year(st->first())) & not((is_leap_year(year(S))))) then
+   (
+      var ys : String := ("" + ((year(st->first())))) ;
+    var ye : String := ("" + ((year(S)))) ;
+    aif := (calculate_days_between_dates(st->first(), "31" + "/" + "12" + "/" + ys) / 366) * c + (calculate_days_between_dates("01" + "/" + "01" + "/" + ye, S) / 365) * c    
+)
+    else (
+      ys := ("" + ((year(st->first())))) ;
+    ye := ("" + ((year(S)))) ;
+    aif := (calculate_days_between_dates(st->first(), "31" + "/" + "12" + "/" + ys) / 365) * c + (calculate_days_between_dates("01" + "/" + "01" + "/" + ye, S) / 366) * c
+      )    )
+    )
+    
+)
+    else (if (dc = "Actual/364") then
+   (
+      aif := (calculate_days_between_dates(st->first(), S) / 364) * c    
+)
+    else (if (dc = "Actual/360") then
+   (
+      aif := (calculate_days_between_dates(st->first(), S) / 360) * c    
+)
+    else (if (dc = "Actual/ActualICMA") then
+   (
+      aif := (calculate_days_between_dates(st->first(), S) / (f * calculate_days_between_dates(st->first(), st[1+1]))) * c    
+)
+    else (
+      aif := (days360(st->first(), S, dc, M) / 360) * c
+      )    )
+    )
+    )
+    )
+ ;
+    return aif;
+
+}
+

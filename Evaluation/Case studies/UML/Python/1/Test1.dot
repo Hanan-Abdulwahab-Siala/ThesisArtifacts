@@ -1,0 +1,38 @@
+digraph G {
+    edge [fontname="Helvetica",fontsize=10,labelfontname="arial",labelfontsize=7,color="red"];
+    node [fontname="Helvetica",fontsize=10,shape=record,style=filled,fillcolor="white",color="red"];
+
+    graph [ rankdir=BT ]
+    node [ shape=none ]
+ 
+
+    Person [ label=<        
+        <table border="0" cellborder="1" cellspacing="0">
+            <tr><td><i><b>\N</b></i></td></tr>
+            <tr><td align="left"> + name : unknown  <br align="left"/> + email : unknown <br align="left"/></td></tr>
+            <tr><td align="left"> __init__() <br align="left"/><i> + get_details() </i><br align="left"/></td></tr>
+        </table>> ]
+    Member [ label=<        
+        <table border="0" cellborder="1" cellspacing="0">
+            <tr><td><b>\N</b></td></tr>
+            <tr><td align="left"> + member_id : String  <br align="left"/> - __borrowed_books : List <br align="left"/></td></tr>
+            <tr><td align="left"> __init__() <br align="left"/> + borrow_book() <br align="left"/> + return_book() <br align="left"/> + get_details() <br align="left"/> + get_borrowed_books() <br align="left"/></td></tr>
+        </table>> ]
+    Book [ label=<        
+        <table border="0" cellborder="1" cellspacing="0">
+            <tr><td><b>\N</b></td></tr>
+            <tr><td align="left"> + title : String  <br align="left"/> + author : String  <br align="left"/> + isbn : String  <br align="left"/> - __borrower : NoneType <br align="left"/></td></tr>
+            <tr><td align="left"> __init__() <br align="left"/> + is_available() <br align="left"/> + borrow() <br align="left"/> + return_book() <br align="left"/> + get_borrower() <br align="left"/> __str__() <br align="left"/></td></tr>
+        </table>> ]
+    Library [ label=<        
+        <table border="0" cellborder="1" cellspacing="0">
+            <tr><td><b>\N</b></td></tr>
+            <tr><td align="left"> - __books : List  <br align="left"/> - __members : List <br align="left"/></td></tr>
+            <tr><td align="left"> __init__() <br align="left"/> + add_book() <br align="left"/> + add_member() <br align="left"/> + list_books() <br align="left"/> + list_available_books() <br align="left"/> + list_members() <br align="left"/></td></tr>
+        </table>> ]
+
+    Book -> Library [headlabel="", taillabel="    ", label="", arrowhead="odiamond", arrowtail="empty", style="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="red"];
+    Member -> Library [headlabel="", taillabel="    ", label="", arrowhead="odiamond", arrowtail="empty", style="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="red"];
+    Book -> Member [headlabel="", taillabel="    ", label="", arrowhead="odiamond", arrowtail="empty", style="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="red"];
+    Member -> Person [headlabel="", taillabel="", label="", arrowhead="empty", arrowtail="empty", style="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="red"];
+}

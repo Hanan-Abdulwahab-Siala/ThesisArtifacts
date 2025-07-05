@@ -1,0 +1,38 @@
+class ImportsTest {
+  static   operation main( args : Sequence(String)) : void
+  pre: true
+  post: true
+  activity: (     var random : OclRandom ; random := OclRandom.newOclRandom() );
+}
+ class HelloWorld {
+  static   operation main( args : Sequence(String)) : void
+  pre: true
+  post: true
+  activity: (     out.println("Hello World!") ;
+     if (i = 3) then     execute doSomething() ; else skip ;
+    if (i = 2) then (     execute doSomething() ) else (     execute doSomethingElse() ) ;
+    if (i = 3) then (     execute doSomething() ) else     if (i = 2) then (     execute doSomethingElse() ) else (     execute doSomethingDifferent() ) ;  ;
+    var a : int ; a := 1 ;
+    var b : int ; b := 2 ;
+    var minVal : int ; minVal := if (a < b) then a else b endif ;
+    for _forEach : Integer.subrange(1,1) do
+      ( var _switchval : OclAny ;
+        _switchval := (ch) ;
+       if _switchval = 'A' then
+     execute doSomething() ;
+    break
+   else skip ;
+       if _switchval = 'B' or _switchval = 'C' then
+     execute doSomethingElse() ;
+    break
+   else skip ;
+       if true then
+     execute doSomethingDifferent() ;
+    break
+   else skip ;
+ )
+    while (i < 10) do (     execute doSomething() ) ;
+    do (     execute doSomething() ) while (i < 10) ;
+        var i : int ; i := 0 ; while i < 10 do ( (     execute doSomething() )  ;     i := i + 1 ) ;
+ );
+}

@@ -1,0 +1,23 @@
+Type,Tool_OCL,GroundTruth_OCL
+TP,class Foo1 {,class Foo1 {
+TP,attribute str : String;,attribute str : String;
+TP,static operation newFoo1() : Foo1,static operation newFoo1() : Foo1
+TP,pre: true,pre: true
+TP,post: true,post: true
+TP,activity:,activity:
+TP,( var self : Foo1 ;,( var self : Foo1 ;
+TP,self := createFoo1();,self := createFoo1();
+TP,self.initialise();,self.initialise();
+TP,return self );,return self );
+TP,operation initialise() : void,operation initialise() : void
+TP,pre: true  post: true,pre: true post: true
+TP,activity: skip;,activity: skip;
+TP,static operation newFoo1( str : String) : Foo1,static operation newFoo1( str : String) : Foo1
+TP,self.initialise(str);,self.initialise(str);
+TP,operation initialise( str : String) : void,operation initialise( str : String) : void
+TP,activity: (     self.str := str );,activity: (     self.str := str );
+TP,},}
+TP,class Foo2 {,class Foo2 {
+TP,static operation initialiseClass(),static operation initialiseClass()
+TP,class Foo3 {,class Foo3 {
+TP,operation initialiseInstance(),operation initialiseInstance()

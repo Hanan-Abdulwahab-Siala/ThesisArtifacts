@@ -1,0 +1,17 @@
+Type,Tool_OCL,GroundTruth_OCL
+TP,interface ActionListener {,interface ActionListener {
+TP,attribute ACTION_ADD : int := 0;,attribute ACTION_ADD : int := 0;
+TP,attribute ACTION_REMOVE : int := 1;,attribute ACTION_REMOVE : int := 1;
+TP,operation actionSelected( action : int) : void,operation actionSelected( action : int) : void
+TP,pre: true,pre: true
+TP,post: true;,post: true;
+TP,},}
+TP,interface RequestListener {,interface RequestListener {
+TP,operation requestReceived() : int,operation requestReceived() : int
+TP,"class ActionHandler implements ActionListener, RequestListener {","class ActionHandler implements ActionListener, RequestListener {"
+TP,post: true,post: true
+TP,activity: skip;,activity: skip;
+TP,class Dummy {,class Dummy {
+TP,operation dummy() : void,operation dummy() : void
+TP,activity: (     var listener : RequestListener ; listener := ActionHandler.newActionHandler() ;,activity: (     var listener : RequestListener ; listener := ActionHandler.newActionHandler() ;
+TP,listener.requestReceived() );,listener.requestReceived() );

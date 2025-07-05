@@ -1,0 +1,1338 @@
+--- ex1.java ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response, which is in JSON format that appropriately solves the following Task: 
+
+### Instruction:
+Generate a concise UML class diagram for the provided Java code. The output should:
+1. Define each class and interface only once, including its attributes, methods, and relationships.
+2. Include all relationships (Inheritance, Realization, Dependency, Association, Composition, Aggregation) without duplication.
+3. Avoid redundant or repeated operations, classes, or relationships.
+
+
+### Input:
+import java.util.*;
+abstract class AbstractContract {
+   public boolean validateTransaction(int senderID, int receiverID) {
+      return senderID!= receiverID;
+   }
+}
+class Payment extends AbstractContract {
+   private int senderID;
+   private int receiverID;
+   public int getSenderID() {
+      return senderID;
+   }
+   public int getReceiverID() {
+      return receiverID;
+   }
+}
+
+### Response:
+{
+  "classes": [
+    {
+      "name": "AbstractContract",
+      "attributes": [],
+      "methods": [
+        {
+          "name": "validateTransaction",
+          "parameters": [
+            {
+              "name": "senderID",
+              "type": "int"
+            },
+            {
+              "name": "receiverID",
+              "type": "int"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Payment",
+      "attributes": [
+        {
+          "name": "senderID",
+          "type": "int"
+        },
+        {
+          "name": "receiverID",
+          "type": "int"
+        }
+      ],
+      "methods": [
+        {
+          "name": "getSenderID",
+          "parameters": []
+        },
+        {
+          "name": "getReceiverID",
+          "parameters": []
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Payment",
+      "target": "AbstractContract",
+      "type": "Inheritance"
+    },
+    {
+      "source": "Payment",
+      "target": "AbstractContract",
+      "type": "Realization"
+    }
+  ]
+}
+
+Explanation:
+In this task, we are given a Java code that defines an abstract class `AbstractContract` and a concrete class `Payment` that extends `AbstractContract`. The `validateTransaction` method of `AbstractContract` checks whether the sender ID is not equal to the receiver ID. The `Payment` class has two attributes `senderID` and `receiverID`, and two getter methods `getSenderID` and `getReceiverID`.
+
+To generate a concise UML class diagram, we first define each class and interface once, including its attributes, methods, and relationships. We then include all relationships (Inheritance, Realization, Dependency, Association, Composition, Aggregation) without duplication. Finally, we avoid redundant or repeated operations, classes, or relationships.
+
+In our response, we define two classes: `AbstractContract` and `Payment`. The `AbstractContract` class has one method `validateTransaction`, which takes two parameters `senderID` and `receiverID`. The `Payment` class inherits from `AbstractContract` and has two attributes `senderID` and `receiverID`, as well as two getter methods `getSenderID` and `getReceiverID`. There is one relationship between `Payment` and `AbstractContract`: `Payment` inherits from `AbstractContract`.
+
+classes=2/2
+Attributes=2/2
+Methods=3/3
+Visibility attributes=0/2
+Visibility methods=0/3
+Parameters=2/2
+Inheritance=1/1
+Abstract classes=0/1
+Accuracy=10/16
+Consistency=10/11
+
+---------------------------------------
+---------------------------------------
+--- ex2.java ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response, which is in JSON format that appropriately solves the following Task: 
+
+### Instruction:
+Generate a concise UML class diagram for the provided Java code. The output should:
+1. Define each class and interface only once, including its attributes, methods, and relationships.
+2. Include all relationships (Inheritance, Realization, Dependency, Association, Composition, Aggregation) without duplication.
+3. Avoid redundant or repeated operations, classes, or relationships.
+
+
+### Input:
+class MedicalRecord {
+    String recordType = "General Record";
+}
+class PatientRecord extends MedicalRecord {
+    int patientID = 4;
+}
+class DoctorRecord extends PatientRecord {
+    float consultationFee;
+    void processRecord() {
+        System.out.println(recordType + " is being processed for patient ID " + patientID + ".");
+    }
+}
+class TreatmentRecord extends PatientRecord {
+    int treatmentCode;
+}
+
+### Response:
+```
+{
+  "class": [
+    "MedicalRecord",
+    "PatientRecord",
+    "DoctorRecord",
+    "TreatmentRecord"
+  ],
+  "interface": [],
+  "method": [
+    "processRecord"
+  ],
+  "attribute": [
+    "recordType",
+    "patientID",
+    "consultationFee",
+    "treatmentCode"
+  ],
+  "relationship": [
+    {
+      "type": "Inheritance",
+      "source": "PatientRecord",
+      "target": "MedicalRecord"
+    },
+    {
+      "type": "Realization",
+      "source": "DoctorRecord",
+      "target": "PatientRecord"
+    },
+    {
+      "type": "Dependency",
+      "source": "TreatmentRecord",
+      "target": "PatientRecord"
+    },
+    {
+      "type": "Association",
+      "source": "DoctorRecord",
+      "target": "PatientRecord"
+    },
+    {
+      "type": "Composition",
+      "source": "TreatmentRecord",
+      "target": "PatientRecord"
+    },
+    {
+      "type": "Aggregation",
+      "source": "TreatmentRecord",
+      "target": "PatientRecord"
+    }
+  ]
+}
+```
+classes=4/4     
+Attributes=2/4 
+Methods=0.5/1   
+Inheritance=1/3    
+Accuracy=7.5/12
+Consistency=7.5/12.5
+
+---------------------------------------
+---------------------------------------
+--- ex3.java ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response, which is in JSON format that appropriately solves the following Task: 
+
+### Instruction:
+Generate a concise UML class diagram for the provided Java code. The output should:
+1. Define each class and interface only once, including its attributes, methods, and relationships.
+2. Include all relationships (Inheritance, Realization, Dependency, Association, Composition, Aggregation) without duplication.
+3. Avoid redundant or repeated operations, classes, or relationships.
+
+
+### Input:
+import java.util.*;
+class MedicalData {
+  int patientID = 430;
+}
+class VitalSigns extends MedicalData {
+  float heartRate = 3.4f;
+  float bloodPressure = 9.6f;
+}  
+class LabResults extends MedicalData {
+  float glucoseLevel = 33.44f;
+  float cholesterol = 99.68f;
+} 
+class DetailedLabResults extends LabResults {
+  float hemoglobin = 33.44f;
+  float platelets = 99.68f;
+} 
+class MedicalHistory extends MedicalData {
+  float previousConditions = 33.44f;
+} 
+class PatientRecord extends MedicalHistory {
+  int recordNumber = 33;
+}
+
+### Response:
+{
+  "MedicalData": {
+    "attributes": ["patientID"],
+    "methods": [],
+    "relationships": [
+      {"MedicalHistory": "extends"},
+      {"VitalSigns": "extends"},
+      {"LabResults": "extends"}
+    ]
+  },
+  "VitalSigns": {
+    "attributes": ["heartRate", "bloodPressure"],
+    "methods": [],
+    "relationships": [
+      {"MedicalData": "extends"}
+    ]
+  },
+  "LabResults": {
+    "attributes": ["glucoseLevel", "cholesterol"],
+    "methods": [],
+    "relationships": [
+      {"MedicalData": "extends"}
+    ]
+  },
+  "DetailedLabResults": {
+    "attributes": ["hemoglobin", "platelets"],
+    "methods": [],
+    "relationships": [
+      {"LabResults": "extends"}
+    ]
+  },
+  "MedicalHistory": {
+    "attributes": ["previousConditions"],
+    "methods": [],
+    "relationships": [
+      {"MedicalData": "extends"}
+    ]
+  },
+  "PatientRecord": {
+    "attributes": ["recordNumber"],
+    "methods": [],
+    "relationships": [
+      {"MedicalHistory": "extends"}
+    ]
+  }
+}
+
+classes=6/6     
+Attributes=4.5/9    
+Inheritance=5/5    
+Accuracy=15.5/20
+Consistency=15.5/15.5
+
+---------------------------------------
+---------------------------------------
+--- ex4.java ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response, which is in JSON format that appropriately solves the following Task: 
+
+### Instruction:
+Generate a concise UML class diagram for the provided Java code. The output should:
+1. Define each class and interface only once, including its attributes, methods, and relationships.
+2. Include all relationships (Inheritance, Realization, Dependency, Association, Composition, Aggregation) without duplication.
+3. Avoid redundant or repeated operations, classes, or relationships.
+
+
+### Input:
+class User {
+  int userID = 430;
+}
+class Metrics {
+  float metricOne = 3.4f;
+  float metricTwo = 9.6f;
+  User userRecord;
+}  
+class DataPoints extends User {
+  float dataOne = 33.44f;
+  float dataTwo = 99.68f;
+}
+
+### Response:
+```json
+{
+  "class": [
+    {
+      "name": "Metrics",
+      "attributes": [
+        {
+          "name": "metricOne",
+          "type": "float"
+        },
+        {
+          "name": "metricTwo",
+          "type": "float"
+        },
+        {
+          "name": "userRecord",
+          "type": "User"
+        }
+      ],
+      "methods": []
+    },
+    {
+      "name": "User",
+      "attributes": [
+        {
+          "name": "userID",
+          "type": "int"
+        }
+      ],
+      "methods": []
+    },
+    {
+      "name": "DataPoints",
+      "attributes": [
+        {
+          "name": "dataOne",
+          "type": "float"
+        },
+        {
+          "name": "dataTwo",
+          "type": "float"
+        }
+      ],
+      "methods": [],
+      "extends": "User"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Metrics",
+      "target": "User",
+      "type": "Realization"
+    },
+    {
+      "source": "DataPoints",
+      "target": "User",
+      "type": "Inheritance"
+    }
+  ]
+}
+```
+classes=3/3
+Attributes=6/6
+Inheritance=1/1
+Association=0/1
+Multiplicity=0/1
+Role names=0/1
+Accuracy=10/13
+Consistency=10/11
+
+---------------------------------------
+---------------------------------------
+--- ex5.java ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response, which is in JSON format that appropriately solves the following Task: 
+
+### Instruction:
+Generate a concise UML class diagram for the provided Java code. The output should:
+1. Define each class and interface only once, including its attributes, methods, and relationships.
+2. Include all relationships (Inheritance, Realization, Dependency, Association, Composition, Aggregation) without duplication.
+3. Avoid redundant or repeated operations, classes, or relationships.
+
+
+### Input:
+import java.util.ArrayList;
+class Person {
+    int personID = 430;
+    String name = "John Doe";
+    int age = 30;
+    ArrayList<DataPoint> dataPoints = new ArrayList<>();
+    public Person(int personID, String name, int age) {
+        this.personID = personID;
+        this.name = name;
+        this.age = age;
+    }
+    public void addDataPoint(DataPoint dp) {
+        dataPoints.add(dp);
+    }
+}
+class DataPoint {
+    float valueOne = 3.4f;
+    float valueTwo = 9.6f;
+    String type = "Metric Type A";
+    String timestamp = "2025-01-29";
+    Person owner;
+    public DataPoint(float valueOne, float valueTwo, String type, String timestamp, Person owner) {
+        this.valueOne = valueOne;
+        this.valueTwo = valueTwo;
+        this.type = type;
+        this.timestamp = timestamp;
+        this.owner = owner;
+    }
+}
+
+### Response:
+{
+  "classes": [
+    {
+      "name": "Person",
+      "attributes": [
+        {
+          "name": "personID",
+          "type": "int"
+        },
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "age",
+          "type": "int"
+        },
+        {
+          "name": "dataPoints",
+          "type": "ArrayList<DataPoint>"
+        }
+      ],
+      "methods": [
+        {
+          "name": "addDataPoint",
+          "parameters": [
+            {
+              "name": "dp",
+              "type": "DataPoint"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DataPoint",
+      "attributes": [
+        {
+          "name": "valueOne",
+          "type": "float"
+        },
+        {
+          "name": "valueTwo",
+          "type": "float"
+        },
+        {
+          "name": "type",
+          "type": "String"
+        },
+        {
+          "name": "timestamp",
+          "type": "String"
+        },
+        {
+          "name": "owner",
+          "type": "Person"
+        }
+      ]
+    }
+  ],
+  "interfaces": [],
+  "relationships": [
+    {
+      "from": "Person",
+      "to": "DataPoint",
+      "type": "Composition",
+      "cardinality": "1..*"
+    },
+    {
+      "from": "Person",
+      "to": "DataPoint",
+      "type": "Association",
+      "cardinality": "1..*"
+    }
+  ]
+}
+
+classes=2/2
+Attributes=9/9
+Methods= 1/1
+Method_Parameters=1/1
+Constructor=0/2
+Constructor_Parameters=0/8
+Visibility (methods_Constructors)=0/3
+Association=1/1
+Multiplicity=1/2
+Role names=0/2
+Accuracy=15/31
+Consistency=15/16
+
+---------------------------------------
+---------------------------------------
+--- ex6.java ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response, which is in JSON format that appropriately solves the following Task: 
+
+### Instruction:
+Generate a concise UML class diagram for the provided Java code. The output should:
+1. Define each class and interface only once, including its attributes, methods, and relationships.
+2. Include all relationships (Inheritance, Realization, Dependency, Association, Composition, Aggregation) without duplication.
+3. Avoid redundant or repeated operations, classes, or relationships.
+
+
+### Input:
+import java.util.*;
+class Engine { 
+  int horsepower = 430;
+}
+class Car { 
+  float speed = 3.4f;
+  float fuelEfficiency = 9.6f;
+  Engine engine;
+}  
+class Driver { 
+  float experience = 33.44f;
+  float rating = 99.68f;
+  Car car;
+}
+
+### Response:
+{
+  "classes": [
+    {
+      "name": "Engine",
+      "attributes": [
+        {
+          "name": "horsepower",
+          "type": "int"
+        }
+      ],
+      "methods": []
+    },
+    {
+      "name": "Car",
+      "attributes": [
+        {
+          "name": "speed",
+          "type": "float"
+        },
+        {
+          "name": "fuelEfficiency",
+          "type": "float"
+        },
+        {
+          "name": "engine",
+          "type": "Engine"
+        }
+      ],
+      "methods": []
+    },
+    {
+      "name": "Driver",
+      "attributes": [
+        {
+          "name": "experience",
+          "type": "float"
+        },
+        {
+          "name": "rating",
+          "type": "float"
+        },
+        {
+          "name": "car",
+          "type": "Car"
+        }
+      ],
+      "methods": []
+    }
+  ],
+  "relationships": [
+    {
+      "type": "Composition",
+      "source": "Car",
+      "target": "Engine"
+    },
+    {
+      "type": "Aggregation",
+      "source": "Driver",
+      "target": "Car"
+    }
+  ]
+}
+
+### Explanation:
+In this response, we define three classes - `Engine`, `Car` and `Driver`. Each class has its own set of attributes and methods, but no relationships between them. The only relationship present is a composition between `Car` and `Engine`, indicating that a `Car` object contains an `Engine` object. Additionally, there is an aggregation between `Driver` and `Car`, which means that a `Driver` object can have multiple `Car` objects associated with it.
+
+classes=3/3
+Attributes=7/7
+Association=0/2
+Multiplicity=0/2
+Role names=0/2
+Accuracy=10/16
+Consistency=10/12
+
+---------------------------------------
+---------------------------------------
+--- ex7.java ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response, which is in JSON format that appropriately solves the following Task: 
+
+### Instruction:
+Generate a concise UML class diagram for the provided Java code. The output should:
+1. Define each class and interface only once, including its attributes, methods, and relationships.
+2. Include all relationships (Inheritance, Realization, Dependency, Association, Composition, Aggregation) without duplication.
+3. Avoid redundant or repeated operations, classes, or relationships.
+
+
+### Input:
+public class PowerUnit {
+    int power = 430;  
+}
+public class Vehicle {
+    float speed = 3.4f;    
+    float fuelEfficiency = 9.6f;  
+    private PowerUnit[] powerUnits = new PowerUnit[30];  
+}
+
+### Response:
+{
+  "classes": [
+    {
+      "name": "PowerUnit",
+      "attributes": [
+        {
+          "name": "power",
+          "type": "int"
+        }
+      ],
+      "methods": []
+    },
+    {
+      "name": "Vehicle",
+      "attributes": [
+        {
+          "name": "speed",
+          "type": "float"
+        },
+        {
+          "name": "fuelEfficiency",
+          "type": "float"
+        }
+      ],
+      "methods": [],
+      "relationships": [
+        {
+          "type": "composition",
+          "source": "Vehicle",
+          "target": "PowerUnit"
+        }
+      ]
+    }
+  ]
+}
+
+classes=2/2
+Attributes=3/4
+Visibility attributes=0/1
+Aggregation=0/1
+Accuracy=5/8
+Consistency=5/6
+
+---------------------------------------
+---------------------------------------
+--- ex8.java ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response, which is in JSON format that appropriately solves the following Task: 
+
+### Instruction:
+Generate a concise UML class diagram for the provided Java code. The output should:
+1. Define each class and interface only once, including its attributes, methods, and relationships.
+2. Include all relationships (Inheritance, Realization, Dependency, Association, Composition, Aggregation) without duplication.
+3. Avoid redundant or repeated operations, classes, or relationships.
+
+
+### Input:
+import java.util.*;
+class Engine { 
+  int horsepower = 430;
+}
+class Car { 
+  float speed = 3.4f;
+  float fuelEfficiency = 9.6f;
+  public int calculateFuelEfficiency(Engine engine) {
+     int result;
+      return 39;
+  }
+}
+
+### Response:
+{
+  "classes": [
+    {
+      "name": "Engine",
+      "attributes": [
+        {
+          "name": "horsepower",
+          "type": "int"
+        }
+      ],
+      "methods": [
+        {
+          "name": "calculateFuelEfficiency",
+          "parameters": [
+            {
+              "name": "engine",
+              "type": "Engine"
+            }
+          ],
+          "returnType": "int"
+        }
+      ],
+      "relationships": [
+        {
+          "name": "calculateFuelEfficiency",
+          "type": "realization"
+        }
+      ]
+    },
+    {
+      "name": "Car",
+      "attributes": [
+        {
+          "name": "speed",
+          "type": "float"
+        },
+        {
+          "name": "fuelEfficiency",
+          "type": "float"
+        }
+      ],
+      "methods": [
+        {
+          "name": "calculateFuelEfficiency",
+          "parameters": [
+            {
+              "name": "engine",
+              "type": "Engine"
+            }
+          ],
+          "returnType": "int"
+        }
+      ],
+      "relationships": [
+        {
+          "name": "calculateFuelEfficiency",
+          "type": "realization"
+        }
+      ]
+    }
+  ]
+}
+
+classes=2/2
+Attributes=3/3
+Methods=1/1
+Visibility methods=0/1
+Parameters=0/1
+Dependency=0/1
+Accuracy=6/9
+Consistency=6/9
+
+---------------------------------------
+---------------------------------------
+--- ex9.java ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response, which is in JSON format that appropriately solves the following Task: 
+
+### Instruction:
+Generate a concise UML class diagram for the provided Java code. The output should:
+1. Define each class and interface only once, including its attributes, methods, and relationships.
+2. Include all relationships (Inheritance, Realization, Dependency, Association, Composition, Aggregation) without duplication.
+3. Avoid redundant or repeated operations, classes, or relationships.
+
+
+### Input:
+import java.util.*;
+class Engine { 
+  int horsepower = 430;  
+}
+class Car { 
+  float speed = 3.4f;    
+  float fuelEfficiency = 9.6f;  
+  public int calculateFuel(int distance) {
+     Engine engine = new Engine();  
+     return distance / engine.horsepower;  
+  }
+}  
+public class Main {
+  public static void main(String[] args) {
+    Car car = new Car();
+    int fuelNeeded = car.calculateFuel(100);  
+    System.out.println("Fuel needed for 100 distance: " + fuelNeeded);
+  }
+}
+
+### Response:
+{
+  "classes": [
+    {
+      "name": "Engine",
+      "attributes": [
+        {
+          "name": "horsepower",
+          "type": "int"
+        }
+      ],
+      "methods": []
+    },
+    {
+      "name": "Car",
+      "attributes": [
+        {
+          "name": "speed",
+          "type": "float"
+        },
+        {
+          "name": "fuelEfficiency",
+          "type": "float"
+        }
+      ],
+      "methods": [
+        {
+          "name": "calculateFuel",
+          "parameters": [
+            {
+              "name": "distance",
+              "type": "int"
+            }
+          ],
+          "returnType": "int"
+        }
+      ]
+    }
+  ],
+  "interfaces": [],
+  "relationships": [
+    {
+      "type": "inheritance",
+      "from": "Car",
+      "to": "Engine"
+    },
+    {
+      "type": "realization",
+      "from": "Car",
+      "to": "Engine"
+    },
+    {
+      "type": "dependency",
+      "from": "Car",
+      "to": "Engine"
+    },
+    {
+      "type": "association",
+      "from": "Car",
+      "to": "Engine",
+      "cardinality": "one-to-one"
+    },
+    {
+      "type": "composition",
+      "from": "Car",
+      "to": "Engine",
+      "cardinality": "one-to-one"
+    },
+    {
+      "type": "aggregation",
+      "from": "Car",
+      "to": "Engine",
+      "cardinality": "one-to-one"
+    }
+  ]
+}
+
+classes=2/3
+Attributes=3/3
+Methods=1/2
+Visibility methods=0/2
+Parameters=1/2
+Static methods=0/1
+Dependency=1/2
+Accuracy=8/15
+Consistency=8/13
+
+---------------------------------------
+---------------------------------------
+--- ex10.java ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response, which is in JSON format that appropriately solves the following Task: 
+
+### Instruction:
+Generate a concise UML class diagram for the provided Java code. The output should:
+1. Define each class and interface only once, including its attributes, methods, and relationships.
+2. Include all relationships (Inheritance, Realization, Dependency, Association, Composition, Aggregation) without duplication.
+3. Avoid redundant or repeated operations, classes, or relationships.
+
+
+### Input:
+import java.util.*;
+class PowerUnit { 
+    int power = 430; 
+}
+class Vehicle { 
+    float speed = 3.4f;    
+    float fuelEfficiency = 9.6f;  
+    public PowerUnit calculatePower(int distance) {
+        return new PowerUnit();  
+    }
+}
+
+### Response:
+{
+  "classes": [
+    {
+      "name": "PowerUnit",
+      "attributes": [
+        {
+          "name": "power",
+          "type": "int"
+        }
+      ]
+    },
+    {
+      "name": "Vehicle",
+      "attributes": [
+        {
+          "name": "speed",
+          "type": "float"
+        },
+        {
+          "name": "fuelEfficiency",
+          "type": "float"
+        }
+      ],
+      "methods": [
+        {
+          "name": "calculatePower",
+          "returnType": "PowerUnit",
+          "parameters": [
+            {
+              "name": "distance",
+              "type": "int"
+            }
+          ]
+        }
+      ],
+      "relationships": [
+        {
+          "name": "PowerUnit",
+          "type": "Composition"
+        }
+      ]
+    }
+  ]
+}
+
+classes=2/2
+Attributes=3/3
+Methods=1/1
+Visibility methods=0/1
+Parameters=1/1
+Dependency=0/1
+Accuracy=7/9
+Consistency=7/8
+
+---------------------------------------
+---------------------------------------
+--- ex11.java ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response, which is in JSON format that appropriately solves the following Task: 
+
+### Instruction:
+Generate a concise UML class diagram for the provided Java code. The output should:
+1. Define each class and interface only once, including its attributes, methods, and relationships.
+2. Include all relationships (Inheritance, Realization, Dependency, Association, Composition, Aggregation) without duplication.
+3. Avoid redundant or repeated operations, classes, or relationships.
+
+
+### Input:
+interface Printer {
+    void printDocument();
+}
+class Device {
+    void powerOn() {
+        System.out.println("The device is now powered on.");
+    }
+}
+class LaserPrinter extends Device implements Printer {
+    public void printDocument() {
+        System.out.println("The printer is printing the document.");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        LaserPrinter printer = new LaserPrinter();
+        printer.printDocument();
+        printer.powerOn();
+    }
+}
+
+### Response:
+{
+    "classes": [
+        {
+            "name": "Printer",
+            "attributes": [],
+            "methods": ["printDocument"],
+            "relationships": []
+        },
+        {
+            "name": "Device",
+            "attributes": [],
+            "methods": ["powerOn"],
+            "relationships": []
+        },
+        {
+            "name": "LaserPrinter",
+            "attributes": [],
+            "methods": [],
+            "relationships": [
+                {
+                    "type": "Inheritance",
+                    "target": "Device"
+                },
+                {
+                    "type": "Realization",
+                    "target": "Printer"
+                }
+            ]
+        }
+    ],
+    "interfaces": [
+        {
+            "name": "Printer",
+            "attributes": [],
+            "methods": ["printDocument"],
+            "relationships": []
+        }
+    ]
+}
+
+classes=2/3
+Interfaces=1/1
+Methods=2/4
+Static method=0/1
+Visibility methods=0/2
+Parameters=0/1
+Inheritance=1/1
+Realization=1/1
+Dependency=0/1
+Accuracy=7/15
+Consistency=7/8
+
+---------------------------------------
+---------------------------------------
+--- ex12.java ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response, which is in JSON format that appropriately solves the following Task: 
+
+### Instruction:
+Generate a concise UML class diagram for the provided Java code. The output should:
+1. Define each class and interface only once, including its attributes, methods, and relationships.
+2. Include all relationships (Inheritance, Realization, Dependency, Association, Composition, Aggregation) without duplication.
+3. Avoid redundant or repeated operations, classes, or relationships.
+
+
+### Input:
+abstract class Appliance {
+   public abstract void turnOn();
+   public void powerOff() {
+      System.out.println("Powering off...");
+   }
+}
+
+### Response:
+{
+    "classes": [
+        {
+            "name": "Appliance",
+            "attributes": [],
+            "methods": [
+                {
+                    "name": "turnOn",
+                    "returnType": "void",
+                    "parameters": []
+                },
+                {
+                    "name": "powerOff",
+                    "returnType": "void",
+                    "parameters": []
+                }
+            ],
+            "relationships": [
+                {
+                    "type": "Abstract",
+                    "target": "Appliance"
+                }
+            ]
+        }
+    ],
+    "interfaces": [],
+    "associations": [],
+    "compositions": [],
+    "aggregations": [],
+    "dependencies": []
+}
+
+classes=1/1
+Methods=2/2
+Visibility methods=0/2
+Abstract classes=1/1
+Abstract methods=0/1
+Accuracy=4/7
+Consistency=4/5
+
+---------------------------------------
+---------------------------------------
+--- ex13.java ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response, which is in JSON format that appropriately solves the following Task: 
+
+### Instruction:
+Generate a concise UML class diagram for the provided Java code. The output should:
+1. Define each class and interface only once, including its attributes, methods, and relationships.
+2. Include all relationships (Inheritance, Realization, Dependency, Association, Composition, Aggregation) without duplication.
+3. Avoid redundant or repeated operations, classes, or relationships.
+
+
+### Input:
+public class Container {
+    private int containerData;
+    public Container(int containerData) {
+        this.containerData = containerData;
+    }
+    public class Item {
+        private int itemData;
+        public Item(int itemData) {
+            this.itemData = itemData;
+        }
+        public void display() {
+            System.out.println("Container Data: " + containerData);
+            System.out.println("Item Data: " + itemData);
+        }
+    }
+}
+
+### Response:
+{
+  "classes": [
+    {
+      "name": "Container",
+      "attributes": [
+        {
+          "name": "containerData",
+          "type": "int"
+        }
+      ],
+      "methods": [
+        {
+          "name": "Container(int)",
+          "parameters": [
+            {
+              "name": "containerData",
+              "type": "int"
+            }
+          ]
+        }
+      ],
+      "relationships": [
+        {
+          "type": "Composition",
+          "target": "Item"
+        }
+      ]
+    },
+    {
+      "name": "Item",
+      "attributes": [
+        {
+          "name": "itemData",
+          "type": "int"
+        }
+      ],
+      "methods": [
+        {
+          "name": "Item(int)",
+          "parameters": [
+            {
+              "name": "itemData",
+              "type": "int"
+            }
+          ]
+        },
+        {
+          "name": "display()"
+        }
+      ],
+      "relationships": [
+        {
+          "type": "Composition",
+          "target": "Container"
+        }
+      ]
+    }
+  ]
+}
+
+classes=2/2
+Attributes=2/2
+Visibility_attributes=0/2
+Methods=1/1
+Constructor=2/2
+Constructor_Parameters=2/2
+Visibility (methods_Constructors)=0/3
+Aggregation=0/1
+Accuracy=9/15
+Consistency=9/11
+
+---------------------------------------
+---------------------------------------
+--- ex14.java ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response, which is in JSON format that appropriately solves the following Task: 
+
+### Instruction:
+Generate a concise UML class diagram for the provided Java code. The output should:
+1. Define each class and interface only once, including its attributes, methods, and relationships.
+2. Include all relationships (Inheritance, Realization, Dependency, Association, Composition, Aggregation) without duplication.
+3. Avoid redundant or repeated operations, classes, or relationships.
+
+
+### Input:
+public class Employee {
+    public String name = "John Doe";
+    private double salary = 50000.0;
+    protected int age = 30;
+    String department = "HR";
+    public void displayDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Salary: " + salary);
+        System.out.println("Age: " + age);
+        System.out.println("Department: " + department);
+    }
+
+### Response:
+```json
+{
+  "classes": [
+    {
+      "name": "Employee",
+      "attributes": [
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "salary",
+          "type": "double"
+        },
+        {
+          "name": "age",
+          "type": "int"
+        },
+        {
+          "name": "department",
+          "type": "String"
+        }
+      ],
+      "methods": [
+        {
+          "name": "displayDetails",
+          "parameters": [],
+          "returnType": "void"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "type": "Inheritance",
+      "source": "Employee",
+      "target": "Object"
+    },
+    {
+      "type": "Realization",
+      "source": "Employee",
+      "target": "Serializable"
+    },
+    {
+      "type": "Dependency",
+      "source": "Employee",
+      "target": "System.out"
+    },
+    {
+      "type": "Association",
+      "source": "Employee",
+      "target": "String"
+    },
+    {
+      "type": "Composition",
+      "source": "Employee",
+      "target": "String"
+    },
+    {
+      "type": "Aggregation",
+      "source": "Employee",
+      "target": "String"
+    }
+  ]
+}
+```
+Explanation: The provided input consists of a single class named `Employee`. The class has five attributes - `name`, `salary`, `age`, `department`, and `displayDetails()`. The class also has two relationships - one with the `Object` class through inheritance, and another with the `Serializable` interface through realization. Additionally, the class has four associations with other classes - `String`, `System.out`, `String`, and `String`. Finally, there is one composition relationship between `Employee` and `String`.
+
+classes=1/1
+Attributes=4/4
+Visibility_attributes=0/3
+Methods=1/1
+Visibility_methods=0/1
+Accuracy=6/10
+Consistency=6/12
+
+---------------------------------------
+---------------------------------------

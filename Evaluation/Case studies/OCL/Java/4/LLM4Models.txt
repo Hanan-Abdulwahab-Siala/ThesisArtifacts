@@ -1,0 +1,35 @@
+class HelloWorld {
+  static   operation main( args : Sequence(String)) : void
+  pre: true
+  post: true
+  activity: (         var i : int ; i := 0 ;
+    var j : int ; j := 9 ; while i < 10 do ( (     execute doSomething() )  ;     i := i + 1 ;     j := j-(3) ) ;
+         while true do ( (     execute doSomething() ) ) ;
+    for (i : intArray) do ( (     execute doSomething(i) )  ) ;
+    for _x : Integer.subrange(1,1) do
+      ( var _switchval : OclAny ;
+        _switchval := (start) ;
+       if _switchval = "someMethod" then
+     execute someMethod() ;
+    break
+   else skip ;
+       if true then
+     continue
+   else skip ;
+ )
+        var i : int ; i := 0 ; while i < 10 do ( (     while (true) do (     break ) )  ;     i := i + 1 ) ;
+        var i : int ; i := 0 ; while i < 10 do ( (     while (true) do (     break ) )  ;     i := i + 1 ) ;
+    var ch : int ;
+      while (ch = getChar()) do ( (     if (ch = ' ') then (     continue ) else skip ;
+     execute doSomething() )  ) ;
+        var str : String ;
+  for str : stringsArr do ( (     var strChars : Sequence(String) ; strChars := str->characters() ;
+     for (ch : strChars) do ( (     if (ch = ' ') then (     continue ) else skip ;
+     execute doSomething(ch) )  ) )  ) ;
+    if (streamClosed) then (     return ) else skip ;
+    execute readFromStream() ;
+    var result : int ; result := a + b ;
+    return result
+ );
+}
+ <EOF>

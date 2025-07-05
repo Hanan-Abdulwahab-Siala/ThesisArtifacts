@@ -1,0 +1,20 @@
+class Foo {
+   operation bar() : void
+  pre: true
+  post: true
+  activity: ( Map{} );
+
+}
+
+ class Foo1 {
+   operation go() : int
+  pre: true
+  post: true
+  activity: (     return 0 );
+
+ class Bar { }
+
+
+}
+
+

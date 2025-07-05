@@ -1,0 +1,83 @@
+Type,Tool_OCL,GroundTruth_OCL
+TP,class LexerTest {,class LexerTest {
+TP,static   operation main( args : Sequence(String)) : void,static   operation main( args : Sequence(String)) : void
+TP,pre: true,pre: true
+TP,post: true,post: true
+TP,activity: (     var x : int ;,activity: (     var x : int ;
+TP,var y : int ;,var y : int ;
+TP,var result : int ;,var result : int ;
+TP,result := x + y ;,result := x + y ;
+TP,result := x - y ;,result := x - y ;
+TP,result := x * y ;,result := x * y ;
+TP,result := y / x ;,result := y / x ;
+TP,result := x mod 3 ;,result := x mod 3 ;
+TP,result := -y ;,result := -y ;
+TP,result := x ;,result := x ;
+TP,var ok : boolean ; ok := false ;,var ok : boolean ; ok := false ;
+TP,var not_ok : boolean ; not_ok := not(ok) ;,var not_ok : boolean ; not_ok := not(ok) ;
+TP,x := x + 1 ;,x := x + 1 ;
+TP,y := y - 1 ;,y := y - 1 ;
+TP,LexerTest.prePost := LexerTest.prePost + 1 ;,LexerTest.prePost := LexerTest.prePost + 1 ;
+TP,LexerTest.prePost := LexerTest.prePost - 1 ;,LexerTest.prePost := LexerTest.prePost - 1 ;
+TP,myapplication.mylibrary.LexerTest.prePost := myapplication.mylibrary.LexerTest.prePost + 1 ;,myapplication.mylibrary.LexerTest.prePost := myapplication.mylibrary.LexerTest.prePost + 1 ;
+TP,myapplication.mylibrary.LexerTest.prePost := myapplication.mylibrary.LexerTest.prePost - 1 ;,myapplication.mylibrary.LexerTest.prePost := myapplication.mylibrary.LexerTest.prePost - 1 ;
+TP,self.prePost := self.prePost + 1 ;,self.prePost := self.prePost + 1 ;
+TP,self.prePost := self.prePost - 1 ;,self.prePost := self.prePost - 1 ;
+TP,super.prePost := super.prePost + 1 ;,super.prePost := super.prePost + 1 ;
+TP,super.prePost := super.prePost - 1 ;,super.prePost := super.prePost - 1 ;
+TP,someMethod()[0+1] := someMethod()[0+1] + 1 ;,someMethod()[0+1] := someMethod()[0+1] + 1 ;
+TP,someMethod()[0+1] := someMethod()[0+1] - 1 ;,someMethod()[0+1] := someMethod()[0+1] - 1 ;
+TP,result := x = y ;,result := x = y ;
+TP,result := x /= y ;,result := x /= y ;
+TP,result := x > y ;,result := x > y ;
+TP,result := x >= y ;,result := x >= y ;
+TP,result := x < y ;,result := x < y ;
+TP,result := x <= y ;,result := x <= y ;
+TP,if ((x > 8) & (y > 8)) then skip else skip ;,if ((x > 8) & (y > 8)) then skip else skip ;
+TP,if ((x > 10) or (y > 10)) then skip else skip ;,if ((x > 10) or (y > 10)) then skip else skip ;
+TP,result := if (x > 10) then x else y endif ;,result := if (x > 10) then x else y endif ;
+TP,var f : int ; f := if b1 then b2 else if b3 then 3 else 4 endif endif ;,var f : int ; f := if b1 then b2 else if b3 then 3 else 4 endif endif ;
+TP,result := -(x + 1) ;,result := -(x + 1) ;
+TP,"result := MathLib.bitwiseAnd(x,4) ;","result := MathLib.bitwiseAnd(x,4) ;"
+TP,"result := MathLib.bitwiseXor(x,5) ;","result := MathLib.bitwiseXor(x,5) ;"
+TP,"result := MathLib.bitwiseOr(x,6) ;","result := MathLib.bitwiseOr(x,6) ;"
+TP,result := result+(x) ;,result := result+(x) ;
+TP,result := result-(x) ;,result := result-(x) ;
+TP,result := result*(x) ;,result := result*(x) ;
+TP,result := result/(x) ;,result := result/(x) ;
+TP,result := result mod x ;,result := result mod x ;
+TP,"result := MathLib.bitwiseAnd(result, x) ;","result := MathLib.bitwiseAnd(result, x) ;"
+TP,"result := MathLib.bitwiseXor(result, x) ;","result := MathLib.bitwiseXor(result,x) ;"
+TP,"result := MathLib.bitwiseOr(result, x) ;","result := MathLib.bitwiseOr(result, x) ;"
+TP,result := result*(2->pow(x)) ;,result := result*(2->pow(x)) ;
+TP,result := result/(2->pow(x)) ;,result := result/(2->pow(x)) ;
+TP,);,);
+TP,static   operation methodCalls() : void,static   operation methodCalls() : void
+TP,var strings : Sequence(String) ;,var strings : Sequence(String) ;
+TP,"strings := Sequence{""test""} ;","strings := Sequence{""test""} ;"
+TP,strings[0+1]->size() ;,strings[0+1]->size() ;
+TP,foo.hashCode() ;,foo.hashCode() ;
+TP,"OclType[""Foo""].hashCode() ;","OclType[""Foo""].hashCode() ;"
+TP,Map{}->at(null+1) ;,Map{}->at(null+1) ;
+TP,},}
+FP,result := +x ;,
+FP,result := x + 1 ;,
+FP,result := y - 1 ;,
+FP,"OclType[""System""].getName() ;",
+FP,result := (1*(2->pow(x)))->oclAsType(long) ;,
+FP,result := (1*(2->pow(x)))->oclAsType(long)>>((x*(2->log(2)))->oclAsType(int)) ;,
+FP,result := (1*(2->pow(x)))->oclAsType(long)>>>((x*(2->log(2)))->oclAsType(int)) ;,
+FP,activity: (     OclAny.newOclAny().oclType().hashCode() ;,
+FP,"new String[] { ""test"" }[0+1].subrange(0,0)->size() ;",
+FP,strings[0+1]->at(0+1) ;,
+FP,var foo : Foo ; foo := Foo.newFoo().newBar() ;,
+FN,,result := y  ;
+FN,,"result := OclType[""System""] ;"
+FN,,(result).getName() ;
+FN,,result := (x*(2->pow(1)))->oclAsType(long) ;
+FN,,result := (x/(2->pow(2)))->oclAsType(long) ;
+FN,,result := (x/(2->pow(3)))->oclAsType(long) ;
+FN,,activity: (     Map{}->oclType().hashCode() ;
+FN,,"Sequence{""test""}[0+1].getLength() ;"
+FN,,(strings)[0+1]->at(0+1) ;
+FN,,var foo : Foo ; foo := (Foo.newFoo()).newBar() ;

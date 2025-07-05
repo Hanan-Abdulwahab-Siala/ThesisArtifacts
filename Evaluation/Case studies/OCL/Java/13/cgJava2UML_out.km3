@@ -1,0 +1,76 @@
+  enumeration Season1 {  literal WINTER;  literal SPRING;  literal SUMMER;  literal AUTUMN }
+
+   class Season2 {     static attribute WINTER : SelfClass := SelfClass.newSelfClass("Cold");
+    static attribute SPRING : SelfClass := SelfClass.newSelfClass("Warmer");
+    static attribute SUMMER : SelfClass := SelfClass.newSelfClass("Hot");
+    static attribute AUTUMN : SelfClass := SelfClass.newSelfClass("Cooler");
+
+
+   static operation newSeason2( description : String) : Season2
+  pre: true
+  post: true
+  activity:
+  ( var self : Season2 ;
+    self := createSeason2();
+    self.initialise(description);
+    return self );
+
+  operation initialise( description : String) : void
+  pre: true  post: true
+  activity: (     self.description := description );
+
+
+   attribute description : String;
+
+   operation getDescription() : String
+  pre: true
+  post: true
+  activity: (     return description );
+
+  }
+
+  class Season3 {     class WINTERclass extends SelfClass {
+   operation getDescription() : String
+  pre: true
+  post: true
+  activity: (     return "cold" );
+
+}
+
+    static attribute WINTER : WINTERclass := WINTERclass.newWINTERclass();
+
+    class SPRINGclass extends SelfClass {
+   operation getDescription() : String
+  pre: true
+  post: true
+  activity: (     return "warmer" );
+
+}
+
+    static attribute SPRING : SPRINGclass := SPRINGclass.newSPRINGclass();
+
+    class SUMMERclass extends SelfClass {
+   operation getDescription() : String
+  pre: true
+  post: true
+  activity: (     return "hot" );
+
+}
+
+    static attribute SUMMER : SUMMERclass := SUMMERclass.newSUMMERclass();
+
+    class FALLclass extends SelfClass {
+   operation getDescription() : String
+  pre: true
+  post: true
+  activity: (     return "cooler" );
+
+}
+
+    static attribute FALL : FALLclass := FALLclass.newFALLclass();
+
+
+
+  }
+
+
