@@ -1,4 +1,0 @@
-AgileUML_path,LLM4Models_path,filename,tp,fp,fn,precision,recall,f1
-C:\Users\PC\Desktop\Temp\aaa\1\python2UML_out.km3,C:\Users\PC\Desktop\Temp\aaa\1\LLM4Models.txt,1,59,0,1,1.0,0.98,0.99
-C:\Users\PC\Desktop\Temp\aaa\2\python2UML_out.km3,C:\Users\PC\Desktop\Temp\aaa\2\LLM4Models.txt,2,82,3,3,0.96,0.96,0.96
-AVERAGE,,,70.5,1.5,2.0,0.98,0.97,0.975
