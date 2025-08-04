@@ -1,3 +1,0 @@
-note = {\url{http://www.sympy.org/}},
-
-note = {\url{https://www.omg.org/spec/SysML/1.6/}},
