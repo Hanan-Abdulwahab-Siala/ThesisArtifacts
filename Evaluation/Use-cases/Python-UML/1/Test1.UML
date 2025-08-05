@@ -1,0 +1,358 @@
+[
+    {
+        "ClassInterface": "Class",
+        "name": "BankAccount",
+        "Visibility": "",
+        "IsStatic": "static",
+        "IsAbstract": "",
+        "superclasses": [],
+        "variables": [
+            {
+                "name": "account_number_counter",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "typeprint": "Integer=1000",
+                "Visibility": "public"
+            },
+            {
+                "name": "account_number",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "unknown",
+                "Visibility": "public"
+            },
+            {
+                "name": "balance",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": "public"
+            }
+        ],
+        "methods": [
+            {
+                "name": "__init__",
+                "Visibility": "",
+                "IsStatic": "",
+                "returnType": [],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    },
+                    {
+                        "name": "balance",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "deposit",
+                "Visibility": "public",
+                "IsStatic": "",
+                "returnType": [],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    },
+                    {
+                        "name": "amount",
+                        "typeprint": "unknown"
+                    }
+                ]
+            },
+            {
+                "name": "withdraw",
+                "Visibility": "public",
+                "IsStatic": "",
+                "returnType": [],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    },
+                    {
+                        "name": "amount",
+                        "typeprint": "unknown"
+                    }
+                ]
+            },
+            {
+                "name": "check_balance",
+                "Visibility": "public",
+                "IsStatic": "",
+                "returnType": [
+                    {
+                        "ReturnType": "unknown",
+                        "ReturnValue": "self"
+                    }
+                ],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "SavingsAccount",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "superclasses": [
+            "BankAccount"
+        ],
+        "variables": [
+            {
+                "name": "interest_rate",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Real",
+                "Visibility": "public"
+            }
+        ],
+        "methods": [
+            {
+                "name": "__init__",
+                "Visibility": "",
+                "IsStatic": "",
+                "returnType": [],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    },
+                    {
+                        "name": "balance",
+                        "typeprint": "Integer"
+                    },
+                    {
+                        "name": "interest_rate",
+                        "typeprint": "Real"
+                    }
+                ]
+            },
+            {
+                "name": "apply_interest",
+                "Visibility": "public",
+                "IsStatic": "",
+                "returnType": [],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "User",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "superclasses": [],
+        "variables": [
+            {
+                "name": "user_id",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": "public"
+            },
+            {
+                "name": "name",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "public"
+            },
+            {
+                "name": "accounts",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Sequence",
+                "Visibility": "public"
+            }
+        ],
+        "methods": [
+            {
+                "name": "__init__",
+                "Visibility": "",
+                "IsStatic": "",
+                "returnType": [],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    },
+                    {
+                        "name": "user_id",
+                        "typeprint": "Integer"
+                    },
+                    {
+                        "name": "name",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "add_account",
+                "Visibility": "public",
+                "IsStatic": "",
+                "returnType": [],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    },
+                    {
+                        "name": "account",
+                        "typeprint": "unknown"
+                    }
+                ]
+            },
+            {
+                "name": "remove_account",
+                "Visibility": "public",
+                "IsStatic": "",
+                "returnType": [],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    },
+                    {
+                        "name": "account_number",
+                        "typeprint": "unknown"
+                    }
+                ]
+            },
+            {
+                "name": "get_accounts",
+                "Visibility": "public",
+                "IsStatic": "",
+                "returnType": [
+                    {
+                        "ReturnType": "accounts",
+                        "ReturnValue": "call"
+                    }
+                ],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Bank",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "superclasses": [],
+        "variables": [
+            {
+                "name": "users",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Sequence",
+                "Visibility": "public"
+            }
+        ],
+        "methods": [
+            {
+                "name": "__init__",
+                "Visibility": "",
+                "IsStatic": "",
+                "returnType": [],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    }
+                ]
+            },
+            {
+                "name": "add_user",
+                "Visibility": "public",
+                "IsStatic": "",
+                "returnType": [],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    },
+                    {
+                        "name": "user",
+                        "typeprint": "unknown"
+                    }
+                ]
+            },
+            {
+                "name": "find_user",
+                "Visibility": "public",
+                "IsStatic": "",
+                "returnType": [
+                    {
+                        "ReturnType": "unknown",
+                        "ReturnValue": "user"
+                    },
+                    {
+                        "ReturnType": "NoneType",
+                        "ReturnValue": null
+                    }
+                ],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    },
+                    {
+                        "name": "user_id",
+                        "typeprint": "unknown"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Transfer",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "superclasses": [],
+        "variables": [
+            {
+                "name": "amount",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": "public"
+            }
+        ],
+        "methods": []
+    }
+]

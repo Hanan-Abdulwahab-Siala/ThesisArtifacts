@@ -1,0 +1,47 @@
+digraph G {
+    edge [fontname="Helvetica",fontsize=10,labelfontname="arial",labelfontsize=7,color="red"];
+    node [fontname="Helvetica",fontsize=10,shape=record,style=filled,fillcolor="white",color="red"];
+
+    graph [ rankdir=BT ]
+    node [ shape=none ]
+ 
+
+    BankAccount [ label=<        
+        <table border="0" cellborder="1" cellspacing="0">
+            <tr><td><u><b>\N</b></u></td></tr>
+            <tr><td align="left"><u> + account_number_counter : Integer=1000 </u> <br align="left"/> + account_number : unknown  <br align="left"/> + balance : Integer <br align="left"/></td></tr>
+            <tr><td align="left"> __init__() <br align="left"/> + deposit() <br align="left"/> + withdraw() <br align="left"/> + check_balance() <br align="left"/></td></tr>
+        </table>> ]
+    SavingsAccount [ label=<        
+        <table border="0" cellborder="1" cellspacing="0">
+            <tr><td><b>\N</b></td></tr>
+            <tr><td align="left"> + interest_rate : Real <br align="left"/></td></tr>
+            <tr><td align="left"> __init__() <br align="left"/> + apply_interest() <br align="left"/></td></tr>
+        </table>> ]
+    User [ label=<        
+        <table border="0" cellborder="1" cellspacing="0">
+            <tr><td><b>\N</b></td></tr>
+            <tr><td align="left"> + user_id : Integer  <br align="left"/> + name : String  <br align="left"/> + accounts : Sequence <br align="left"/></td></tr>
+            <tr><td align="left"> __init__() <br align="left"/> + add_account() <br align="left"/> + remove_account() <br align="left"/> + get_accounts() <br align="left"/></td></tr>
+        </table>> ]
+    Bank [ label=<        
+        <table border="0" cellborder="1" cellspacing="0">
+            <tr><td><b>\N</b></td></tr>
+            <tr><td align="left"> + users : Sequence <br align="left"/></td></tr>
+            <tr><td align="left"> __init__() <br align="left"/> + add_user() <br align="left"/> + find_user() <br align="left"/></td></tr>
+        </table>> ]
+    Transfer [ label=<        
+        <table border="0" cellborder="1" cellspacing="0">
+            <tr><td><b>\N</b></td></tr>
+            <tr><td align="left"> + amount : Integer <br align="left"/></td></tr>
+            <tr><td align="left"></td></tr>
+        </table>> ]
+
+    User -> Bank [headlabel="", taillabel="    ", label="", arrowhead="odiamond", arrowtail="empty", style="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="red"];
+    BankAccount -> User [headlabel="", taillabel="    ", label="", arrowhead="odiamond", arrowtail="empty", style="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="red"];
+    SavingsAccount -> User [headlabel="", taillabel="    ", label="", arrowhead="odiamond", arrowtail="empty", style="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="red"];
+    SavingsAccount -> BankAccount [headlabel="", taillabel="", label="", arrowhead="empty", arrowtail="empty", style="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="red"];
+    Transfer -> BankAccount [headlabel="from_account    1", taillabel="    *", label="", arrowhead="vee", arrowtail="empty", style="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="red"];
+    Transfer -> SavingsAccount [headlabel="to_account    1", taillabel="    *", label="", arrowhead="vee", arrowtail="empty", style="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="red"];
+    Transfer -> Bank [headlabel="bank    1", taillabel="    *", label="", arrowhead="vee", arrowtail="empty", style="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="red"];
+}
