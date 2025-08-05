@@ -2,11 +2,9 @@
 
 ## Model Download
 
-The full model is hosted on the Hugging Face Hub due to GitHub size limits.
+The full model is hosted on the Hugging Face Hub. You can download the model from:
 
-You can download the model from:
-
-👉 [https://huggingface.co/H1971/Java-UML](https://huggingface.co/H1971/Java-UML)
+👉 [https://huggingface.co/HA-Siala/Java-UML](https://huggingface.co/HA-Siala/Java-UML)
 
 ---
 
@@ -15,4 +13,4 @@ You can download the model from:
 ```python
 from transformers import AutoModel
 
-model = AutoModel.from_pretrained("H1971/Java-UML")
+model = AutoModel.from_pretrained("HA-Siala/Java-UML")
