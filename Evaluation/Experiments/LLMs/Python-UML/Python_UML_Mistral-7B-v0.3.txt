@@ -1,0 +1,1571 @@
+--- ex1.py ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response, which is in JSON format that appropriately solves the following Task: 
+
+### Instruction:
+Generate a concise UML class diagram for the provided Python code. The output should:
+1. Define each class and interface only once, including its attributes, methods, and relationships.
+2. Include all relationships (Inheritance, Realization, Dependency, Association, Composition, Aggregation) without duplication.
+3. Avoid redundant or repeated operations, classes, or relationships.
+
+
+### Input:
+class Device:
+    def __init__(self, brand):
+        self.brand = brand
+    def get_brand(self):
+        return f"Brand: {self.brand}"
+class Laptop(Device):
+    def __init__(self, brand, ram, storage):
+        super().__init__(brand)  
+        self.ram = ram
+        self.storage = storage
+    def specs(self):
+        return f"{self.get_brand()}, RAM: {self.ram}GB, Storage: {self.storage}GB"
+class Smartphone(Device):
+    def __init__(self, brand, battery_capacity):
+        super().__init__(brand)  
+        self.battery_capacity = battery_capacity
+    def battery_life(self):
+        return f"{self.get_brand()}, Battery: {self.battery_capacity}mAh"
+laptop = Laptop("Dell", 16, 512)
+print(laptop.specs())  
+smartphone = Smartphone("Samsung", 5000)
+print(smartphone.battery_life())  
+
+### Response:
+```
+{
+  "class_diagram": {
+    "class": [
+      {
+        "name": "Device",
+        "attributes": [
+          {
+            "name": "brand",
+            "type": "str"
+          }
+        ],
+        "methods": [
+          {
+            "name": "get_brand",
+            "return_type": "str"
+          }
+        ]
+      },
+      {
+        "name": "Laptop",
+        "extends": "Device",
+        "attributes": [
+          {
+            "name": "ram",
+            "type": "int"
+          },
+          {
+            "name": "storage",
+            "type": "int"
+          }
+        ],
+        "methods": [
+          {
+            "name": "specs",
+            "return_type": "str"
+          }
+        ]
+      },
+      {
+        "name": "Smartphone",
+        "extends": "Device",
+        "attributes": [
+          {
+            "name": "battery_capacity",
+            "type": "int"
+          }
+        ],
+        "methods": [
+          {
+            "name": "battery_life",
+            "return_type": "str"
+          }
+        ]
+      }
+    ],
+    "relationship": [
+      {
+        "type": "Realization",
+        "from": "Laptop",
+        "to": "Device"
+      },
+      {
+        "type": "Realization",
+        "from": "Smartphone",
+        "to": "Device"
+      },
+      {
+        "type": "Dependency",
+        "from": "Laptop",
+        "to": "Device"
+      },
+      {
+        "type": "Dependency",
+        "from": "Smartphone",
+        "to": "Device"
+      }
+    ]
+  }
+}
+```
+
+classes=3/3
+Attributes=4/4
+Methods=3/3
+Inheritance=2/2
+Accuracy=12/12
+Consistency=12/16
+
+---------------------------------------
+---------------------------------------
+--- ex2.py ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response, which is in JSON format that appropriately solves the following Task: 
+
+### Instruction:
+Generate a concise UML class diagram for the provided Python code. The output should:
+1. Define each class and interface only once, including its attributes, methods, and relationships.
+2. Include all relationships (Inheritance, Realization, Dependency, Association, Composition, Aggregation) without duplication.
+3. Avoid redundant or repeated operations, classes, or relationships.
+
+
+### Input:
+class Box:
+    def __init__(self):
+        self.item_instance = self.Gadget()
+    class Gadget:
+        def __init__(self):
+            print("Gadget has been created!")
+        def operate(self):
+            print("Gadget is now operating!")
+        def stop(self):
+            print("Gadget has stopped!")
+box_instance = Box()
+gadget_instance = box_instance.item_instance
+gadget_instance.operate()
+gadget_instance.stop()
+
+### Response:
+
+{
+  "classes": [
+    {
+      "name": "Box",
+      "attributes": [],
+      "methods": [
+        {
+          "name": "__init__",
+          "parameters": [],
+          "return_type": "None"
+        }
+      ],
+      "relationships": [
+        {
+          "type": "Aggregation",
+          "target_class": "Gadget"
+        }
+      ]
+    },
+    {
+      "name": "Gadget",
+      "attributes": [],
+      "methods": [
+        {
+          "name": "__init__",
+          "parameters": [],
+          "return_type": "None"
+        },
+        {
+          "name": "operate",
+          "parameters": [],
+          "return_type": "None"
+        },
+        {
+          "name": "stop",
+          "parameters": [],
+          "return_type": "None"
+        }
+      ],
+      "relationships": []
+    }
+  ],
+  "interfaces": []
+}
+
+classes=2/2
+Attributes=0/1
+Methods=2/2
+Aggregation=1/1
+Accuracy=5/6
+Consistency=5/5
+
+---------------------------------------
+---------------------------------------
+--- ex3.py ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response, which is in JSON format that appropriately solves the following Task: 
+
+### Instruction:
+Generate a concise UML class diagram for the provided Python code. The output should:
+1. Define each class and interface only once, including its attributes, methods, and relationships.
+2. Include all relationships (Inheritance, Realization, Dependency, Association, Composition, Aggregation) without duplication.
+3. Avoid redundant or repeated operations, classes, or relationships.
+
+
+### Input:
+from abc import ABC, abstractmethod
+class GeometricFigure(ABC):  
+   @abstractmethod
+   def area(self):
+      pass
+class Square(GeometricFigure):  
+   def __init__(self, side_length):  
+      self.side_length = side_length
+   def area(self):
+      return self.side_length ** 2  
+   def perimeter(self):  
+      return 4 * self.side_length
+square = Square(5)
+print(f"Area: {square.area()}")
+print(f"Perimeter: {square.perimeter()}")
+
+### Response:
+{
+   "classes": [
+      {
+         "name": "GeometricFigure",
+         "attributes": [],
+         "methods": [
+            {
+               "name": "area",
+               "return_type": "float",
+               "parameters": []
+            }
+         ],
+         "relationships": []
+      },
+      {
+         "name": "Square",
+         "attributes": [
+            {
+               "name": "side_length",
+               "type": "float"
+            }
+         ],
+         "methods": [
+            {
+               "name": "area",
+               "return_type": "float",
+               "parameters": []
+            },
+            {
+               "name": "perimeter",
+               "return_type": "float",
+               "parameters": []
+            }
+         ],
+         "relationships": [
+            {
+               "type": "Realization",
+               "source": "GeometricFigure",
+               "target": "Square"
+            }
+         ]
+      }
+   ]
+}
+
+classes=1/1
+Interfaces=1/1
+Attributes=1/1
+Methods=3/3
+Realization=1/1
+Accuracy=7/7
+Consistency=7/11
+
+---------------------------------------
+---------------------------------------
+--- ex4.py ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response, which is in JSON format that appropriately solves the following Task: 
+
+### Instruction:
+Generate a concise UML class diagram for the provided Python code. The output should:
+1. Define each class and interface only once, including its attributes, methods, and relationships.
+2. Include all relationships (Inheritance, Realization, Dependency, Association, Composition, Aggregation) without duplication.
+3. Avoid redundant or repeated operations, classes, or relationships.
+
+
+### Input:
+class Operations:
+    @staticmethod
+    def add_numbers(a, b):  
+        return a + b
+    @classmethod
+    def greet_class(cls):  
+        return f"Hello from the class {cls.__name__}!"
+    def greet_user(self, username):  
+        return f"Hello, {username}, welcome to the platform!"
+operation = Operations()
+print(operation.add_numbers(5, 3))
+print(operation.greet_class())
+print(operation.greet_user("Alice"))
+
+### Response:
+{
+  "class_diagram": {
+    "classes": [
+      {
+        "name": "Operations",
+        "attributes": [],
+        "methods": [
+          {
+            "name": "add_numbers",
+            "type": "static",
+            "parameters": [
+              {
+                "name": "a",
+                "type": "int"
+              },
+              {
+                "name": "b",
+                "type": "int"
+              }
+            ],
+            "return_type": "int"
+          },
+          {
+            "name": "greet_class",
+            "type": "classmethod",
+            "parameters": [],
+            "return_type": "str"
+          },
+          {
+            "name": "greet_user",
+            "type": "instancemethod",
+            "parameters": [
+              {
+                "name": "username",
+                "type": "str"
+              }
+            ],
+            "return_type": "str"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "Realization",
+        "source": "Operations",
+        "target": "Operations",
+        "source_method": "add_numbers",
+        "target_method": "add_numbers"
+      },
+      {
+        "type": "Realization",
+        "source": "Operations",
+        "target": "Operations",
+        "source_method": "greet_class",
+        "target_method": "greet_class"
+      },
+      {
+        "type": "Realization",
+        "source": "Operations",
+        "target": "Operations",
+        "source_method": "greet_user",
+        "target_method": "greet_user"
+      }
+    ]
+  }
+}
+
+classes=1/1
+Methods=3/3
+Static method=2/2
+Accuracy=6/6
+Consistency=6/9
+
+---------------------------------------
+---------------------------------------
+--- ex5.py ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response, which is in JSON format that appropriately solves the following Task: 
+
+### Instruction:
+Generate a concise UML class diagram for the provided Python code. The output should:
+1. Define each class and interface only once, including its attributes, methods, and relationships.
+2. Include all relationships (Inheritance, Realization, Dependency, Association, Composition, Aggregation) without duplication.
+3. Avoid redundant or repeated operations, classes, or relationships.
+
+
+### Input:
+from abc import ABC, abstractmethod
+class Worker(ABC):
+    def __init__(self, full_name, income):
+        self.full_name = full_name
+        self.income = income
+    @abstractmethod
+    def work(self):
+        pass
+    def show_name(self):
+        return f"Name: {self.full_name}"
+    def is_high_income(self):
+        return self.income > 3000
+class Developer(Worker):
+    def work(self):
+        return f"{self.full_name} is coding."
+dev = Developer("John", 3500)
+print(dev.show_name())
+print(dev.work())
+print(f"High income: {dev.is_high_income()}")
+
+### Response:
+{
+  "classes": [
+    {
+      "name": "Worker",
+      "attributes": [
+        {
+          "name": "full_name",
+          "type": "string"
+        },
+        {
+          "name": "income",
+          "type": "int"
+        }
+      ],
+      "methods": [
+        {
+          "name": "show_name",
+          "return_type": "string",
+          "parameters": []
+        },
+        {
+          "name": "is_high_income",
+          "return_type": "bool",
+          "parameters": []
+        }
+      ],
+      "relationships": [
+        {
+          "type": "Realization",
+          "from": "Worker",
+          "to": "Developer"
+        }
+      ]
+    },
+    {
+      "name": "Developer",
+      "attributes": [
+        {
+          "name": "full_name",
+          "type": "string"
+        },
+        {
+          "name": "income",
+          "type": "int"
+        }
+      ],
+      "methods": [
+        {
+          "name": "work",
+          "return_type": "string",
+          "parameters": []
+        }
+      ],
+      "relationships": [
+        {
+          "type": "Inheritance",
+          "from": "Worker",
+          "to": "Developer"
+        }
+      ]
+    }
+  ]
+}
+
+classes=2/2
+Attributes=2/2
+Methods=3/4
+Abstract classes=0/1
+Abstract methods=0/1
+Inheritance=1/1
+Accuracy=8/11
+Consistency=8/9
+
+---------------------------------------
+---------------------------------------
+--- ex6.py ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response, which is in JSON format that appropriately solves the following Task: 
+
+### Instruction:
+Generate a concise UML class diagram for the provided Python code. The output should:
+1. Define each class and interface only once, including its attributes, methods, and relationships.
+2. Include all relationships (Inheritance, Realization, Dependency, Association, Composition, Aggregation) without duplication.
+3. Avoid redundant or repeated operations, classes, or relationships.
+
+
+### Input:
+class Entity:  
+    def action(self):  
+        pass
+class Car(Entity):  
+    def action(self):  
+        return "Vroom! Vroom! The car is starting!"
+class Airplane(Entity):  
+    def action(self):  
+        return "Whoosh! The airplane is flying!"
+class Robot(Entity):  
+    def action(self):  
+        return "Beep boop! The robot is working!"
+car = Car()
+airplane = Airplane()
+robot = Robot()
+print(car.action())
+print(airplane.action())
+print(robot.action())
+
+### Response:
+{
+  "class_definitions": [
+    {
+      "name": "Entity",
+      "attributes": [],
+      "methods": [
+        {
+          "name": "action",
+          "parameters": [],
+          "return_type": "str",
+          "description": "Performs an action"
+        }
+      ],
+      "relationships": [
+        {
+          "type": "Inheritance",
+          "target_class": "Car"
+        },
+        {
+          "type": "Inheritance",
+          "target_class": "Airplane"
+        },
+        {
+          "type": "Inheritance",
+          "target_class": "Robot"
+        }
+      ]
+    },
+    {
+      "name": "Car",
+      "attributes": [],
+      "methods": [
+        {
+          "name": "action",
+          "parameters": [],
+          "return_type": "str",
+          "description": "Performs an action specific to a car"
+        }
+      ],
+      "relationships": [
+        {
+          "type": "Dependency",
+          "target_class": "Entity"
+        }
+      ]
+    },
+    {
+      "name": "Airplane",
+      "attributes": [],
+      "methods": [
+        {
+          "name": "action",
+          "parameters": [],
+          "return_type": "str",
+          "description": "Performs an action specific to an airplane"
+        }
+      ],
+      "relationships": [
+        {
+          "type": "Dependency",
+          "target_class": "Entity"
+        }
+      ]
+    },
+    {
+      "name": "Robot",
+      "attributes": [],
+      "methods": [
+        {
+          "name": "action",
+          "parameters": [],
+          "return_type": "str",
+          "description": "Performs an action specific to a robot"
+        }
+      ],
+      "relationships": [
+        {
+          "type": "Dependency",
+          "target_class": "Entity"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "type": "Association",
+      "source_class": "Entity",
+      "target_class": "Car",
+      "description": "A car is an entity."
+    },
+    {
+      "type": "Association",
+      "source_class": "Entity",
+      "target_class": "Airplane",
+      "description": "An airplane is an entity."
+    },
+    {
+      "type": "Association",
+      "source_class": "Entity",
+      "target_class": "Robot",
+      "description": "A robot is an entity."
+    },
+    {
+      "type": "Association",
+      "source_class": "Car",
+      "target_class": "Entity",
+      "description": "A car is an entity."
+    },
+    {
+      "type": "Association",
+      "source_class": "Airplane",
+      "target_class": "Entity",
+      "description": "An airplane is an entity."
+    },
+    {
+      "type": "Association",
+      "source_class": "Robot",
+      "target_class": "Entity",
+      "description": "A robot is an entity."
+    }
+  ]
+}
+
+classes=4/4
+Methods=4/4
+Inheritance=3/3
+Accuracy=11/11
+Consistency=11/20
+
+
+---------------------------------------
+---------------------------------------
+--- ex7.py ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response, which is in JSON format that appropriately solves the following Task: 
+
+### Instruction:
+Generate a concise UML class diagram for the provided Python code. The output should:
+1. Define each class and interface only once, including its attributes, methods, and relationships.
+2. Include all relationships (Inheritance, Realization, Dependency, Association, Composition, Aggregation) without duplication.
+3. Avoid redundant or repeated operations, classes, or relationships.
+
+
+### Input:
+class Alpha:
+   def alpha_method(self):
+      print("Alpha Method")
+class Beta:
+   def beta_method(self):
+      print("Beta Method")
+class Gamma(Alpha, Beta):
+   def gamma_method(self):
+      print("Gamma Method")
+
+### Response:
+
+```
+{
+   "class_diagram": {
+      "classes": [
+         {
+            "name": "Alpha",
+            "attributes": [],
+            "methods": [
+               {
+                  "name": "alpha_method"
+               }
+            ],
+            "relationships": [
+               {
+                  "type": "Realization",
+                  "target_class": "Beta"
+               }
+            ]
+         },
+         {
+            "name": "Beta",
+            "attributes": [],
+            "methods": [
+               {
+                  "name": "beta_method"
+               }
+            ],
+            "relationships": []
+         },
+         {
+            "name": "Gamma",
+            "attributes": [],
+            "methods": [
+               {
+                  "name": "gamma_method"
+               }
+            ],
+            "relationships": [
+               {
+                  "type": "Inheritance",
+                  "target_class": "Alpha"
+               },
+               {
+                  "type": "Inheritance",
+                  "target_class": "Beta"
+               }
+            ]
+         }
+      ],
+      "relationships": [
+         {
+            "type": "Dependency",
+            "source_class": "Alpha",
+            "target_class": "Beta"
+         },
+         {
+            "type": "Association",
+            "source_class": "Gamma",
+            "target_class": "Alpha"
+         },
+         {
+            "type": "Association",
+            "source_class": "Gamma",
+            "target_class": "Beta"
+         }
+      ]
+   }
+}
+```
+
+### Output:
+
+```
+{
+  "class_diagram": {
+    "classes": [
+      {
+        "name": "Alpha",
+        "attributes": [],
+        "methods": [
+          {
+            "name": "alpha_method"
+          }
+        ],
+        "relationships": [
+          {
+            "type": "Realization",
+            "target_class": "Beta"
+          }
+        ]
+      },
+      {
+        "name": "Beta",
+        "attributes": [],
+        "methods": [
+          {
+            "name": "beta_method"
+          }
+        ],
+        "relationships": []
+      },
+      {
+        "name": "Gamma",
+        "attributes": [],
+        "methods": [
+          {
+            "name": "gamma_method"
+          }
+        ],
+        "relationships": [
+          {
+            "type": "Inheritance",
+            "target_class": "Alpha"
+          },
+          {
+            "type": "Inheritance",
+            "target_class": "Beta"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "Dependency",
+        "source_class": "Alpha",
+        "target_class": "Beta"
+      },
+      {
+        "type": "Association",
+        "source_class": "Gamma",
+        "target_class": "Alpha"
+      },
+      {
+        "type": "Association",
+        "source_class": "Gamma",
+        "target_class": "Beta"
+      }
+    ]
+  }
+}
+```
+
+classes=3/3
+Methods=3/3
+Inheritance=2/2
+Accuracy=8/8
+Consistency=8/12
+
+---------------------------------------
+---------------------------------------
+--- ex8.py ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response, which is in JSON format that appropriately solves the following Task: 
+
+### Instruction:
+Generate a concise UML class diagram for the provided Python code. The output should:
+1. Define each class and interface only once, including its attributes, methods, and relationships.
+2. Include all relationships (Inheritance, Realization, Dependency, Association, Composition, Aggregation) without duplication.
+3. Avoid redundant or repeated operations, classes, or relationships.
+
+
+### Input:
+class Item:  
+    def __init__(self, name):
+        self.name = name  
+class Container:  
+    def __init__(self):
+        self.item_instance = Item("Example Item")  
+    def get_name(self):  
+        return self.item_instance.name  
+container_instance = Container()
+print(container_instance.get_name()) 
+
+### Response:
+{
+    "classes": [
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ],
+            "methods": [],
+            "relationships": []
+        },
+        {
+            "name": "Container",
+            "attributes": [
+                {
+                    "name": "item_instance",
+                    "type": "Item"
+                }
+            ],
+            "methods": [
+                {
+                    "name": "get_name",
+                    "return_type": "string",
+                    "parameters": []
+                }
+            ],
+            "relationships": [
+                {
+                    "type": "composition",
+                    "target_class": "Item"
+                }
+            ]
+        }
+    ],
+    "interfaces": []
+}
+
+classes=2/2
+Methods=1/1
+Attributes=2/2
+Composition=1/1
+Accuracy=6/6
+Consistency=6/6
+
+---------------------------------------
+---------------------------------------
+--- ex9.py ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response, which is in JSON format that appropriately solves the following Task: 
+
+### Instruction:
+Generate a concise UML class diagram for the provided Python code. The output should:
+1. Define each class and interface only once, including its attributes, methods, and relationships.
+2. Include all relationships (Inheritance, Realization, Dependency, Association, Composition, Aggregation) without duplication.
+3. Avoid redundant or repeated operations, classes, or relationships.
+
+
+### Input:
+class Element:  
+    def __init__(self, identifier):  
+        self.identifier = identifier  
+class Collection:  
+    def __init__(self):
+        self.elements = []  
+    def add_element(self, element):  
+        self.elements.append(element)  
+collection_instance = Collection()
+element1 = Element("Element1")  
+element2 = Element("Element2")  
+collection_instance.add_element(element1)
+collection_instance.add_element(element2)
+
+### Response:
+
+```json
+{
+  "elements": [
+    {
+      "name": "Element",
+      "attributes": [
+        {
+          "name": "identifier",
+          "type": "string"
+        }
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "parameters": [
+            {
+              "name": "identifier",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Collection",
+      "attributes": [
+        {
+          "name": "elements",
+          "type": "Collection<Element>"
+        }
+      ],
+      "methods": [
+        {
+          "name": "__init__",
+          "parameters": []
+        },
+        {
+          "name": "add_element",
+          "parameters": [
+            {
+              "name": "element",
+              "type": "Element"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "type": "Association",
+      "source": "Collection",
+      "target": "Element",
+      "multiplicity": {
+        "source": "1..*",
+        "target": "*"
+      }
+    }
+  ]
+}
+```
+
+classes=2/2
+Methods=1/1
+Attributes=2/2
+Aggregation=0.5/1
+Accuracy=5.5/6
+Consistency=5.5/5.5
+
+---------------------------------------
+---------------------------------------
+--- ex10.py ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response, which is in JSON format that appropriately solves the following Task: 
+
+### Instruction:
+Generate a concise UML class diagram for the provided Python code. The output should:
+1. Define each class and interface only once, including its attributes, methods, and relationships.
+2. Include all relationships (Inheritance, Realization, Dependency, Association, Composition, Aggregation) without duplication.
+3. Avoid redundant or repeated operations, classes, or relationships.
+
+
+### Input:
+class Compensation:  
+    def __init__(self, monthly_income):  
+        self.monthly_income = monthly_income  
+    def annual_income(self):  
+        return self.monthly_income * 12  
+class Worker:  
+    def __init__(self, full_name, compensation):  
+        self.full_name = full_name  
+        self.compensation = compensation 
+    def total_income(self):  
+        return self.compensation.annual_income()  
+compensation = Compensation(2000)
+worker = Worker('Ali', compensation)
+print(f"{worker.full_name}'s total annual income is: {worker.total_income()}")
+
+### Response:
+{
+  "Compensation": {
+    "attributes": [
+      {
+        "name": "monthly_income",
+        "type": "int"
+      }
+    ],
+    "methods": [
+      {
+        "name": "annual_income",
+        "return_type": "int",
+        "parameters": []
+      }
+    ]
+  },
+  "Worker": {
+    "attributes": [
+      {
+        "name": "full_name",
+        "type": "str"
+      },
+      {
+        "name": "compensation",
+        "type": "Compensation"
+      }
+    ],
+    "methods": [
+      {
+        "name": "total_income",
+        "return_type": "int",
+        "parameters": []
+      }
+    ]
+  },
+  "relationships": [
+    {
+      "source": "Worker",
+      "target": "Compensation",
+      "type": "Composition"
+    }
+  ]
+}
+
+classes=2/2
+Methods=2/2
+Attributes=3/3
+Aggregation=0/1
+Accuracy=7/8
+Consistency=7/8
+---------------------------------------
+---------------------------------------
+--- ex11.py ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response, which is in JSON format that appropriately solves the following Task: 
+
+### Instruction:
+Generate a concise UML class diagram for the provided Python code. The output should:
+1. Define each class and interface only once, including its attributes, methods, and relationships.
+2. Include all relationships (Inheritance, Realization, Dependency, Association, Composition, Aggregation) without duplication.
+3. Avoid redundant or repeated operations, classes, or relationships.
+
+
+### Input:
+class Item:  
+    def __init__(self):
+        self.description = "This is an Item class"  
+class Container:  
+    def __init__(self):
+        self.item_instance = None  
+    def set_item_instance(self, item_instance):  
+        self.item_instance = item_instance  
+item = Item()  
+container = Container()  
+container.set_item_instance(item)
+print(container.item_instance.description)
+
+### Response:
+
+{
+  "class_definitions": [
+    {
+      "name": "Item",
+      "attributes": [
+        {
+          "name": "description",
+          "type": "string"
+        }
+      ],
+      "methods": []
+    },
+    {
+      "name": "Container",
+      "attributes": [
+        {
+          "name": "item_instance",
+          "type": "Item"
+        }
+      ],
+      "methods": [
+        {
+          "name": "set_item_instance",
+          "parameters": [
+            {
+              "name": "item_instance",
+              "type": "Item"
+            }
+          ],
+          "returns": "void"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Item",
+      "target": "Container",
+      "type": "Dependency"
+    }
+  ]
+}
+
+classes=2/2
+Methods=1/1
+Attributes=2/2
+Association=0/1
+Accuracy=5/6
+Consistency=5/6
+
+---------------------------------------
+---------------------------------------
+--- ex12.py ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response, which is in JSON format that appropriately solves the following Task: 
+
+### Instruction:
+Generate a concise UML class diagram for the provided Python code. The output should:
+1. Define each class and interface only once, including its attributes, methods, and relationships.
+2. Include all relationships (Inheritance, Realization, Dependency, Association, Composition, Aggregation) without duplication.
+3. Avoid redundant or repeated operations, classes, or relationships.
+
+
+### Input:
+class Product:  
+    def __init__(self):
+        self.name = "Product Class"  
+    def link_container(self, container_instance):  
+        self.container_instance = container_instance  
+class Container:  
+    def __init__(self):
+        self.year_established = 2024  
+    def link_product(self, product_instance):  
+        self.product_instance = product_instance  
+product = Product()  
+container = Container()  
+container.link_product(product)
+product.link_container(container)
+print(container.product_instance.name)
+print(product.container_instance.year_established)
+
+### Response:
+{  
+  "Product": {  
+    "attributes": {  
+      "name": "Product Class"  
+    },  
+    "relationships": [  
+      {  
+        "type": "has_one",  
+        "target": "Container"  
+      }  
+    ]  
+  },  
+  "Container": {  
+    "attributes": {  
+      "year_established": 2024  
+    },  
+    "relationships": [  
+      {  
+        "type": "has_one",  
+        "target": "Product"  
+      }  
+    ]  
+  }  
+}
+
+classes=2/2
+Methods=0/2
+Attributes=2/2
+Association=0/1
+Role names=0/2
+Accuracy=4/9
+Consistency=4/6
+
+---------------------------------------
+---------------------------------------
+--- ex13.py ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response, which is in JSON format that appropriately solves the following Task: 
+
+### Instruction:
+Generate a concise UML class diagram for the provided Python code. The output should:
+1. Define each class and interface only once, including its attributes, methods, and relationships.
+2. Include all relationships (Inheritance, Realization, Dependency, Association, Composition, Aggregation) without duplication.
+3. Avoid redundant or repeated operations, classes, or relationships.
+
+
+### Input:
+class Item:
+    def __init__(self, data):
+        self.data = data
+class Container:
+    def __init__(self, content):
+        self.content = content   
+    def method_1(self):
+        y = Item("New Item")
+
+### Response:
+```json
+{
+    "Class": {
+        "Item": {
+            "Attribute": {
+                "data": {
+                    "type": "String"
+                }
+            }
+        },
+        "Container": {
+            "Attribute": {
+                "content": {
+                    "type": "Item"
+                }
+            },
+            "Method": {
+                "method_1": {
+                    "return_type": "Item"
+                }
+            }
+        }
+    },
+    "Relationship": {
+        "Inheritance": {
+            "Item": {
+                "from": "Container"
+            }
+        },
+        "Realization": {
+            "method_1": {
+                "from": "Container",
+                "to": "Item"
+            }
+        }
+    }
+}
+```
+
+### Explanation:
+The input is a Python class named `Container` with a `content` attribute and a `method_1` method that returns an `Item`. The output is a JSON representation of a UML class diagram that defines the `Item` and `Container` classes, their attributes and methods, and the relationships between them.
+
+The `Item` class has a `data` attribute of type `String`. The `Container` class has a `content` attribute of type `Item` and a `method_1` method that returns an `Item`.
+
+The `Inheritance` relationship indicates that `Item` inherits from `Container`. The `Realization` relationship indicates that the `method_1` method of `Container` realizes the `Item` class.
+
+classes=2/2
+Methods=1/1
+Attributes=2/2
+Dependency=0/1
+Accuracy=5/6
+Consistency=5/7
+
+---------------------------------------
+---------------------------------------
+--- ex14.py ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response, which is in JSON format that appropriately solves the following Task: 
+
+### Instruction:
+Generate a concise UML class diagram for the provided Python code. The output should:
+1. Define each class and interface only once, including its attributes, methods, and relationships.
+2. Include all relationships (Inheritance, Realization, Dependency, Association, Composition, Aggregation) without duplication.
+3. Avoid redundant or repeated operations, classes, or relationships.
+
+
+### Input:
+class Vehicle:
+    def __init__(self, type_of_vehicle):
+        self.type_of_vehicle = type_of_vehicle
+    def operate(self):
+        return f"The {self.type_of_vehicle} is operating."
+    def stop(self):
+        return f"The {self.type_of_vehicle} has stopped."
+class Operator:
+    def __init__(self, identifier):
+        self.identifier = identifier
+    def operate_vehicle(self, vehicle: Vehicle):
+        return f"{self.identifier} operates the {vehicle.operate()}"
+    def park_vehicle(self, vehicle: Vehicle):
+        return f"{self.identifier} parks the {vehicle.stop()}"
+
+### Response:
+```
+{
+  "UML_Class_Diagram": {
+    "Class": [
+      {
+        "Name": "Vehicle",
+        "Attributes": [
+          {
+            "Name": "type_of_vehicle",
+            "Type": "String"
+          }
+        ],
+        "Methods": [
+          {
+            "Name": "operate",
+            "Return_Type": "String",
+            "Parameters": []
+          },
+          {
+            "Name": "stop",
+            "Return_Type": "String",
+            "Parameters": []
+          }
+        ],
+        "Relationships": [
+          {
+            "Type": "Realization",
+            "Source": "Operator",
+            "Target": "Vehicle"
+          }
+        ]
+      },
+      {
+        "Name": "Operator",
+        "Attributes": [
+          {
+            "Name": "identifier",
+            "Type": "String"
+          }
+        ],
+        "Methods": [
+          {
+            "Name": "operate_vehicle",
+            "Return_Type": "String",
+            "Parameters": [
+              {
+                "Name": "vehicle",
+                "Type": "Vehicle"
+              }
+            ]
+          },
+          {
+            "Name": "park_vehicle",
+            "Return_Type": "String",
+            "Parameters": [
+              {
+                "Name": "vehicle",
+                "Type": "Vehicle"
+              }
+            ]
+          }
+        ],
+        "Relationships": [
+          {
+            "Type": "Association",
+            "Source": "Vehicle",
+            "Target": "Operator"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+classes=2/2
+Methods=4/4
+Attributes=2/2
+Dependency=0/1
+Accuracy=8/9
+Consistency=8/10
+
+---------------------------------------
+---------------------------------------
+--- ex15.py ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response, which is in JSON format that appropriately solves the following Task: 
+
+### Instruction:
+Generate a concise UML class diagram for the provided Python code. The output should:
+1. Define each class and interface only once, including its attributes, methods, and relationships.
+2. Include all relationships (Inheritance, Realization, Dependency, Association, Composition, Aggregation) without duplication.
+3. Avoid redundant or repeated operations, classes, or relationships.
+
+
+### Input:
+class Product:  
+    def __init__(self, quantity):  
+        self.quantity = quantity  
+    def get_quantity(self):  
+        return self.quantity  
+class Factory:  
+    def build_product(self):  
+        return Product(13)  
+factory = Factory()
+product = factory.build_product()
+print(product.get_quantity())
+
+### Response:
+{  
+    "classes": [  
+        {  
+            "name": "Product",  
+            "attributes": [  
+                {  
+                    "name": "quantity",  
+                    "type": "int"  
+                }  
+            ],  
+            "methods": [  
+                {  
+                    "name": "get_quantity",  
+                    "return_type": "int"  
+                }  
+            ]  
+        },  
+        {  
+            "name": "Factory",  
+            "methods": [  
+                {  
+                    "name": "build_product",  
+                    "return_type": "Product",  
+                    "parameters": [  
+                        {  
+                            "name": "quantity",  
+                            "type": "int"  
+                        }  
+                    ]  
+                }  
+            ]  
+        }  
+    ],  
+    "relationships": [  
+        {  
+            "type": "Inheritance",  
+            "from": "Product",  
+            "to": "Factory"  
+        },  
+        {  
+            "type": "Dependency",  
+            "from": "Product",  
+            "to": "Factory"  
+        }  
+    ]  
+}
+
+classes=2/2
+Methods=2/2
+Attributes=1/1
+Dependency=1/1
+Accuracy=6/6
+Consistency=6/8
+
+---------------------------------------
+---------------------------------------
+--- ex16.py ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response, which is in JSON format that appropriately solves the following Task: 
+
+### Instruction:
+Generate a concise UML class diagram for the provided Python code. The output should:
+1. Define each class and interface only once, including its attributes, methods, and relationships.
+2. Include all relationships (Inheritance, Realization, Dependency, Association, Composition, Aggregation) without duplication.
+3. Avoid redundant or repeated operations, classes, or relationships.
+
+
+### Input:
+class CustomClass:
+    def __init__(self):
+        self.count = 100            
+        self._threshold = 200       
+        self.__secret_key = "xyz"   
+        self._aa = 'A'              
+        self.__bb = 10.5 
+
+### Response:
+```
+{
+  "class_diagram": {
+    "title": "CustomClass",
+    "class": [
+      {
+        "name": "CustomClass",
+        "attributes": [
+          {
+            "name": "count",
+            "type": "int"
+          },
+          {
+            "name": "_threshold",
+            "type": "int"
+          },
+          {
+            "name": "__secret_key",
+            "type": "str"
+          },
+          {
+            "name": "_aa",
+            "type": "str"
+          },
+          {
+            "name": "__bb",
+            "type": "float"
+          }
+        ],
+        "methods": [
+          {
+            "name": "__init__",
+            "parameters": []
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "inheritance",
+        "source": "CustomClass",
+        "target": "object"
+      }
+    ]
+  }
+}
+```
+
+classes=1/1
+Attributes=5/5
+Visibility=0/5 
+Accuracy=6/11
+Consistency=6/7
+
+---------------------------------------
+---------------------------------------
