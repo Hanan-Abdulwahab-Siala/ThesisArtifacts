@@ -1,0 +1,11 @@
+[
+    {
+        "Relationship": "Association",
+        "Source": "Container",
+        "Target": "Item",
+        "Multiplicity1": "",
+        "Role1": "item",
+        "Multiplicity2": "",
+        "Role2": ""
+    }
+]

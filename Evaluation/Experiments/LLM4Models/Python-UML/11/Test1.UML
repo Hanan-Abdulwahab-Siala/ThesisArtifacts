@@ -1,0 +1,75 @@
+[
+    {
+        "ClassInterface": "Class",
+        "name": "Item",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "superclasses": [],
+        "variables": [],
+        "methods": [
+            {
+                "name": "__init__",
+                "Visibility": "",
+                "IsStatic": "",
+                "returnType": [],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Container",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "superclasses": [],
+        "variables": [
+            {
+                "name": "item_instance",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "NoneType",
+                "Visibility": "public"
+            }
+        ],
+        "methods": [
+            {
+                "name": "__init__",
+                "Visibility": "",
+                "IsStatic": "",
+                "returnType": [],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    }
+                ]
+            },
+            {
+                "name": "set_item_instance",
+                "Visibility": "public",
+                "IsStatic": "",
+                "returnType": [],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    },
+                    {
+                        "name": "item_instance",
+                        "typeprint": "unknown"
+                    }
+                ]
+            }
+        ]
+    }
+]

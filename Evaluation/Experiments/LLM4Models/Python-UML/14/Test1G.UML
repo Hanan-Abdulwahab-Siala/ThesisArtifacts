@@ -1,0 +1,154 @@
+[
+    {
+        "ClassInterface": "Class",
+        "name": "Vehicle",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "superclasses": [],
+        "variables": [
+            {
+                "name": "type_of_vehicle",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "unknown",
+                "Visibility": "public"
+            }
+        ],
+        "methods": [
+            {
+                "name": "__init__",
+                "Visibility": "",
+                "IsStatic": "",
+                "returnType": [],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    },
+                    {
+                        "name": "type_of_vehicle",
+                        "typeprint": "unknown"
+                    }
+                ]
+            },
+            {
+                "name": "operate",
+                "Visibility": "public",
+                "IsStatic": "",
+                "returnType": [
+                    {
+                        "ReturnType": "String",
+                        "ReturnValue": ""
+                    }
+                ],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    }
+                ]
+            },
+            {
+                "name": "stop",
+                "Visibility": "public",
+                "IsStatic": "",
+                "returnType": [
+                    {
+                        "ReturnType": "String",
+                        "ReturnValue": ""
+                    }
+                ],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Operator",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "superclasses": [],
+        "variables": [
+            {
+                "name": "identifier",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "unknown",
+                "Visibility": "public"
+            }
+        ],
+        "methods": [
+            {
+                "name": "__init__",
+                "Visibility": "",
+                "IsStatic": "",
+                "returnType": [],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    },
+                    {
+                        "name": "identifier",
+                        "typeprint": "unknown"
+                    }
+                ]
+            },
+            {
+                "name": "operate_vehicle",
+                "Visibility": "public",
+                "IsStatic": "",
+                "returnType": [
+                    {
+                        "ReturnType": "String",
+                        "ReturnValue": ""
+                    }
+                ],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    },
+                    {
+                        "name": "vehicle",
+                        "typeprint": "Vehicle"
+                    }
+                ]
+            },
+            {
+                "name": "park_vehicle",
+                "Visibility": "public",
+                "IsStatic": "",
+                "returnType": [
+                    {
+                        "ReturnType": "String",
+                        "ReturnValue": ""
+                    }
+                ],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    },
+                    {
+                        "name": "vehicle",
+                        "typeprint": "Vehicle"
+                    }
+                ]
+            }
+        ]
+    }
+]

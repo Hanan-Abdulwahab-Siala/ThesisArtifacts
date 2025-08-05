@@ -1,0 +1,119 @@
+[
+    {
+        "ClassInterface": "Class",
+        "name": "Entity",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "superclasses": [],
+        "variables": [],
+        "methods": [
+            {
+                "name": "action",
+                "Visibility": "public",
+                "IsStatic": "",
+                "returnType": [],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Car",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "superclasses": [
+            "Entity"
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "action",
+                "Visibility": "public",
+                "IsStatic": "",
+                "returnType": [
+                    {
+                        "ReturnType": "String",
+                        "ReturnValue": "Vroom! Vroom! The car is starting!"
+                    }
+                ],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Airplane",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "superclasses": [
+            "Entity"
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "action",
+                "Visibility": "public",
+                "IsStatic": "",
+                "returnType": [
+                    {
+                        "ReturnType": "String",
+                        "ReturnValue": "Whoosh! The airplane is flying!"
+                    }
+                ],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Robot",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "superclasses": [
+            "Entity"
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "action",
+                "Visibility": "public",
+                "IsStatic": "",
+                "returnType": [
+                    {
+                        "ReturnType": "String",
+                        "ReturnValue": "Beep boop! The robot is working!"
+                    }
+                ],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    }
+                ]
+            }
+        ]
+    }
+]

@@ -1,0 +1,11 @@
+[
+    {
+        "Relationship": "Aggregation",
+        "Source": "Gadget",
+        "Target": "Box",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    }
+]

@@ -1,0 +1,11 @@
+[
+    {
+        "Relationship": "Dependency",
+        "Source": "Factory",
+        "Target": "Product",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    }
+]

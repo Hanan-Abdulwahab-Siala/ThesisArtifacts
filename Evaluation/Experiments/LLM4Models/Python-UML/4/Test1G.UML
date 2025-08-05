@@ -1,0 +1,70 @@
+[
+    {
+        "ClassInterface": "Class",
+        "name": "Operations",
+        "Visibility": "",
+        "IsStatic": "static",
+        "IsAbstract": "",
+        "superclasses": [],
+        "variables": [],
+        "methods": [
+            {
+                "name": "add_numbers",
+                "Visibility": "public",
+                "IsStatic": "static",
+                "returnType": [],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "a",
+                        "typeprint": "Integer"
+                    },
+                    {
+                        "name": "b",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "greet_class",
+                "Visibility": "public",
+                "IsStatic": "static",
+                "returnType": [
+                    {
+                        "ReturnType": "String",
+                        "ReturnValue": ""
+                    }
+                ],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "cls",
+                        "typeprint": "unknown"
+                    }
+                ]
+            },
+            {
+                "name": "greet_user",
+                "Visibility": "public",
+                "IsStatic": "",
+                "returnType": [
+                    {
+                        "ReturnType": "String",
+                        "ReturnValue": ""
+                    }
+                ],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    },
+                    {
+                        "name": "username",
+                        "typeprint": "String"
+                    }
+                ]
+            }
+        ]
+    }
+]

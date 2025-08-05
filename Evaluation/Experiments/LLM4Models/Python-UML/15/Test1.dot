@@ -1,0 +1,23 @@
+digraph G {
+    edge [fontname="Helvetica",fontsize=10,labelfontname="arial",labelfontsize=7,color="red"];
+    node [fontname="Helvetica",fontsize=10,shape=record,style=filled,fillcolor="white",color="red"];
+
+    graph [ rankdir=BT ]
+    node [ shape=none ]
+ 
+
+    Product [ label=<        
+        <table border="0" cellborder="1" cellspacing="0">
+            <tr><td><b>\N</b></td></tr>
+            <tr><td align="left"> + quantity : Integer <br align="left"/></td></tr>
+            <tr><td align="left"> __init__() <br align="left"/> + get_quantity() <br align="left"/></td></tr>
+        </table>> ]
+    Factory [ label=<        
+        <table border="0" cellborder="1" cellspacing="0">
+            <tr><td><b>\N</b></td></tr>
+            <tr><td align="left"></td></tr>
+            <tr><td align="left"> + build_product() <br align="left"/></td></tr>
+        </table>> ]
+
+    Factory -> Product [headlabel="    ", taillabel="", label="", arrowhead="vee", arrowtail="empty", style="dashed", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="red"];
+}

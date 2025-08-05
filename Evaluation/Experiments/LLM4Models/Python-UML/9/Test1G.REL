@@ -1,0 +1,11 @@
+[
+    {
+        "Relationship": "Aggregation",
+        "Source": "Element",
+        "Target": "Collection",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    }
+]

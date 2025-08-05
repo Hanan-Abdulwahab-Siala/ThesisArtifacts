@@ -1,0 +1,116 @@
+[
+    {
+        "ClassInterface": "Class",
+        "name": "Compensation",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "superclasses": [],
+        "variables": [
+            {
+                "name": "monthly_income",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": "public"
+            }
+        ],
+        "methods": [
+            {
+                "name": "__init__",
+                "Visibility": "",
+                "IsStatic": "",
+                "returnType": [],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    },
+                    {
+                        "name": "monthly_income",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "annual_income",
+                "Visibility": "public",
+                "IsStatic": "",
+                "returnType": [],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Worker",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "superclasses": [],
+        "variables": [
+            {
+                "name": "full_name",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "public"
+            },
+            {
+                "name": "compensation",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "unknown",
+                "Visibility": "public"
+            }
+        ],
+        "methods": [
+            {
+                "name": "__init__",
+                "Visibility": "",
+                "IsStatic": "",
+                "returnType": [],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    },
+                    {
+                        "name": "full_name",
+                        "typeprint": "String"
+                    },
+                    {
+                        "name": "compensation",
+                        "typeprint": "unknown"
+                    }
+                ]
+            },
+            {
+                "name": "total_income",
+                "Visibility": "public",
+                "IsStatic": "",
+                "returnType": [
+                    {
+                        "ReturnType": "annual_income",
+                        "ReturnValue": "call"
+                    }
+                ],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    }
+                ]
+            }
+        ]
+    }
+]
