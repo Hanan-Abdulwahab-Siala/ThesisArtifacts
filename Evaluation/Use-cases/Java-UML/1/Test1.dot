@@ -1,0 +1,47 @@
+digraph G {
+    edge [fontname="Helvetica",fontsize=10,labelfontname="arial",labelfontsize=7,color="red"];
+    node [fontname="Helvetica",fontsize=10,shape=record,style=filled,fillcolor="white",color="red"];
+
+    graph [ rankdir=BT ]
+    node [ shape=none ]
+ 
+
+    Car [ label=<        
+        <table border="0" cellborder="1" cellspacing="0">
+            <tr><td><b>\N</b></td></tr>
+            <tr><td align="left"> - carId : String  <br align="left"/> - brand : String  <br align="left"/> - model : String  <br align="left"/> - basePricePerDay : Real  <br align="left"/> - isAvailable : Boolean <br align="left"/></td></tr>
+            <tr><td align="left"> + getCarId() <br align="left"/> + getBrand() <br align="left"/> + getModel() <br align="left"/> + calculatePrice() <br align="left"/> + isAvailable() <br align="left"/> + rent() <br align="left"/> + returnCar() <br align="left"/></td></tr>
+        </table>> ]
+    Customer [ label=<        
+        <table border="0" cellborder="1" cellspacing="0">
+            <tr><td><b>\N</b></td></tr>
+            <tr><td align="left"> - customerId : String  <br align="left"/> - name : String <br align="left"/></td></tr>
+            <tr><td align="left"> + getCustomerId() <br align="left"/> + getName() <br align="left"/></td></tr>
+        </table>> ]
+    Rental [ label=<        
+        <table border="0" cellborder="1" cellspacing="0">
+            <tr><td><b>\N</b></td></tr>
+            <tr><td align="left"> - days : Integer <br align="left"/></td></tr>
+            <tr><td align="left"> + getCar() <br align="left"/> + getCustomer() <br align="left"/> + getDays() <br align="left"/></td></tr>
+        </table>> ]
+    CarRentalSystem [ label=<        
+        <table border="0" cellborder="1" cellspacing="0">
+            <tr><td><b>\N</b></td></tr>
+            <tr><td align="left"></td></tr>
+            <tr><td align="left"> + addCar() <br align="left"/> + addCustomer() <br align="left"/> + rentCar() <br align="left"/> + returnCar() <br align="left"/> + menu() <br align="left"/></td></tr>
+        </table>> ]
+    Main [ label=<        
+        <table border="0" cellborder="1" cellspacing="0">
+            <tr><td><b>+\N</b></td></tr>
+            <tr><td align="left"></td></tr>
+            <tr><td align="left"><u> + main() </u><br align="left"/></td></tr>
+        </table>> ]
+
+    Rental -> Car [headlabel="car    0..1", taillabel="    ", label="", arrowhead="vee", arrowtail="empty", style="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="red"];
+    Rental -> Customer [headlabel="customer    0..1", taillabel="    ", label="", arrowhead="vee", arrowtail="empty", style="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="red"];
+    CarRentalSystem -> Car [headlabel="cars    0..*", taillabel="    ", label="", arrowhead="vee", arrowtail="empty", style="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="red"];
+    CarRentalSystem -> Customer [headlabel="customers    0..*", taillabel="    ", label="", arrowhead="vee", arrowtail="empty", style="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="red"];
+    CarRentalSystem -> Rental [headlabel="rentals    0..*", taillabel="    ", label="", arrowhead="vee", arrowtail="empty", style="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="red"];
+    Main -> CarRentalSystem [headlabel="rentalSystem    ", taillabel="", label="", arrowhead="vee", arrowtail="empty", style="dashed", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="red"];
+    Main -> Car [headlabel="car1    ", taillabel="", label="", arrowhead="vee", arrowtail="empty", style="dashed", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="red"];
+}
