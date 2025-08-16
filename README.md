@@ -2,7 +2,7 @@
 
 The artifacts used in my thesis are classified into four groups:
 
-1. [Training datasets](./Training datasets/)  
+1. [Training datasets](./datasets/)  
 2. [LLM4Models](./LLM4Models/)  
    - [Java-UML](./LLM4Models/Java-UML/README.md)  
    - [Python-UML](./LLM4Models/Python-UML/README.md)    
