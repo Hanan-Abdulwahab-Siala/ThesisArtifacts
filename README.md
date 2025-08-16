@@ -8,7 +8,7 @@ The artifacts used in my thesis are classified into four groups:
    - [Python-UML](./LLM4Models/Python-UML/README.md)    
    - [Java-OCL](./LLM4Models/Java-OCL/README.md)  
    - [Python-OCL](./LLM4Models/Python-OCL/README.md)   
-3. [Evaluation](./evaluation/)  
+3. [Evaluation](./Evaluation/)  
 4. [Scripts](./scripts/)
 
 
