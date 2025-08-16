@@ -1,0 +1,83 @@
+[
+    {
+        "ClassInterface": "Class",
+        "name": "MedicalRecord",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [],
+        "variables": [
+            {
+                "name": "recordType",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            }
+        ],
+        "methods": []
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "PatientRecord",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [],
+        "variables": [
+            {
+                "name": "patientID",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": ""
+            }
+        ],
+        "methods": []
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "DoctorRecord",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [],
+        "variables": [
+            {
+                "name": "consultationFee",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Real",
+                "Visibility": ""
+            }
+        ],
+        "methods": [
+            {
+                "name": "processRecord",
+                "Visibility": "",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "TreatmentRecord",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [],
+        "variables": [
+            {
+                "name": "treatmentCode",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": ""
+            }
+        ],
+        "methods": []
+    }
+]

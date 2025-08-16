@@ -1,0 +1,50 @@
+[
+    {
+        "ClassInterface": "Class",
+        "name": "Employee",
+        "Visibility": "public",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [],
+        "variables": [
+            {
+                "name": "name",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "public"
+            },
+            {
+                "name": "salary",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Real",
+                "Visibility": "private"
+            },
+            {
+                "name": "age",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": "protected"
+            },
+            {
+                "name": "department",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            }
+        ],
+        "methods": [
+            {
+                "name": "displayDetails",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": []
+            }
+        ]
+    }
+]

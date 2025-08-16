@@ -1,0 +1,23 @@
+digraph G {
+    edge [fontname="Helvetica",fontsize=10,labelfontname="arial",labelfontsize=7,color="red"];
+    node [fontname="Helvetica",fontsize=10,shape=record,style=filled,fillcolor="white",color="red"];
+
+    graph [ rankdir=BT ]
+    node [ shape=none ]
+ 
+
+    PowerUnit [ label=<        
+        <table border="0" cellborder="1" cellspacing="0">
+            <tr><td><b>+\N</b></td></tr>
+            <tr><td align="left">  power : Integer <br align="left"/></td></tr>
+            <tr><td align="left"></td></tr>
+        </table>> ]
+    Vehicle [ label=<        
+        <table border="0" cellborder="1" cellspacing="0">
+            <tr><td><b>+\N</b></td></tr>
+            <tr><td align="left">  speed : Real  <br align="left"/>  fuelEfficiency : Real <br align="left"/></td></tr>
+            <tr><td align="left"></td></tr>
+        </table>> ]
+
+    PowerUnit -> Vehicle [headlabel="", taillabel="powerUnits    1..*", label="", arrowhead="odiamond", arrowtail="empty", style="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="red"];
+}

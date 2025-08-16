@@ -1,0 +1,11 @@
+[
+    {
+        "Relationship": "Association",
+        "Source": "Person",
+        "Target": "DataPoint",
+        "Multiplicity1": "0..*",
+        "Role1": "dataPoints",
+        "Multiplicity2": "0..1",
+        "Role2": "owner"
+    }
+]

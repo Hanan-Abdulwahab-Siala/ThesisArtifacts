@@ -1,0 +1,29 @@
+[
+    {
+        "ClassInterface": "Class",
+        "name": "Appliance",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "abstract",
+        "constructors": [],
+        "variables": [],
+        "methods": [
+            {
+                "name": "turnOn",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "abstract",
+                "returnType": "OclVoid",
+                "parameters": []
+            },
+            {
+                "name": "powerOff",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": []
+            }
+        ]
+    }
+]
