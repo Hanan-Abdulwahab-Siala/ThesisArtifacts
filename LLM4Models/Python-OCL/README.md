@@ -6,12 +6,12 @@ The full model is hosted on the Hugging Face Hub. You can download the model fro
 
 ### Version 1
 
-👉 [https://huggingface.co/HA-Siala/Python-OCL-V1](https://huggingface.co/HA-Siala/Python-OCL-V1)
+👉 [https://huggingface.co/HA-Siala/Python-OCL-v0.1](https://huggingface.co/HA-Siala/Python-OCL-v0.1)
 
 
 ### Version 2
 
-👉 [https://huggingface.co/HA-Siala/Python-OCL-V2](https://huggingface.co/HA-Siala/Python-OCL-V2)
+👉 [https://huggingface.co/HA-Siala/Python-OCL-v0.2](https://huggingface.co/HA-Siala/Python-OCL-v0.2)
 
 ---
 
