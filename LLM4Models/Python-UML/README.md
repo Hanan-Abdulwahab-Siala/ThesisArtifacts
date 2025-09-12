@@ -4,13 +4,14 @@
 
 The full model is hosted on the Hugging Face Hub. You can download the model from:
 
-👉 [https://huggingface.co/HA-Siala/Python-UML](https://huggingface.co/HA-Siala/Python-UML)
+### Version 1
+
+👉 [https://huggingface.co/HA-Siala/Python-UML-v0.1](https://huggingface.co/HA-Siala/Python-UML-v0.1)
+
+
+### Version 2
+
+👉 [https://huggingface.co/HA-Siala/Python-UML-v0.2](https://huggingface.co/HA-Siala/Python-UML-v0.2)
 
 ---
 
-### How to load the model
-
-```python
-from transformers import AutoModel
-
-model = AutoModel.from_pretrained("HA-Siala/Python-UML")
