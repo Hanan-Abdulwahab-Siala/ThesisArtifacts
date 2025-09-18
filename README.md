@@ -1,3 +1,4 @@
+![LLM4Models LLM](images/LLM4Models.png)
 # Thesis Artifacts
 
 The artifacts used in my thesis are classified into four groups:
