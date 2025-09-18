@@ -1,4 +1,4 @@
-![LLM4Models LLM](Images/LLM4Models.png)
+<img src="Images/LLM4Models.png" alt="Banner" width="600"/>
 # Thesis Artifacts
 
 The artifacts used in my thesis are classified into four groups:
