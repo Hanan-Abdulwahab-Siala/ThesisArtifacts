@@ -1,4 +1,4 @@
-<img src="Images/LLM4Models.png" alt="Banner" width="700"/>
+<img src="Images/LLM4Models.png" alt="Banner" width="800"/>
 
 # Thesis Artifacts
 
