@@ -2,15 +2,17 @@
 
 # Thesis Artifacts
 
-The artifacts used in my thesis are classified into four groups:
+This repository contains all artifacts used in my thesis, which are classified into four main groups:
 
-1. [Training datasets](./Training-datasets/)
-2. [LLM4Models](./LLM4Models/)  
-   - [Java-UML](./LLM4Models/Java-UML/README.md)  
-   - [Python-UML](./LLM4Models/Python-UML/README.md)    
-   - [Java-OCL](./LLM4Models/Java-OCL/README.md)  
-   - [Python-OCL](./LLM4Models/Python-OCL/README.md)   
-3. [Evaluation](./Evaluation/)  
-4. [Scripts](./Scripts/)
+## 1. [Training datasets](./Training-datasets/)
+contains training datasets.
+## 2. [LLM4Models](./LLM4Models/)  
+contains models to abstract UML and OCL representations from Java and Python programs.
+## 3. [Evaluation](./Evaluation/)  
+provides case studies used in the evaluation.
+## 4. [Scripts](./Scripts/)
+contains the most important scripts used in the thesis work.
 
+---
 
+### Repository Structure
