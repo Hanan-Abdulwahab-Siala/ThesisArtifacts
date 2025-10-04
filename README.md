@@ -20,8 +20,22 @@ Contains the most important scripts used in the thesis work.
 
 ---
 
-### Citation
-If you use this repository, please cite:  
-[Model-driven Approaches for Reverse Engineering, PhD Thesis by Hanan Abdulwahab Siala, supervised by Kevin Lano and Gunel Jahangirova, 2025, King's College London]
+## Citation
+
+If you use this repository or reference the thesis, please cite:
+
+**Model-driven Approaches for Reverse Engineering, PhD Thesis, Hanan Abdulwahab Siala, supervised by Kevin Lano and Gunel Jahangirova, 2025, King's College London**
+
+---
+
+### BibTeX
+```bibtex
+@phdthesis{siala2025reverse,
+  title        = {Model-driven Approaches for Reverse Engineering},
+  author       = {Hanan Abdulwahab Siala},
+  school       = {King's College London},
+  year         = {2025},
+  note         = {PhD Thesis. Supervised by Kevin Lano and Gunel Jahangirova}
+}
 
 ---
