@@ -1,0 +1,15 @@
+Type,Tool_OCL,GroundTruth_OCL
+TP,class NonDecreasingNumbersCalculator {,class NonDecreasingNumbersCalculator {
+TP,static   operation calculateNonDecreasingNumbers( digits : int) : long,static   operation calculateNonDecreasingNumbers( digits : int) : long
+TP,pre: true,pre: true
+TP,post: true,post: true
+TP,activity: (     var base : int ; base := 10 ;,activity: (     var base : int ; base := 10 ;
+TP,var count : long ; count := 1 ;,var count : long ; count := 1 ;
+TP,var i : int ; i := 1 ; while i <= digits do ( (     count := count * (base + i - 1) ;,var i : int ; i := 1 ; while i <= digits do ( (     count := count * (base + i - 1) ;
+TP,count := count / i )  ;     i := i + 1 ) ;,count := count / i )  ;     i := i + 1 ) ;
+TP,return count );,return count );
+TP,static   operation main( args : Sequence(String)) : void,static   operation main( args : Sequence(String)) : void
+TP,activity: (     var numberOfDigits : int ; numberOfDigits := 4 ;,activity: (     var numberOfDigits : int ; numberOfDigits := 4 ;
+TP,"OclFile[""System.out""].println(""Total non-decreasing numbers with "" + numberOfDigits + "" digits: "" + calculateNonDecreasingNumbers(numberOfDigits)) );","OclFile[""System.out""].println(""Total non-decreasing numbers with "" + numberOfDigits + "" digits: "" + calculateNonDecreasingNumbers(numberOfDigits)) );"
+TP,},}
+TP,<EOF>,<EOF>

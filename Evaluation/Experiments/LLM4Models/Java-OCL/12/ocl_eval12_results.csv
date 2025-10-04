@@ -1,0 +1,15 @@
+Type,Tool_OCL,GroundTruth_OCL
+TP,class Main {,class Main {
+TP,static   operation main( args : Sequence(String)) : void,static   operation main( args : Sequence(String)) : void
+TP,pre: true,pre: true
+TP,post: true,post: true
+TP,activity: (     var activation : double ; activation := MathLib.random() ;,activity: (     var activation : double ; activation := MathLib.random() ;
+TP,var checkpoint : double ; checkpoint := 0.0 ;,var checkpoint : double ; checkpoint := 0.0 ;
+TP,"OclFile[""System.out""].println(""Forward pass: "" + activation) ;","OclFile[""System.out""].println(""Forward pass: "" + activation) ;"
+TP,var checkpointingEnabled : boolean ; checkpointingEnabled := true ;,var checkpointingEnabled : boolean ; checkpointingEnabled := true ;
+TP,if (checkpointingEnabled) then (     checkpoint := activation ) else skip ;,if (checkpointingEnabled) then (     checkpoint := activation ) else skip ;
+TP,if (checkpointingEnabled) then (     activation := checkpoint - 0.05 ) else (     activation := activation-(0.05) ) ;,if (checkpointingEnabled) then (     activation := checkpoint - 0.05 ) else (     activation := activation-(0.05) ) ;
+TP,"OclFile[""System.out""].println(""Updated activation: "" + activation) ;","OclFile[""System.out""].println(""Updated activation: "" + activation) ;"
+TP,);,);
+TP,},}
+TP,<EOF>,<EOF>
