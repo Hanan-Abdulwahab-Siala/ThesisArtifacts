@@ -16,7 +16,7 @@ Contains the most important scripts used in the thesis work.
 ---
 
 ### Languages Used
-- Python (primary)
+- Python (primary).
 
 ---
 
