@@ -1,0 +1,14 @@
+Type,Tool_OCL,GroundTruth_OCL
+TP,class FromPython {,class FromPython {
+TP,operation initialise(),operation initialise()
+TP,pre: true post: true,pre: true post: true
+TP,activity:     skip ;,activity:     skip ;
+TP,"var items_list : Sequence := Sequence{""AAA""}->union(Sequence{""BBB""}->union(Sequence{""CCC""}->union(Sequence{ ""DDD"" }))) ;","var items_list : Sequence := Sequence{""AAA""}->union(Sequence{""BBB""}->union(Sequence{""CCC""}->union(Sequence{ ""DDD"" }))) ;"
+TP,var list_length : int := (items_list)->size() ;,var list_length : int := (items_list)->size() ;
+TP,var sine_value : double := (5.0)->sin() ;,var sine_value : double := (5.0)->sin() ;
+TP,execute (sine_value)->display() ;,execute (sine_value)->display() ;
+TP,execute (cosine_value)->display() ;,execute (cosine_value)->display() ;
+TP,execute (power_result)->display();,execute (power_result)->display();
+TP,},}
+TP,var cosine_value : double := (5.0)->cos() ;,
+TP,var power_result : double := ((list_length))->pow(2) ;,

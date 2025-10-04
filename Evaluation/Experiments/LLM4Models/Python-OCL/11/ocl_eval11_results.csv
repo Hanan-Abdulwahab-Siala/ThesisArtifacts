@@ -1,0 +1,10 @@
+Type,Tool_OCL,GroundTruth_OCL
+TP,class FromPython {,class FromPython {
+TP,operation initialise(),operation initialise()
+TP,pre: true post: true,pre: true post: true
+TP,"activity:     var text_original : String := ""Hello World"" ;","activity:     var text_original : String := ""Hello World"" ;"
+TP,var text_capitalized : String := StringLib.capitalise(text_original) ;,var text_capitalized : String := StringLib.capitalise(text_original) ;
+TP,"var text_modified : String := text_original.replace("" "", ""*"") ;","var text_modified : String := text_original.replace("" "", ""*"") ;"
+TP,execute (text_capitalized)->display() ;,execute (text_capitalized)->display() ;
+TP,execute (text_modified)->display();,execute (text_modified)->display();
+TP,},}

@@ -1,0 +1,17 @@
+
+ class FromPython {
+
+
+
+
+  operation initialise()
+  pre: true post: true
+  activity:     var num : double := -54.3 ;
+    var absolute_value : double := (num)->abs() ;
+    execute (absolute_value)->display() ;
+    var rounded_value : double := (num)->round() ;
+    execute (rounded_value)->display();
+
+
+}
+
