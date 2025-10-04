@@ -13,13 +13,15 @@ Provides case studies used to evaluate the LLM4Models approach.
 ## 4. [Scripts](./Scripts/)
 Contains the most important scripts used in the thesis work.
 
+--
 
 ### Languages Used
 - Python (primary)
 
+--
 
 ### Citation
 If you use this repository, please cite:  
-`[Model-driven Approaches for Reverse Engineering, PhD Thesis by Hanan Abdulwahab Siala, supervised by Kevin Lano and Gunel Jahangirova, 2025, King's College London]`
+[Model-driven Approaches for Reverse Engineering, PhD Thesis by Hanan Abdulwahab Siala, supervised by Kevin Lano and Gunel Jahangirova, 2025, King's College London]
 
 ---
