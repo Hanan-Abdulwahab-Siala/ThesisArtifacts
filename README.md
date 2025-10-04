@@ -13,12 +13,12 @@ provides case studies used in the evaluation.
 ## 4. [Scripts](./Scripts/)
 contains the most important scripts used in the thesis work.
 
----
+***
 
 ### Languages Used
 - Python (primary)
 
----
+***
 
 ### Citation
 If you use this repository, please cite:  
