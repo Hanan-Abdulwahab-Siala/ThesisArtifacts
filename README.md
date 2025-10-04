@@ -15,4 +15,13 @@ contains the most important scripts used in the thesis work.
 
 ---
 
-### Repository Structure
+### Languages Used
+- Python (primary)
+
+---
+
+### Citation
+If you use this repository, please cite:  
+`[Model-driven Approaches for Reverse Engineering, Hanan Abdulwahab Siala, supervised by Kevin Lano and Gunel Jahangirova, 2025, King's College London]`
+
+---
