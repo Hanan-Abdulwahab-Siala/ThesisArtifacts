@@ -16,6 +16,14 @@ Contains the most important scripts used in the thesis work.
 ---
 
 ### Repository Structure
+# Project Name
+
+A short description of your project goes here — what it does, why it’s useful.
+
+---
+
+## Project Structure
+
 ├── comparative_analysis
 │ ├── Scripts and analyses for model comparison and error analysis
 ├── data
@@ -33,6 +41,15 @@ Contains the most important scripts used in the thesis work.
 ├── .gitignore
 └── requirements.txt
 
+yaml
+Copy code
+
+---
+
+## Installation
+
+```bash
+pip install -r requirements.txt
 ---
 
 ### Languages Used
