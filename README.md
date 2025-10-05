@@ -16,8 +16,22 @@ Contains the most important scripts used in the thesis work.
 ---
 
 ### Repository Structure
-## Project Structure
-
+├── comparative_analysis
+│ ├── Scripts and analyses for model comparison and error analysis
+├── data
+│ ├── Preprocessed datasets, sustainability PDFs, and Q&A pairs
+├── evaluation
+│ ├── Scripts for automated evaluation using BLEU, ROUGE, and METEOR
+│ ├── Results and logs for evaluated models
+├── results_tests
+│ ├── Test cases and evaluation outputs
+├── scripts
+│ ├── batch
+│ ├── training # Scripts for finetuning models
+│ ├── utilities # Helper scripts for data preparation
+├── .gitattributes
+├── .gitignore
+└── requirements.txt
 
 ---
 
