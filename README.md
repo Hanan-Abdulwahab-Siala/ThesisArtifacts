@@ -16,6 +16,8 @@ Contains the most important scripts used in the thesis work.
 ---
 
 ### Repository Structure
+## Project Structure
+
 
 ---
 
