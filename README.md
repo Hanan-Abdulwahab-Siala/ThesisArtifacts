@@ -16,40 +16,27 @@ Contains the most important scripts used in the thesis work.
 ---
 
 ### Repository Structure
-# Project Name
 
-A short description of your project goes here — what it does, why it’s useful.
-
----
-
-## Project Structure
-
+```
+.
 ├── comparative_analysis
-│ ├── Scripts and analyses for model comparison and error analysis
+│   ├── Scripts and analyses for model comparison and error analysis
 ├── data
-│ ├── Preprocessed datasets, sustainability PDFs, and Q&A pairs
+│   ├── Preprocessed datasets, sustainability PDFs, and Q&A pairs
 ├── evaluation
-│ ├── Scripts for automated evaluation using BLEU, ROUGE, and METEOR
-│ ├── Results and logs for evaluated models
+│   ├── Scripts for automated evaluation using BLEU, ROUGE, and METEOR
+│   ├── Results and logs for evaluated models
 ├── results_tests
-│ ├── Test cases and evaluation outputs
+│   ├── Test cases and evaluation outputs
 ├── scripts
-│ ├── batch
-│ ├── training # Scripts for finetuning models
-│ ├── utilities # Helper scripts for data preparation
+│   ├── batch
+│   ├── training                # Scripts for finetuning models
+│   ├── utilities               # Helper scripts for data preparation
 ├── .gitattributes
 ├── .gitignore
 └── requirements.txt
+```
 
-yaml
-Copy code
-
----
-
-## Installation
-
-```bash
-pip install -r requirements.txt
 ---
 
 ### Languages Used
