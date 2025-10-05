@@ -21,9 +21,23 @@ Contains the most important scripts used in the thesis work.
 .
 ├── Evaluation
 │   ├── Experiments
+│   │   ├── LLM4Models
+│   │   │   ├── Java-OCL
+│   │   │   ├── Java-UML                
+│   │   │   ├── Python-OCL              
+│   │   │   ├── Python-UML
+│   │   ├── LLMs
+│   │   │   ├── Java-OCL
+│   │   │   ├── Java-UML                
+│   │   │   ├── Python-OCL              
+│   │   │   ├── Python-UML
 │   ├── Case-studies
+│   │   ├── Java-OCL
+│   │   ├── Java-UML                
+│   │   ├── Python-OCL              
+│   │   ├── Python-UML
 ├── Images
-├── LLM4Models
+├── LLM4Models                  # The generated LLM4Models LLM
 │   ├── Java-OCL
 │   ├── Java-UML                
 │   ├── Python-OCL              
