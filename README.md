@@ -70,6 +70,7 @@ If you use this repository or reference the thesis, please cite:
 
 **Model-driven Approaches for Reverse Engineering, PhD Thesis, Hanan Abdulwahab Siala, supervised by Kevin Lano and Gunel Jahangirova, 2025, King's College London**
 
+---
 
 ### BibTeX
 ```bibtex
