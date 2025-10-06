@@ -42,7 +42,12 @@ Contains the most important scripts used in the thesis work.
 │   ├── Java-UML                
 │   ├── Python-OCL              
 │   ├── Python-UML
-├── Scripts                     # Scripts for finetuning models     
+├── Scripts                     # Scripts for finetuning models
+│   ├── Dataset                 # Scripts to construct the training datasets
+│   ├── Fine-tuning             # Scripts to fine-tune Mistral-7B LLM   
+│   ├── Inference               # Scripts for inferring UML class diagrams and OCL specification
+│   ├── Parsers                 # Java2JSON Parser and Python2JSON Parser
+│   ├── Statistics
 ├── Training-datasets
 │   ├── Java-OCL
 │   ├── Java-UML                
