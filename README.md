@@ -59,7 +59,7 @@ Contains the most important scripts used in the thesis work.
 
 ---
 ### Inferring Process
-# 1. Preprocessing Stage
+#### 1. Preprocessing Stage
 
 Before the inferring process for abstracting UML and OCL representation, a pre-processing stage should be applied to the Java/Python program by executing a Python script **Preprocessing**, where you need to choose various values for the following variables:
 
@@ -73,7 +73,7 @@ Before the inferring process for abstracting UML and OCL representation, a pre-p
 
 The output will be saved in **CleanFile.java** for Java, and **CleanFile.py** for Python.
 
-# 2. Inferring Stage
+#### 2. Inferring Stage
 
   - Put your program in **Test1.java** for Java programs or **Test1.py** for Python programs.
 
@@ -93,7 +93,7 @@ The output will be saved in **CleanFile.java** for Java, and **CleanFile.py** fo
 
   - Choose version 1 or 2 for the **version** variable.
 
-# 3. Post-Processing Stage
+#### 3. Post-Processing Stage
 
 For abstracting UML class diagrams from both Java and Python programs, a post-processing stage should be applied to the output of the LLM4Models LLM, which includes:
    + Splitting the output into two JSON files by executing the Python script **PostprocessingUML**.
