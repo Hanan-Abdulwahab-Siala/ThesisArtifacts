@@ -69,6 +69,16 @@ Before the inferring process for abstracting UML and OCL representation, a pre-p
 
 2- Inferring Stage:
 
+   1) Put your program in Test1.java for Java programs or Test1.py for Python programs.
+   2) The output will be saved in LLM4Models.txt
+   3) For What_I_Want variable:
+       - Choose 1 to abstract UML from Java
+       - Choose 2 to abstract UML from Python
+       - Choose 3 to abstract OCL from Java
+       - Choose 4 to abstract OCL from Python
+   4) Put Full_Model=True for using a full model or Full_Model=False for using LoRA adapter
+   5) Choose version 1 or 2 for variable "version"
+
 3- Post-Processing Stage:
   1) For abstracting UML class diagrams from both Java and Python programs, a post-processing stage should be applied to the output of the LLM4Models LLM, which includes: 
     a) Splitting the output into two JSON files by executing a Python script in "PostprocessingUML". 
