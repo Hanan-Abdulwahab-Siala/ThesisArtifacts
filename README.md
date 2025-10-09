@@ -59,55 +59,53 @@ Contains the most important scripts used in the thesis work.
 
 ---
 ### Inferring Process
-*** 1. Preprocessing Stage ***
 
-Before the inferring process for abstracting UML and OCL representation, a pre-processing stage should be applied to the Java/Python program by executing a Python script **Preprocessing**, where you need to choose various values for the following variables:
+---
 
-   1. **Language**: Java or Python.
+#### **1. Preprocessing Stage**
+Before starting the inferring process for abstracting UML and OCL representations, a preprocessing stage should be applied to the Java/Python program by executing the **`Preprocessing`** Python script. Configure the following options:
 
-   2. **InputDirectoryProgram**: The source directory that contains the source program before pre-processing.
+**Options:**
+- **Language:** `Java` or `Python`  
+- **InputDirectoryProgram:** Path to source program(s) before preprocessing  
+- **OutputDirectory:** Path where preprocessed program will be saved  
+- **ManyDirectories:** `True` if classes are in multiple directories, otherwise `False`  
 
-   3. **OutputDirectory**: The output directory that contains the program after pre-processing.
+**Output:**
+- Java → **`CleanFile.java`**  
+- Python → **`CleanFile.py`**
 
-   4. **ManyDirectories**: Whether classes are in one directory or multiple directories by assigning a True or False value.
+---
 
-The output will be saved in **CleanFile.java** for Java, and **CleanFile.py** for Python.
+#### **2. Inferring Stage**
+1. Place your program in:
+   - **`Test1.java`** for Java programs  
+   - **`Test1.py`** for Python programs  
+2. The output will be saved in **`LLM4Models.txt`**  
+3. Set the **`What_I_Want`** variable:
+   - `1` → Abstract UML from Java  
+   - `2` → Abstract UML from Python  
+   - `3` → Abstract OCL from Java  
+   - `4` → Abstract OCL from Python  
+4. Set **`Full_Model = True`** to use the full model, or **`Full_Model = False`** to use a LoRA adapter  
+5. Choose **`version = 1`** or **`version = 2`**
 
-#### 2. Inferring Stage
+---
 
-  - Put your program in **Test1.java** for Java programs or **Test1.py** for Python programs.
+#### **3. Post-Processing Stage**
 
-  - The output will be saved in **LLM4Models.txt**.
+**a) UML Class Diagrams**
+- Apply post-processing to the output of **`LLM4Models`** using:
+  1. **`PostprocessingUML`** — splits LLM output into two JSON files (`classes.json` and `relations.json`)  
+  2. **`DrawingClassDiagram`** — draws UML diagrams using **Graphviz** and saves as `.png`  
 
-  - For the **What_I_Want** variable:
+**Method display options:**
+- Methods with parameters’ names and types  
+- Methods with parameters’ types only  
+- Methods only *(default)*
 
-    + Choose 1 to abstract UML from Java.
-
-    + Choose 2 to abstract UML from Python.
-
-    + Choose 3 to abstract OCL from Java.
-
-    + Choose 4 to abstract OCL from Python.
-
-  - Set **Full_Model = True** to use the full model, or **Full_Model = False** to use a LoRA adapter.
-
-  - Choose version 1 or 2 for the **version** variable.
-
-#### 3. Post-Processing Stage
-
-For abstracting UML class diagrams from both Java and Python programs, a post-processing stage should be applied to the output of the LLM4Models LLM, which includes:
-   + Splitting the output into two JSON files by executing the Python script **PostprocessingUML**.
-   + Drawing the generated UML class diagrams graphically using the Graphviz tool, which can be saved in .png format by running the Python script **DrawingClassDiagram**.
-
-Three options are available for displaying methods in the generated UML class diagrams:
-
-  + Methods with parameters' names and types.
-
-  + Methods with parameters' types only.
-
-  + Methods only (default).
-
-For abstracting OCL specifications from Java and Python programs, a post-processing stage should be applied to the LLM4Models LLM output by running the post-processing Python script **PostprocessingOCL**.
+**b) OCL Specifications**
+- Apply post-processing using **`PostprocessingOCL`** to convert LLM output into OCL specification files
 
 ---
 
