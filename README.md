@@ -59,55 +59,55 @@ Contains the most important scripts used in the thesis work.
 
 ---
 ### Inferring Process
-## 1. Preprocessing Stage
+# 1. Preprocessing Stage
 
-Before the inferring process for abstracting UML and OCL representation, a pre-processing stage should be applied to the Java/Python program by executing a Python script **Preprocessing**, where you need to choose the following:
+Before the inferring process for abstracting UML and OCL representation, a pre-processing stage should be applied to the Java/Python program by executing a Python script **Preprocessing**, where you need to choose various values for the following variables:
 
-Language: Java or Python.
+   1. **Language**: Java or Python.
 
-InputDirectoryProgram: The source directory that contains the source program before pre-processing.
+   2. **InputDirectoryProgram**: The source directory that contains the source program before pre-processing.
 
-OutputDirectory: The output directory that contains the program after pre-processing.
+   3. **OutputDirectory**: The output directory that contains the program after pre-processing.
 
-ManyDirectories: Whether classes are in one directory or multiple directories by assigning a True or False value.
+   4. **ManyDirectories**: Whether classes are in one directory or multiple directories by assigning a True or False value.
 
-The output will be saved in CleanFile.java for Java, and CleanFile.py for Python.
+The output will be saved in **CleanFile.java** for Java, and **CleanFile.py** for Python.
 
-## 2. Inferring Stage
+# 2. Inferring Stage
 
-Put your program in Test1.java for Java programs or Test1.py for Python programs.
+  - Put your program in **Test1.java** for Java programs or **Test1.py** for Python programs.
 
-The output will be saved in LLM4Models.txt.
+  - The output will be saved in **LLM4Models.txt**.
 
-For the What_I_Want variable:
+  - For the **What_I_Want** variable:
 
-Choose 1 to abstract UML from Java.
+    + Choose 1 to abstract UML from Java.
 
-Choose 2 to abstract UML from Python.
+    + Choose 2 to abstract UML from Python.
 
-Choose 3 to abstract OCL from Java.
+    + Choose 3 to abstract OCL from Java.
 
-Choose 4 to abstract OCL from Python.
+    + Choose 4 to abstract OCL from Python.
 
-Set Full_Model = True to use the full model, or Full_Model = False to use a LoRA adapter.
+  - Set **Full_Model = True** to use the full model, or **Full_Model = False** to use a LoRA adapter.
 
-Choose version 1 or 2 for the version variable.
+  - Choose version 1 or 2 for the **version** variable.
 
-## 3. Post-Processing Stage
+# 3. Post-Processing Stage
 
 For abstracting UML class diagrams from both Java and Python programs, a post-processing stage should be applied to the output of the LLM4Models LLM, which includes:
-a) Splitting the output into two JSON files by executing the Python script PostprocessingUML.
-b) Drawing the generated UML class diagrams graphically using the Graphviz tool, which can be saved in .png format by running the Python script DrawingClassDiagram.
+   + Splitting the output into two JSON files by executing the Python script **PostprocessingUML**.
+   + Drawing the generated UML class diagrams graphically using the Graphviz tool, which can be saved in .png format by running the Python script **DrawingClassDiagram**.
 
 Three options are available for displaying methods in the generated UML class diagrams:
 
-Methods with parameters' names and types.
+  + Methods with parameters' names and types.
 
-Methods with parameters' types only.
+  + Methods with parameters' types only.
 
-Methods only (default).
+  + Methods only (default).
 
-For abstracting OCL specifications from Java and Python programs, a post-processing stage should be applied to the LLM4Models LLM output by running the post-processing Python script PostprocessingOCL.
+For abstracting OCL specifications from Java and Python programs, a post-processing stage should be applied to the LLM4Models LLM output by running the post-processing Python script **PostprocessingOCL**.
 
 ---
 
