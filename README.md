@@ -59,29 +59,25 @@ Contains the most important scripts used in the thesis work.
 
 ---
 ### Inferring Process
-1.. Preprocessing Stage:
-Before the inferring process for abstracting UML and OCL representation, a pre-processing stage should be applied to the Java/Python program by executing a Python script Preprocess, where you need to choose the following: 
-    1. Language: Java or Python program
-    2. The source directory that contains the source program before preprocessing in "InputDirectoryProgram" variable.
-    3. The output directory that contains the program after preprocessing in "OutputDirectory" variable.
+1- Preprocessing Stage:
+Before the inferring process for abstracting UML and OCL representation, a pre-processing stage should be applied to the Java/Python program by executing a Python script "Preprocessing", where you need to choose the following: 
+    1. Language: Java or Python.
+    2. The source directory that contains the source program before pre-processing in "InputDirectoryProgram" variable.
+    3. The output directory that contains the program after pre-processing in "OutputDirectory" variable.
     4. Whether classes are just one directory or many directories by assigning true or false value to "ManyDirectories" variable.
-    5. we assume that 
-   FileName='Test1.java'
-   OutputFile='CleanFile.java'
-else:
-   FileName='Test1.py' 
-   OutputFile='CleanFile.py' 
-2.. Inferring Stage:
+    5. The output will be saved in 'CleanFile.java' for Java, and 'CleanFile.py' for Python.  
 
-3.. Post-Processing Stage:
-1) For abstracting UML class diagrams from both Java and Python programs, a post-processing stage should be applied to the output of the LLM4Models LLM, which includes: 
-    1) Splitting the output into two JSON files by executing a Python script in. 
-    2) Drawing the generated UML class diagrams graphically using the Graphviz tool, which can be saved in png format by running the Python script in. Three choices are available for drawing methods in the generated UML class diagrams:
-    - Methods with parameters' names and types.
-    - Methods with parameter' types.
-    - Methods only (Default).
+2- Inferring Stage:
 
-2) For abstracting OCL specifications from Java and Python programs, a post-processing stage should be applied to the LLM4Models LLM output by running the post-processing Python script "PostprocessingOCL".
+3- Post-Processing Stage:
+  1) For abstracting UML class diagrams from both Java and Python programs, a post-processing stage should be applied to the output of the LLM4Models LLM, which includes: 
+    a) Splitting the output into two JSON files by executing a Python script in "PostprocessingUML". 
+    b) Drawing the generated UML class diagrams graphically using the Graphviz tool, which can be saved in png format by running the Python script "DrawingClassDiagram". Three choices are available for drawing  methods in the generated UML class diagrams:
+        - Methods with parameters' names and types.
+        - Methods with parameter' types.
+        - Methods only (Default).
+
+  2) For abstracting OCL specifications from Java and Python programs, a post-processing stage should be applied to the LLM4Models LLM output by running the post-processing Python script "PostprocessingOCL". 
 
 ---
 
