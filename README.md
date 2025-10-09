@@ -58,37 +58,54 @@ Contains the most important scripts used in the thesis work.
 ```
 
 ---
-### Inferring Process
+Inferring Process
+
 1- Preprocessing Stage:
-Before the inferring process for abstracting UML and OCL representation, a pre-processing stage should be applied to the Java/Python program by executing a Python script "Preprocessing", where you need to choose the following: 
-    1. Language: Java or Python.
-    2. The source directory that contains the source program before pre-processing in "InputDirectoryProgram" variable.
-    3. The output directory that contains the program after pre-processing in "OutputDirectory" variable.
-    4. Whether classes are just one directory or many directories by assigning true or false value to "ManyDirectories" variable.
-    5. The output will be saved in 'CleanFile.java' for Java, and 'CleanFile.py' for Python.  
+Before the inferring process for abstracting UML and OCL representation, a pre-processing stage should be applied to the Java/Python program by executing a Python script Preprocessing, where you need to choose the following:
+
+Language: Java or Python.
+
+The source directory that contains the source program before pre-processing in InputDirectoryProgram variable.
+
+The output directory that contains the program after pre-processing in OutputDirectory variable.
+
+Whether classes are just one directory or many directories by assigning a true or false value to ManyDirectories variable.
+
+The output will be saved in CleanFile.java for Java, and CleanFile.py for Python.
 
 2- Inferring Stage:
 
-   1) Put your program in Test1.java for Java programs or Test1.py for Python programs.
-   2) The output will be saved in LLM4Models.txt
-   3) For What_I_Want variable:
-       - Choose 1 to abstract UML from Java
-       - Choose 2 to abstract UML from Python
-       - Choose 3 to abstract OCL from Java
-       - Choose 4 to abstract OCL from Python
-   4) Put Full_Model=True for using a full model or Full_Model=False for using LoRA adapter
-   5) Choose version 1 or 2 for variable "version"
+Put your program in Test1.java for Java programs or Test1.py for Python programs.
+
+The output will be saved in LLM4Models.txt.
+
+For What_I_Want variable:
+
+Choose 1 to abstract UML from Java.
+
+Choose 2 to abstract UML from Python.
+
+Choose 3 to abstract OCL from Java.
+
+Choose 4 to abstract OCL from Python.
+
+Put Full_Model = True for using a full model or Full_Model = False for using a LoRA adapter.
+
+Choose version 1 or 2 for variable version.
 
 3- Post-Processing Stage:
-  1) For abstracting UML class diagrams from both Java and Python programs, a post-processing stage should be applied to the output of the LLM4Models LLM, which includes: 
-    a) Splitting the output into two JSON files by executing a Python script in "PostprocessingUML". 
-    b) Drawing the generated UML class diagrams graphically using the Graphviz tool, which can be saved in png format by running the Python script "DrawingClassDiagram". Three choices are available for drawing  methods in the generated UML class diagrams:
-        - Methods with parameters' names and types.
-        - Methods with parameter' types.
-        - Methods only (Default).
 
-  2) For abstracting OCL specifications from Java and Python programs, a post-processing stage should be applied to the LLM4Models LLM output by running the post-processing Python script "PostprocessingOCL". 
+For abstracting UML class diagrams from both Java and Python programs, a post-processing stage should be applied to the output of the LLM4Models LLM, which includes:
+a) Splitting the output into two JSON files by executing a Python script PostprocessingUML.
+b) Drawing the generated UML class diagrams graphically using the Graphviz tool, which can be saved in PNG format by running the Python script DrawingClassDiagram. Three choices are available for drawing methods in the generated UML class diagrams:
 
+Methods with parameters' names and types.
+
+Methods with parameters' types.
+
+Methods only (Default).
+
+For abstracting OCL specifications from Java and Python programs, a post-processing stage should be applied to the LLM4Models LLM output by running the post-processing Python script PostprocessingOCL.
 ---
 
 ### Languages Used
