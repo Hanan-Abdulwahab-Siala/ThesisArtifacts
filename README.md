@@ -130,5 +130,8 @@ If you use this repository or reference the thesis, please cite:
   year         = {2025},
   note         = {PhD Thesis. Supervised by Kevin Lano and Gunel Jahangirova}
 }
+```
 
 ---
+
+
