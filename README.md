@@ -99,12 +99,12 @@ Before starting the inferring process for abstracting UML and OCL representation
   2. **`DrawingClassDiagram`** — draws UML diagrams using **Graphviz** and saves as `.png`  
 
 **Method display options:**
-- Methods with parameters’ names and types  
-- Methods with parameters’ types only  
-- Methods only *(default)*
+- Methods with parameters’ names and types.  
+- Methods with parameter’ types only.  
+- Methods only *(default)*.
 
 **b) OCL Specifications**
-- Apply post-processing using **`PostprocessingOCL`** to convert LLM output into OCL specification files
+- Apply post-processing using **`PostprocessingOCL`** to convert LLM output into OCL specification files.
 
 ---
 
@@ -131,3 +131,4 @@ If you use this repository or reference the thesis, please cite:
   note         = {PhD Thesis. Supervised by Kevin Lano and Gunel Jahangirova}
 }
 
+---
