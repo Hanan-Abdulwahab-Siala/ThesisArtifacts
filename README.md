@@ -62,18 +62,17 @@ Contains the most important scripts used in the thesis work.
 
 ---
 
-#### **1. Preprocessing Stage**
-Before starting the inferring process for abstracting UML and OCL representations, a preprocessing stage should be applied to the Java/Python program by executing the **`Preprocessing`** Python script. Configure the following options:
+#### **1. Pre-processing Stage**
+Before starting the inferring process for abstracting UML and OCL representations, a pre-processing stage should be applied to the Java/Python program by executing the **`Preprocessing`** Python script. Configure the following options:
 
 **Options:**
-- **Language:** `Java` or `Python`  
-- **InputDirectoryProgram:** Path to source program(s) before preprocessing  
-- **OutputDirectory:** Path where preprocessed program will be saved  
-- **ManyDirectories:** `True` if classes are in multiple directories, otherwise `False`  
+- **Language:** `Java` or `Python`.  
+- **InputDirectory:** Path to source program(s) before pre-processing.  
+- **OutputDirectory:** Path where the pre-processed program will be saved.  
 
 **Output:**
-- Java → **`CleanFile.java`**  
-- Python → **`CleanFile.py`**
+- Java → **`Test1.java`**  
+- Python → **`Test1.py`**
 
 ---
 
