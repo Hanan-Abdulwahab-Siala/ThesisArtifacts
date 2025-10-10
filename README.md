@@ -71,23 +71,23 @@ Before starting the inferring process for abstracting UML and OCL representation
 - **OutputDirectory:** Path where the pre-processed program will be saved.  
 
 **Output:**
-- Java → **`Test1.java`**  
-- Python → **`Test1.py`**
+- Java → **`Test1.java`**. 
+- Python → **`Test1.py`**.
 
 ---
 
 #### **2. Inferring Stage**
 1. Place your program in:
-   - **`Test1.java`** for Java programs  
-   - **`Test1.py`** for Python programs  
-2. The output will be saved in **`LLM4Models.txt`**  
+   - **`Test1.java`** for Java programs.  
+   - **`Test1.py`** for Python programs.  
+2. The output will be saved in **`LLM4Models.txt`**.  
 3. Set the **`What_I_Want`** variable:
-   - `1` → Abstract UML from Java  
-   - `2` → Abstract UML from Python  
-   - `3` → Abstract OCL from Java  
-   - `4` → Abstract OCL from Python  
-4. Set **`Full_Model = True`** to use the full model, or **`Full_Model = False`** to use a LoRA adapter  
-5. Choose **`version = 1`** or **`version = 2`**
+   - `1` → Abstract UML from Java.  
+   - `2` → Abstract UML from Python.  
+   - `3` → Abstract OCL from Java.  
+   - `4` → Abstract OCL from Python.  
+4. Set **`Full_Model = True`** to use the full model, or **`Full_Model = False`** to use a LoRA adapter.  
+5. Choose **`version = 1`** or **`version = 2`**.
 
 ---
 
@@ -95,8 +95,8 @@ Before starting the inferring process for abstracting UML and OCL representation
 
 **a) UML Class Diagrams**
 - Apply post-processing to the output of **`LLM4Models`** using:
-  1. **`PostprocessingUML`** — splits LLM output into two JSON files (`classes.json` and `relations.json`)  
-  2. **`DrawingClassDiagram`** — draws UML diagrams using **Graphviz** and saves as `.png`  
+  1. **`PostprocessingUML`** — splits LLM output into two files in JSON format (`Test1.UML` and `Test1.REL`).  
+  2. **`DrawingClassDiagram`** — generates UML diagrams from the two JSON files using **Graphviz** tool and saves them as `Test1.png`.  
 
 **Method display options:**
 - Methods with parameters’ names and types.  
