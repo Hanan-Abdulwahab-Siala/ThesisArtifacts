@@ -95,8 +95,8 @@ Before starting the inferring process for abstracting UML and OCL representation
 
 **a) UML Class Diagrams**
 - Apply post-processing to the output of **`LLM4Models`** using:
-  1. **`PostprocessingUML`** — splits LLM output into two files in JSON format (`Test1.UML` and `Test1.REL`).  
-  2. **`DrawingClassDiagram`** — generates UML diagrams from the two JSON files using **Graphviz** tool and saves them as `Test1.png`.  
+  1. **`PostprocessingUML`** Python script — splits LLM output into two files in JSON format (`Test1.UML` and `Test1.REL`).  
+  2. **`DrawingClassDiagram`** Python script — generates UML diagrams from the two JSON files using the **Graphviz** tool and saves them as `Test1.png`. Please install the Graphviz tool before running the script.
 
 **Method display options:**
 - Methods with parameters’ names and types.  
@@ -104,7 +104,7 @@ Before starting the inferring process for abstracting UML and OCL representation
 - Methods only *(default)*.
 
 **b) OCL Specifications**
-- Apply post-processing using **`PostprocessingOCL`** to convert LLM output into OCL specification files.
+- Apply post-processing using **`PostprocessingOCL`** Python script to convert LLM output into OCL specification files.
 
 ---
 
