@@ -47,8 +47,8 @@ Contains the most important scripts used in the thesis work.
 │   ├── Fine-tuning             # Scripts to fine-tune Mistral-7B LLM   
 │   ├── Inference               # Scripts for inferring UML class diagrams and OCL specification
 │   ├── Parsers                 # Java2JSON Parser and Python2JSON Parser
-#│   ├── Statistics              # Scripts to compare the results of LLM4Models LLM with: 1) the results of Java2JSON and Python2JSON (UML)
-#│   │                                                                                    2) the results of the AgileUML toolset (OCL)
+<!-- │   ├── Statistics              # Scripts to compare the results of LLM4Models LLM with: 1) the results of Java2JSON and Python2JSON (UML) -->
+<!-- │   │                                                                                    2) the results of the AgileUML toolset (OCL) -->
 ├── Training-datasets
 │   ├── Java-OCL
 │   ├── Java-UML                
