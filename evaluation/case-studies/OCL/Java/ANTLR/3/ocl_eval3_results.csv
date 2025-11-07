@@ -1,0 +1,34 @@
+Type,Tool_OCL,GroundTruth_OCL
+TP,class ImportsTest {,class ImportsTest {
+TP,static   operation main( args : Sequence(String)) : void,static   operation main( args : Sequence(String)) : void
+TP,pre: true,pre: true
+TP,post: true,post: true
+TP,activity: (     var random : OclRandom ; random := OclRandom.newOclRandom() );,activity: (     var random : OclRandom ; random := OclRandom.newOclRandom() );
+TP,},}
+TP,class HelloWorld {,class HelloWorld {
+TP,"activity: (     out.println(""Hello World!"") ;","activity: (     out.println(""Hello World!"") ;"
+TP,if (i = 3) then     execute doSomething() ; else skip ;,if (i = 3) then     execute doSomething() ; else skip ;
+TP,if (i = 2) then (     execute doSomething() ) else (     execute doSomethingElse() ) ;,if (i = 2) then (     execute doSomething() ) else (     execute doSomethingElse() ) ;
+TP,if (i = 3) then (     execute doSomething() ) else     if (i = 2) then (     execute doSomethingElse() ) else (     execute doSomethingDifferent() ) ;  ;,if (i = 3) then (     execute doSomething() ) else     if (i = 2) then (     execute doSomethingElse() ) else (     execute doSomethingDifferent() ) ;  ;
+TP,var a : int ; a := 1 ;,var a : int ; a := 1 ;
+TP,var b : int ; b := 2 ;,var b : int ; b := 2 ;
+TP,var minVal : int ; minVal := if (a < b) then a else b endif ;,var minVal : int ; minVal := if (a < b) then a else b endif ;
+TP,( var _switchval : OclAny ;,( var _switchval : OclAny ;
+TP,_switchval := (ch) ;,_switchval := (ch) ;
+TP,if _switchval = 'A' then,if _switchval = 'A' then
+TP,execute doSomething() ;,execute doSomething() ;
+TP,break,break
+TP,else skip ;,else skip ;
+TP,if _switchval = 'B' or _switchval = 'C' then,if _switchval = 'B' or _switchval = 'C' then
+TP,execute doSomethingElse() ;,execute doSomethingElse() ;
+TP,if true then,if true then
+TP,execute doSomethingDifferent() ;,execute doSomethingDifferent() ;
+TP,),)
+TP,while (i < 10) do (     execute doSomething() ) ;,while (i < 10) do (     execute doSomething() ) ;
+TP,var i : int ; i := 0 ; while i < 10 do ( (     execute doSomething() )  ;     i := i + 1 ) ;,var i : int ; i := 0 ; while i < 10 do ( (     execute doSomething() )  ;     i := i + 1 ) ;
+TP,);,);
+FP,"for _forEach : Integer.subrange(1,1) do",
+FP,do (     execute doSomething() ) while (i < 10) ;,
+FN,,"for _x : Integer.subrange(1,1) do"
+FN,,while true do ((     execute doSomething() ) ;
+FN,,if (i < 10) then skip else break) ;

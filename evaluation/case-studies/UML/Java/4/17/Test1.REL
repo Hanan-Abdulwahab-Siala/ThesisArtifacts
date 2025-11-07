@@ -1,0 +1,11 @@
+[
+    {
+        "Relationship": "Association",
+        "Source": "IfCase",
+        "Target": "Entity",
+        "Multiplicity1": "0..1",
+        "Role1": "entity",
+        "Multiplicity2": "",
+        "Role2": ""
+    }
+]

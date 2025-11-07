@@ -1,0 +1,9 @@
+Type,Tool_OCL,GroundTruth_OCL
+TP,class Operation {,class Operation {
+TP,operation doSomething() : int,operation doSomething() : int
+TP,pre: true,pre: true
+TP,post: true,post: true
+TP,activity: (     return 0 );,activity: (     return 0 );
+TP,},}
+TP,class NewOperation extends Operation {,class NewOperation extends Operation {
+TP,activity: (     return 1 );,activity: (     return 1 );

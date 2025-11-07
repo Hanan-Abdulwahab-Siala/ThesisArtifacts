@@ -1,0 +1,17 @@
+interface Bean {
+    static attribute ASDF : String := "ASDF";
+}
+ class AnnoName<T> {
+  static   operation fn1<T>( p : Bar<T>) : Bar<T>
+  pre: true
+  post: true
+  activity: (     return null );
+  static   operation fn2<T>( p : Bar<T>) : Bar<T>
+  pre: true
+  post: true
+  activity: (     return null );
+  static   operation fn3<T>( p : Bar<T>) : Bar<T>
+  pre: true
+  post: true
+  activity: (     return null );
+}

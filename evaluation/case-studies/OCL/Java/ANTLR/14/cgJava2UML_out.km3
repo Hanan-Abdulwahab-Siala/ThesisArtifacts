@@ -1,0 +1,41 @@
+interface ActionListener {
+   attribute ACTION_ADD : int := 0;
+
+   attribute ACTION_REMOVE : int := 1;
+
+   operation actionSelected( action : int) : void
+  pre: true
+  post: true;
+
+}
+
+ interface RequestListener {
+   operation requestReceived() : int
+  pre: true
+  post: true;
+
+}
+
+class ActionHandler implements ActionListener, RequestListener {
+   operation actionSelected( action : int) : void
+  pre: true
+  post: true
+  activity: skip;
+
+   operation requestReceived() : int
+  pre: true
+  post: true
+  activity: skip;
+
+}
+
+class Dummy {
+   operation dummy() : void
+  pre: true
+  post: true
+  activity: (     var listener : RequestListener ; listener := ActionHandler.newActionHandler() ;
+     listener.requestReceived() );
+
+}
+
+
