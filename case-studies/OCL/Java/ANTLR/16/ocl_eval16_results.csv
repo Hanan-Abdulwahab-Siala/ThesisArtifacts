@@ -1,0 +1,13 @@
+Type,Tool_OCL,GroundTruth_OCL
+TP,"class Mapper<T,V> {","class Mapper<T,V> {"
+TP,"operation add( array : T, item : V) : void","operation add( array : T, item : V) : void"
+TP,pre: true,pre: true
+TP,post: true,post: true
+TP,activity: (     array->excludes(item) ;,activity: (     array->excludes(item) ;
+TP,"var mapper : Mapper<CustomList,int> ; mapper := Mapper<CustomList,int>.newMapper() ;","var mapper : Mapper<CustomList,int> ; mapper := Mapper<CustomList,int>.newMapper() ;"
+TP,"var mapper : Mapper<CustomList,OclAny> ;","var mapper : Mapper<CustomList,OclAny> ;"
+TP,"mapper := Mapper<CustomList,Boolean>.newMapper() ;","mapper := Mapper<CustomList,Boolean>.newMapper() ;"
+TP,"mapper := Mapper<CustomList,int>.newMapper() ;","mapper := Mapper<CustomList,int>.newMapper() ;"
+TP,);,);
+TP,},}
+TP,<EOF>,<EOF>

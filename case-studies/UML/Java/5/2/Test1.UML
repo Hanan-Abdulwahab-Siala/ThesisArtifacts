@@ -1,0 +1,53 @@
+[
+    {
+        "ClassInterface": "Class",
+        "name": "EnumLiteral",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "EnumLiteral",
+                "Visibility": "",
+                "parameters": [
+                    {
+                        "typeprint": "String",
+                        "name": "v"
+                    }
+                ]
+            }
+        ],
+        "variables": [
+            {
+                "name": "value",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            }
+        ],
+        "methods": [
+            {
+                "name": "toString",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "cg",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": [
+                    {
+                        "name": "cgs",
+                        "typeprint": "CGSpec"
+                    }
+                ]
+            }
+        ]
+    }
+]

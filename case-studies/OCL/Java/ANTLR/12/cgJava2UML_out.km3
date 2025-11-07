@@ -1,0 +1,75 @@
+class AbstractClass {
+  static    attribute hello : String;
+
+
+  static operation initialiseClass()
+  pre: true post: true
+  activity:     OclFile["System.out"].println(OclType["AbstractClass"].getName() + ": static block runtime") ; 
+    hello := "hello from " + OclType["AbstractClass"].getName() ; 
+;
+
+
+  operation initialiseInstance()
+  pre: true post: true
+  activity:     OclFile["System.out"].println(OclType["AbstractClass"].getName() + ": instance block runtime") ; 
+;
+
+   static operation newAbstractClass() : AbstractClass
+  pre: true
+  post: true
+  activity:
+  ( var self : AbstractClass ;
+    self := createAbstractClass();
+    self.initialise();
+    return self );
+
+  operation initialise() : void
+  pre: true  post: true
+  activity: (     OclFile["System.out"].println(OclType["AbstractClass"].getName() + ": constructor runtime") );
+
+
+  static   operation hello() : void
+  pre: true
+  post: true
+  activity: (     OclFile["System.out"].println(hello) );
+
+}
+
+ class CustomClass extends AbstractClass {
+
+  static operation initialiseClass()
+  pre: true post: true
+  activity:     OclFile["System.out"].println(OclType["CustomClass"].getName() + ": static block runtime") ; 
+;
+
+
+  operation initialiseInstance()
+  pre: true post: true
+  activity:     OclFile["System.out"].println(OclType["CustomClass"].getName() + ": instance block runtime") ; 
+;
+
+   static operation newCustomClass() : CustomClass
+  pre: true
+  post: true
+  activity:
+  ( var self : CustomClass ;
+    self := createCustomClass();
+    self.initialise();
+    return self );
+
+  operation initialise() : void
+  pre: true  post: true
+  activity: (     execute super() ; 
+     OclFile["System.out"].println(OclType["CustomClass"].getName() + ": constructor runtime") );
+
+
+  static   operation main( args : Sequence(String)) : void
+  pre: true
+  post: true
+  activity: (     var nc : CustomClass ; nc := CustomClass.newCustomClass() ;
+     execute hello() ; 
+     AbstractClass.hello() );
+
+}
+
+

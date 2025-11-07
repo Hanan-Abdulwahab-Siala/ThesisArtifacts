@@ -1,0 +1,12 @@
+Type,Tool_OCL,GroundTruth_OCL
+TP,class Foo {,class Foo {
+TP,operation bar() : void,operation bar() : void
+TP,pre: true,pre: true
+TP,post: true,post: true
+TP,},}
+TP,class Foo1 {,class Foo1 {
+TP,operation go() : int,operation go() : int
+TP,activity: (     return 0 );,activity: (     return 0 );
+TP,class Bar { },class Bar { }
+FP,activity: ( OclAny.newOclAny() );,
+FN,,activity: ( Map{} );

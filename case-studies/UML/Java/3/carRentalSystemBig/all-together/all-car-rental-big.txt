@@ -1,0 +1,1381 @@
+package com.example.car_rental_sys.orm;
+
+import com.example.car_rental_sys.ToolsLib.DateTools;
+import com.example.car_rental_sys.ToolsLib.ImageTools;
+import com.example.car_rental_sys.sqlParser.SQL;
+import javafx.scene.image.Image;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class User {
+    protected int userID = 0;
+    protected String userName ="null";
+    protected String userFirstName ="null";
+    protected String userLastName ="null";
+    protected String password = "0123456789";
+    protected String userGroup = "customer";
+    protected String post = "null";
+    protected String securityProblem = "null";
+    protected String securityAnswer = "null";
+    protected String birthday = "2022-01-01 00:00:00";
+    protected String gender = "null";
+    protected String country = "null";
+    protected String DLNumber   = "null";
+    protected String phone = "0123456789";
+    protected String email = "rent@mail.com";
+    protected String address = "null";
+    protected String about = "null";
+    protected String regTime = "null";
+    protected Image avatar;
+
+    public User(){
+        // do nothing
+    }
+
+    public User(String email) {
+        this.email = email;
+        initUser();
+    }
+
+
+
+    // for creating new user
+    public User(String userFirstName, String userLastName, String password, String userGroup, String post, String securityProblem,
+                String securityAnswer, String birthday, String gender, String country, String DLNumber,
+                String phone, String email, String address, String about, String regTime){
+        this.userName = userFirstName + "-" + userLastName;
+        this.password = password;
+        this.userGroup = userGroup;
+        this.post = post;
+        this.securityProblem = securityProblem;
+        this.securityAnswer = securityAnswer;
+        this.birthday = birthday;
+        this.gender = gender;
+        this.country = country;
+        this.DLNumber = DLNumber;
+        this.phone = phone;
+        this.email = email;
+        this.address = address;
+        this.about = about;
+        this.regTime = regTime;
+    }
+
+    private void initUser() {
+        String sql = "select * from userInfo where email = '" + this.email + "'";
+        //System.out.println(sql);
+        ArrayList<String[]> userInfo = SQL.query(sql);
+        if (userInfo.size() == 0){
+            throw new RuntimeException("No user found");
+        }
+        String[] user = userInfo.get(0);
+        this.userID = Integer.parseInt(user[0]);
+        this.userName = user[1].replace("-", " ");
+        this.userGroup = user[2];
+        this.post = user[3];
+        this.securityProblem = user[4];
+        this.securityAnswer = user[5];
+        this.birthday = user[6];
+        this.gender = user[7];
+        this.country = user[8];
+        this.DLNumber = user[9];
+        this.phone = user[10];
+        this.email = user[11];
+        this.address = user[12];
+        this.about = user[13];
+        this.regTime = user[14];
+        this.avatar = ImageTools.getUserAvatarFromUserID(userID);
+    }
+
+    public int getUserID() {
+        return userID;
+    }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getUserFirstName() {
+        return userFirstName;
+    }
+
+    public void setUserFirstName(String userFirstName) {
+        this.userFirstName = userFirstName;
+    }
+
+    public String getUserLastName() {
+        return userLastName;
+    }
+
+    public void setUserLastName(String userLastName) {
+        this.userLastName = userLastName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUserGroup() {
+        return userGroup;
+    }
+
+    public void setUserGroup(String userGroup) {
+        this.userGroup = userGroup;
+    }
+
+    public String getPost() {
+        return post;
+    }
+
+    public void setPost(String post) {
+        this.post = post;
+    }
+
+    public String getSecurityProblem() {
+        return securityProblem;
+    }
+
+    public void setSecurityProblem(String securityProblem) {
+        this.securityProblem = securityProblem;
+    }
+
+    public String getSecurityAnswer() {
+        return securityAnswer;
+    }
+
+    public void setSecurityAnswer(String securityAnswer) {
+        this.securityAnswer = securityAnswer;
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getDLNumber() {
+        return DLNumber;
+    }
+
+    public void setDLNumber(String DLNumber) {
+        this.DLNumber = DLNumber;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getAbout() {
+        return about;
+    }
+
+    public void setAbout(String about) {
+        this.about = about;
+    }
+
+    public String getRegTime() {
+        return regTime;
+    }
+
+    public void setRegTime(String regTime) {
+        this.regTime = regTime;
+    }
+
+    public Image getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(Image avatar) {
+        this.avatar = avatar;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +  ",\n" +
+                "userID=" + userID + ",\n" +
+                "userName='" + userName + '\'' + ",\n" +
+                "userGroup='" + userGroup + '\'' + ",\n" +
+                "post='" + post + '\'' + ",\n" +
+                "securityProblem='" + securityProblem + '\'' +",\n" +
+                "securityAnswer='" + securityAnswer + '\'' + ",\n" +
+                "birthday='" + birthday + '\'' + ",\n" +
+                "gender='" + gender + '\'' + ",\n" +
+                "country='" + country + '\'' + ",\n" +
+                "DLNumber='" + DLNumber + '\'' + ",\n" +
+                "phone='" + phone + '\'' + ",\n" +
+                "email='" + email + '\'' + ",\n" +
+                "address='" + address + '\'' + ",\n" +
+                "about='" + about + '\'' + ",\n" +
+                "regTime='" + regTime + '\'' + ",\n" +
+                '}';
+    }
+
+    public void updateUserInfo(){
+        String sql = "UPDATE userInfo SET userName = '" + userName + "', birthday = '" + birthday + "', phone = '" + phone + "', email = '"
+                + email + "', address = '" + address + "', about = '" + about + "' WHERE userID = " + userID;
+        SQL.execute(sql);
+    }
+
+    public void updateSecurityProblem(String newSecurityProblem, String newSecurityAnswer){
+        this.securityProblem = newSecurityProblem;
+        this.securityAnswer = newSecurityAnswer;
+        String sql = "UPDATE userInfo SET securityProblem = '" + newSecurityProblem + "', securityAnswer = '" + newSecurityAnswer + "' WHERE userID = " + userID;
+        SQL.execute(sql);
+    }
+}
+package com.example.car_rental_sys.orm;
+
+public class Admin extends User{
+    public Admin(String email) {
+        super(email);
+    }
+}
+package com.example.car_rental_sys.orm;
+
+import com.example.car_rental_sys.ToolsLib.DataTools;
+
+import java.util.Locale;
+import java.util.Objects;
+
+public class UserFactory {
+
+    public static User getUser(String email) {
+        String role = DataTools.getUserRoleFromUserEmail(email);
+        switch (Objects.requireNonNull(role)) {
+            case "driver":
+                return new Admin(email);
+            case "admin":
+                return new Driver(email);
+            case "customer":
+                return new Customer(email);
+            default:
+                return null;
+        }
+    }
+
+    public static User getUser(int userID) {
+        String email = DataTools.getEmailFromUserID(userID);
+        String role = DataTools.getUserRoleFromUserID(userID);
+        switch (role) {
+            case "driver":
+                return new Admin(email);
+            case "admin":
+                return new Driver(email);
+            case "customer":
+                return new Customer(email);
+            default:
+                return null;
+        }
+    }
+
+}
+package com.example.car_rental_sys.orm;
+
+public class Driver extends User{
+
+
+
+    public Driver(String email) {
+        super(email);
+    }
+}
+package com.example.car_rental_sys.orm;
+
+import com.example.car_rental_sys.ConfigFile;
+import com.example.car_rental_sys.ToolsLib.DataTools;
+import com.example.car_rental_sys.ToolsLib.ImageTools;
+import com.example.car_rental_sys.funtions.FileOperate;
+import javafx.scene.image.Image;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+public class Customer extends User {
+    private int orderNum;
+    private String[] bankCardList;
+    private ArrayList<String[]> bankCardData;
+    private Image vipBadge;
+    private Image vipCard;
+
+    public Customer() {
+        super();
+    }
+
+    public Customer(String email) {
+        super(email);
+        initCustomerData();
+    }
+
+    private void initCustomerData() {
+        this.orderNum = DataTools.getCustomerOrderNum(userID);
+        //System.out.println("orderNum: " + orderNum);
+        this.bankCardList = DataTools.getCustomerBankCardsList(userID);
+        this.bankCardData = DataTools.getCustomerBankCardsData(userID);
+        this.vipBadge = ImageTools.getBadgeImage(userID);
+        this.vipCard = ImageTools.getVIPCardImage(userID);
+    }
+
+    public Customer(String userFirstName, String userLastName, String password, String userGroup, String post,
+                    String securityProblem, String securityAnswer, String birthday, String gender, String country,
+                    String DLNumber, String phone, String email, String address, String about, String regTime) {
+        super(userFirstName, userLastName, password, userGroup, post, securityProblem, securityAnswer, birthday, gender, country, DLNumber, phone, email, address, about, regTime);
+    }
+
+    public int getOrderNum() {
+        return orderNum;
+    }
+
+    public void setOrderNum(int orderNum) {
+        this.orderNum = orderNum;
+    }
+
+    public Image getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(Image avatar) {
+        this.avatar = avatar;
+    }
+
+    public Image getVipBadge() {
+        return vipBadge;
+    }
+
+    public void setVipBadge(Image vipBadge) {
+        this.vipBadge = vipBadge;
+    }
+
+    public Image getVipCard() {
+        return vipCard;
+    }
+
+    public void setVipCard(Image vipCard) {
+        this.vipCard = vipCard;
+    }
+
+    public boolean storeCustomerInfo() throws IOException {
+        String userID = String.valueOf(DataTools.getNewUserID());
+        String[] userinfo = new String[]{
+                userID, userFirstName + "-" + userLastName, userGroup, post, securityProblem, securityAnswer,
+                birthday, gender, country, DLNumber, phone, email, address, about, regTime
+        };
+        String userAndPassword = userID + "," + password;
+
+        String userinfoStr = String.join(",", userinfo);
+        try {
+            FileOperate.addStringToFile(ConfigFile.dataFilesRootPath + "userinfo.txt", userinfoStr);
+            FileOperate.addStringToFile(ConfigFile.dataFilesRootPath + "password.txt", userAndPassword);
+
+            // add default avatar
+            ImageTools.addDefaultAvatar(Integer.parseInt(userID));
+
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+
+
+    }
+
+    public ArrayList<String[]> getBankCardData() {
+        return bankCardData;
+    }
+
+    public void setBankCardData(ArrayList<String[]> bankCardData) {
+        this.bankCardData = bankCardData;
+    }
+}
+
+//  TODO: add bankCard list property
+package com.example.car_rental_sys.orm;
+
+import com.example.car_rental_sys.ToolsLib.DataTools;
+import com.example.car_rental_sys.ToolsLib.DateTools;
+import com.example.car_rental_sys.sqlParser.SQL;
+
+import java.util.ArrayList;
+import java.util.Date;
+
+public class Car {
+    private int carID;
+    private String carModel;
+    private String chassisNumber;
+    private String carNumber;
+    private String carBrand;
+    private Date manufacturingDate;
+    private Date addedDate;
+    private int status;
+
+    public Car(int carID){
+        this.carID = carID;
+        initData();
+    }
+
+    private void initData(){
+        String sql = "SELECT * FROM carInfo WHERE carID = " + carID;
+        ArrayList<String[]> data = SQL.query(sql);
+        if(data.size() == 0){
+            return;
+        }
+        String[] carInfo = data.get(0);
+        carModel = carInfo[1];
+        chassisNumber = carInfo[2];
+        carNumber = carInfo[3];
+        manufacturingDate = DateTools.stringToDateObje(carInfo[4]);
+        System.out.println("manufacturingDate: " + manufacturingDate);
+        addedDate = DateTools.stringToDateObje(carInfo[5]);
+        status = Integer.parseInt(carInfo[6]);
+    }
+
+    public Car(int carID, String carModel, String chassisNumber, String carNumber, Date manufacturingDate, int status) {
+        this.carID = carID;
+        this.carModel = carModel;
+        this.chassisNumber = chassisNumber;
+        this.carNumber = carNumber;
+        this.manufacturingDate = manufacturingDate;
+        this.status = status;
+    }
+
+    public Car(String carModel, String chassisNumber, String carNumber, String manufacturingDate, int status){
+        this.carModel = carModel;
+        this.chassisNumber = chassisNumber;
+        this.carNumber = carNumber;
+        this.manufacturingDate = DateTools.stringToDateObje(manufacturingDate);
+        this.status = status;
+    }
+
+    public Car(int carID, String carModel, String chassisNumber, String carNumber, Date manufacturingDate, Date addedDate, int status) {
+        this.carID = carID;
+        this.carModel = carModel;
+        this.chassisNumber = chassisNumber;
+        this.carNumber = carNumber;
+        this.manufacturingDate = manufacturingDate;
+        this.addedDate = addedDate;
+        this.status = status;
+    }
+
+    public void setCarModel(String carModel) {
+        this.carModel = carModel;
+    }
+
+    public void setChassisNumber(String chassisNumber) {
+        this.chassisNumber = chassisNumber;
+    }
+
+    public void setCarNumber(String carNumber) {
+        this.carNumber = carNumber;
+    }
+
+    public void setManufacturingDate(Date manufacturingDate) {
+        this.manufacturingDate = manufacturingDate;
+    }
+
+    public void setAddedDate(Date addedDate) {
+        this.addedDate = addedDate;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public int getCarID() {
+        return carID;
+    }
+
+    public String getCarModel() {
+        return carModel;
+    }
+
+    public String getChassisNumber() {
+        return chassisNumber;
+    }
+
+    public String getCarNumber() {
+        return carNumber;
+    }
+
+    public String getManufacturingDate() {
+        System.out.println("Date: " + manufacturingDate);
+        return DateTools.dateToString(manufacturingDate,"yyyy-MM-dd");
+    }
+
+    public String getAddedDate() {
+        return  DateTools.dateToString(addedDate,"yyyy-MM-dd");
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void updateCarInfo(String carModel, String chassisNumber, String carNumber, String manufacturingDate, int status){
+        this.carModel = carModel;
+        this.chassisNumber = chassisNumber;
+        this.carNumber = carNumber;
+        this.manufacturingDate = DateTools.stringToDateObje(manufacturingDate);
+        this.status = status;
+        update();
+    }
+
+    public void addCarInfo(){
+        String sql = "INSERT INTO carInfo VALUES (" + (DataTools.getID("carModels")-1) + ", '" + carModel + "', '" + chassisNumber + "', '" + carNumber + "', '"
+                + DateTools.dateToString(manufacturingDate,"yyyy-MM-dd") + "', '" + DateTools.getNow() + "', " + status + ")";
+        System.out.println(sql);
+        SQL.execute(sql);
+    }
+
+    public void update(){
+        String sql = "UPDATE carInfo SET carModel = '" + carModel + "', chassisNumber = '" + chassisNumber + "', carNumber = '" + carNumber + "', manufacturingDate = '"
+                + DateTools.dateToString(manufacturingDate,"yyyy-MM-dd") + "', status = " + status + " WHERE carID = " + carID;
+        SQL.execute(sql);
+    }
+
+    public void delete(){
+        String sql = "DELETE FROM carInfo WHERE carID = " + carID;
+        SQL.execute(sql);
+        System.out.println("done");
+    }
+
+}
+package com.example.car_rental_sys.orm;
+
+import javafx.scene.image.Image;
+
+import java.lang.reflect.Field;
+
+public class NewCar {
+    private String carModel;
+    private String chassisNumber;
+    private String carNumber;    //plateNumber
+    private String manufacturingDate;
+    private String price;
+    private String seatNumber;
+    private String gearType;  //category Type
+    private String carBrand;   //car brand
+    private String gradientDark;
+    private String gradientLight;
+    private String imageUrl;
+    private Image newCarImage;
+
+
+    public NewCar(String carModel, String chassisNumber, String carNumber, String manufacturingDate, String price,
+                  String seatNumber, String gearType, String carBrand, String gradientDark, String gradientLight, String imageUrl, Image newCarImage) {
+        this.carModel = carModel;
+        this.chassisNumber = chassisNumber;
+        this.carNumber = carNumber;
+        this.manufacturingDate = manufacturingDate;
+        this.price = price;
+        this.seatNumber = seatNumber;
+        this.gearType = gearType;
+        this.carBrand = carBrand;
+        this.gradientDark = gradientDark;
+        this.gradientLight = gradientLight;
+        this.imageUrl = imageUrl;
+        this.newCarImage = newCarImage;
+    }
+
+    public String getCarModel() {
+        return carModel;
+    }
+
+    public void setCarModel(String carModel) {
+        this.carModel = carModel;
+    }
+
+    public String getChassisNumber() {
+        return chassisNumber;
+    }
+
+    public void setChassisNumber(String chassisNumber) {
+        this.chassisNumber = chassisNumber;
+    }
+
+    public String getCarNumber() {
+        return carNumber;
+    }
+
+    public void setCarNumber(String carNumber) {
+        this.carNumber = carNumber;
+    }
+
+    public String getManufacturingDate() {
+        return manufacturingDate;
+    }
+
+    public void setManufacturingDate(String manufacturingDate) {
+        this.manufacturingDate = manufacturingDate;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public String getSeatNumber() {
+        return seatNumber;
+    }
+
+    public void setSeatNumber(String seatNumber) {
+        this.seatNumber = seatNumber;
+    }
+
+    public String getGearType() {
+        return gearType;
+    }
+
+    public void setGearType(String gearType) {
+        this.gearType = gearType;
+    }
+
+    public String getCarBrand() {
+        return carBrand;
+    }
+
+    public void setCarBrand(String carBrand) {
+        this.carBrand = carBrand;
+    }
+
+    public String getGradientDark() {
+        return gradientDark;
+    }
+
+    public void setGradientDark(String gradientDark) {
+        this.gradientDark = gradientDark;
+    }
+
+    public String getGradientLight() {
+        return gradientLight;
+    }
+
+    public void setGradientLight(String gradientLight) {
+        this.gradientLight = gradientLight;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public Image getNewCarImage() {
+        return newCarImage;
+    }
+
+    public void setNewCarImage(Image newCarImage) {
+        this.newCarImage = newCarImage;
+    }
+
+    public void clearProperty() {
+        this.carModel = null;
+        this.chassisNumber = null;
+        this.carNumber = null;
+        this.manufacturingDate = null;
+        this.price = null;
+        this.seatNumber = null;
+        this.gearType = null;
+        this.carBrand = null;
+        this.gradientDark = null;
+        this.gradientLight = null;
+        this.imageUrl = null;
+        this.newCarImage = null;
+
+        System.out.println("draft deleted");
+    }
+
+    public boolean checkAllNull() throws IllegalAccessException {
+        Field[] fields = this.getClass().getDeclaredFields();
+        for (Field field : fields) {
+            field.setAccessible(true);
+            if (field.get(this) != null) {
+                if (field.getName().equals("gradientDark") || field.getName().equals("gradientLight")) {
+                    continue;
+                }
+                return false;
+            }
+        }
+        return true;
+
+    }
+}
+package com.example.car_rental_sys.orm;
+
+import com.example.car_rental_sys.ToolsLib.DataTools;
+import com.example.car_rental_sys.ToolsLib.DateTools;
+import com.example.car_rental_sys.ToolsLib.ImageTools;
+import com.example.car_rental_sys.sqlParser.SQL;
+
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Objects;
+
+public class CarModel {
+    private int modelID;
+    private String carModel;
+    private int seats;
+    private int price;
+    private String gearType;
+    private String darkColor;
+    private String lightColor;
+    private String carBrand;
+    private double star;
+    private int speed;
+    private double power;
+    private String imageURL;
+
+    public CarModel(){
+
+    }
+
+    public CarModel(int modelID) {
+        this.modelID = modelID;
+        initData("modelID");
+    }
+
+    public CarModel(String carModel) {
+        this.carModel = carModel;
+        initData("carModel");
+    }
+
+    private void initData(String type){
+        String sql ;
+        if(Objects.equals(type, "modelID")){
+            sql = "SELECT * FROM carModels WHERE " + type + " = " + modelID;
+        }else if (Objects.equals(type, "carModel")){
+            sql = "SELECT * FROM carModels WHERE " + type + " = " +"'" + carModel +"'";
+        }else{
+            throw  new IllegalArgumentException("type must be modelID or carModel");
+        }
+        ArrayList<String[]> data = SQL.query(sql);
+        if(data.size() == 0){
+            return;
+        }
+        String[] carModelInfo = data.get(0);
+        modelID = Integer.parseInt(carModelInfo[0]);
+        carModel = carModelInfo[1];
+        seats = Integer.parseInt(carModelInfo[2]);
+        price = Integer.parseInt(carModelInfo[3]);
+        gearType = carModelInfo[4];
+        darkColor = carModelInfo[5];
+        lightColor = carModelInfo[6];
+        carBrand = carModelInfo[7];
+        star = Double.parseDouble(carModelInfo[8]);
+        speed = Integer.parseInt(carModelInfo[9]);
+        power = Double.parseDouble(carModelInfo[10]);
+        imageURL = "file:src/main/resources/com/example/car_rental_sys/image/cars/"+ carModel + ".png";
+
+    }
+
+    public CarModel(String carModel, int seats, int price, String gearType, String darkColor, String lightColor, String carBrand, String imageURL) {
+        this.carModel = carModel;
+        this.seats = seats;
+        this.price = price;
+        this.gearType = gearType;
+        this.darkColor = darkColor;
+        this.lightColor = lightColor;
+        this.carBrand = carBrand;
+        this.imageURL = imageURL;
+    }
+
+    public CarModel(int modelID, String carModel, int seats, int price, String gearType, String darkColor,
+                    String lightColor, String carBrand, double star, int speed, double power) {
+        this.modelID = modelID;
+        this.carModel = carModel;
+        this.seats = seats;
+        this.price = price;
+        this.gearType = gearType;
+        this.darkColor = darkColor;
+        this.lightColor = lightColor;
+        this.carBrand = carBrand;
+        this.star = star;
+        this.speed = speed;
+        this.power = power;
+    }
+
+    public int getModelID() {
+        return modelID;
+    }
+
+    public void setModelID(int modelID) {
+        this.modelID = modelID;
+    }
+
+    public String getCarModel() {
+        return carModel;
+    }
+
+    public void setCarModel(String carModel) {
+        this.carModel = carModel;
+    }
+
+    public int getSeats() {
+        return seats;
+    }
+
+    public void setSeats(int seats) {
+        this.seats = seats;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public String getGearType() {
+        return gearType;
+    }
+
+    public void setGearType(String gearType) {
+        this.gearType = gearType;
+    }
+
+    public String getDarkColor() {
+        return darkColor;
+    }
+
+    public void setDarkColor(String darkColor) {
+        this.darkColor = darkColor;
+    }
+
+    public String getLightColor() {
+        return lightColor;
+    }
+
+    public void setLightColor(String lightColor) {
+        this.lightColor = lightColor;
+    }
+
+    public String getCarBrand() {
+        return carBrand;
+    }
+
+    public void setCarBrand(String carBrand) {
+        this.carBrand = carBrand;
+    }
+
+    public double getStar() {
+        return star;
+    }
+
+    public void setStar(double star) {
+        this.star = star;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    public double getPower() {
+        return power;
+    }
+
+    public void setPower(double power) {
+        this.power = power;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
+    }
+
+    public void updateCarModel(String carModel, int seats, int price, String gearType, String darkColor, String lightColor){
+        this.carModel = carModel;
+        this.seats = seats;
+        this.price = price;
+        this.gearType = gearType;
+        this.darkColor = darkColor;
+        this.lightColor = lightColor;
+        update();
+    }
+
+    public void addCarModel(){
+        String values = DataTools.getID("carModels") + ",'" + carModel + "'," + seats + "," + price + ",'" + gearType + "','" + darkColor +
+                "','" + lightColor + "','" + carBrand + "'," + DataTools.getCarStar() + "," + DataTools.getCarSpeed() + "," + DataTools.getCarPower();
+        String sql = "INSERT INTO carModels VALUES (" + values + ")";
+        System.out.println(sql);
+        SQL.execute(sql);
+        System.out.println(imageURL);
+        ImageTools.renameCarImage(imageURL, carModel);
+    }
+
+    public void update(){
+        String sql = "UPDATE carModels SET carModel = '" + carModel + "', seats = " + seats + ", price = " + price +
+                ", gearType = '" + gearType + "', darkColor = '" + darkColor + "', lightColor = '" + lightColor +
+                "' WHERE modelID = " + modelID;
+        System.out.println(sql);
+        boolean process = SQL.execute(sql);
+        System.out.println(process);
+    }
+
+    public void delete(){
+        String sql = "DELETE FROM carModels WHERE modelID = " + modelID;
+        SQL.execute(sql);
+        System.out.println("done");
+        ImageTools.deleteFile(imageURL);
+    }
+}
+package com.example.car_rental_sys.orm;
+
+import com.example.car_rental_sys.ToolsLib.DataTools;
+import com.example.car_rental_sys.ToolsLib.DateTools;
+import com.example.car_rental_sys.sqlParser.SQL;
+
+import java.util.ArrayList;
+import java.util.Date;
+
+public class Order {
+    private int orderID;
+    private int carID;
+    private Date orderTime = null;
+    private Date pickUpTime = null;
+    private Date returnTime = null;
+    private String pickUpLocation = "";
+    private String parkingLocation = "";
+
+
+    private int userID = 0;
+    private int price = 0;
+    private String paymentMethod = "";
+    private String account = "";
+    private int status = -1;
+    private int star = 0;
+
+    private String invoiceNo = "";
+
+    public Order() {
+    }
+
+    /*
+    public static void getNewOrder(){
+        Order newOrder = new Order();
+        newOrder.setOrderID(getID("orders"));
+        newOrder.setCarID();
+        newOrder.setOrderTime(DateTools.stringToDateObje(DateTools.getNow()));
+        newOrder.setPickUpTime();
+        newOrder.setReturnTime();
+        newOrder.setParkingLocation();
+        newOrder.setPickUpLocation();
+        newOrder.setUserID();
+        newOrder.setPrice();
+        newOrder.setPaymentMethod();
+        newOrder.setAccount();
+        newOrder.setStatus();
+        newOrder.setStar();
+    }
+    * */
+
+    public Order(int orderID) {
+        this.orderID = orderID;
+        initOrder();
+    }
+
+    private void initOrder() {
+        String sql = "select * from orders where orderID = " + orderID;
+        ArrayList<String[]> result = SQL.query(sql);
+        if (result.size() == 0) {
+            System.out.println("Order: " + this.orderID +  "not found");
+        }
+        else{
+            String[] orderInfo = result.get(0);
+            this.carID = Integer.parseInt(orderInfo[1]);
+            this.orderTime = DateTools.stringToDateObje(orderInfo[2]);
+            this.pickUpTime = DateTools.stringToDateObje(orderInfo[3]);
+            this.returnTime = DateTools.stringToDateObje(orderInfo[4]);
+            this.pickUpLocation = orderInfo[5];
+            this.parkingLocation = orderInfo[6];
+            this.userID = Integer.parseInt(orderInfo[7]);
+            this.price = Integer.parseInt(orderInfo[8]);
+            this.paymentMethod = orderInfo[9];
+            this.account = orderInfo[10];
+            this.status = Integer.parseInt(orderInfo[11]);
+            this.star = Integer.parseInt(orderInfo[12]);
+            this.invoiceNo = DataTools.generateRandomInvoiceNo(this.orderID);
+        }
+    }
+
+    public int getOrderID() {
+        return orderID;
+    }
+
+    public int getCarID() {
+        return carID;
+    }
+
+    public Date getOrderTime() {
+        return orderTime;
+    }
+
+    public String getOrderTimeStr() {
+        return DateTools.getSpecFormatDateTime(orderTime);
+    }
+
+    public Date getPickUpTime() {
+        return pickUpTime;
+    }
+
+    public String getPickUpTimeStr() {
+        return DateTools.getSpecFormatDateTime(pickUpTime);
+    }
+
+    public Date getReturnTime() {
+        return returnTime;
+    }
+
+    public String getReturnTimeStr() {
+        return DateTools.getSpecFormatDateTime(returnTime);
+    }
+
+    public int getUserID() {
+        return userID;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public String getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public String getAccount() {
+        return account;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public int getStar() {
+        return star;
+    }
+
+    public void setOrderID(int orderID) {
+        this.orderID = orderID;
+    }
+
+    public void setCarID(int carID) {
+        this.carID = carID;
+    }
+
+    public void setOrderTime(Date orderTime) {
+        this.orderTime = orderTime;
+    }
+
+    public void setPickUpTime(Date pickUpTime) {
+        this.pickUpTime = pickUpTime;
+    }
+
+    public void setReturnTime(Date returnTime) {
+        this.returnTime = returnTime;
+    }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
+    public void setAccount(String account) {
+        this.account = account;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public void setStar(int star) {
+        this.star = star;
+    }
+
+    public String getPickUpLocation() {
+        return pickUpLocation;
+    }
+
+    public void setPickUpLocation(String pickUpLocation) {
+        this.pickUpLocation = pickUpLocation;
+    }
+
+    public String getParkingLocation() {
+        return parkingLocation;
+    }
+
+    public void setParkingLocation(String parkingLocation) {
+        this.parkingLocation = parkingLocation;
+    }
+
+    public String getInvoiceNo() {
+        return invoiceNo;
+    }
+
+    public void setInvoiceNo(String invoiceNo) {
+        this.invoiceNo = invoiceNo;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "orderID=" + orderID +
+                ", carID=" + carID +
+                ", orderTime=" + orderTime +
+                ", pickUpTime=" + pickUpTime +
+                ", returnTime=" + returnTime +
+                ", userID=" + userID +
+                ", price=" + price +
+                ", paymentMethod='" + paymentMethod + '\'' +
+                ", account='" + account + '\'' +
+                ", status=" + status +
+                ", star=" + star +
+                ", invoiceNo='" + invoiceNo + '\'' +
+                '}';
+    }
+}
+package com.example.car_rental_sys.orm;
+
+public class Comment {
+    private int commentID;
+    private String type;
+    private String payload;
+    private int posterID;
+    private String comment;
+    private int relevantCommentID;
+    private String commentDateTime;
+    private int like;
+    private int star;
+
+
+    public Comment(int commentID, String type, String payload, int posterID, String comment, int relevantCommentID, String commentDateTime, int like, int star) {
+        this.commentID = commentID;
+        this.type = type;
+        this.payload = payload;
+        this.posterID = posterID;
+        this.comment = comment;
+        this.relevantCommentID = relevantCommentID;
+        this.commentDateTime = commentDateTime;
+        this.like = like;
+        this.star = star;
+    }
+}
+package com.example.car_rental_sys.orm;
+
+import com.example.car_rental_sys.sqlParser.SQL;
+
+import java.util.ArrayList;
+
+public class Card {
+    private int userID;
+    private String cardType;
+    private String cardName;
+    private String cardBankName;
+    private String cardHolderName;
+    private String cardValidDate;
+    private String cardNumber;
+    private String cardBillingAddress;
+    private String cardBalance;
+    private String[] cardTheme;
+
+
+    public static Card instance;
+
+    public Card() {
+        instance = this;
+    }
+
+    public String[] getCardDetails(int userID, String cardNumber){
+        // get card details from database
+        String query = "SELECT * FROM bankCardInfo WHERE userID = " + userID + " AND cardNumber = "+cardNumber +";";
+        ArrayList<String[]> cardDetails = SQL.query(query);
+        //get the first row of the result
+        return cardDetails.get(0);
+    }
+
+    public Card(int userID, String cardNumber){
+        String[] cardDetails = getCardDetails(userID, cardNumber);
+        this.userID = Integer.parseInt(cardDetails[0]);
+        this.cardType = cardDetails[1];
+        this.cardName = cardDetails[2];
+        this.cardBankName = cardDetails[3];
+        this.cardHolderName = cardDetails[4];
+        this.cardValidDate = cardDetails[5];
+        this.cardNumber = cardDetails[6];
+        this.cardBillingAddress = cardDetails[7];
+        this.cardTheme = cardDetails[8].split(",");
+        this.cardBalance = cardDetails[9];
+    }
+
+    public Card(int userID, String cardType, String cardName, String cardBankName, String cardHolderName, String cardValidDate, String cardNumber, String cardBillingAddress, String[] cardTheme) {
+        this.userID = userID;
+        this.cardType = cardType;
+        this.cardName = cardName;
+        this.cardBankName = cardBankName;
+        this.cardHolderName = cardHolderName;
+        this.cardValidDate = cardValidDate;
+        this.cardNumber = cardNumber;
+        this.cardBillingAddress = cardBillingAddress;
+        this.cardTheme = cardTheme;
+    }
+
+    public int getUserID() {
+        return userID;
+    }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
+    }
+
+    public String getCardType() {
+        return cardType;
+    }
+
+    public void setCardType(String cardType) {
+        this.cardType = cardType;
+    }
+
+    public String getCardName() {
+        return cardName;
+    }
+
+    public void setCardName(String cardName) {
+        this.cardName = cardName;
+    }
+
+    public String getCardBankName() {
+        return cardBankName;
+    }
+
+    public void setCardBankName(String cardBankName) {
+        this.cardBankName = cardBankName;
+    }
+
+    public String getCardHolderName() {
+        return cardHolderName;
+    }
+
+    public void setCardHolderName(String cardHolderName) {
+        this.cardHolderName = cardHolderName;
+    }
+
+    public String getCardValidDate() {
+        return cardValidDate;
+    }
+
+    public void setCardValidDate(String cardValidDate) {
+        this.cardValidDate = cardValidDate;
+    }
+
+    public String getCardNumber() {
+        return cardNumber;
+    }
+
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+
+    public String getCardBillingAddress() {
+        return cardBillingAddress;
+    }
+
+    public void setCardBillingAddress(String cardBillingAddress) {
+        this.cardBillingAddress = cardBillingAddress;
+    }
+
+    public String[] getCardTheme() {
+        return cardTheme;
+    }
+
+    public void setCardTheme(String[] cardTheme) {
+        this.cardTheme = cardTheme;
+    }
+
+    public String getCardBalance() {
+        return cardBalance;
+    }
+
+    public void setCardBalance(String cardBalance) {
+        this.cardBalance = cardBalance;
+    }
+
+    public void update(){
+        String query = "UPDATE bankCardInfo SET cardName = '"+this.cardName+"', billingAddress = '"+this.cardBillingAddress+
+                "' WHERE userID = "+this.userID+" AND cardNumber = "+this.cardNumber+";";
+        //System.out.println(query);
+        SQL.execute(query);
+    }
+
+    public void delete(){
+        String query = "DELETE FROM bankCardInfo WHERE userID = "+this.userID+" AND cardNumber = "+this.cardNumber+";";
+        //System.out.println(query);
+        SQL.execute(query);
+    }
+}

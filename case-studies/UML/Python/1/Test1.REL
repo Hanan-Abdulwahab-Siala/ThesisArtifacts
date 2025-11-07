@@ -1,0 +1,65 @@
+[
+    {
+        "Relationship": "Aggregation",
+        "Source": "User",
+        "Target": "Bank",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Aggregation",
+        "Source": "BankAccount",
+        "Target": "User",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Aggregation",
+        "Source": "SavingsAccount",
+        "Target": "User",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Inheritance",
+        "Source": "SavingsAccount",
+        "Target": "BankAccount",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Transfer",
+        "Target": "BankAccount",
+        "Multiplicity1": "1",
+        "Role1": "from_account",
+        "Multiplicity2": "*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Transfer",
+        "Target": "SavingsAccount",
+        "Multiplicity1": "1",
+        "Role1": "to_account",
+        "Multiplicity2": "*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Transfer",
+        "Target": "Bank",
+        "Multiplicity1": "1",
+        "Role1": "bank",
+        "Multiplicity2": "*",
+        "Role2": ""
+    }
+]

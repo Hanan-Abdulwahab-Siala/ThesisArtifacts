@@ -1,0 +1,849 @@
+[
+    {
+        "ClassInterface": "Class",
+        "name": "FinalStatement",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "FinalStatement",
+                "Visibility": "",
+                "parameters": [
+                    {
+                        "typeprint": "Statement",
+                        "name": "s"
+                    }
+                ]
+            },
+            {
+                "name": "FinalStatement",
+                "Visibility": "",
+                "parameters": [
+                    {
+                        "typeprint": "Vector",
+                        "name": "stats"
+                    }
+                ]
+            }
+        ],
+        "variables": [
+            {
+                "name": "body",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Statement",
+                "Visibility": ""
+            }
+        ],
+        "methods": [
+            {
+                "name": "getOperator",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "cg",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": [
+                    {
+                        "name": "cgs",
+                        "typeprint": "CGSpec"
+                    }
+                ]
+            },
+            {
+                "name": "cgparameters",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Vector",
+                "parameters": []
+            },
+            {
+                "name": "cgterms",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Vector",
+                "parameters": []
+            },
+            {
+                "name": "clone",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Statement",
+                "parameters": []
+            },
+            {
+                "name": "optimiseOCL",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Statement",
+                "parameters": []
+            },
+            {
+                "name": "findClones",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "clones",
+                        "typeprint": "Map"
+                    },
+                    {
+                        "name": "rule",
+                        "typeprint": "String"
+                    },
+                    {
+                        "name": "op",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "findClones",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "clones",
+                        "typeprint": "Map"
+                    },
+                    {
+                        "name": "cdefs",
+                        "typeprint": "Map"
+                    },
+                    {
+                        "name": "rule",
+                        "typeprint": "String"
+                    },
+                    {
+                        "name": "op",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "energyUse",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Map",
+                "parameters": [
+                    {
+                        "name": "uses",
+                        "typeprint": "Map"
+                    },
+                    {
+                        "name": "rUses",
+                        "typeprint": "Vector"
+                    },
+                    {
+                        "name": "aUses",
+                        "typeprint": "Vector"
+                    }
+                ]
+            },
+            {
+                "name": "collectionOperatorUses",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Map",
+                "parameters": [
+                    {
+                        "name": "lev",
+                        "typeprint": "Integer"
+                    },
+                    {
+                        "name": "uses",
+                        "typeprint": "Map"
+                    },
+                    {
+                        "name": "vars",
+                        "typeprint": "Vector"
+                    }
+                ]
+            },
+            {
+                "name": "findMagicNumbers",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "mgns",
+                        "typeprint": "Map"
+                    },
+                    {
+                        "name": "rule",
+                        "typeprint": "String"
+                    },
+                    {
+                        "name": "op",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "generateDesign",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Statement",
+                "parameters": [
+                    {
+                        "name": "env",
+                        "typeprint": "Map"
+                    },
+                    {
+                        "name": "local",
+                        "typeprint": "Boolean"
+                    }
+                ]
+            },
+            {
+                "name": "toString",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "toAST",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "containsSubexpression",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Boolean",
+                "parameters": [
+                    {
+                        "name": "expr",
+                        "typeprint": "Expression"
+                    }
+                ]
+            },
+            {
+                "name": "singleMutants",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Vector",
+                "parameters": []
+            },
+            {
+                "name": "toStringJava",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "toEtl",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "display",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "out",
+                        "typeprint": "PrintWriter"
+                    }
+                ]
+            },
+            {
+                "name": "display",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": []
+            },
+            {
+                "name": "displayJava",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "v",
+                        "typeprint": "String"
+                    },
+                    {
+                        "name": "out",
+                        "typeprint": "PrintWriter"
+                    }
+                ]
+            },
+            {
+                "name": "displayJava",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "v",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "saveModelData",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": [
+                    {
+                        "name": "out",
+                        "typeprint": "PrintWriter"
+                    }
+                ]
+            },
+            {
+                "name": "saveModelData",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": [
+                    {
+                        "name": "out",
+                        "typeprint": "PrintWriter"
+                    },
+                    {
+                        "name": "ent",
+                        "typeprint": "Entity"
+                    }
+                ]
+            },
+            {
+                "name": "dereference",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Statement",
+                "parameters": [
+                    {
+                        "name": "v",
+                        "typeprint": "BasicExpression"
+                    }
+                ]
+            },
+            {
+                "name": "addContainerReference",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Statement",
+                "parameters": [
+                    {
+                        "name": "ref",
+                        "typeprint": "BasicExpression"
+                    },
+                    {
+                        "name": "var",
+                        "typeprint": "String"
+                    },
+                    {
+                        "name": "excl",
+                        "typeprint": "Vector"
+                    }
+                ]
+            },
+            {
+                "name": "substituteEq",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Statement",
+                "parameters": [
+                    {
+                        "name": "oldE",
+                        "typeprint": "String"
+                    },
+                    {
+                        "name": "newE",
+                        "typeprint": "Expression"
+                    }
+                ]
+            },
+            {
+                "name": "removeSlicedParameters",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Statement",
+                "parameters": [
+                    {
+                        "name": "bf",
+                        "typeprint": "BehaviouralFeature"
+                    },
+                    {
+                        "name": "fpars",
+                        "typeprint": "Vector"
+                    }
+                ]
+            },
+            {
+                "name": "typeCheck",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Boolean",
+                "parameters": [
+                    {
+                        "name": "types",
+                        "typeprint": "Vector"
+                    },
+                    {
+                        "name": "entities",
+                        "typeprint": "Vector"
+                    },
+                    {
+                        "name": "cs",
+                        "typeprint": "Vector"
+                    },
+                    {
+                        "name": "env",
+                        "typeprint": "Map"
+                    }
+                ]
+            },
+            {
+                "name": "typeInference",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Boolean",
+                "parameters": [
+                    {
+                        "name": "types",
+                        "typeprint": "Vector"
+                    },
+                    {
+                        "name": "entities",
+                        "typeprint": "Vector"
+                    },
+                    {
+                        "name": "cs",
+                        "typeprint": "Vector"
+                    },
+                    {
+                        "name": "env",
+                        "typeprint": "Map"
+                    },
+                    {
+                        "name": "vartypes",
+                        "typeprint": "Map"
+                    }
+                ]
+            },
+            {
+                "name": "wpc",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Expression",
+                "parameters": [
+                    {
+                        "name": "post",
+                        "typeprint": "Expression"
+                    }
+                ]
+            },
+            {
+                "name": "wpc",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Expression",
+                "parameters": [
+                    {
+                        "name": "inv",
+                        "typeprint": "Expression"
+                    },
+                    {
+                        "name": "post",
+                        "typeprint": "Expression"
+                    }
+                ]
+            },
+            {
+                "name": "dataDependents",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Vector",
+                "parameters": [
+                    {
+                        "name": "allvars",
+                        "typeprint": "Vector"
+                    },
+                    {
+                        "name": "vars",
+                        "typeprint": "Vector"
+                    }
+                ]
+            },
+            {
+                "name": "dataDependents",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Vector",
+                "parameters": [
+                    {
+                        "name": "allvars",
+                        "typeprint": "Vector"
+                    },
+                    {
+                        "name": "vars",
+                        "typeprint": "Vector"
+                    },
+                    {
+                        "name": "mp",
+                        "typeprint": "Map"
+                    },
+                    {
+                        "name": "dlin",
+                        "typeprint": "Map"
+                    }
+                ]
+            },
+            {
+                "name": "updates",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Boolean",
+                "parameters": [
+                    {
+                        "name": "v",
+                        "typeprint": "Vector"
+                    }
+                ]
+            },
+            {
+                "name": "updateForm",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": [
+                    {
+                        "name": "env",
+                        "typeprint": "Map"
+                    },
+                    {
+                        "name": "local",
+                        "typeprint": "Boolean"
+                    },
+                    {
+                        "name": "types",
+                        "typeprint": "Vector"
+                    },
+                    {
+                        "name": "entities",
+                        "typeprint": "Vector"
+                    },
+                    {
+                        "name": "vars",
+                        "typeprint": "Vector"
+                    }
+                ]
+            },
+            {
+                "name": "updateFormJava6",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": [
+                    {
+                        "name": "env",
+                        "typeprint": "Map"
+                    },
+                    {
+                        "name": "local",
+                        "typeprint": "Boolean"
+                    }
+                ]
+            },
+            {
+                "name": "updateFormJava7",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": [
+                    {
+                        "name": "env",
+                        "typeprint": "Map"
+                    },
+                    {
+                        "name": "local",
+                        "typeprint": "Boolean"
+                    }
+                ]
+            },
+            {
+                "name": "updateFormCSharp",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": [
+                    {
+                        "name": "env",
+                        "typeprint": "Map"
+                    },
+                    {
+                        "name": "local",
+                        "typeprint": "Boolean"
+                    }
+                ]
+            },
+            {
+                "name": "updateFormCPP",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": [
+                    {
+                        "name": "env",
+                        "typeprint": "Map"
+                    },
+                    {
+                        "name": "local",
+                        "typeprint": "Boolean"
+                    }
+                ]
+            },
+            {
+                "name": "bupdateForm",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "BStatement",
+                "parameters": [
+                    {
+                        "name": "env",
+                        "typeprint": "Map"
+                    },
+                    {
+                        "name": "local",
+                        "typeprint": "Boolean"
+                    }
+                ]
+            },
+            {
+                "name": "bupdateForm",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "allPreTerms",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Vector",
+                "parameters": []
+            },
+            {
+                "name": "allPreTerms",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Vector",
+                "parameters": [
+                    {
+                        "name": "var",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "readFrame",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Vector",
+                "parameters": []
+            },
+            {
+                "name": "writeFrame",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Vector",
+                "parameters": []
+            },
+            {
+                "name": "checkConversions",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Statement",
+                "parameters": [
+                    {
+                        "name": "e",
+                        "typeprint": "Entity"
+                    },
+                    {
+                        "name": "propType",
+                        "typeprint": "Type"
+                    },
+                    {
+                        "name": "propElemType",
+                        "typeprint": "Type"
+                    },
+                    {
+                        "name": "interp",
+                        "typeprint": "Map"
+                    }
+                ]
+            },
+            {
+                "name": "replaceModuleReferences",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Statement",
+                "parameters": [
+                    {
+                        "name": "uc",
+                        "typeprint": "UseCase"
+                    }
+                ]
+            },
+            {
+                "name": "syntacticComplexity",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Integer",
+                "parameters": []
+            },
+            {
+                "name": "cyclomaticComplexity",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Integer",
+                "parameters": []
+            },
+            {
+                "name": "epl",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Integer",
+                "parameters": []
+            },
+            {
+                "name": "allOperationsUsedIn",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Vector",
+                "parameters": []
+            },
+            {
+                "name": "allAttributesUsedIn",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Vector",
+                "parameters": []
+            },
+            {
+                "name": "getUses",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Vector",
+                "parameters": [
+                    {
+                        "name": "var",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getVariableUses",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Vector",
+                "parameters": []
+            },
+            {
+                "name": "getVariableUses",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Vector",
+                "parameters": [
+                    {
+                        "name": "unused",
+                        "typeprint": "Vector"
+                    }
+                ]
+            },
+            {
+                "name": "equivalentsUsedIn",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Vector",
+                "parameters": []
+            },
+            {
+                "name": "metavariables",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Vector",
+                "parameters": []
+            }
+        ]
+    }
+]

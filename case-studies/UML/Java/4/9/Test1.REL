@@ -1,0 +1,20 @@
+[
+    {
+        "Relationship": "Inheritance",
+        "Source": "SequenceStatement",
+        "Target": "Statement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Aggregation",
+        "Source": "SequenceStatement",
+        "Target": "BParallelStatement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "1..*",
+        "Role2": ""
+    }
+]

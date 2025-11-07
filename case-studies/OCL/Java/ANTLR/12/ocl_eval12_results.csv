@@ -1,0 +1,35 @@
+Type,Tool_OCL,GroundTruth_OCL
+TP,class AbstractClass {,class AbstractClass {
+TP,static    attribute hello : String;,static    attribute hello : String;
+TP,static operation initialiseClass(),static operation initialiseClass()
+TP,pre: true  post: true,pre: true  post: true
+TP,"activity:     OclFile[""System.out""].println(OclType[""AbstractClass""].getName() + "": static block runtime"") ;","activity:     OclFile[""System.out""].println(OclType[""AbstractClass""].getName() + "": static block runtime"") ;"
+TP,"hello := ""hello from "" + OclType[""AbstractClass""].getName() ;","hello := ""hello from "" + OclType[""AbstractClass""].getName() ;"
+TP,;,;
+TP,operation initialiseInstance(),operation initialiseInstance()
+TP,"activity:     OclFile[""System.out""].println(OclType[""AbstractClass""].getName() + "": instance block runtime"") ;","activity:     OclFile[""System.out""].println(OclType[""AbstractClass""].getName() + "": instance block runtime"") ;"
+TP,static operation newAbstractClass() : AbstractClass,static operation newAbstractClass() : AbstractClass
+TP,pre: true,pre: true
+TP,post: true,post: true
+TP,activity:,activity:
+TP,( var self : AbstractClass ;,( var self : AbstractClass ;
+TP,self := createAbstractClass();,self := createAbstractClass();
+TP,self.initialise();,self.initialise();
+TP,return self );,return self );
+TP,operation initialise() : void,operation initialise() : void
+TP,"activity: (     OclFile[""System.out""].println(OclType[""AbstractClass""].getName() + "": constructor runtime"") );","activity: (     OclFile[""System.out""].println(OclType[""AbstractClass""].getName() + "": constructor runtime"") );"
+TP,static   operation hello() : void,static   operation hello() : void
+TP,"activity: (     OclFile[""System.out""].println(hello) );","activity: (     OclFile[""System.out""].println(hello) );"
+TP,},}
+TP,class CustomClass extends AbstractClass {,class CustomClass extends AbstractClass {
+TP,"activity:     OclFile[""System.out""].println(OclType[""CustomClass""].getName() + "": static block runtime"") ;","activity:     OclFile[""System.out""].println(OclType[""CustomClass""].getName() + "": static block runtime"") ;"
+TP,"activity:     OclFile[""System.out""].println(OclType[""CustomClass""].getName() + "": instance block runtime"") ;","activity:     OclFile[""System.out""].println(OclType[""CustomClass""].getName() + "": instance block runtime"") ;"
+TP,static operation newCustomClass() : CustomClass,static operation newCustomClass() : CustomClass
+TP,( var self : CustomClass ;,( var self : CustomClass ;
+TP,self := createCustomClass();,self := createCustomClass();
+TP,activity: (     execute super() ;,activity: (     execute super() ;
+TP,"OclFile[""System.out""].println(OclType[""CustomClass""].getName() + "": constructor runtime"") );","OclFile[""System.out""].println(OclType[""CustomClass""].getName() + "": constructor runtime"") );"
+TP,static   operation main( args : Sequence(String)) : void,static   operation main( args : Sequence(String)) : void
+TP,activity: (     var nc : CustomClass ; nc := CustomClass.newCustomClass() ;,activity: (     var nc : CustomClass ; nc := CustomClass.newCustomClass() ;
+TP,execute hello() ;,execute hello() ;
+TP,AbstractClass.hello() );,AbstractClass.hello() );

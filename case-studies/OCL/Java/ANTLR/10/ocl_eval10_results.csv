@@ -1,0 +1,28 @@
+Type,Tool_OCL,GroundTruth_OCL
+TP,class Foo {,class Foo {
+TP,static operation newFoo() : Foo,static operation newFoo() : Foo
+TP,pre: true,pre: true
+TP,post: true,post: true
+TP,activity:,activity:
+TP,( var self : Foo ;,( var self : Foo ;
+TP,self := createFoo();,self := createFoo();
+TP,self.initialise();,self.initialise();
+TP,return self );,return self );
+TP,operation initialise() : void,operation initialise() : void
+TP,pre: true  post: true,pre: true  post: true
+TP,"activity: (     OclFile[""System.out""].println(OclType[""Foo""].getName() + "": constructor runtime"") );","activity: (     OclFile[""System.out""].println(OclType[""Foo""].getName() + "": constructor runtime"") );"
+TP,"static operation newFoo( a : int, b : int) : Foo","static operation newFoo( a : int, b : int) : Foo"
+TP,"self.initialise(a, b);","self.initialise(a, b);"
+TP,"operation initialise( a : int, b : int) : void","operation initialise( a : int, b : int) : void"
+TP,"operation bar( a : int, b : int) : int","operation bar( a : int, b : int) : int"
+TP,activity: (     return (a * 2) + b );,activity: (     return (a * 2) + b );
+TP,operation bar( a : int) : int,operation bar( a : int) : int
+TP,activity: (     return a * 2 );,activity: (     return a * 2 );
+TP,operation openStream() : void,operation openStream() : void
+TP,activity: skip;,activity: skip;
+TP,"operation printReport( header : String, numbers : Sequence(int)) : void","operation printReport( header : String, numbers : Sequence(int)) : void"
+TP,"activity: (     OclFile[""System.out""].println(header) ;","activity: (     OclFile[""System.out""].println(header) ;"
+TP,"for (num : numbers) do ( (     OclFile[""System.out""].println(num) )  ) );","for (num : numbers) do ( (     OclFile[""System.out""].println(num) )  ) );"
+TP,},}
+FP,"activity: (     OclFile[""System.out""].println(OclType[""Foo""].getName() + "": overloaded constructor "" + self) );",
+FN,,"activity: (     OclFile[""System.out""].println(OclType[""Foo""].getName() + "": overloaded constructor "" + self.initialise()) );"

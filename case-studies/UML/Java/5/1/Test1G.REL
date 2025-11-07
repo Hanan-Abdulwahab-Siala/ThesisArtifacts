@@ -1,0 +1,20 @@
+[
+    {
+        "Relationship": "Inheritance",
+        "Source": "Type",
+        "Target": "ModelElement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Type",
+        "Target": "Type",
+        "Multiplicity1": "0..1",
+        "Role1": "elementType",
+        "Multiplicity2": "",
+        "Role2": ""
+    }
+]

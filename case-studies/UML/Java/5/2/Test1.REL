@@ -1,0 +1,11 @@
+[
+    {
+        "Relationship": "Dependency",
+        "Source": "CGSpec",
+        "Target": "EnumLiteral",
+        "Multiplicity1": "",
+        "Role1": "cgs",
+        "Multiplicity2": "",
+        "Role2": ""
+    }
+]
