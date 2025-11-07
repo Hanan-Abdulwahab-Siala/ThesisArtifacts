@@ -9,6 +9,9 @@ Contains models to abstract UML and OCL representations from Java and Python pro
 ## 2. [evaluation](./evaluation/)  
 Provides case studies used to evaluate the LLM4Models approach.
 ## 3. [images](./LLM4Models.png/)
+
+## 3. ![images](LLM4Models.png)
+
 ## 4. [src](./src/)
 Contains the most important scripts used in the thesis work.
 ## 5. [training datasets](./training-datasets/)
