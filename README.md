@@ -4,13 +4,13 @@
 
 This repository contains all artifacts used in my thesis, which are classified into four main groups:
 
-## 1. [Training datasets](./Training-datasets/)
+## 1. [training datasets](./training-datasets/)
 Contains training datasets.
 ## 2. [LLM4Models](./LLM4Models/)  
 Contains models to abstract UML and OCL representations from Java and Python programs.
-## 3. [Evaluation](./Evaluation/)  
+## 3. [evaluation](./evaluation/)  
 Provides case studies used to evaluate the LLM4Models approach.
-## 4. [Scripts](./Scripts/)
+## 4. [src](./src/)
 Contains the most important scripts used in the thesis work.
 
 ---
@@ -19,8 +19,18 @@ Contains the most important scripts used in the thesis work.
 
 ```
 .
-├── Evaluation
-│   ├── Experiments
+├── LLM4Models                  # The generated LLM4Models LLM
+│   ├── Java-OCL
+│   ├── Java-UML                
+│   ├── Python-OCL              
+│   ├── Python-UML
+├── evaluation
+│   ├── case-studies
+│   │   ├── Java-OCL
+│   │   ├── Java-UML                
+│   │   ├── Python-OCL              
+│   │   ├── Python-UML
+│   ├── experiments
 │   │   ├── LLM4Models
 │   │   │   ├── Java-OCL
 │   │   │   ├── Java-UML                
@@ -31,23 +41,13 @@ Contains the most important scripts used in the thesis work.
 │   │   │   ├── Java-UML                
 │   │   │   ├── Python-OCL              
 │   │   │   ├── Python-UML
-│   ├── Case-studies
-│   │   ├── Java-OCL
-│   │   ├── Java-UML                
-│   │   ├── Python-OCL              
-│   │   ├── Python-UML
-├── Images
-├── LLM4Models                  # The generated LLM4Models LLM
-│   ├── Java-OCL
-│   ├── Java-UML                
-│   ├── Python-OCL              
-│   ├── Python-UML
-├── Scripts                     
-│   ├── Dataset                 # Scripts to construct the training datasets
-│   ├── Fine-tuning             # Scripts to fine-tune Mistral-7B LLM   
-│   ├── Inference               # Scripts for inferring UML class diagrams and OCL specification
-│   ├── Parsers                 # Java2JSON Parser and Python2JSON Parser
-├── Training-datasets
+├── images
+├── src                     
+│   ├── dataset                 # Scripts to construct the training datasets
+│   ├── fine-tuning             # Scripts to fine-tune Mistral-7B LLM   
+│   ├── inference               # Scripts for inferring UML class diagrams and OCL specification
+│   ├── parsers                 # Java2JSON Parser and Python2JSON Parser
+├── training-datasets
 │   ├── Java-OCL
 │   ├── Java-UML                
 │   ├── Python-OCL              
