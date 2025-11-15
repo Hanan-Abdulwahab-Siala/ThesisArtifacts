@@ -16,6 +16,11 @@ The models are hosted on the Hugging Face Hub. Below are the available versions:
 
 👉 [https://huggingface.co/HA-Siala/Java-UML-v0.2](https://huggingface.co/HA-Siala/Java-UML-v0.2)
 
+
+### Version 3
+
+👉 [https://huggingface.co/HA-Siala/Java-UML-v0.3](https://huggingface.co/HA-Siala/Java-UML-v0.3)
+
 ---
 
 ## 🚀 Ready-to-Use Models (Adapter + Base Model)
