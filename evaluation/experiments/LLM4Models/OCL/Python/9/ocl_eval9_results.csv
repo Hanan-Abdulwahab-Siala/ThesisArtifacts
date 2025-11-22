@@ -1,0 +1,26 @@
+Type,Tool_OCL,GroundTruth_OCL
+TP,class Animal {,class Animal {
+TP,static operation newAnimal() : Animal,static operation newAnimal() : Animal
+TP,pre: true,pre: true
+TP,post: Animal->exists( _x | result = _x );,post: Animal->exists( _x | result = _x );
+TP,operation sound(),operation sound()
+TP,pre: true post: true,pre: true post: true
+TP,activity:,activity:
+TP,"execute (""Animals make different sounds"")->display();","execute (""Animals make different sounds"")->display();"
+TP,},}
+TP,class Dog extends Animal {,class Dog extends Animal {
+TP,static operation newDog() : Dog,static operation newDog() : Dog
+TP,post: Dog->exists( _x | result = _x );,post: Dog->exists( _x | result = _x );
+TP,"execute (""Dogs bark"")->display();","execute (""Dogs bark"")->display();"
+TP,"class Cat extends Animal, Dog {","class Cat extends Animal, Dog {"
+TP,static operation newCat() : Cat,static operation newCat() : Cat
+TP,post: Cat->exists( _x | result = _x );,post: Cat->exists( _x | result = _x );
+TP,operation initialise(),operation initialise()
+TP,skip ;,skip ;
+TP,class FromPython {,class FromPython {
+TP,activity:     skip ;,activity:     skip ;
+TP,pet.sound() ;,pet.sound() ;
+TP,"execute (""This code demonstrates multiple inheritance in Python."")->display() ;","execute (""This code demonstrates multiple inheritance in Python."")->display() ;"
+TP,"execute (""The method resolution order determines which method is executed."")->display();","execute (""The method resolution order determines which method is executed."")->display();"
+FP,"var pet : Cat := (OclType[""Cat""]).newOclType[""Cat""]() ;",
+FN,,var pet : Cat := (Cat.newCat()).initialise() ;

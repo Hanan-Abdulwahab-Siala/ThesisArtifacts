@@ -1,0 +1,6 @@
+class FromPython {
+  operation initialise()
+  pre: true post: true
+  activity:     var greeting_message : String := "Hello World" ;
+    for char : greeting_message do (    execute ("Current character:")->display());
+}

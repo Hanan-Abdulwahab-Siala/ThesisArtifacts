@@ -1,0 +1,611 @@
+--- ex1.py ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately solves the following Task: 
+
+### Instruction:
+Generate an Object Constraint Language (OCL) for the provided Python code. The output should:
+1. Ensure no repeated or redundant operations or classes.
+2. Include only the OCL code for the provided Python code.
+3. Do not include statements for items not found in the Python code. 
+
+### Input:
+class Person:
+   def __init__(self, full_name, student_id, age, score):
+      self.full_name = full_name
+      self.student_id = student_id
+      self.age = age
+      self.score = score  
+   def increase_score(self, additional_score):
+      self.score += additional_score
+   def celebrate_birthday(self):
+      self.age += 1
+      return self.age
+student = Person("Jorge", "123", 18, 80)  
+new_age = student.celebrate_birthday()  
+print(new_age)  
+
+### Response:
+``` 
+context Person:
+  property full_name: String
+  property student_id: String
+  property age: Integer
+  property score: Integer
+  def increase_score(self, additional_score): 
+    self.score += additional_score
+  def celebrate_birthday(self): 
+    self.age += 1
+    return self.age
+context Student:
+  property student_id: String
+  property age: Integer
+  property score: Integer
+  def increase_score(self, additional_score): 
+    self.score += additional_score
+  def celebrate_birthday(self): 
+    self.age += 1
+    return self.age
+``` 
+---------------------------------------
+Classes=1/1
+Attributes=4/4
+Operations=2/4
+Statements=7/10
+Accuracy=14/19
+Consistency=14/23
+---------------------------------------
+The syntactic correctness:
+
+line 2:11 mismatched input 'full_name' expecting 'inv'
+(contextConstraint (invConstraint context (identifier Person) : (identifier property) full_name : String property student_id : String property age : Integer property score : Integer def increase_score ( self , additional_score ) : self . score + = additional_score def celebrate_birthday ( self ) : self . age + = 1 return self . age context Student : property student_id : String property age : Integer property score : Integer def increase_score ( self , additional_score ) : self . score + = additional_score def celebrate_birthday ( self ) : self . age + = 1 return self . age))
+
+Result: Fail
+---------------------------------------
+---------------------------------------
+--- ex2.py ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately solves the following Task: 
+
+### Instruction:
+Generate an Object Constraint Language (OCL) for the provided Python code. The output should:
+1. Ensure no repeated or redundant operations or classes.
+2. Include only the OCL code for the provided Python code.
+3. Do not include statements for items not found in the Python code. 
+
+### Input:
+product = 15 * 3  
+value = 12  
+product += 10  
+value *= 12  
+print("Updated product:", product)  
+print("Updated value:", value)  
+numbers = [11, 12, 13, 14, 15]  
+squared_result = {num: num * num for num in numbers}  
+print("Squared numbers:", squared_result)
+
+### Response:
+```ocd
+context Math:  
+  class:  
+    product: Integer  
+    value: Integer  
+  operation:  
+    product: product * 15 * 3  
+    value: value * 12  
+    product: product + 10  
+    value: value * 12  
+    print: print("Updated product:", product)  
+    print: print("Updated value:", value)  
+    numbers: [11, 12, 13, 14, 15]  
+    squared_result: {num: num * num for num in numbers}  
+    print: print("Squared numbers:", squared_result)  
+```
+---------------------------------------
+Classes=1/1
+Functions=1/1
+Variables=4/4
+Statements=5/9
+Accuracy=11/15
+Consistency=11/15
+---------------------------------------
+The syntactic correctness:
+
+line 2:2 mismatched input 'class' expecting ID
+(contextConstraint (invConstraint context (identifier Math) : (identifier class : product : Integer value : Integer operation : product : product * 15 * 3 value : value * 12 product : product + 10 value : value * 12 print : print ( "Updated product:" , product ) print : print ( "Updated value:" , value ) numbers : [ 11 , 12 , 13 , 14 , 15 ] squared_result : { num : num * num for num in numbers } print : print ( "Squared numbers:" , squared_result ))))
+
+Result: Fail
+---------------------------------------
+---------------------------------------
+--- ex3.py ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately solves the following Task: 
+
+### Instruction:
+Generate an Object Constraint Language (OCL) for the provided Python code. The output should:
+1. Ensure no repeated or redundant operations or classes.
+2. Include only the OCL code for the provided Python code.
+3. Do not include statements for items not found in the Python code. 
+
+### Input:
+def multiply_numbers(num1, num2):
+   result = num1 * num2  
+   print("Multiplication result:", result)  
+multiply_numbers(20, 2)  
+
+### Response:
+``` 
+// Object Constraint Language (OCL) for the provided Python code.
+context Object {
+  def multiply_numbers(num1: Integer, num2: Integer): Integer {
+    result := num1 * num2 
+    print("Multiplication result:", result) 
+  }
+}
+``` 
+---------------------------------------
+classes 1/1
+functions 1/2
+variables 1/1
+statements 2/3
+Accuracy 5/7
+Consistency 5/5
+---------------------------------------
+The syntactic correctness:
+
+line 1:15 no viable alternative at input 'contextObject{'
+(contextConstraint context Object { def multiply_numbers ( num1 : Integer , num2 : Integer ) : Integer { result := num1 * num2 print ( "Multiplication result:" , result ) } })
+
+Result: Fail
+---------------------------------------
+---------------------------------------
+--- ex4.py ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately solves the following Task: 
+
+### Instruction:
+Generate an Object Constraint Language (OCL) for the provided Python code. The output should:
+1. Ensure no repeated or redundant operations or classes.
+2. Include only the OCL code for the provided Python code.
+3. Do not include statements for items not found in the Python code. 
+
+### Input:
+number = 11  
+if number > 10:
+   result = number * number  
+elif number > 0:
+   result = number * number * number  
+else:
+   result = -number  
+print("Final result:", result)
+
+### Response:
+```OCL
+context Python  
+inv:  
+    number = 11  
+    if number > 10 then  
+        result = number * number  
+    elif number > 0 then  
+        result = number * number * number  
+    else  
+        result = -number  
+    end  
+    print("Final result:", result)  
+```
+---------------------------------------
+Classes: 1/1
+Variables: 2/2
+Operations: 0/1
+Statements: 7/7
+Accuracy: 10/11
+Consistency 10/10
+---------------------------------------
+The syntactic correctness:
+
+(contextConstraint (invConstraint context (identifier Python) inv : (expression (logicalExpression (equalityExpression (additiveExpression (factorExpression (factor2Expression (arrowExpression (basicExpression (identifier number)))))) = (additiveExpression (factorExpression (factor2Expression (arrowExpression (basicExpression 11))))))))))
+
+Result: Pass
+---------------------------------------
+---------------------------------------
+--- ex5.py ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately solves the following Task: 
+
+### Instruction:
+Generate an Object Constraint Language (OCL) for the provided Python code. The output should:
+1. Ensure no repeated or redundant operations or classes.
+2. Include only the OCL code for the provided Python code.
+3. Do not include statements for items not found in the Python code. 
+
+### Input:
+input_file = open('MyFile', 'r')  
+file_content = input_file.read()  
+input_file.close()  
+output_file = open('MyFile', 'a')  
+output_file.write(file_content)  
+output_file.close()  
+
+### Response:
+```mermaid
+classDiagram
+    class MyFile {
+        -input_file
+        -file_content
+        -output_file
+        -input_file = open('MyFile', 'r')
+        -file_content = input_file.read()
+        -input_file.close()
+        -output_file = open('MyFile', 'a')
+        -output_file.write(file_content)
+        -output_file.close()
+    }
+```
+---------------------------------------
+Classes=1/1
+Operations=0/1
+Statements=0/6
+Variables=3/3
+Accuracy=4/11
+Consistency=4/14
+---------------------------------------
+The syntactic correctness:
+
+line 1:0 mismatched input 'classDiagram' expecting 'context'
+(contextConstraint classDiagram class MyFile { - input_file - file_content - output_file - input_file = open ( 'MyFile' , 'r' ) - file_content = input_file . read ( ) - input_file . close ( ) - output_file = open ( 'MyFile' , 'a' ) - output_file . write ( file_content ) - output_file . close ( ) })
+
+Result: Fail
+---------------------------------------
+---------------------------------------
+--- ex6.py ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately solves the following Task: 
+
+### Instruction:
+Generate an Object Constraint Language (OCL) for the provided Python code. The output should:
+1. Ensure no repeated or redundant operations or classes.
+2. Include only the OCL code for the provided Python code.
+3. Do not include statements for items not found in the Python code. 
+
+### Input:
+letters_to_numbers = {"X": 21, "Y": 22, "Z": 23}  
+for letter in letters_to_numbers.keys():
+   print("Letter:", letter)  
+
+### Response:
+```OCL
+context PythonClass
+{
+    let letters_to_numbers : Map<String, Integer>
+    let letter : String
+    let number : Integer
+    
+    function print_letter
+    {
+        letter := letters_to_numbers->get(letter)
+        print("Letter:", letter)
+    }
+    
+    function print_number
+    {
+        number := letters_to_numbers->get(number)
+        print("Number:", number)
+    }
+}
+```
+---------------------------------------
+Classes: 1/1
+Operations 0/1
+Variables: 2/2
+Statements: 1/3
+Accuracy = 4/7
+Consistency = 4/12
+---------------------------------------
+The syntactic correctness:
+
+line 2:0 no viable alternative at input 'contextPythonClass{'
+(contextConstraint context PythonClass { let letters_to_numbers : Map < String , Integer > let letter : String let number : Integer function print_letter { letter := letters_to_numbers - > get ( letter ) print ( "Letter:" , letter ) } function print_number { number := letters_to_numbers - > get ( number ) print ( "Number:" , number ) } })
+
+Result: Fail
+---------------------------------------
+---------------------------------------
+--- ex7.py ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately solves the following Task: 
+
+### Instruction:
+Generate an Object Constraint Language (OCL) for the provided Python code. The output should:
+1. Ensure no repeated or redundant operations or classes.
+2. Include only the OCL code for the provided Python code.
+3. Do not include statements for items not found in the Python code. 
+
+### Input:
+greeting_message = "Hello World"  
+for char in greeting_message:  
+   print("Current character:", char)  
+
+### Response:
+greeting_message : String = "Hello World"  
+greeting_message->forAll(c : Character | c->print("Current character:")) 
+---------------------------------------
+Classes=0/1
+Operations=0/1
+Variables=1/2
+Statements=3/3
+Accuracy=4/7
+Consistency=4/5
+---------------------------------------
+The syntactic correctness:
+
+line 1:0 mismatched input 'greeting_message' expecting 'context'
+(contextConstraint greeting_message : String = "Hello World" greeting_message ->forAll ( c : Character | c - > print ( "Current character:" ) ))
+
+Result: Fail
+---------------------------------------
+---------------------------------------
+--- ex8.py ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately solves the following Task: 
+
+### Instruction:
+Generate an Object Constraint Language (OCL) for the provided Python code. The output should:
+1. Ensure no repeated or redundant operations or classes.
+2. Include only the OCL code for the provided Python code.
+3. Do not include statements for items not found in the Python code. 
+
+### Input:
+def calculate_product(value1 = 10):
+   multiplier = 100  
+   result_value = value1  
+   return multiplier * result_value  
+
+### Response:
+context ProductCalculator:  
+    function calculate_product():  
+        let value1: Integer = 10  
+        let multiplier: Integer = 100  
+        let result_value: Integer = value1  
+        return multiplier * result_value  
+---------------------------------------
+Classes=1/1
+Operations=1/2
+Variables=3/3
+Statements=3/3
+Accuracy=9/9
+Consistency=9/9
+---------------------------------------
+The syntactic correctness:
+
+line 2:13 mismatched input 'calculate_product' expecting 'inv'
+(contextConstraint (invConstraint context (identifier ProductCalculator) : (identifier function) calculate_product ( ) : let value1 : Integer = 10 let multiplier : Integer = 100 let result_value : Integer = value1 return multiplier * result_value))
+
+Result: Fail
+---------------------------------------
+---------------------------------------
+--- ex9.py ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately solves the following Task: 
+
+### Instruction:
+Generate an Object Constraint Language (OCL) for the provided Python code. The output should:
+1. Ensure no repeated or redundant operations or classes.
+2. Include only the OCL code for the provided Python code.
+3. Do not include statements for items not found in the Python code. 
+
+### Input:
+class Animal:
+   def sound(self):
+      print("Animals make different sounds")
+class Dog(Animal):
+   def sound(self):
+      print("Dogs bark")
+class Cat(Animal, Dog):
+   pass
+pet = Cat()
+pet.sound()
+print("This code demonstrates multiple inheritance in Python.")
+print("The method resolution order determines which method is executed.")
+
+### Response:
+The OCL code for the provided Python code is as follows:
+context Animal: 
+   def sound(): 
+      self.sound()
+      print("Animals make different sounds")
+context Dog: 
+   def sound(): 
+      self.sound()
+      print("Dogs bark")
+context Cat: 
+   def sound(): 
+      self.sound()
+      print("Cats meow")
+The OCL code ensures no repeated or redundant operations or classes by defining the context for each class and defining the method for each class. The output includes only the OCL code for the provided Python code, and does not include statements for items not found in the Python code.
+---------------------------------------
+Classes=3/3
+Functions=0/4
+Statements=2/6
+Variables=1/1
+Accuracy=6/14
+Consistency=6/7
+---------------------------------------
+The syntactic correctness:
+
+line 2:7 mismatched input 'sound' expecting 'inv'
+(contextConstraint (invConstraint context (identifier Animal) : (identifier def) sound ( ) : self . sound ( ) print ( "Animals make different sounds" ) context Dog : def sound ( ) : self . sound ( ) print ( "Dogs bark" ) context Cat : def sound ( ) : self . sound ( ) print ( "Cats meow" )))
+
+Result: Fail
+---------------------------------------
+---------------------------------------
+--- ex10.py ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately solves the following Task: 
+
+### Instruction:
+Generate an Object Constraint Language (OCL) for the provided Python code. The output should:
+1. Ensure no repeated or redundant operations or classes.
+2. Include only the OCL code for the provided Python code.
+3. Do not include statements for items not found in the Python code. 
+
+### Input:
+num = -54.3
+absolute_value = abs(num)
+print(absolute_value)
+rounded_value = round(num)
+print(rounded_value)
+
+### Response:
+The OCL code for the provided Python code is as follows:
+``` 
+context Object:
+  operation: abs(x: Integer) : Integer
+    pre: x >= 0
+    post: result = x
+  operation: round(x: Integer) : Integer
+    pre: x >= 0
+    post: result = x
+```
+Explanation: The above OCL code ensures that no repeated or redundant operations or classes are included in the output. It also includes only the OCL code for the provided Python code and does not include statements for items not found in the Python code. The `abs` operation is used to find the absolute value of a number, while the `round` operation is used to round a number to the nearest integer. Both operations have preconditions that ensure they are only applied to positive numbers. Finally, both operations have postconditions that specify the result of each operation.
+---------------------------------------
+Classes=1/1
+Operations=0/1
+Statements=1/5
+Variables=0/3
+Accuracy=2/10
+Consistency=2/4
+---------------------------------------
+The syntactic correctness:
+
+line 2:2 mismatched input 'operation' expecting ID
+(contextConstraint (invConstraint context (identifier Object) : (identifier operation : abs ( x : Integer ) : Integer pre: x >= 0 post: result = x operation : round ( x : Integer ) : Integer pre: x >= 0 post: result = x)))
+
+Result: Fail
+---------------------------------------
+---------------------------------------
+--- ex11.py ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately solves the following Task: 
+
+### Instruction:
+Generate an Object Constraint Language (OCL) for the provided Python code. The output should:
+1. Ensure no repeated or redundant operations or classes.
+2. Include only the OCL code for the provided Python code.
+3. Do not include statements for items not found in the Python code. 
+
+### Input:
+text_original = "Hello World"
+text_capitalized = text_original.capitalize()
+text_modified = text_original.replace(" ", "*")
+print(text_capitalized)
+print(text_modified)
+
+### Response:
+context
+    context model
+        context Text
+            context Text
+                property original : String
+                property capitalized : String
+                property modified : String
+            end
+        end
+    end
+end
+---------------------------------------
+Classes=1/1
+Operations=0/1
+Statements=0/5
+Variables=0/3
+Accuracy=1/10
+Consistency=1/7
+---------------------------------------
+The syntactic correctness:
+
+line 2:4 no viable alternative at input 'contextcontext'
+(contextConstraint context context model context Text context Text property original : String property capitalized : String property modified : String end end end end)
+
+Result: Fail
+---------------------------------------
+---------------------------------------
+--- ex12.py ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately solves the following Task: 
+
+### Instruction:
+Generate an Object Constraint Language (OCL) for the provided Python code. The output should:
+1. Ensure no repeated or redundant operations or classes.
+2. Include only the OCL code for the provided Python code.
+3. Do not include statements for items not found in the Python code. 
+
+### Input:
+import math
+items_list = ["AAA", "BBB", "CCC","DDD"]
+list_length = len(items_list)
+sine_value = math.sin(5.0)
+cosine_value = math.cos(5.0)
+power_result = math.pow(list_length, 2)
+print(sine_value)
+print(cosine_value)
+print(power_result)
+
+### Response:
+```OCL
+context PythonCode
+{
+    itemsList : String[4] = {"AAA", "BBB", "CCC", "DDD"}
+    listLength : Integer = itemsList->size()
+    sineValue : Float = math.sin(5.0)
+    cosineValue : Float = math.cos(5.0)
+    powerResult : Float = math.pow(listLength, 2)
+}
+```
+---------------------------------------
+Classes=1/1
+Operations=0/1
+Statements=5/8
+Variables=5/5
+Accuracy=11/15
+Consistency=11/11
+---------------------------------------
+The syntactic correctness:
+
+line 2:0 no viable alternative at input 'contextPythonCode{'
+(contextConstraint context PythonCode { itemsList : String [ 4 ] = { "AAA" , "BBB" , "CCC" , "DDD" } listLength : Integer = itemsList ->size() sineValue : Float = math . sin ( 5.0 ) cosineValue : Float = math . cos ( 5.0 ) powerResult : Float = math . pow ( listLength , 2 ) })
+
+Result: Fail
+---------------------------------------
+---------------------------------------
+--- ex13.py ---
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately solves the following Task: 
+
+### Instruction:
+Generate an Object Constraint Language (OCL) for the provided Python code. The output should:
+1. Ensure no repeated or redundant operations or classes.
+2. Include only the OCL code for the provided Python code.
+3. Do not include statements for items not found in the Python code. 
+
+### Input:
+import pandas as pd
+data = pd.read_csv("Data/Data1.csv")
+marks_column = data["Marks"]
+average_marks = marks_column.mean()
+print(f"The average marks are: {average_marks}")
+
+### Response:
+The Object Constraint Language (OCL) for the provided Python code is as follows:
+
+```uml
+context Marks
+    attribute marks: Integer
+    attribute average: Integer
+    operation getAverageMarks(): Integer
+        pre: self.marks.size() > 0
+        post: result = self.marks.sum() / self.marks.size()
+    end
+end
+```
+---------------------------------------
+Classes: 1/1
+Operations: 0/1
+Variables: 0/3
+Statements: 0/4
+Accuracy = 1/9
+Consistency: 1/6
+---------------------------------------
+The syntactic correctness:
+
+line 2:4 no viable alternative at input 'contextMarksattribute'
+(contextConstraint context Marks attribute marks : Integer attribute average : Integer operation getAverageMarks ( ) : Integer pre: self . marks . size ( ) > 0 post: result = self . marks . sum ( ) / self . marks . size ( ) end end)
+
+Result: Fail
+---------------------------------------
+---------------------------------------
+
+syntactic correctness=1/13

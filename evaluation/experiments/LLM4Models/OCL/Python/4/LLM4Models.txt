@@ -1,0 +1,17 @@
+class FromPython {
+  operation initialise()
+  pre: true post: true
+  activity:     var number : int := 11 ;
+    if number > 10 then  (
+      var result : int := number * number
+    )
+    else (if number > 0 then
+   (
+      result := number * number * number
+)
+    else (
+      result := -number
+      )    )
+ ;
+    execute ("Final result:")->display();
+}

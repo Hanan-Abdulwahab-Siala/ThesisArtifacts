@@ -1,0 +1,17 @@
+class Main {
+  static   operation main( args : Sequence(String)) : void
+  pre: true
+  post: true
+  activity: (     var activations : Sequence(double) ; activations := Integer.subrange(1,10)->collect(0.0) ;
+     var checkpoints : Sequence(double) ; checkpoints := Integer.subrange(1,10)->collect(0.0) ;
+        var i : int ; i := 0 ; while i < 10 do ( (     activations[i+1] := MathLib.random() )  ;     i := i + 1 ) ; 
+    var useCheckpointing : boolean ; useCheckpointing := true ;
+    if (useCheckpointing) then (     for _x : Integer.subrange(1,10) do checkpoints[0 + _x] := activations[0 + _x] ) else skip ; 
+        var i : int ; i := 0 ; while i < 10 do ( (     var source : Sequence(double) ; source := if useCheckpointing then checkpoints else activations endif ;
+     activations[i+1] := source[i+1] - 0.1 )  ;     i := i + 1 ) ; 
+    OclFile["System.out"].println(java.util.Arrays.toString(activations)) ; 
+ );
+
+}
+
+ <EOF>

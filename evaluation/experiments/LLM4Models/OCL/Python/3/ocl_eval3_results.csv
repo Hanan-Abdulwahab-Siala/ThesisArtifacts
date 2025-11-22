@@ -1,0 +1,11 @@
+Type,Tool_OCL,GroundTruth_OCL
+TP,class FromPython {,class FromPython {
+TP,operation initialise(),operation initialise()
+TP,pre: true post: true,pre: true post: true
+TP,activity:     skip ;,activity:     skip ;
+TP,"multiply_numbers(20, 2);","multiply_numbers(20, 2);"
+TP,"operation multiply_numbers(num1 : OclAny, num2 : OclAny)","operation multiply_numbers(num1 : OclAny, num2 : OclAny)"
+TP,activity:,activity:
+TP,var result : double := num1 * num2 ;,var result : double := num1 * num2 ;
+TP,"execute (""Multiplication result:"")->display();","execute (""Multiplication result:"")->display();"
+TP,},}

@@ -1,0 +1,70 @@
+[
+    {
+        "ClassInterface": "Class",
+        "name": "Engine",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [],
+        "variables": [
+            {
+                "name": "horsepower",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": ""
+            }
+        ],
+        "methods": []
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Car",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [],
+        "variables": [
+            {
+                "name": "speed",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Real",
+                "Visibility": ""
+            },
+            {
+                "name": "fuelEfficiency",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Real",
+                "Visibility": ""
+            }
+        ],
+        "methods": []
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Driver",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [],
+        "variables": [
+            {
+                "name": "experience",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Real",
+                "Visibility": ""
+            },
+            {
+                "name": "rating",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Real",
+                "Visibility": ""
+            }
+        ],
+        "methods": []
+    }
+]

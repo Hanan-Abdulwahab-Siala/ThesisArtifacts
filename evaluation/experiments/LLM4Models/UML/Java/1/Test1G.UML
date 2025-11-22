@@ -1,0 +1,118 @@
+[
+    {
+        "ClassInterface": "Class",
+        "name": "AbstractContract",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "abstract",
+        "superclass": null,
+        "interfaces": [],
+        "constructors": [],
+        "variables": [],
+        "methods": [
+            {
+                "name": "validateTransaction",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "boolean",
+                "returnType2": "",
+                "returnType3": "BasicType(dimensions=[], name=boolean)",
+                "returntypeprint": "Boolean",
+                "parameters": [
+                    {
+                        "name": "senderID",
+                        "type": "int",
+                        "type2": "",
+                        "type3": "BasicType(dimensions=[], name=int)",
+                        "typeprint": "Integer"
+                    },
+                    {
+                        "name": "receiverID",
+                        "type": "int",
+                        "type2": "",
+                        "type3": "BasicType(dimensions=[], name=int)",
+                        "typeprint": "Integer"
+                    }
+                ],
+                "localVariables": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Payment",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "superclass": "AbstractContract",
+        "interfaces": [],
+        "constructors": [],
+        "variables": [
+            {
+                "name": "senderID",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "type": "int",
+                "type2": "",
+                "type3": "BasicType(dimensions=[], name=int)",
+                "typeprint": "Integer",
+                "IsNew": false,
+                "WhereNew": "",
+                "IsParameterConstructor": false,
+                "IsParameterMethod": false,
+                "IsSetter": false,
+                "IsConstructor": false,
+                "AssignedInConstructor": false,
+                "AssignedInMethod": false,
+                "IsArray": false,
+                "Visibility": "private"
+            },
+            {
+                "name": "receiverID",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "type": "int",
+                "type2": "",
+                "type3": "BasicType(dimensions=[], name=int)",
+                "typeprint": "Integer",
+                "IsNew": false,
+                "WhereNew": "",
+                "IsParameterConstructor": false,
+                "IsParameterMethod": false,
+                "IsSetter": false,
+                "IsConstructor": false,
+                "AssignedInConstructor": false,
+                "AssignedInMethod": false,
+                "IsArray": false,
+                "Visibility": "private"
+            }
+        ],
+        "methods": [
+            {
+                "name": "getSenderID",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "int",
+                "returnType2": "",
+                "returnType3": "BasicType(dimensions=[], name=int)",
+                "returntypeprint": "Integer",
+                "parameters": [],
+                "localVariables": []
+            },
+            {
+                "name": "getReceiverID",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "int",
+                "returnType2": "",
+                "returnType3": "BasicType(dimensions=[], name=int)",
+                "returntypeprint": "Integer",
+                "parameters": [],
+                "localVariables": []
+            }
+        ]
+    }
+]

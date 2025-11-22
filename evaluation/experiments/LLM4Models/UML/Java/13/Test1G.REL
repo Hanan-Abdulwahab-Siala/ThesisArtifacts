@@ -1,0 +1,12 @@
+[
+    {
+        "Relationship": "Aggregation",
+        "Source": "Item",
+        "Target": "Container",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "1..1",
+        "Role2": "",
+        "Flag": false
+    }
+]

@@ -1,0 +1,21 @@
+class BinarySearchAlgorithm {
+  static   operation searchElement( sortedArray : Sequence(int), start : int, end : int, target : int) : int
+  pre: true
+  post: true
+  activity: (     if (end >= start) then (     var middle : int ; middle := start + (end - start) / 2 ;
+     if (sortedArray[middle+1] = target) then     return middle else skip ; 
+     if (sortedArray[middle+1] > target) then     return searchElement(sortedArray, start, middle - 1, target) else skip ; 
+     return searchElement(sortedArray, middle + 1, end, target) ) else skip ; 
+     return -1 );
+
+  static   operation main( args : Sequence(String)) : void
+  pre: true
+  post: true
+  activity: (     var numbers : Sequence(int) ; numbers := Sequence{1,3,5,7,9,11,13} ;
+     var target : int ; target := 7 ;
+     var result : int ; result := searchElement(numbers, 0, numbers->size() - 1, target) ;
+     if (result /= -1) then     OclFile["System.out"].println("Element found at index: " + result) ; else     OclFile["System.out"].println("Element not found.") ; );
+
+}
+
+ <EOF>

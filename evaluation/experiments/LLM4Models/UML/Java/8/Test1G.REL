@@ -1,0 +1,12 @@
+[
+    {
+        "Relationship": "Dependency",
+        "Source": "Car",
+        "Target": "Engine",
+        "Multiplicity1": "",
+        "Role1": "engine",
+        "Multiplicity2": "",
+        "Role2": "",
+        "Flag": true
+    }
+]
