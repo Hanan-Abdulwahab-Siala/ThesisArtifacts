@@ -1,0 +1,92 @@
+[
+    {
+        "Relationship": "Inheritance",
+        "Source": "BachelourStudent",
+        "Target": "Student",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Realization",
+        "Source": "BachelourStudent",
+        "Target": "ProjectScoreBehaviour",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Inheritance",
+        "Source": "MasterStudent",
+        "Target": "Student",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Realization",
+        "Source": "MasterStudent",
+        "Target": "ConferenceScoreBehaviour",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Inheritance",
+        "Source": "PhDStudent",
+        "Target": "MasterStudent",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Realization",
+        "Source": "PhDStudent",
+        "Target": "ArticleScoreBehaviour",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "Main",
+        "Target": "BachelourStudent",
+        "Multiplicity1": "",
+        "Role1": "bs",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "Main",
+        "Target": "MasterStudent",
+        "Multiplicity1": "",
+        "Role1": "ms",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "Main",
+        "Target": "PhDStudent",
+        "Multiplicity1": "",
+        "Role1": "phd",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "Main",
+        "Target": "Student",
+        "Multiplicity1": "",
+        "Role1": "myStudents",
+        "Multiplicity2": "",
+        "Role2": ""
+    }
+]

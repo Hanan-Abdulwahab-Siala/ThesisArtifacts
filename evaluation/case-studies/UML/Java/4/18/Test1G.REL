@@ -1,0 +1,11 @@
+[
+    {
+        "Relationship": "Inheritance",
+        "Source": "ConditionalStatement",
+        "Target": "Statement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    }
+]
