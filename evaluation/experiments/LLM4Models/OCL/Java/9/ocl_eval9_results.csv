@@ -1,0 +1,17 @@
+Type,Tool_OCL,GroundTruth_OCL
+TP,class CompositeNumberChecker {,class CompositeNumberChecker {
+TP,static   operation isComposite( number : int) : boolean,static   operation isComposite( number : int) : boolean
+TP,pre: true,pre: true
+TP,post: true,post: true
+TP,"activity: (     if (number <= 3) then (     OclFile[""System.out""].println(""False"") ;","activity: (     if (number <= 3) then (     OclFile[""System.out""].println(""False"") ;"
+TP,return false ) else skip ;,return false ) else skip ;
+TP,"if (number mod 2 = 0 or number mod 3 = 0) then (     OclFile[""System.out""].println(""True"") ;","if (number mod 2 = 0 or number mod 3 = 0) then (     OclFile[""System.out""].println(""True"") ;"
+TP,return true ) else skip ;,return true ) else skip ;
+TP,"var i : int ; i := 5 ; while i * i <= number do ( (     if (number mod i = 0 or number mod (i + 2) = 0) then (     OclFile[""System.out""].println(""True"") ;","var i : int ; i := 5 ; while i * i <= number do ( (     if (number mod i = 0 or number mod (i + 2) = 0) then (     OclFile[""System.out""].println(""True"") ;"
+TP,return true ) else skip )  ;     i := i + 6 ) ;,return true ) else skip )  ;     i := i + 6 ) ;
+TP,"OclFile[""System.out""].println(""False"") ;","OclFile[""System.out""].println(""False"") ;"
+TP,static   operation main( args : Sequence(String)) : void,static   operation main( args : Sequence(String)) : void
+TP,activity: (     var num : int ; num := 10 ;,activity: (     var num : int ; num := 10 ;
+TP,execute isComposite(num) );,execute isComposite(num) );
+TP,},}
+TP,return false );,

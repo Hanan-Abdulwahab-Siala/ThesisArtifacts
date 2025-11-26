@@ -1,0 +1,19 @@
+class NonDecreasingNumbersCalculator {
+  static   operation calculateNonDecreasingNumbers( digits : int) : long
+  pre: true
+  post: true
+  activity: (     var base : int ; base := 10 ;
+     var count : long ; count := 1 ;
+         var i : int ; i := 1 ; while i <= digits do ( (     count := count * (base + i - 1) ; 
+     count := count / i )  ;     i := i + 1 ) ; 
+     return count );
+
+  static   operation main( args : Sequence(String)) : void
+  pre: true
+  post: true
+  activity: (     var numberOfDigits : int ; numberOfDigits := 4 ;
+     OclFile["System.out"].println("Total non-decreasing numbers with " + numberOfDigits + " digits: " + calculateNonDecreasingNumbers(numberOfDigits)) );
+
+}
+
+ <EOF>

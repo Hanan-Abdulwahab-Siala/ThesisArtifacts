@@ -1,0 +1,11 @@
+[
+    {
+        "Relationship": "Dependency",
+        "Source": "Operator",
+        "Target": "Vehicle",
+        "Multiplicity1": "",
+        "Role1": "vehicle",
+        "Multiplicity2": "",
+        "Role2": ""
+    }
+]

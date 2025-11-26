@@ -1,0 +1,101 @@
+[
+    {
+        "ClassInterface": "Class",
+        "name": "Container",
+        "Visibility": "public",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "superclass": null,
+        "interfaces": [],
+        "constructors": [
+            {
+                "name": "Container",
+                "Visibility": "public",
+                "parameters": [
+                    {
+                        "typeprint": "Integer",
+                        "name": "containerData"
+                    }
+                ]
+            }
+        ],
+        "variables": [
+            {
+                "name": "containerData",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "type": "int",
+                "type2": "",
+                "type3": "BasicType(dimensions=[], name=int)",
+                "typeprint": "Integer",
+                "IsNew": false,
+                "WhereNew": "",
+                "IsParameterConstructor": true,
+                "IsParameterMethod": false,
+                "IsSetter": true,
+                "IsConstructor": true,
+                "AssignedInConstructor": true,
+                "AssignedInMethod": false,
+                "IsArray": false,
+                "Visibility": "private"
+            }
+        ],
+        "methods": []
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Item",
+        "Visibility": "public",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "superclass": null,
+        "interfaces": [],
+        "constructors": [
+            {
+                "name": "Item",
+                "Visibility": "public",
+                "parameters": [
+                    {
+                        "typeprint": "Integer",
+                        "name": "itemData"
+                    }
+                ]
+            }
+        ],
+        "variables": [
+            {
+                "name": "itemData",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "type": "int",
+                "type2": "",
+                "type3": "BasicType(dimensions=[], name=int)",
+                "typeprint": "Integer",
+                "IsNew": false,
+                "WhereNew": "",
+                "IsParameterConstructor": true,
+                "IsParameterMethod": false,
+                "IsSetter": true,
+                "IsConstructor": true,
+                "AssignedInConstructor": true,
+                "AssignedInMethod": false,
+                "IsArray": false,
+                "Visibility": "private"
+            }
+        ],
+        "methods": [
+            {
+                "name": "display",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "returnType2": "",
+                "returnType3": "None",
+                "returntypeprint": "OclVoid",
+                "parameters": [],
+                "localVariables": []
+            }
+        ]
+    }
+]

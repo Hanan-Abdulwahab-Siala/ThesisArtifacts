@@ -1,0 +1,75 @@
+[
+    {
+        "ClassInterface": "Class",
+        "name": "Item",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "superclasses": [],
+        "variables": [
+            {
+                "name": "name",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "public"
+            }
+        ],
+        "methods": [
+            {
+                "name": "__init__",
+                "Visibility": "",
+                "IsStatic": "",
+                "returnType": [],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    },
+                    {
+                        "name": "name",
+                        "typeprint": "String"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Container",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "superclasses": [],
+        "variables": [],
+        "methods": [
+            {
+                "name": "__init__",
+                "Visibility": "",
+                "IsStatic": "",
+                "returnType": [],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    }
+                ]
+            },
+            {
+                "name": "get_name",
+                "Visibility": "public",
+                "IsStatic": "",
+                "returnType": [],
+                "IsAbstract": "",
+                "parameters": [
+                    {
+                        "name": "self",
+                        "typeprint": "self"
+                    }
+                ]
+            }
+        ]
+    }
+]

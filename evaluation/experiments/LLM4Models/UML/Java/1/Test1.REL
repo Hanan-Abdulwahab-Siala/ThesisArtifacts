@@ -1,0 +1,11 @@
+[
+    {
+        "Relationship": "Inheritance",
+        "Source": "Payment",
+        "Target": "AbstractContract",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    }
+]

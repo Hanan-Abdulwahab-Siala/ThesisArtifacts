@@ -1,0 +1,59 @@
+[
+    {
+        "ClassInterface": "Class",
+        "name": "PowerUnit",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [],
+        "variables": [
+            {
+                "name": "power",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": ""
+            }
+        ],
+        "methods": []
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Vehicle",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [],
+        "variables": [
+            {
+                "name": "speed",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Real",
+                "Visibility": ""
+            },
+            {
+                "name": "fuelEfficiency",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Real",
+                "Visibility": ""
+            }
+        ],
+        "methods": [
+            {
+                "name": "calculatePower",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "PowerUnit",
+                "parameters": [
+                    {
+                        "name": "distance",
+                        "typeprint": "Integer"
+                    }
+                ]
+            }
+        ]
+    }
+]

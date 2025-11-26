@@ -1,0 +1,17 @@
+
+ class FromPython {
+
+
+
+
+  operation initialise()
+  pre: true post: true
+  activity:     skip ;
+    var data : Map := OclFile.newOclFile_Read(OclFile.newOclFile(("Data/Data1.csv"))).readMap() ;
+    var marks_column : OclAny := data->at("Marks") ;
+    var average_marks : double := MathLib.mean(marks_column) ;
+    execute (StringLib.formattedString("The average marks are: {average_marks}"))->display();
+
+
+}
+
