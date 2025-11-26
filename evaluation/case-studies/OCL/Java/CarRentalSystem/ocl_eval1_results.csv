@@ -1,0 +1,780 @@
+Type,Tool_OCL,GroundTruth_OCL
+TP,class User {,class User {
+TP,attribute userID : int := 0;,attribute userID : int := 0;
+TP,"attribute userName : String := ""null"";","attribute userName : String := ""null"";"
+TP,"attribute userFirstName : String := ""null"";","attribute userFirstName : String := ""null"";"
+TP,"attribute userLastName : String := ""null"";","attribute userLastName : String := ""null"";"
+TP,"attribute password : String := ""0123456789"";","attribute password : String := ""0123456789"";"
+TP,"attribute userGroup : String := ""customer"";","attribute userGroup : String := ""customer"";"
+TP,"attribute post : String := ""null"";","attribute post : String := ""null"";"
+TP,"attribute securityProblem : String := ""null"";","attribute securityProblem : String := ""null"";"
+TP,"attribute securityAnswer : String := ""null"";","attribute securityAnswer : String := ""null"";"
+TP,"attribute birthday : String := ""2022-01-01 00:00:00"";","attribute birthday : String := ""2022-01-01 00:00:00"";"
+TP,"attribute gender : String := ""null"";","attribute gender : String := ""null"";"
+TP,"attribute country : String := ""null"";","attribute country : String := ""null"";"
+TP,"attribute DLNumber : String := ""null"";","attribute DLNumber : String := ""null"";"
+TP,"attribute phone : String := ""0123456789"";","attribute phone : String := ""0123456789"";"
+TP,"attribute email : String := ""rent@mail.com"";","attribute email : String := ""rent@mail.com"";"
+TP,"attribute address : String := ""null"";","attribute address : String := ""null"";"
+TP,"attribute about : String := ""null"";","attribute about : String := ""null"";"
+TP,"attribute regTime : String := ""null"";","attribute regTime : String := ""null"";"
+TP,attribute avatar : Image;,attribute avatar : Image;
+TP,static operation newUser() : User,static operation newUser() : User
+TP,pre: true,pre: true
+TP,post: true,post: true
+TP,activity:,activity:
+TP,( var self : User ;,( var self : User ;
+TP,self := createUser();,self := createUser();
+TP,self.initialise();,self.initialise();
+TP,return self );,return self );
+TP,operation initialise() : void,operation initialise() : void
+TP,pre: true  post: true,pre: true  post: true
+TP,activity: (     execute super() );,activity: (     execute super() );
+TP,static operation newUser( email : String) : User,static operation newUser( email : String) : User
+TP,self.initialise(email);,self.initialise(email);
+TP,operation initialise( email : String) : void,operation initialise( email : String) : void
+TP,activity: (     self.email := email ;,activity: (     self.email := email ;
+TP,execute initUser() );,execute initUser() );
+TP,"static operation newUser( userFirstName : String, userLastName : String, password : String, userGroup : String, post : String, securityProblem : String, securityAnswer : String, birthday : String, gender : String, country : String, DLNumber : String, phone : String, email : String, address : String, about : String, regTime : String) : User","static operation newUser( userFirstName : String, userLastName : String, password : String, userGroup : String, post : String, securityProblem : String, securityAnswer : String, birthday : String, gender : String, country : String, DLNumber : String, phone : String, email : String, address : String, about : String, regTime : String) : User"
+TP,"self.initialise(userFirstName, userLastName, password, userGroup, post, securityProblem, securityAnswer, birthday, gender, country, DLNumber, phone, email, address, about, regTime);","self.initialise(userFirstName, userLastName,password,userGroup,post,securityProblem,securityAnswer,birthday,gender,country,DLNumber,phone,email,address,about,regTime);"
+TP,"operation initialise( userFirstName : String, userLastName : String, password : String, userGroup : String, post : String, securityProblem : String, securityAnswer : String, birthday : String, gender : String, country : String, DLNumber : String, phone : String, email : String, address : String, about : String, regTime : String) : void","operation initialise( userFirstName : String, userLastName : String, password : String, userGroup : String, post : String, securityProblem : String, securityAnswer : String, birthday : String, gender : String, country : String, DLNumber : String, phone : String, email : String, address : String, about : String, regTime : String) : void"
+TP,"activity: (     self.userName := userFirstName + ""-"" + userLastName ;","activity: (     self.userName := userFirstName + ""-"" + userLastName ;"
+TP,self.password := password ;,self.password := password ;
+TP,self.userGroup := userGroup ;,self.userGroup := userGroup ;
+TP,self.post := post ;,self.post := post ;
+TP,self.securityProblem := securityProblem ;,self.securityProblem := securityProblem ;
+TP,self.securityAnswer := securityAnswer ;,self.securityAnswer := securityAnswer ;
+TP,self.birthday := birthday ;,self.birthday := birthday ;
+TP,self.gender := gender ;,self.gender := gender ;
+TP,self.country := country ;,self.country := country ;
+TP,self.DLNumber := DLNumber ;,self.DLNumber := DLNumber ;
+TP,self.phone := phone ;,self.phone := phone ;
+TP,self.email := email ;,self.email := email ;
+TP,self.address := address ;,self.address := address ;
+TP,self.about := about ;,self.about := about ;
+TP,self.regTime := regTime ;,self.regTime := regTime ;
+TP,self.avatar := ImageTools.getUserAvatarFromUserID(userID) ;,self.avatar := ImageTools.getUserAvatarFromUserID(userID) ;
+TP,);,);
+TP,operation getUserID() : int,operation getUserID() : int
+TP,activity: (     return userID );,activity: (     return userID );
+TP,operation setUserID( userID : int) : void,operation setUserID( userID : int) : void
+TP,activity: (     self.userID := userID );,activity: (     self.userID := userID );
+TP,operation getUserName() : String,operation getUserName() : String
+TP,activity: (     return userName );,activity: (     return userName );
+TP,operation setUserName( userName : String) : void,operation setUserName( userName : String) : void
+TP,activity: (     self.userName := userName );,activity: (     self.userName := userName );
+TP,operation getUserFirstName() : String,operation getUserFirstName() : String
+TP,activity: (     return userFirstName );,activity: (     return userFirstName );
+TP,operation setUserFirstName( userFirstName : String) : void,operation setUserFirstName( userFirstName : String) : void
+TP,activity: (     self.userFirstName := userFirstName );,activity: (     self.userFirstName := userFirstName );
+TP,operation getUserLastName() : String,operation getUserLastName() : String
+TP,activity: (     return userLastName );,activity: (     return userLastName );
+TP,operation setUserLastName( userLastName : String) : void,operation setUserLastName( userLastName : String) : void
+TP,activity: (     self.userLastName := userLastName );,activity: (     self.userLastName := userLastName );
+TP,operation getPassword() : String,operation getPassword() : String
+TP,activity: (     return password );,activity: (     return password );
+TP,operation setPassword( password : String) : void,operation setPassword( password : String) : void
+TP,activity: (     self.password := password );,activity: (     self.password := password );
+TP,operation getUserGroup() : String,operation getUserGroup() : String
+TP,activity: (     return userGroup );,activity: (     return userGroup );
+TP,operation setUserGroup( userGroup : String) : void,operation setUserGroup( userGroup : String) : void
+TP,activity: (     self.userGroup := userGroup );,activity: (     self.userGroup := userGroup );
+TP,operation getPost() : String,operation getPost() : String
+TP,activity: (     return post );,activity: (     return post );
+TP,operation setPost( post : String) : void,operation setPost( post : String) : void
+TP,activity: (     self.post := post );,activity: (     self.post := post );
+TP,operation getSecurityProblem() : String,operation getSecurityProblem() : String
+TP,activity: (     return securityProblem );,activity: (     return securityProblem );
+TP,operation setSecurityProblem( securityProblem : String) : void,operation setSecurityProblem( securityProblem : String) : void
+TP,activity: (     self.securityProblem := securityProblem );,activity: (     self.securityProblem := securityProblem );
+TP,operation getSecurityAnswer() : String,operation getSecurityAnswer() : String
+TP,activity: (     return securityAnswer );,activity: (     return securityAnswer );
+TP,operation setSecurityAnswer( securityAnswer : String) : void,operation setSecurityAnswer( securityAnswer : String) : void
+TP,activity: (     self.securityAnswer := securityAnswer );,activity: (     self.securityAnswer := securityAnswer );
+TP,operation getBirthday() : String,operation getBirthday() : String
+TP,activity: (     return birthday );,activity: (     return birthday );
+TP,operation setBirthday( birthday : String) : void,operation setBirthday( birthday : String) : void
+TP,activity: (     self.birthday := birthday );,activity: (     self.birthday := birthday );
+TP,operation getGender() : String,operation getGender() : String
+TP,activity: (     return gender );,activity: (     return gender );
+TP,operation setGender( gender : String) : void,operation setGender( gender : String) : void
+TP,activity: (     self.gender := gender );,activity: (     self.gender := gender );
+TP,operation getCountry() : String,operation getCountry() : String
+TP,activity: (     return country );,activity: (     return country );
+TP,operation setCountry( country : String) : void,operation setCountry( country : String) : void
+TP,activity: (     self.country := country );,activity: (     self.country := country );
+TP,operation getDLNumber() : String,operation getDLNumber() : String
+TP,activity: (     return DLNumber );,activity: (     return DLNumber );
+TP,operation setDLNumber( DLNumber : String) : void,operation setDLNumber( DLNumber : String) : void
+TP,activity: (     self.DLNumber := DLNumber );,activity: (     self.DLNumber := DLNumber );
+TP,operation getPhone() : String,operation getPhone() : String
+TP,activity: (     return phone );,activity: (     return phone );
+TP,operation setPhone( phone : String) : void,operation setPhone( phone : String) : void
+TP,activity: (     self.phone := phone );,activity: (     self.phone := phone );
+TP,operation getEmail() : String,operation getEmail() : String
+TP,activity: (     return email );,activity: (     return email );
+TP,operation setEmail( email : String) : void,operation setEmail( email : String) : void
+TP,activity: (     self.email := email );,activity: (     self.email := email );
+TP,operation getAddress() : String,operation getAddress() : String
+TP,activity: (     return address );,activity: (     return address );
+TP,operation setAddress( address : String) : void,operation setAddress( address : String) : void
+TP,activity: (     self.address := address );,activity: (     self.address := address );
+TP,operation getAbout() : String,operation getAbout() : String
+TP,activity: (     return about );,activity: (     return about );
+TP,operation setAbout( about : String) : void,operation setAbout( about : String) : void
+TP,activity: (     self.about := about );,activity: (     self.about := about );
+TP,operation getRegTime() : String,operation getRegTime() : String
+TP,activity: (     return regTime );,activity: (     return regTime );
+TP,operation setRegTime( regTime : String) : void,operation setRegTime( regTime : String) : void
+TP,activity: (     self.regTime := regTime );,activity: (     self.regTime := regTime );
+TP,operation getAvatar() : Image,operation getAvatar() : Image
+TP,activity: (     return avatar );,activity: (     return avatar );
+TP,operation setAvatar( avatar : Image) : void,operation setAvatar( avatar : Image) : void
+TP,activity: (     self.avatar := avatar );,activity: (     self.avatar := avatar );
+TP,operation toString() : String,operation toString() : String
+TP,},}
+TP,class Admin extends User {,class Admin extends User {
+TP,static operation newAdmin( email : String) : Admin,static operation newAdmin( email : String) : Admin
+TP,( var self : Admin ;,( var self : Admin ;
+TP,self := createAdmin();,self := createAdmin();
+TP,activity: (     execute super(email) );,activity: (     execute super(email) );
+TP,class UserFactory {,class UserFactory {
+TP,static   operation getUser( email : String) : User,static   operation getUser( email : String) : User
+TP,activity: (     var role : String ; role := DataTools.getUserRoleFromUserEmail(email) ;,activity: (     var role : String ; role := DataTools.getUserRoleFromUserEmail(email) ;
+TP,"for _x : Integer.subrange(1,1) do","for _x : Integer.subrange(1,1) do"
+TP,( var _switchval : OclAny ;,( var _switchval : OclAny ;
+TP,_switchval := (role) ;,_switchval := (role) ;
+TP,"if _switchval = ""driver"" then","if _switchval = ""driver"" then"
+TP,return Admin.newAdmin(email),return Admin.newAdmin(email)
+TP,else skip ;,else skip ;
+TP,"if _switchval = ""admin"" then","if _switchval = ""admin"" then"
+TP,return Driver.newDriver(email),return Driver.newDriver(email)
+TP,"if _switchval = ""customer"" then","if _switchval = ""customer"" then"
+TP,return Customer.newCustomer(email),return Customer.newCustomer(email)
+TP,if true then,if true then
+TP,return null,return null
+TP,),)
+TP,static   operation getUser( userID : int) : User,static   operation getUser( userID : int) : User
+TP,activity: (     var email : String ; email := DataTools.getEmailFromUserID(userID) ;,activity: (     var email : String ; email := DataTools.getEmailFromUserID(userID) ;
+TP,var role : String ; role := DataTools.getUserRoleFromUserID(userID) ;,var role : String ; role := DataTools.getUserRoleFromUserID(userID) ;
+TP,class Driver extends User {,class Driver extends User {
+TP,static operation newDriver( email : String) : Driver,static operation newDriver( email : String) : Driver
+TP,( var self : Driver ;,( var self : Driver ;
+TP,self := createDriver();,self := createDriver();
+TP,class Customer extends User {,class Customer extends User {
+TP,attribute orderNum : int;,attribute orderNum : int;
+TP,attribute bankCardList : Sequence(String);,attribute bankCardList : Sequence(String);
+TP,attribute bankCardData : Sequence(Sequence(String));,attribute bankCardData : Sequence(Sequence(String));
+TP,attribute vipBadge : Image;,attribute vipBadge : Image;
+TP,attribute vipCard : Image;,attribute vipCard : Image;
+TP,static operation newCustomer() : Customer,static operation newCustomer() : Customer
+TP,( var self : Customer ;,( var self : Customer ;
+TP,self := createCustomer();,self := createCustomer();
+TP,static operation newCustomer( email : String) : Customer,static operation newCustomer( email : String) : Customer
+TP,activity: (     execute super(email) ;,activity: (     execute super(email) ;
+TP,execute initCustomerData() );,execute initCustomerData() );
+TP,operation initCustomerData() : void,operation initCustomerData() : void
+TP,activity: (     self.orderNum := DataTools.getCustomerOrderNum(userID) ;,activity: (     self.orderNum := DataTools.getCustomerOrderNum(userID) ;
+TP,self.bankCardList := DataTools.getCustomerBankCardsList(userID) ;,self.bankCardList := DataTools.getCustomerBankCardsList(userID) ;
+TP,self.bankCardData := DataTools.getCustomerBankCardsData(userID) ;,self.bankCardData := DataTools.getCustomerBankCardsData(userID) ;
+TP,self.vipBadge := ImageTools.getBadgeImage(userID) ;,self.vipBadge := ImageTools.getBadgeImage(userID) ;
+TP,"static operation newCustomer( userFirstName : String, userLastName : String, password : String, userGroup : String, post : String, securityProblem : String, securityAnswer : String, birthday : String, gender : String, country : String, DLNumber : String, phone : String, email : String, address : String, about : String, regTime : String) : Customer","static operation newCustomer( userFirstName : String, userLastName : String, password : String, userGroup : String, post : String, securityProblem : String, securityAnswer : String, birthday : String, gender : String, country : String, DLNumber : String, phone : String, email : String, address : String, about : String, regTime : String) : Customer"
+TP,operation getOrderNum() : int,operation getOrderNum() : int
+TP,activity: (     return orderNum );,activity: (     return orderNum );
+TP,operation setOrderNum( orderNum : int) : void,operation setOrderNum( orderNum : int) : void
+TP,activity: (     self.orderNum := orderNum );,activity: (     self.orderNum := orderNum );
+TP,operation getVipBadge() : Image,operation getVipBadge() : Image
+TP,activity: (     return vipBadge );,activity: (     return vipBadge );
+TP,operation setVipBadge( vipBadge : Image) : void,operation setVipBadge( vipBadge : Image) : void
+TP,activity: (     self.vipBadge := vipBadge );,activity: (     self.vipBadge := vipBadge );
+TP,operation getVipCard() : Image,operation getVipCard() : Image
+TP,activity: (     return vipCard );,activity: (     return vipCard );
+TP,operation setVipCard( vipCard : Image) : void,operation setVipCard( vipCard : Image) : void
+TP,activity: (     self.vipCard := vipCard );,activity: (     self.vipCard := vipCard );
+TP,class Car {,class Car {
+TP,attribute carID : int;,attribute carID : int;
+TP,attribute carModel : String;,attribute carModel : String;
+TP,attribute chassisNumber : String;,attribute chassisNumber : String;
+TP,attribute carNumber : String;,attribute carNumber : String;
+TP,attribute carBrand : String;,attribute carBrand : String;
+TP,attribute manufacturingDate : OclDate;,attribute manufacturingDate : OclDate;
+TP,attribute addedDate : OclDate;,attribute addedDate : OclDate;
+TP,attribute status : int;,attribute status : int;
+TP,static operation newCar( carID : int) : Car,static operation newCar( carID : int) : Car
+TP,( var self : Car ;,( var self : Car ;
+TP,self := createCar();,self := createCar();
+TP,self.initialise(carID);,self.initialise(carID);
+TP,operation initialise( carID : int) : void,operation initialise( carID : int) : void
+TP,activity: (     self.carID := carID ;,activity: (     self.carID := carID ;
+TP,execute initData() );,execute initData() );
+TP,operation initData() : void,operation initData() : void
+TP,"activity: (     var sql : String ; sql := ""SELECT * FROM carInfo WHERE carID = "" + carID ;","activity: (     var sql : String ; sql := ""SELECT * FROM carInfo WHERE carID = "" + carID ;"
+TP,var data : Sequence(Sequence(String)) ; data := SQL.query(sql) ;,var data : Sequence(Sequence(String)) ; data := SQL.query(sql) ;
+TP,if (data->size() = 0) then (     return ) else skip ;,if (data->size() = 0) then (     return ) else skip ;
+TP,var carInfo : Sequence(String) ; carInfo := data->at(0+1) ;,var carInfo : Sequence(String) ; carInfo := data->at(0+1) ;
+TP,"OclFile[""System.out""].println(""manufacturingDate: "" + manufacturingDate) ;","OclFile[""System.out""].println(""manufacturingDate: "" + manufacturingDate) ;"
+TP,"static operation newCar( carID : int, carModel : String, chassisNumber : String, carNumber : String, manufacturingDate : OclDate, status : int) : Car","static operation newCar( carID : int, carModel : String, chassisNumber : String, carNumber : String, manufacturingDate : OclDate, status : int) : Car"
+TP,"self.initialise(carID, carModel, chassisNumber, carNumber, manufacturingDate, status);","self.initialise(carID, carModel,chassisNumber,carNumber,manufacturingDate,status);"
+TP,"static operation newCar( carModel : String, chassisNumber : String, carNumber : String, manufacturingDate : String, status : int) : Car","static operation newCar( carModel : String, chassisNumber : String, carNumber : String, manufacturingDate : String, status : int) : Car"
+TP,"self.initialise(carModel, chassisNumber, carNumber, manufacturingDate, status);","self.initialise(carModel, chassisNumber,carNumber,manufacturingDate,status);"
+TP,"static operation newCar( carID : int, carModel : String, chassisNumber : String, carNumber : String, manufacturingDate : OclDate, addedDate : OclDate, status : int) : Car","static operation newCar( carID : int, carModel : String, chassisNumber : String, carNumber : String, manufacturingDate : OclDate, addedDate : OclDate, status : int) : Car"
+TP,"self.initialise(carID, carModel, chassisNumber, carNumber, manufacturingDate, addedDate, status);","self.initialise(carID, carModel,chassisNumber,carNumber,manufacturingDate,addedDate,status);"
+TP,operation setCarModel( carModel : String) : void,operation setCarModel( carModel : String) : void
+TP,activity: (     self.carModel := carModel );,activity: (     self.carModel := carModel );
+TP,operation setChassisNumber( chassisNumber : String) : void,operation setChassisNumber( chassisNumber : String) : void
+TP,activity: (     self.chassisNumber := chassisNumber );,activity: (     self.chassisNumber := chassisNumber );
+TP,operation setCarNumber( carNumber : String) : void,operation setCarNumber( carNumber : String) : void
+TP,activity: (     self.carNumber := carNumber );,activity: (     self.carNumber := carNumber );
+TP,operation setManufacturingDate( manufacturingDate : OclDate) : void,operation setManufacturingDate( manufacturingDate : OclDate) : void
+TP,activity: (     self.manufacturingDate := manufacturingDate );,activity: (     self.manufacturingDate := manufacturingDate );
+TP,operation setAddedDate( addedDate : OclDate) : void,operation setAddedDate( addedDate : OclDate) : void
+TP,activity: (     self.addedDate := addedDate );,activity: (     self.addedDate := addedDate );
+TP,operation setStatus( status : int) : void,operation setStatus( status : int) : void
+TP,activity: (     self.status := status );,activity: (     self.status := status );
+TP,operation getCarID() : int,operation getCarID() : int
+TP,activity: (     return carID );,activity: (     return carID );
+TP,operation getCarModel() : String,operation getCarModel() : String
+TP,activity: (     return carModel );,activity: (     return carModel );
+TP,operation getChassisNumber() : String,operation getChassisNumber() : String
+TP,activity: (     return chassisNumber );,activity: (     return chassisNumber );
+TP,operation getCarNumber() : String,operation getCarNumber() : String
+TP,activity: (     return carNumber );,activity: (     return carNumber );
+TP,operation getManufacturingDate() : String,operation getManufacturingDate() : String
+TP,"activity: (     OclFile[""System.out""].println(""Date: "" + manufacturingDate) ;","activity: (     OclFile[""System.out""].println(""Date: "" + manufacturingDate) ;"
+TP,"return DateTools.dateToString(manufacturingDate,""yyyy-MM-dd"") );","return DateTools.dateToString(manufacturingDate, ""yyyy-MM-dd"") );"
+TP,operation getAddedDate() : String,operation getAddedDate() : String
+TP,"activity: (     return DateTools.dateToString(addedDate,""yyyy-MM-dd"") );","activity: (     return DateTools.dateToString(addedDate, ""yyyy-MM-dd"") );"
+TP,operation getStatus() : int,operation getStatus() : int
+TP,activity: (     return status );,activity: (     return status );
+TP,"operation updateCarInfo( carModel : String, chassisNumber : String, carNumber : String, manufacturingDate : String, status : int) : void","operation updateCarInfo( carModel : String, chassisNumber : String, carNumber : String, manufacturingDate : String, status : int) : void"
+TP,activity: (     self.carModel := carModel ;,activity: (     self.carModel := carModel ;
+TP,self.chassisNumber := chassisNumber ;,self.chassisNumber := chassisNumber ;
+TP,self.carNumber := carNumber ;,self.carNumber := carNumber ;
+TP,self.manufacturingDate := DateTools.stringToDateObje(manufacturingDate) ;,self.manufacturingDate := DateTools.stringToDateObje(manufacturingDate) ;
+TP,self.status := status ;,self.status := status ;
+TP,operation addCarInfo() : void,operation addCarInfo() : void
+TP,"OclFile[""System.out""].println(sql) ;","OclFile[""System.out""].println(sql) ;"
+TP,SQL.execute(sql) );,SQL.execute(sql) );
+TP,operation update() : void,operation update() : void
+TP,operation delete() : void,operation delete() : void
+TP,"activity: (     var sql : String ; sql := ""DELETE FROM carInfo WHERE carID = "" + carID ;","activity: (     var sql : String ; sql := ""DELETE FROM carInfo WHERE carID = "" + carID ;"
+TP,SQL.execute(sql) ;,SQL.execute(sql) ;
+TP,"OclFile[""System.out""].println(""done"") );","OclFile[""System.out""].println(""done"") );"
+TP,class NewCar {,class NewCar {
+TP,attribute manufacturingDate : String;,attribute manufacturingDate : String;
+TP,attribute price : String;,attribute price : String;
+TP,attribute seatNumber : String;,attribute seatNumber : String;
+TP,attribute gradientDark : String;,attribute gradientDark : String;
+TP,attribute gradientLight : String;,attribute gradientLight : String;
+TP,attribute imageURL : String;,attribute imageURL : String;
+TP,attribute newCarImage : Image;,attribute newCarImage : Image;
+TP,"static operation newNewCar( carModel : String, chassisNumber : String, carNumber : String, manufacturingDate : String, price : String, seatNumber : String, gearType : String, carBrand : String, gradientDark : String, gradientLight : String, imageUrl : String, newCarImage : Image) : NewCar","static operation newNewCar( carModel : String, chassisNumber : String, carNumber : String, manufacturingDate : String, price : String, seatNumber : String, gearType : String, carBrand : String, gradientDark : String, gradientLight : String, imageUrl : String, newCarImage : Image) : NewCar"
+TP,( var self : NewCar ;,( var self : NewCar ;
+TP,self := createNewCar();,self := createNewCar();
+TP,"self.initialise(carModel, chassisNumber, carNumber, manufacturingDate, price, seatNumber, gearType, carBrand, gradientDark, gradientLight, imageUrl, newCarImage);","self.initialise(carModel, chassisNumber,carNumber,manufacturingDate,price,seatNumber,gearType,carBrand,gradientDark,gradientLight,imageUrl,newCarImage);"
+TP,"operation initialise( carModel : String, chassisNumber : String, carNumber : String, manufacturingDate : String, price : String, seatNumber : String, gearType : String, carBrand : String, gradientDark : String, gradientLight : String, imageUrl : String, newCarImage : Image) : void","operation initialise( carModel : String, chassisNumber : String, carNumber : String, manufacturingDate : String, price : String, seatNumber : String, gearType : String, carBrand : String, gradientDark : String, gradientLight : String, imageUrl : String, newCarImage : Image) : void"
+TP,self.manufacturingDate := manufacturingDate ;,self.manufacturingDate := manufacturingDate ;
+TP,self.price := price ;,self.price := price ;
+TP,self.seatNumber := seatNumber ;,self.seatNumber := seatNumber ;
+TP,self.gearType := gearType ;,self.gearType := gearType ;
+TP,self.carBrand := carBrand ;,self.carBrand := carBrand ;
+TP,self.gradientDark := gradientDark ;,self.gradientDark := gradientDark ;
+TP,self.gradientLight := gradientLight ;,self.gradientLight := gradientLight ;
+TP,self.imageUrl := imageUrl ;,self.imageURL := imageURL ;
+TP,self.newCarImage := newCarImage ;,self.newCarImage := newCarImage ;
+TP,self.initialise(modelID);,self.initialise(modelID);
+TP,operation initialise( modelID : int) : void,operation initialise( modelID : int) : void
+TP,self.newCarImage := null ;,self.newCarImage := null ;
+TP,"OclFile[""System.out""].println(""draft deleted"") ;","OclFile[""System.out""].println(""draft deleted"") ;"
+TP,operation checkAllNull() : boolean,operation checkAllNull() : boolean
+TP,return false ) else skip )  ) ;,return false ) else skip )  ) ;
+TP,return true );,return true );
+TP,class CarModel {,class CarModel {
+TP,attribute modelID : int;,attribute modelID : int;
+TP,attribute seats : int;,attribute seats : int;
+TP,attribute price : int;,attribute price : int;
+TP,attribute gearType : String;,attribute gearType : String;
+TP,attribute darkColor : String;,attribute darkColor : String;
+TP,attribute lightColor : String;,attribute lightColor : String;
+TP,attribute star : double;,attribute star : double;
+TP,attribute speed : int;,attribute speed : int;
+TP,attribute power : double;,attribute power : double;
+TP,static operation newCarModel() : CarModel,static operation newCarModel() : CarModel
+TP,( var self : CarModel ;,( var self : CarModel ;
+TP,self := createCarModel();,self := createCarModel();
+TP,static operation newCarModel( modelID : int) : CarModel,static operation newCarModel( modelID : int) : CarModel
+TP,activity: (     self.modelID := modelID ;,activity: (     self.modelID := modelID ;
+TP,"execute initData(""modelID"") );","execute initData(""modelID"") );"
+TP,static operation newCarModel( carModel : String) : CarModel,static operation newCarModel( carModel : String) : CarModel
+TP,self.initialise(carModel);,self.initialise(carModel);
+TP,operation initialise( carModel : String) : void,operation initialise( carModel : String) : void
+TP,"execute initData(""carModel"") );","execute initData(""carModel"") );"
+TP,operation initData( type : String) : void,operation initData( type : String) : void
+TP,activity: (     var sql : String ;,activity: (     var sql : String ;
+TP,var carModelInfo : Sequence(String) ; carModelInfo := data->at(0+1) ;,var carModelInfo : Sequence(String) ; carModelInfo := data->at(0+1) ;
+TP,self.seats := seats ;,self.seats := seats ;
+TP,self.darkColor := darkColor ;,self.darkColor := darkColor ;
+TP,self.lightColor := lightColor ;,self.lightColor := lightColor ;
+TP,self.star := star ;,self.star := star ;
+TP,self.speed := speed ;,self.speed := speed ;
+TP,self.power := power ;,self.power := power ;
+TP,"static operation newCarModel( modelID : int, carModel : String, seats : int, price : int, gearType : String, darkColor : String, lightColor : String, carBrand : String, star : double, speed : int, power : double) : CarModel","static operation newCarModel( modelID : int, carModel : String, seats : int, price : int, gearType : String, darkColor : String, lightColor : String, carBrand : String, star : double, speed : int, power : double) : CarModel"
+TP,"self.initialise(modelID, carModel, seats, price, gearType, darkColor, lightColor, carBrand, star, speed, power);","self.initialise(modelID, carModel,seats,price,gearType,darkColor,lightColor,carBrand,star,speed,power);"
+TP,"operation initialise( modelID : int, carModel : String, seats : int, price : int, gearType : String, darkColor : String, lightColor : String, carBrand : String, star : double, speed : int, power : double) : void","operation initialise( modelID : int, carModel : String, seats : int, price : int, gearType : String, darkColor : String, lightColor : String, carBrand : String, star : double, speed : int, power : double) : void"
+TP,self.carModel := carModel ;,self.carModel := carModel ;
+TP,operation getModelID() : int,operation getModelID() : int
+TP,activity: (     return modelID );,activity: (     return modelID );
+TP,operation setModelID( modelID : int) : void,operation setModelID( modelID : int) : void
+TP,activity: (     self.modelID := modelID );,activity: (     self.modelID := modelID );
+TP,operation getSeats() : int,operation getSeats() : int
+TP,activity: (     return seats );,activity: (     return seats );
+TP,operation setSeats( seats : int) : void,operation setSeats( seats : int) : void
+TP,activity: (     self.seats := seats );,activity: (     self.seats := seats );
+TP,operation getPrice() : int,operation getPrice() : int
+TP,activity: (     return price );,activity: (     return price );
+TP,operation setPrice( price : int) : void,operation setPrice( price : int) : void
+TP,activity: (     self.price := price );,activity: (     self.price := price );
+TP,operation getGearType() : String,operation getGearType() : String
+TP,activity: (     return gearType );,activity: (     return gearType );
+TP,operation setGearType( gearType : String) : void,operation setGearType( gearType : String) : void
+TP,activity: (     self.gearType := gearType );,activity: (     self.gearType := gearType );
+TP,operation getDarkColor() : String,operation getDarkColor() : String
+TP,activity: (     return darkColor );,activity: (     return darkColor );
+TP,operation setDarkColor( darkColor : String) : void,operation setDarkColor( darkColor : String) : void
+TP,activity: (     self.darkColor := darkColor );,activity: (     self.darkColor := darkColor );
+TP,operation getLightColor() : String,operation getLightColor() : String
+TP,activity: (     return lightColor );,activity: (     return lightColor );
+TP,operation setLightColor( lightColor : String) : void,operation setLightColor( lightColor : String) : void
+TP,activity: (     self.lightColor := lightColor );,activity: (     self.lightColor := lightColor );
+TP,operation getCarBrand() : String,operation getCarBrand() : String
+TP,activity: (     return carBrand );,activity: (     return carBrand );
+TP,operation setCarBrand( carBrand : String) : void,operation setCarBrand( carBrand : String) : void
+TP,activity: (     self.carBrand := carBrand );,activity: (     self.carBrand := carBrand );
+TP,operation getStar() : double,operation getStar() : double
+TP,activity: (     return star );,activity: (     return star );
+TP,operation setStar( star : double) : void,operation setStar( star : double) : void
+TP,activity: (     self.star := star );,activity: (     self.star := star );
+TP,operation getSpeed() : int,operation getSpeed() : int
+TP,activity: (     return speed );,activity: (     return speed );
+TP,operation setSpeed( speed : int) : void,operation setSpeed( speed : int) : void
+TP,activity: (     self.speed := speed );,activity: (     self.speed := speed );
+TP,operation getPower() : double,operation getPower() : double
+TP,activity: (     return power );,activity: (     return power );
+TP,operation setPower( power : double) : void,operation setPower( power : double) : void
+TP,activity: (     self.power := power );,activity: (     self.power := power );
+TP,operation getImageURL() : String,operation getImageURL() : String
+TP,activity: (     return imageURL );,activity: (     return imageURL );
+TP,operation setImageURL( imageURL : String) : void,operation setImageURL( imageURL : String) : void
+TP,activity: (     self.imageURL := imageURL );,activity: (     self.imageURL := imageURL );
+TP,"operation updateCarModel( carModel : String, seats : int, price : int, gearType : String, darkColor : String, lightColor : String) : void","operation updateCarModel( carModel : String, seats : int, price : int, gearType : String, darkColor : String, lightColor : String) : void"
+TP,operation addCarModel() : void,operation addCarModel() : void
+TP,"var sql : String ; sql := ""INSERT INTO carModels VALUES ("" + values + "")"" ;","var sql : String ; sql := ""INSERT INTO carModels VALUES ("" + values + "")"" ;"
+TP,"OclFile[""System.out""].println(imageURL) ;","OclFile[""System.out""].println(imageURL) ;"
+TP,"OclFile[""System.out""].println(process) );","OclFile[""System.out""].println(process) );"
+TP,"activity: (     var sql : String ; sql := ""DELETE FROM carModels WHERE modelID = "" + modelID ;","activity: (     var sql : String ; sql := ""DELETE FROM carModels WHERE modelID = "" + modelID ;"
+TP,class Order {,class Order {
+TP,attribute orderID : int;,attribute orderID : int;
+TP,attribute orderTime : OclDate := null;,attribute orderTime : OclDate := null;
+TP,attribute pickUpTime : OclDate := null;,attribute pickUpTime : OclDate := null;
+TP,attribute returnTime : OclDate := null;,attribute returnTime : OclDate := null;
+TP,attribute price : int := 0;,attribute price : int := 0;
+TP,"attribute paymentMethod : String := """";","attribute paymentMethod : String := """";"
+TP,"attribute account : String := """";","attribute account : String := """";"
+TP,attribute status : int := -1;,attribute status : int := -1;
+TP,attribute star : int := 0;,attribute star : int := 0;
+TP,"attribute invoiceNo : String := """";","attribute invoiceNo : String := """";"
+TP,static operation newOrder() : Order,static operation newOrder() : Order
+TP,( var self : Order ;,( var self : Order ;
+TP,self := createOrder();,self := createOrder();
+TP,static operation newOrder( orderID : int) : Order,static operation newOrder( orderID : int) : Order
+TP,self.initialise(orderID);,self.initialise(orderID);
+TP,operation initialise( orderID : int) : void,operation initialise( orderID : int) : void
+TP,activity: (     self.orderID := orderID ;,activity: (     self.orderID := orderID ;
+TP,execute initOrder() );,execute initOrder() );
+TP,operation initOrder() : void,operation initOrder() : void
+TP,"activity: (     var sql : String ; sql := ""select * from orders where orderID = "" + orderID ;","activity: (     var sql : String ; sql := ""select * from orders where orderID = "" + orderID ;"
+TP,var result : Sequence(Sequence(String)) ; result := SQL.query(sql) ;,var result : Sequence(Sequence(String)) ; result := SQL.query(sql) ;
+TP,"if (result->size() = 0) then (     OclFile[""System.out""].println(""Order: "" + self.orderID + ""not found"") ) else (     var orderInfo : Sequence(String) ; orderInfo := result->at(0+1) ;","if (result->size() = 0) then (     OclFile[""System.out""].println(""Order: "" + self.orderID + ""not found"") ) else (     var orderInfo : Sequence(String) ; orderInfo := result->at(0+1) ;"
+TP,self.carID := (orderInfo[1+1])->toInteger() ;,self.carID := (orderInfo[1+1])->toInteger() ;
+TP,self.orderTime := DateTools.stringToDateObje(orderInfo[2+1]) ;,self.orderTime := DateTools.stringToDateObje(orderInfo[2+1]) ;
+TP,self.pickUpTime := DateTools.stringToDateObje(orderInfo[3+1]) ;,self.pickUpTime := DateTools.stringToDateObje(orderInfo[3+1]) ;
+TP,self.returnTime := DateTools.stringToDateObje(orderInfo[4+1]) ;,self.returnTime := DateTools.stringToDateObje(orderInfo[4+1]) ;
+TP,self.userID := (orderInfo[7+1])->toInteger() ;,self.userID := (orderInfo[7+1])->toInteger() ;
+TP,self.price := (orderInfo[8+1])->toInteger() ;,self.price := (orderInfo[8+1])->toInteger() ;
+TP,self.paymentMethod := orderInfo[9+1] ;,self.paymentMethod := orderInfo[9+1] ;
+TP,self.account := orderInfo[10+1] ;,self.account := orderInfo[10+1] ;
+TP,self.status := (orderInfo[11+1])->toInteger() ;,self.status := (orderInfo[11+1])->toInteger() ;
+TP,self.star := (orderInfo[12+1])->toInteger() ;,self.star := (orderInfo[12+1])->toInteger() ;
+TP,self.invoiceNo := DataTools.generateRandomInvoiceNo(self.orderID) ;,self.invoiceNo := DataTools.generateRandomInvoiceNo(self.orderID) ;
+TP,) );,) );
+TP,operation getOrderID() : int,operation getOrderID() : int
+TP,activity: (     return orderID );,activity: (     return orderID );
+TP,operation getOrderTime() : OclDate,operation getOrderTime() : OclDate
+TP,activity: (     return orderTime );,activity: (     return orderTime );
+TP,operation getOrderTimeStr() : String,operation getOrderTimeStr() : String
+TP,activity: (     return DateTools.getSpecFormatDateTime(orderTime) );,activity: (     return DateTools.getSpecFormatDateTime(orderTime) );
+TP,operation getPickUpTime() : OclDate,operation getPickUpTime() : OclDate
+TP,activity: (     return pickUpTime );,activity: (     return pickUpTime );
+TP,operation getPickUpTimeStr() : String,operation getPickUpTimeStr() : String
+TP,activity: (     return DateTools.getSpecFormatDateTime(pickUpTime) );,activity: (     return DateTools.getSpecFormatDateTime(pickUpTime) );
+TP,operation getReturnTime() : OclDate,operation getReturnTime() : OclDate
+TP,activity: (     return returnTime );,activity: (     return returnTime );
+TP,operation getReturnTimeStr() : String,operation getReturnTimeStr() : String
+TP,activity: (     return DateTools.getSpecFormatDateTime(returnTime) );,activity: (     return DateTools.getSpecFormatDateTime(returnTime) );
+TP,operation getPaymentMethod() : String,operation getPaymentMethod() : String
+TP,activity: (     return paymentMethod );,activity: (     return paymentMethod );
+TP,operation getAccount() : String,operation getAccount() : String
+TP,activity: (     return account );,activity: (     return account );
+TP,operation getStar() : int,operation getStar() : int
+TP,operation getPickUpLocation() : String,operation getPickUpLocation() : String
+TP,activity: (     return pickUpLocation );,activity: (     return pickUpLocation );
+TP,operation setPickUpLocation( pickUpLocation : String) : void,operation setPickUpLocation( pickUpLocation : String) : void
+TP,activity: (     self.pickUpLocation := pickUpLocation );,activity: (     self.pickUpLocation := pickUpLocation );
+TP,operation getParkingLocation() : String,operation getParkingLocation() : String
+TP,activity: (     return parkingLocation );,activity: (     return parkingLocation );
+TP,operation setParkingLocation( parkingLocation : String) : void,operation setParkingLocation( parkingLocation : String) : void
+TP,activity: (     self.parkingLocation := parkingLocation );,activity: (     self.parkingLocation := parkingLocation );
+TP,operation getInvoiceNo() : String,operation getInvoiceNo() : String
+TP,activity: (     return invoiceNo );,activity: (     return invoiceNo );
+TP,operation setInvoiceNo( invoiceNo : String) : void,operation setInvoiceNo( invoiceNo : String) : void
+TP,activity: (     self.invoiceNo := invoiceNo );,activity: (     self.invoiceNo := invoiceNo );
+TP,class Comment {,class Comment {
+TP,attribute commentID : int;,attribute commentID : int;
+TP,attribute type : String;,attribute type : String;
+TP,attribute payload : String;,attribute payload : String;
+TP,attribute posterID : int;,attribute posterID : int;
+TP,attribute comment : String;,attribute comment : String;
+TP,attribute relevantCommentID : int;,attribute relevantCommentID : int;
+TP,attribute commentDateTime : String;,attribute commentDateTime : String;
+TP,attribute like : int;,attribute like : int;
+TP,attribute star : int;,attribute star : int;
+TP,"static operation newComment( commentID : int, type : String, payload : String, posterID : int, comment : String, relevantCommentID : int, commentDateTime : String, like : int, star : int) : Comment","static operation newComment( commentID : int, type : String, payload : String, posterID : int, comment : String, relevantCommentID : int, commentDateTime : String, like : int, star : int) : Comment"
+TP,( var self : Comment ;,( var self : Comment ;
+TP,self := createComment();,self := createComment();
+TP,"self.initialise(commentID, type, payload, posterID, comment, relevantCommentID, commentDateTime, like, star);","self.initialise(commentID, type,payload,posterID,comment,relevantCommentID,commentDateTime,like,star);"
+TP,"operation initialise( commentID : int, type : String, payload : String, posterID : int, comment : String, relevantCommentID : int, commentDateTime : String, like : int, star : int) : void","operation initialise( commentID : int, type : String, payload : String, posterID : int, comment : String, relevantCommentID : int, commentDateTime : String, like : int, star : int) : void"
+TP,activity: (     self.commentID := commentID ;,activity: (     self.commentID := commentID ;
+TP,self.type := type ;,self.type := type ;
+TP,self.payload := payload ;,self.payload := payload ;
+TP,self.posterID := posterID ;,self.posterID := posterID ;
+TP,self.comment := comment ;,self.comment := comment ;
+TP,self.relevantCommentID := relevantCommentID ;,self.relevantCommentID := relevantCommentID ;
+TP,self.commentDateTime := commentDateTime ;,self.commentDateTime := commentDateTime ;
+TP,self.like := like ;,self.like := like ;
+TP,class Card {,class Card {
+TP,attribute userID : int;,attribute userID : int;
+TP,attribute cardType : String;,attribute cardType : String;
+TP,attribute cardName : String;,attribute cardName : String;
+TP,attribute cardBankName : String;,attribute cardBankName : String;
+TP,attribute cardHolderName : String;,attribute cardHolderName : String;
+TP,attribute cardValidDate : String;,attribute cardValidDate : String;
+TP,attribute cardNumber : String;,attribute cardNumber : String;
+TP,attribute cardBillingAddress : String;,attribute cardBillingAddress : String;
+TP,attribute cardBalance : String;,attribute cardBalance : String;
+TP,attribute cardTheme : Sequence(String);,attribute cardTheme : Sequence(String);
+TP,static operation newCard() : Card,static operation newCard() : Card
+TP,( var self : Card ;,( var self : Card ;
+TP,self := createCard();,self := createCard();
+TP,activity: (     instance := self );,activity: (     instance := self );
+TP,activity: (     self.userID := userID ;,activity: (     self.userID := userID ;
+TP,"static operation newCard( userID : int, cardNumber : String) : Card","static operation newCard( userID : int, cardNumber : String) : Card"
+TP,"self.initialise(userID, cardNumber);","self.initialise(userID, cardNumber);"
+TP,"operation initialise( userID : int, cardNumber : String) : void","operation initialise( userID : int, cardNumber : String) : void"
+TP,"activity: (     var cardDetails : Sequence(String) ; cardDetails := getCardDetails(userID, cardNumber) ;","activity: (     var cardDetails : Sequence(String) ; cardDetails := getCardDetails(userID, cardNumber) ;"
+TP,self.userID := (cardDetails[0+1])->toInteger() ;,self.userID := (cardDetails[0+1])->toInteger() ;
+TP,self.cardType := cardDetails[1+1] ;,self.cardType := cardDetails[1+1] ;
+TP,self.cardName := cardDetails[2+1] ;,self.cardName := cardDetails[2+1] ;
+TP,self.cardBankName := cardDetails[3+1] ;,self.cardBankName := cardDetails[3+1] ;
+TP,self.cardHolderName := cardDetails[4+1] ;,self.cardHolderName := cardDetails[4+1] ;
+TP,self.cardValidDate := cardDetails[5+1] ;,self.cardValidDate := cardDetails[5+1] ;
+TP,self.cardNumber := cardDetails[6+1] ;,self.cardNumber := cardDetails[6+1] ;
+TP,self.cardBillingAddress := cardDetails[7+1] ;,self.cardBillingAddress := cardDetails[7+1] ;
+TP,"self.cardTheme := cardDetails[8+1]->split("","") ;","self.cardTheme := cardDetails[8+1]->split("","") ;"
+TP,self.cardBalance := cardDetails[9+1] ;,self.cardBalance := cardDetails[9+1] ;
+TP,"static operation newCard( userID : int, cardType : String, cardName : String, cardBankName : String, cardHolderName : String, cardValidDate : String, cardNumber : String, cardBillingAddress : String, cardTheme : Sequence(String)) : Card","static operation newCard( userID : int, cardType : String, cardName : String, cardBankName : String, cardHolderName : String, cardValidDate : String, cardNumber : String, cardBillingAddress : String, cardTheme : Sequence(String)) : Card"
+TP,"self.initialise(userID, cardType, cardName, cardBankName, cardHolderName, cardValidDate, cardNumber, cardBillingAddress, cardTheme);","self.initialise(userID, cardType,cardName,cardBankName,cardHolderName,cardValidDate,cardNumber,cardBillingAddress,cardTheme);"
+TP,"operation initialise( userID : int, cardType : String, cardName : String, cardBankName : String, cardHolderName : String, cardValidDate : String, cardNumber : String, cardBillingAddress : String, cardTheme : Sequence(String)) : void","operation initialise( userID : int, cardType : String, cardName : String, cardBankName : String, cardHolderName : String, cardValidDate : String, cardNumber : String, cardBillingAddress : String, cardTheme : Sequence(String)) : void"
+TP,self.cardType := cardType ;,self.cardType := cardType ;
+TP,self.cardName := cardName ;,self.cardName := cardName ;
+TP,self.cardBankName := cardBankName ;,self.cardBankName := cardBankName ;
+TP,self.cardHolderName := cardHolderName ;,self.cardHolderName := cardHolderName ;
+TP,self.cardValidDate := cardValidDate ;,self.cardValidDate := cardValidDate ;
+TP,self.cardNumber := cardNumber ;,self.cardNumber := cardNumber ;
+TP,self.cardBillingAddress := cardBillingAddress ;,self.cardBillingAddress := cardBillingAddress ;
+TP,self.cardTheme := cardTheme ;,self.cardTheme := cardTheme ;
+TP,operation getCardType() : String,operation getCardType() : String
+TP,activity: (     return cardType );,activity: (     return cardType );
+TP,operation setCardType( cardType : String) : void,operation setCardType( cardType : String) : void
+TP,activity: (     self.cardType := cardType );,activity: (     self.cardType := cardType );
+TP,operation getCardName() : String,operation getCardName() : String
+TP,activity: (     return cardName );,activity: (     return cardName );
+TP,operation setCardName( cardName : String) : void,operation setCardName( cardName : String) : void
+TP,activity: (     self.cardName := cardName );,activity: (     self.cardName := cardName );
+TP,operation getCardBankName() : String,operation getCardBankName() : String
+TP,activity: (     return cardBankName );,activity: (     return cardBankName );
+TP,operation setCardBankName( cardBankName : String) : void,operation setCardBankName( cardBankName : String) : void
+TP,activity: (     self.cardBankName := cardBankName );,activity: (     self.cardBankName := cardBankName );
+TP,operation getCardHolderName() : String,operation getCardHolderName() : String
+TP,activity: (     return cardHolderName );,activity: (     return cardHolderName );
+TP,operation setCardHolderName( cardHolderName : String) : void,operation setCardHolderName( cardHolderName : String) : void
+TP,activity: (     self.cardHolderName := cardHolderName );,activity: (     self.cardHolderName := cardHolderName );
+TP,operation getCardValidDate() : String,operation getCardValidDate() : String
+TP,activity: (     return cardValidDate );,activity: (     return cardValidDate );
+TP,operation setCardValidDate( cardValidDate : String) : void,operation setCardValidDate( cardValidDate : String) : void
+TP,activity: (     self.cardValidDate := cardValidDate );,activity: (     self.cardValidDate := cardValidDate );
+TP,operation getCardNumber() : String,operation getCardNumber() : String
+TP,activity: (     return cardNumber );,activity: (     return cardNumber );
+TP,operation setCardNumber( cardNumber : String) : void,operation setCardNumber( cardNumber : String) : void
+TP,activity: (     self.cardNumber := cardNumber );,activity: (     self.cardNumber := cardNumber );
+TP,operation getCardBillingAddress() : String,operation getCardBillingAddress() : String
+TP,activity: (     return cardBillingAddress );,activity: (     return cardBillingAddress );
+TP,operation setCardBillingAddress( cardBillingAddress : String) : void,operation setCardBillingAddress( cardBillingAddress : String) : void
+TP,activity: (     self.cardBillingAddress := cardBillingAddress );,activity: (     self.cardBillingAddress := cardBillingAddress );
+TP,operation getCardBalance() : String,operation getCardBalance() : String
+TP,activity: (     return cardBalance );,activity: (     return cardBalance );
+TP,operation setCardBalance( cardBalance : String) : void,operation setCardBalance( cardBalance : String) : void
+TP,activity: (     self.cardBalance := cardBalance );,activity: (     self.cardBalance := cardBalance );
+TP,operation getCardTheme() : Sequence(String),operation getCardTheme() : Sequence(String)
+TP,activity: (     return cardTheme );,activity: (     return cardTheme );
+TP,operation setCardTheme( cardTheme : Sequence(String)) : void,operation setCardTheme( cardTheme : Sequence(String)) : void
+TP,activity: (     self.cardTheme := cardTheme );,activity: (     self.cardTheme := cardTheme );
+TP,SQL.execute(query) );,SQL.execute(query) );
+TP,"activity: (     var query : String ; query := ""DELETE FROM bankCardInfo WHERE userID = ""+self.userID+"" AND cardNumber = ""+self.cardNumber+"";"" ;","activity: (     var query : String ; query := ""DELETE FROM bankCardInfo WHERE userID = "" + self.userID + "" AND cardNumber = "" + self.cardNumber + "";"" ;"
+FP,"activity: (     return ""User{,"" +",
+FP,""" "" +",
+FP,"""userID="" + userID + "",",
+FP,""" +",
+FP,"""userName='"" + userName + ''' + "",",
+FP,"""userGroup='"" + userGroup + ''' + "",",
+FP,"""post='"" + post + ''' + "",",
+FP,"""securityProblem='"" + securityProblem + ''' +"",",
+FP,"""securityAnswer='"" + securityAnswer + ''' + "",",
+FP,"""birthday='"" + birthday + ''' + "",",
+FP,"""gender='"" + gender + ''' + "",",
+FP,"""country='"" + country + ''' + "",",
+FP,"""DLNumber='"" + DLNumber + ''' + "",",
+FP,"""phone='"" + phone + ''' + "",",
+FP,"""email='"" + email + ''' + "",",
+FP,"""address='"" + address + ''' + "",",
+FP,"""about='"" + about + ''' + "",",
+FP,"""regTime='"" + regTime + ''' + "",",
+FP,'}');,
+FP,return null );,
+FP,activity: (     execute super() ;,
+FP,self.orderNum := 0 ;,
+FP,self.bankCardList := Sequence{} ;,
+FP,self.bankCardData := Sequence{} ;,
+FP,self.vipBadge := null ;,
+FP,self.vipCard := null );,
+FP,self.vipCard := ImageTools.getVIPCardImage(userID) );,
+FP,self.carModel := carInfo[1+1] ;,
+FP,self.chassisNumber := carInfo[2+1] ;,
+FP,self.carNumber := carInfo[3+1] ;,
+FP,self.manufacturingDate := DateTools.stringToDateObje(carInfo[4+1]) ;,
+FP,self.addedDate := DateTools.stringToDateObje(carInfo[5+1]) ;,
+FP,self.status := (carInfo[6+1])->toInteger() ;,
+FP,execute update() );,
+FP,"activity: (     var sql : String ; sql := ""INSERT INTO carInfo VALUES ("" + (DataTools.getID(""carModels"") - 1) + "", '"" + carModel + ""', '"" + chassisNumber + ""', '"" + carNumber + ""', '""",
+FP,"+ DateTools.dateToString(manufacturingDate,""yyyy-MM-dd"") + ""', '"" + DateTools.getNow() + ""', "" + status + "")"";",
+FP,"activity: (     var sql : String ; sql := ""UPDATE carInfo SET carModel = '"" + carModel + ""', chassisNumber = '"" + chassisNumber + ""', carNumber = '"" + carNumber + ""', manufacturingDate = '""",
+FP,"+ DateTools.dateToString(manufacturingDate,""yyyy-MM-dd"") + ""', status = "" + status + "" WHERE carID = "" + carID ;",
+FP,"attribute carNumber : String;    static    attribute plateNumber : String := ""plateNumber"";",
+FP,"attribute gearType : String;  static    attribute categoryType : String := ""categoryType"";",
+FP,"attribute carBrand : String;   static    attribute carBrand : String := ""carBrand"";",
+FP,static operation newNewCar( modelID : int) : NewCar,
+FP,"activity: (     self.carModel := """" ;",
+FP,"self.chassisNumber := """" ;",
+FP,"self.carNumber := """" ;",
+FP,"self.manufacturingDate := """" ;",
+FP,"self.price := """" ;",
+FP,"self.seatNumber := """" ;",
+FP,"self.gearType := """" ;",
+FP,"self.carBrand := """" ;",
+FP,"self.gradientDark := """" ;",
+FP,"self.gradientLight := """" ;",
+FP,"self.imageUrl := """" ;",
+FP,activity: (     var fields : Sequence(OclAttribute) ; fields := self.getClass().getDeclaredAttributes() ;,
+FP,var field : OclAttribute ; field := fields->at(0+1) ;,
+FP,for field : fields do ( (     field.setAccessible(true) ;,
+FP,"if (field.get(self) /= null) then (     if (field.name = ""gradientDark"" or field.name = ""gradientLight"") then (     continue ) else skip ;",
+FP,"if (Objects.equals(type, ""modelID"")) then (     sql := ""SELECT * FROM carModels WHERE "" + type + "" = "" + modelID ) else     if (Objects.equals(type, ""carModel"")) then (     sql := ""SELECT * FROM carModels WHERE "" + type + "" = "" + ""'"" + carModel + ""'"" ) else (     error IllegalArgumentException.newIllegalArgumentException(""type must be modelID or carModel"") ) ;  ;",
+FP,self.modelID := (carModelInfo[0+1])->toInteger() ;,
+FP,self.carModel := carModelInfo[1+1] ;,
+FP,self.seats := (carModelInfo[2+1])->toInteger() ;,
+FP,self.price := (carModelInfo[3+1])->toInteger() ;,
+FP,self.gearType := carModelInfo[4+1] ;,
+FP,self.darkColor := carModelInfo[5+1] ;,
+FP,self.lightColor := carModelInfo[6+1] ;,
+FP,self.carBrand := carModelInfo[7+1] ;,
+FP,self.star := (carModelInfo[8+1])->toReal() ;,
+FP,self.speed := (carModelInfo[9+1])->toInteger() ;,
+FP,self.power := (carModelInfo[10+1])->toReal() ;,
+FP,"self.imageURL := ""file:src/main/resources/com/example/car_rental_sys/image/cars/"" + carModel + "".png"" ;",
+FP,"static operation newCarModel( carModel : String, seats : int, price : int, gearType : String, darkColor : String, lightColor : String, carBrand : String, star : double, speed : int, power : double) : CarModel",
+FP,"self.initialise(carModel, seats, price, gearType, darkColor, lightColor, carBrand, star, speed, power);",
+FP,"operation initialise( carModel : String, seats : int, price : int, gearType : String, darkColor : String, lightColor : String, carBrand : String, star : double, speed : int, power : double) : void",
+FP,"activity: (     var values : String ; values := DataTools.getID(""carModels"") + ',' + carModel + ',' + seats + ',' + price + ',' + gearType + ',' + darkColor + ',' + lightColor + ',' + carBrand + ',' + DataTools.getCarStar() + ',' + DataTools.getCarSpeed() + ',' + DataTools.getCarPower() ;",
+FP,"ImageTools.renameCarImage(imageURL, carModel) );",
+FP,"activity: (     var sql : String ; sql := ""UPDATE carModels SET carModel = '"" + carModel + ""', seats = "" + seats + "", price = "" + price +",
+FP,""", gearType = '"" + gearType + ""', darkColor = '"" + darkColor + ""', lightColor = '"" + lightColor + ""' WHERE modelID = "" + modelID ;",
+FP,boolean process := SQL.execute(sql) ;,
+FP,"activity: (     return ""Order{"" +",
+FP,""" orderID="" + orderID +",
+FP,""", carID="" + carID +",
+FP,""", orderTime="" + orderTime +",
+FP,""", pickUpTime="" + pickUpTime +",
+FP,""", returnTime="" + returnTime +",
+FP,""", userID="" + userID +",
+FP,""", price="" + price +",
+FP,""", paymentMethod='"" + paymentMethod + ''' +",
+FP,""", account='"" + account + ''' +",
+FP,""", status="" + status +",
+FP,""", star="" + star +",
+FP,""", invoiceNo='"" + invoiceNo + ''' +",
+FP,static   attribute instance : Card := null;,
+FP,static operation newCard( userID : int) : Card,
+FP,self.initialise(userID);,
+FP,operation initialise( userID : int) : void,
+FP,"activity: (     var query : String ; query := ""UPDATE bankCardInfo SET cardName = '""+self.cardName+""', billingAddress = '""+self.cardBillingAddress+",
+FP,"""' WHERE userID = ""+self.userID+"" AND cardNumber = ""+self.cardNumber+"";"" ;",
+FN,,activity: skip;
+FN,,operation initUser() : void
+FN,,"activity: (     var sql : String ; sql := ""select * from userInfo where email = '"" + self.email + ""'"" ;"
+FN,,var userInfo : Sequence(Sequence(String)) ; userInfo := SQL.query(sql) ;
+FN,,"if (userInfo->size() = 0) then (     error ProgramException(""No user found"") ) else skip ;"
+FN,,var user : Sequence(String) ; user := userInfo->at(0+1) ;
+FN,,self.userID := (user[0+1])->toInteger() ;
+FN,,"self.userName := user[1+1].replace(""-"", "" "") ;"
+FN,,self.userGroup := user[2+1] ;
+FN,,self.post := user[3+1] ;
+FN,,self.securityProblem := user[4+1] ;
+FN,,self.securityAnswer := user[5+1] ;
+FN,,self.birthday := user[6+1] ;
+FN,,self.gender := user[7+1] ;
+FN,,self.country := user[8+1] ;
+FN,,self.DLNumber := user[9+1] ;
+FN,,self.phone := user[10+1] ;
+FN,,self.email := user[11+1] ;
+FN,,self.address := user[12+1] ;
+FN,,self.about := user[13+1] ;
+FN,,self.regTime := user[14+1] ;
+FN,,"activity: (     return ""User{"" + "",\n"" + ""userID="" + userID + "",\n"" + ""userName='"" + userName + '\'' + "",\n"" + ""userGroup='"" + userGroup + '\'' + "",\n"" + ""post='"" + post + '\'' + "",\n"" + ""securityProblem='"" + securityProblem + '\'' + "",\n"" + ""securityAnswer='"" + securityAnswer + '\'' + "",\n"" + ""birthday='"" + birthday + '\'' + "",\n"" + ""gender='"" + gender + '\'' + "",\n"" + ""country='"" + country + '\'' + "",\n"" + ""DLNumber='"" + DLNumber + '\'' + "",\n"" + ""phone='"" + phone + '\'' + "",\n"" + ""email='"" + email + '\'' + "",\n"" + ""address='"" + address + '\'' + "",\n"" + ""about='"" + about + '\'' + "",\n"" + ""regTime='"" + regTime + '\'' + "",\n"" + '}' );"
+FN,,operation updateUserInfo() : void
+FN,,"activity: (     var sql : String ; sql := ""UPDATE userInfo SET userName = '"" + userName + ""', birthday = '"" + birthday + ""', phone = '"" + phone + ""', email = '"" + email + ""', address = '"" + address + ""', about = '"" + about + ""' WHERE userID = "" + userID ;"
+FN,,"operation updateSecurityProblem( newSecurityProblem : String, newSecurityAnswer : String) : void"
+FN,,activity: (     self.securityProblem := newSecurityProblem ;
+FN,,self.securityAnswer := newSecurityAnswer ;
+FN,,"var sql : String ; sql := ""UPDATE userInfo SET securityProblem = '"" + newSecurityProblem + ""', securityAnswer = '"" + newSecurityAnswer + ""' WHERE userID = "" + userID ;"
+FN,,_switchval := (Objects.requireNonNull(role)) ;
+FN,,self.vipCard := ImageTools.getVIPCardImage(userID) ;
+FN,,"activity: (     execute super(userFirstName, userLastName, password, userGroup, post, securityProblem, securityAnswer, birthday, gender, country, DLNumber, phone, email, address, about, regTime) );"
+FN,,operation storeCustomerInfo() : boolean
+FN,,"activity: (     var userID : String ; userID := ((DataTools.getNewUserID()) + """") ;"
+FN,,"var userinfo : Sequence(String) ; userinfo := Sequence{userID,userFirstName + ""-"" + userLastName,userGroup,post,securityProblem,securityAnswer,birthday,gender,country,DLNumber,phone,email,address,about,regTime} ;"
+FN,,"var userAndPassword : String ; userAndPassword := userID + "","" + password ;"
+FN,,"var userinfoStr : String ; userinfoStr := join("","", userinfo) ;"
+FN,,"try (     FileOperate.addStringToFile(ConfigFile.dataFilesRootPath + ""userinfo.txt"", userinfoStr) ;"
+FN,,"FileOperate.addStringToFile(ConfigFile.dataFilesRootPath + ""password.txt"", userAndPassword) ;"
+FN,,ImageTools.addDefaultAvatar((userID)->toInteger()) ;
+FN,,return true )   catch (e : ProgramException) do (     e.printStackTrace() ;
+FN,,return false )
+FN,,operation getBankCardData() : Sequence(Sequence(String))
+FN,,activity: (     return bankCardData );
+FN,,operation setBankCardData( bankCardData : Sequence(Sequence(String))) : void
+FN,,activity: (     self.bankCardData := bankCardData );
+FN,,carModel := carInfo[1+1] ;
+FN,,chassisNumber := carInfo[2+1] ;
+FN,,carNumber := carInfo[3+1] ;
+FN,,manufacturingDate := DateTools.stringToDateObje(carInfo[4+1]) ;
+FN,,addedDate := DateTools.stringToDateObje(carInfo[5+1]) ;
+FN,,status := (carInfo[6+1])->toInteger() ;
+FN,,"operation initialise( carID : int, carModel : String, chassisNumber : String, carNumber : String, manufacturingDate : OclDate, status : int) : void"
+FN,,"operation initialise( carModel : String, chassisNumber : String, carNumber : String, manufacturingDate : String, status : int) : void"
+FN,,"operation initialise( carID : int, carModel : String, chassisNumber : String, carNumber : String, manufacturingDate : OclDate, addedDate : OclDate, status : int) : void"
+FN,,self.addedDate := addedDate ;
+FN,,execute update() ;
+FN,,"activity: (     var sql : String ; sql := ""INSERT INTO carInfo VALUES ("" + (DataTools.getID(""carModels"") - 1) + "", '"" + carModel + ""', '"" + chassisNumber + ""', '"" + carNumber + ""', '"" + DateTools.dateToString(manufacturingDate, ""yyyy-MM-dd"") + ""', '"" + DateTools.getNow() + ""', "" + status + "")"" ;"
+FN,,"activity: (     var sql : String ; sql := ""UPDATE carInfo SET carModel = '"" + carModel + ""', chassisNumber = '"" + chassisNumber + ""', carNumber = '"" + carNumber + ""', manufacturingDate = '"" + DateTools.dateToString(manufacturingDate, ""yyyy-MM-dd"") + ""', status = "" + status + "" WHERE carID = "" + carID ;"
+FN,,activity: (     return manufacturingDate );
+FN,,operation setManufacturingDate( manufacturingDate : String) : void
+FN,,operation getPrice() : String
+FN,,operation setPrice( price : String) : void
+FN,,operation getSeatNumber() : String
+FN,,activity: (     return seatNumber );
+FN,,operation setSeatNumber( seatNumber : String) : void
+FN,,activity: (     self.seatNumber := seatNumber );
+FN,,operation getGradientDark() : String
+FN,,activity: (     return gradientDark );
+FN,,operation setGradientDark( gradientDark : String) : void
+FN,,activity: (     self.gradientDark := gradientDark );
+FN,,operation getGradientLight() : String
+FN,,activity: (     return gradientLight );
+FN,,operation setGradientLight( gradientLight : String) : void
+FN,,activity: (     self.gradientLight := gradientLight );
+FN,,operation getNewCarImage() : Image
+FN,,activity: (     return newCarImage );
+FN,,operation setNewCarImage( newCarImage : Image) : void
+FN,,activity: (     self.newCarImage := newCarImage );
+FN,,operation clearProperty() : void
+FN,,activity: (     self.carModel := null ;
+FN,,self.chassisNumber := null ;
+FN,,self.carNumber := null ;
+FN,,self.manufacturingDate := null ;
+FN,,self.price := null ;
+FN,,self.seatNumber := null ;
+FN,,self.gearType := null ;
+FN,,self.carBrand := null ;
+FN,,self.gradientDark := null ;
+FN,,self.gradientLight := null ;
+FN,,self.imageUrl := null ;
+FN,,activity: (     var fields : Sequence(OclAttribute) ; fields := self->oclType().getDeclaredFields() ;
+FN,,for (field : fields) do ( (     field.setAccessible(true) ;
+FN,,"if (field->at(self+1) /= null) then (     if (field.getName() = ""gradientDark"" or field.getName() = ""gradientLight"") then (     continue ) else skip ;"
+FN,,"if (Objects = type, ""modelID"") then (     sql := ""SELECT * FROM carModels WHERE "" + type + "" = "" + modelID ) else     if (Objects = type, ""carModel"") then (     sql := ""SELECT * FROM carModels WHERE "" + type + "" = "" + ""'"" + carModel + ""'"" ) else (     error IllegalArgumentException.newIllegalArgumentException(""type must be modelID or carModel"") ) ;  ;"
+FN,,modelID := (carModelInfo[0+1])->toInteger() ;
+FN,,carModel := carModelInfo[1+1] ;
+FN,,seats := (carModelInfo[2+1])->toInteger() ;
+FN,,price := (carModelInfo[3+1])->toInteger() ;
+FN,,gearType := carModelInfo[4+1] ;
+FN,,darkColor := carModelInfo[5+1] ;
+FN,,lightColor := carModelInfo[6+1] ;
+FN,,carBrand := carModelInfo[7+1] ;
+FN,,star := (carModelInfo[8+1])->toReal() ;
+FN,,speed := (carModelInfo[9+1])->toInteger() ;
+FN,,power := (carModelInfo[10+1])->toReal() ;
+FN,,"imageURL := ""file:src/main/resources/com/example/car_rental_sys/image/cars/"" + carModel + "".png"" ;"
+FN,,"static operation newCarModel( carModel : String, seats : int, price : int, gearType : String, darkColor : String, lightColor : String, carBrand : String, imageURL : String) : CarModel"
+FN,,"self.initialise(carModel, seats,price,gearType,darkColor,lightColor,carBrand,imageURL);"
+FN,,"operation initialise( carModel : String, seats : int, price : int, gearType : String, darkColor : String, lightColor : String, carBrand : String, imageURL : String) : void"
+FN,,"activity: (     var values : String ; values := DataTools.getID(""carModels"") + "",'"" + carModel + ""',"" + seats + "","" + price + "",'"" + gearType + ""','"" + darkColor + ""','"" + lightColor + ""','"" + carBrand + ""',"" + DataTools.getCarStar() + "","" + DataTools.getCarSpeed() + "","" + DataTools.getCarPower() ;"
+FN,,"ImageTools.renameCarImage(imageURL, carModel) ;"
+FN,,"activity: (     var sql : String ; sql := ""UPDATE carModels SET carModel = '"" + carModel + ""', seats = "" + seats + "", price = "" + price + "", gearType = '"" + gearType + ""', darkColor = '"" + darkColor + ""', lightColor = '"" + lightColor + ""' WHERE modelID = "" + modelID ;"
+FN,,var process : boolean ; process := SQL.execute(sql) ;
+FN,,"OclFile[""System.out""].println(""done"") ;"
+FN,,ImageTools.deleteFile(imageURL) );
+FN,,"attribute pickUpLocation : String := """";"
+FN,,"attribute parkingLocation : String := """";"
+FN,,self.pickUpLocation := orderInfo[5+1] ;
+FN,,self.parkingLocation := orderInfo[6+1] ;
+FN,,operation setOrderID( orderID : int) : void
+FN,,activity: (     self.orderID := orderID );
+FN,,operation setCarID( carID : int) : void
+FN,,activity: (     self.carID := carID );
+FN,,operation setOrderTime( orderTime : OclDate) : void
+FN,,activity: (     self.orderTime := orderTime );
+FN,,operation setPickUpTime( pickUpTime : OclDate) : void
+FN,,activity: (     self.pickUpTime := pickUpTime );
+FN,,operation setReturnTime( returnTime : OclDate) : void
+FN,,activity: (     self.returnTime := returnTime );
+FN,,operation setPaymentMethod( paymentMethod : String) : void
+FN,,activity: (     self.paymentMethod := paymentMethod );
+FN,,operation setAccount( account : String) : void
+FN,,activity: (     self.account := account );
+FN,,operation setStar( star : int) : void
+FN,,"activity: (     return ""Order{"" + ""orderID="" + orderID + "", carID="" + carID + "", orderTime="" + orderTime + "", pickUpTime="" + pickUpTime + "", returnTime="" + returnTime + "", userID="" + userID + "", price="" + price + "", paymentMethod='"" + paymentMethod + '\'' + "", account='"" + account + '\'' + "", status="" + status + "", star="" + star + "", invoiceNo='"" + invoiceNo + '\'' + '}' );"
+FN,,static   attribute instance : Card;
+FN,,"operation getCardDetails( userID : int, cardNumber : String) : Sequence(String)"
+FN,,"activity: (     var query : String ; query := ""SELECT * FROM bankCardInfo WHERE userID = "" + userID + "" AND cardNumber = "" + cardNumber + "";"" ;"
+FN,,var cardDetails : Sequence(Sequence(String)) ; cardDetails := SQL.query(query) ;
+FN,,return cardDetails->at(0+1) );
+FN,,"activity: (     var query : String ; query := ""UPDATE bankCardInfo SET cardName = '"" + self.cardName + ""', billingAddress = '"" + self.cardBillingAddress + ""' WHERE userID = "" + self.userID + "" AND cardNumber = "" + self.cardNumber + "";"" ;"

@@ -1,0 +1,17 @@
+class Foo {
+  static class Bar { }
+
+
+}
+
+ class Foo1 {
+   operation bar() : void
+  pre: true
+  post: true
+  activity: ( class Foobar { }
+
+ );
+
+}
+
+

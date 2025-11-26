@@ -1,0 +1,12 @@
+[
+    {
+        "Relationship": "Inheritance",
+        "Source": "ContinueStatement",
+        "Target": "Statement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": "",
+        "Flag": false
+    }
+]

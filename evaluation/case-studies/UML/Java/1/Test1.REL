@@ -1,0 +1,101 @@
+[
+    {
+        "Relationship": "Aggregation",
+        "Source": "Car",
+        "Target": "Rental",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..1",
+        "Role2": "car"
+    },
+    {
+        "Relationship": "Aggregation",
+        "Source": "Customer",
+        "Target": "Rental",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..1",
+        "Role2": "customer"
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "Rental",
+        "Target": "Car",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "Rental",
+        "Target": "Customer",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Composition",
+        "Source": "Car",
+        "Target": "CarRentalSystem",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "cars"
+    },
+    {
+        "Relationship": "Composition",
+        "Source": "Customer",
+        "Target": "CarRentalSystem",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "customers"
+    },
+    {
+        "Relationship": "Composition",
+        "Source": "Rental",
+        "Target": "CarRentalSystem",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "rentals"
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "CarRentalSystem",
+        "Target": "Car",
+        "Multiplicity1": "",
+        "Role1": "car",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "CarRentalSystem",
+        "Target": "Customer",
+        "Multiplicity1": "",
+        "Role1": "newCustomer",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "Main",
+        "Target": "CarRentalSystem",
+        "Multiplicity1": "",
+        "Role1": "rentalSystem",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "Main",
+        "Target": "Car",
+        "Multiplicity1": "",
+        "Role1": "car1",
+        "Multiplicity2": "",
+        "Role2": ""
+    }
+]

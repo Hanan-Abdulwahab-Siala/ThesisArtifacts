@@ -1,0 +1,1748 @@
+class User {
+     attribute userID : int := 0;
+
+     attribute userName : String := "null";
+
+     attribute userFirstName : String := "null";
+
+     attribute userLastName : String := "null";
+
+     attribute password : String := "0123456789";
+
+     attribute userGroup : String := "customer";
+
+     attribute post : String := "null";
+
+     attribute securityProblem : String := "null";
+
+     attribute securityAnswer : String := "null";
+
+     attribute birthday : String := "2022-01-01 00:00:00";
+
+     attribute gender : String := "null";
+
+     attribute country : String := "null";
+
+     attribute DLNumber : String := "null";
+
+     attribute phone : String := "0123456789";
+
+     attribute email : String := "rent@mail.com";
+
+     attribute address : String := "null";
+
+     attribute about : String := "null";
+
+     attribute regTime : String := "null";
+
+     attribute avatar : Image;
+
+   static operation newUser() : User
+  pre: true
+  post: true
+  activity:
+  ( var self : User ;
+    self := createUser();
+    self.initialise();
+    return self );
+
+  operation initialise() : void
+  pre: true  post: true
+  activity: skip;
+
+
+   static operation newUser( email : String) : User
+  pre: true
+  post: true
+  activity:
+  ( var self : User ;
+    self := createUser();
+    self.initialise(email);
+    return self );
+
+  operation initialise( email : String) : void
+  pre: true  post: true
+  activity: (     self.email := email ; 
+     execute initUser() );
+
+
+   static operation newUser( userFirstName : String, userLastName : String, password : String, userGroup : String, post : String, securityProblem : String, securityAnswer : String, birthday : String, gender : String, country : String, DLNumber : String, phone : String, email : String, address : String, about : String, regTime : String) : User
+  pre: true
+  post: true
+  activity:
+  ( var self : User ;
+    self := createUser();
+    self.initialise(userFirstName, userLastName,password,userGroup,post,securityProblem,securityAnswer,birthday,gender,country,DLNumber,phone,email,address,about,regTime);
+    return self );
+
+  operation initialise( userFirstName : String, userLastName : String, password : String, userGroup : String, post : String, securityProblem : String, securityAnswer : String, birthday : String, gender : String, country : String, DLNumber : String, phone : String, email : String, address : String, about : String, regTime : String) : void
+  pre: true  post: true
+  activity: (     self.userName := userFirstName + "-" + userLastName ; 
+     self.password := password ; 
+    self.userGroup := userGroup ; 
+    self.post := post ; 
+    self.securityProblem := securityProblem ; 
+    self.securityAnswer := securityAnswer ; 
+    self.birthday := birthday ; 
+    self.gender := gender ; 
+    self.country := country ; 
+    self.DLNumber := DLNumber ; 
+    self.phone := phone ; 
+    self.email := email ; 
+    self.address := address ; 
+    self.about := about ; 
+    self.regTime := regTime ; 
+ );
+
+
+   operation initUser() : void
+  pre: true
+  post: true
+  activity: (     var sql : String ; sql := "select * from userInfo where email = '" + self.email + "'" ;
+     var userInfo : Sequence(Sequence(String)) ; userInfo := SQL.query(sql) ;
+    if (userInfo->size() = 0) then (     error ProgramException("No user found") ) else skip ; 
+    var user : Sequence(String) ; user := userInfo->at(0+1) ;
+    self.userID := (user[0+1])->toInteger() ; 
+    self.userName := user[1+1].replace("-", " ") ; 
+    self.userGroup := user[2+1] ; 
+    self.post := user[3+1] ; 
+    self.securityProblem := user[4+1] ; 
+    self.securityAnswer := user[5+1] ; 
+    self.birthday := user[6+1] ; 
+    self.gender := user[7+1] ; 
+    self.country := user[8+1] ; 
+    self.DLNumber := user[9+1] ; 
+    self.phone := user[10+1] ; 
+    self.email := user[11+1] ; 
+    self.address := user[12+1] ; 
+    self.about := user[13+1] ; 
+    self.regTime := user[14+1] ; 
+    self.avatar := ImageTools.getUserAvatarFromUserID(userID) ; 
+ );
+
+   operation getUserID() : int
+  pre: true
+  post: true
+  activity: (     return userID );
+
+   operation setUserID( userID : int) : void
+  pre: true
+  post: true
+  activity: (     self.userID := userID );
+
+   operation getUserName() : String
+  pre: true
+  post: true
+  activity: (     return userName );
+
+   operation setUserName( userName : String) : void
+  pre: true
+  post: true
+  activity: (     self.userName := userName );
+
+   operation getUserFirstName() : String
+  pre: true
+  post: true
+  activity: (     return userFirstName );
+
+   operation setUserFirstName( userFirstName : String) : void
+  pre: true
+  post: true
+  activity: (     self.userFirstName := userFirstName );
+
+   operation getUserLastName() : String
+  pre: true
+  post: true
+  activity: (     return userLastName );
+
+   operation setUserLastName( userLastName : String) : void
+  pre: true
+  post: true
+  activity: (     self.userLastName := userLastName );
+
+   operation getPassword() : String
+  pre: true
+  post: true
+  activity: (     return password );
+
+   operation setPassword( password : String) : void
+  pre: true
+  post: true
+  activity: (     self.password := password );
+
+   operation getUserGroup() : String
+  pre: true
+  post: true
+  activity: (     return userGroup );
+
+   operation setUserGroup( userGroup : String) : void
+  pre: true
+  post: true
+  activity: (     self.userGroup := userGroup );
+
+   operation getPost() : String
+  pre: true
+  post: true
+  activity: (     return post );
+
+   operation setPost( post : String) : void
+  pre: true
+  post: true
+  activity: (     self.post := post );
+
+   operation getSecurityProblem() : String
+  pre: true
+  post: true
+  activity: (     return securityProblem );
+
+   operation setSecurityProblem( securityProblem : String) : void
+  pre: true
+  post: true
+  activity: (     self.securityProblem := securityProblem );
+
+   operation getSecurityAnswer() : String
+  pre: true
+  post: true
+  activity: (     return securityAnswer );
+
+   operation setSecurityAnswer( securityAnswer : String) : void
+  pre: true
+  post: true
+  activity: (     self.securityAnswer := securityAnswer );
+
+   operation getBirthday() : String
+  pre: true
+  post: true
+  activity: (     return birthday );
+
+   operation setBirthday( birthday : String) : void
+  pre: true
+  post: true
+  activity: (     self.birthday := birthday );
+
+   operation getGender() : String
+  pre: true
+  post: true
+  activity: (     return gender );
+
+   operation setGender( gender : String) : void
+  pre: true
+  post: true
+  activity: (     self.gender := gender );
+
+   operation getCountry() : String
+  pre: true
+  post: true
+  activity: (     return country );
+
+   operation setCountry( country : String) : void
+  pre: true
+  post: true
+  activity: (     self.country := country );
+
+   operation getDLNumber() : String
+  pre: true
+  post: true
+  activity: (     return DLNumber );
+
+   operation setDLNumber( DLNumber : String) : void
+  pre: true
+  post: true
+  activity: (     self.DLNumber := DLNumber );
+
+   operation getPhone() : String
+  pre: true
+  post: true
+  activity: (     return phone );
+
+   operation setPhone( phone : String) : void
+  pre: true
+  post: true
+  activity: (     self.phone := phone );
+
+   operation getEmail() : String
+  pre: true
+  post: true
+  activity: (     return email );
+
+   operation setEmail( email : String) : void
+  pre: true
+  post: true
+  activity: (     self.email := email );
+
+   operation getAddress() : String
+  pre: true
+  post: true
+  activity: (     return address );
+
+   operation setAddress( address : String) : void
+  pre: true
+  post: true
+  activity: (     self.address := address );
+
+   operation getAbout() : String
+  pre: true
+  post: true
+  activity: (     return about );
+
+   operation setAbout( about : String) : void
+  pre: true
+  post: true
+  activity: (     self.about := about );
+
+   operation getRegTime() : String
+  pre: true
+  post: true
+  activity: (     return regTime );
+
+   operation setRegTime( regTime : String) : void
+  pre: true
+  post: true
+  activity: (     self.regTime := regTime );
+
+   operation getAvatar() : Image
+  pre: true
+  post: true
+  activity: (     return avatar );
+
+   operation setAvatar( avatar : Image) : void
+  pre: true
+  post: true
+  activity: (     self.avatar := avatar );
+
+      operation toString() : String
+  pre: true
+  post: true
+  activity: (     return "User{" + ",\n" + "userID=" + userID + ",\n" + "userName='" + userName + '\'' + ",\n" + "userGroup='" + userGroup + '\'' + ",\n" + "post='" + post + '\'' + ",\n" + "securityProblem='" + securityProblem + '\'' + ",\n" + "securityAnswer='" + securityAnswer + '\'' + ",\n" + "birthday='" + birthday + '\'' + ",\n" + "gender='" + gender + '\'' + ",\n" + "country='" + country + '\'' + ",\n" + "DLNumber='" + DLNumber + '\'' + ",\n" + "phone='" + phone + '\'' + ",\n" + "email='" + email + '\'' + ",\n" + "address='" + address + '\'' + ",\n" + "about='" + about + '\'' + ",\n" + "regTime='" + regTime + '\'' + ",\n" + '}' );
+
+   operation updateUserInfo() : void
+  pre: true
+  post: true
+  activity: (     var sql : String ; sql := "UPDATE userInfo SET userName = '" + userName + "', birthday = '" + birthday + "', phone = '" + phone + "', email = '" + email + "', address = '" + address + "', about = '" + about + "' WHERE userID = " + userID ;
+     SQL.execute(sql) );
+
+   operation updateSecurityProblem( newSecurityProblem : String, newSecurityAnswer : String) : void
+  pre: true
+  post: true
+  activity: (     self.securityProblem := newSecurityProblem ; 
+     self.securityAnswer := newSecurityAnswer ; 
+     var sql : String ; sql := "UPDATE userInfo SET securityProblem = '" + newSecurityProblem + "', securityAnswer = '" + newSecurityAnswer + "' WHERE userID = " + userID ;
+     SQL.execute(sql) );
+
+}
+
+ class Admin extends User {
+   static operation newAdmin( email : String) : Admin
+  pre: true
+  post: true
+  activity:
+  ( var self : Admin ;
+    self := createAdmin();
+    self.initialise(email);
+    return self );
+
+  operation initialise( email : String) : void
+  pre: true  post: true
+  activity: (     execute super(email) );
+
+
+}
+
+class UserFactory {
+  static   operation getUser( email : String) : User
+  pre: true
+  post: true
+  activity: (     var role : String ; role := DataTools.getUserRoleFromUserEmail(email) ;
+ 
+    for _x : Integer.subrange(1,1) do
+      ( var _switchval : OclAny ;
+        _switchval := (Objects.requireNonNull(role)) ; 
+       if _switchval = "driver" then
+     return Admin.newAdmin(email) 
+   else skip ;
+
+       if _switchval = "admin" then
+     return Driver.newDriver(email) 
+   else skip ;
+       if _switchval = "customer" then
+     return Customer.newCustomer(email) 
+   else skip ;
+       if true then
+     return null 
+   else skip ;
+ )
+ );
+
+  static   operation getUser( userID : int) : User
+  pre: true
+  post: true
+  activity: (     var email : String ; email := DataTools.getEmailFromUserID(userID) ;
+     var role : String ; role := DataTools.getUserRoleFromUserID(userID) ;
+ 
+    for _x : Integer.subrange(1,1) do
+      ( var _switchval : OclAny ;
+        _switchval := (role) ; 
+       if _switchval = "driver" then
+     return Admin.newAdmin(email) 
+   else skip ;
+
+       if _switchval = "admin" then
+     return Driver.newDriver(email) 
+   else skip ;
+       if _switchval = "customer" then
+     return Customer.newCustomer(email) 
+   else skip ;
+       if true then
+     return null 
+   else skip ;
+ )
+ );
+
+}
+
+class Driver extends User {
+   static operation newDriver( email : String) : Driver
+  pre: true
+  post: true
+  activity:
+  ( var self : Driver ;
+    self := createDriver();
+    self.initialise(email);
+    return self );
+
+  operation initialise( email : String) : void
+  pre: true  post: true
+  activity: (     execute super(email) );
+
+
+}
+
+class Customer extends User {
+   attribute orderNum : int;
+
+   attribute bankCardList : Sequence(String);
+
+   attribute bankCardData : Sequence(Sequence(String));
+
+   attribute vipBadge : Image;
+
+   attribute vipCard : Image;
+
+   static operation newCustomer() : Customer
+  pre: true
+  post: true
+  activity:
+  ( var self : Customer ;
+    self := createCustomer();
+    self.initialise();
+    return self );
+
+  operation initialise() : void
+  pre: true  post: true
+  activity: (     execute super() );
+
+
+   static operation newCustomer( email : String) : Customer
+  pre: true
+  post: true
+  activity:
+  ( var self : Customer ;
+    self := createCustomer();
+    self.initialise(email);
+    return self );
+
+  operation initialise( email : String) : void
+  pre: true  post: true
+  activity: (     execute super(email) ; 
+     execute initCustomerData() );
+
+
+   operation initCustomerData() : void
+  pre: true
+  post: true
+  activity: (     self.orderNum := DataTools.getCustomerOrderNum(userID) ; 
+     self.bankCardList := DataTools.getCustomerBankCardsList(userID) ; 
+    self.bankCardData := DataTools.getCustomerBankCardsData(userID) ; 
+    self.vipBadge := ImageTools.getBadgeImage(userID) ; 
+    self.vipCard := ImageTools.getVIPCardImage(userID) ; 
+ );
+
+   static operation newCustomer( userFirstName : String, userLastName : String, password : String, userGroup : String, post : String, securityProblem : String, securityAnswer : String, birthday : String, gender : String, country : String, DLNumber : String, phone : String, email : String, address : String, about : String, regTime : String) : Customer
+  pre: true
+  post: true
+  activity:
+  ( var self : Customer ;
+    self := createCustomer();
+    self.initialise(userFirstName, userLastName,password,userGroup,post,securityProblem,securityAnswer,birthday,gender,country,DLNumber,phone,email,address,about,regTime);
+    return self );
+
+  operation initialise( userFirstName : String, userLastName : String, password : String, userGroup : String, post : String, securityProblem : String, securityAnswer : String, birthday : String, gender : String, country : String, DLNumber : String, phone : String, email : String, address : String, about : String, regTime : String) : void
+  pre: true  post: true
+  activity: (     execute super(userFirstName, userLastName, password, userGroup, post, securityProblem, securityAnswer, birthday, gender, country, DLNumber, phone, email, address, about, regTime) );
+
+
+   operation getOrderNum() : int
+  pre: true
+  post: true
+  activity: (     return orderNum );
+
+   operation setOrderNum( orderNum : int) : void
+  pre: true
+  post: true
+  activity: (     self.orderNum := orderNum );
+
+   operation getAvatar() : Image
+  pre: true
+  post: true
+  activity: (     return avatar );
+
+   operation setAvatar( avatar : Image) : void
+  pre: true
+  post: true
+  activity: (     self.avatar := avatar );
+
+   operation getVipBadge() : Image
+  pre: true
+  post: true
+  activity: (     return vipBadge );
+
+   operation setVipBadge( vipBadge : Image) : void
+  pre: true
+  post: true
+  activity: (     self.vipBadge := vipBadge );
+
+   operation getVipCard() : Image
+  pre: true
+  post: true
+  activity: (     return vipCard );
+
+   operation setVipCard( vipCard : Image) : void
+  pre: true
+  post: true
+  activity: (     self.vipCard := vipCard );
+
+   operation storeCustomerInfo() : boolean
+  pre: true
+  post: true
+  activity: (     var userID : String ; userID := ((DataTools.getNewUserID()) + "") ;
+     var userinfo : Sequence(String) ; userinfo := Sequence{userID,userFirstName + "-" + userLastName,userGroup,post,securityProblem,securityAnswer,birthday,gender,country,DLNumber,phone,email,address,about,regTime} ;
+    var userAndPassword : String ; userAndPassword := userID + "," + password ;
+    var userinfoStr : String ; userinfoStr := join(",", userinfo) ;
+    try (     FileOperate.addStringToFile(ConfigFile.dataFilesRootPath + "userinfo.txt", userinfoStr) ; 
+     FileOperate.addStringToFile(ConfigFile.dataFilesRootPath + "password.txt", userAndPassword) ; 
+     ImageTools.addDefaultAvatar((userID)->toInteger()) ; 
+     return true )   catch (e : ProgramException) do (     e.printStackTrace() ; 
+     return false )
+ 
+ );
+
+   operation getBankCardData() : Sequence(Sequence(String))
+  pre: true
+  post: true
+  activity: (     return bankCardData );
+
+   operation setBankCardData( bankCardData : Sequence(Sequence(String))) : void
+  pre: true
+  post: true
+  activity: (     self.bankCardData := bankCardData );
+
+}
+
+class Car {
+   attribute carID : int;
+
+   attribute carModel : String;
+
+   attribute chassisNumber : String;
+
+   attribute carNumber : String;
+
+   attribute carBrand : String;
+
+   attribute manufacturingDate : OclDate;
+
+   attribute addedDate : OclDate;
+
+   attribute status : int;
+
+   static operation newCar( carID : int) : Car
+  pre: true
+  post: true
+  activity:
+  ( var self : Car ;
+    self := createCar();
+    self.initialise(carID);
+    return self );
+
+  operation initialise( carID : int) : void
+  pre: true  post: true
+  activity: (     self.carID := carID ; 
+     execute initData() );
+
+
+   operation initData() : void
+  pre: true
+  post: true
+  activity: (     var sql : String ; sql := "SELECT * FROM carInfo WHERE carID = " + carID ;
+     var data : Sequence(Sequence(String)) ; data := SQL.query(sql) ;
+    if (data->size() = 0) then (     return ) else skip ; 
+    var carInfo : Sequence(String) ; carInfo := data->at(0+1) ;
+    carModel := carInfo[1+1] ; 
+    chassisNumber := carInfo[2+1] ; 
+    carNumber := carInfo[3+1] ; 
+    manufacturingDate := DateTools.stringToDateObje(carInfo[4+1]) ; 
+    OclFile["System.out"].println("manufacturingDate: " + manufacturingDate) ; 
+    addedDate := DateTools.stringToDateObje(carInfo[5+1]) ; 
+    status := (carInfo[6+1])->toInteger() ; 
+ );
+
+   static operation newCar( carID : int, carModel : String, chassisNumber : String, carNumber : String, manufacturingDate : OclDate, status : int) : Car
+  pre: true
+  post: true
+  activity:
+  ( var self : Car ;
+    self := createCar();
+    self.initialise(carID, carModel,chassisNumber,carNumber,manufacturingDate,status);
+    return self );
+
+  operation initialise( carID : int, carModel : String, chassisNumber : String, carNumber : String, manufacturingDate : OclDate, status : int) : void
+  pre: true  post: true
+  activity: (     self.carID := carID ; 
+     self.carModel := carModel ; 
+    self.chassisNumber := chassisNumber ; 
+    self.carNumber := carNumber ; 
+    self.manufacturingDate := manufacturingDate ; 
+    self.status := status ; 
+ );
+
+
+   static operation newCar( carModel : String, chassisNumber : String, carNumber : String, manufacturingDate : String, status : int) : Car
+  pre: true
+  post: true
+  activity:
+  ( var self : Car ;
+    self := createCar();
+    self.initialise(carModel, chassisNumber,carNumber,manufacturingDate,status);
+    return self );
+
+  operation initialise( carModel : String, chassisNumber : String, carNumber : String, manufacturingDate : String, status : int) : void
+  pre: true  post: true
+  activity: (     self.carModel := carModel ; 
+     self.chassisNumber := chassisNumber ; 
+    self.carNumber := carNumber ; 
+    self.manufacturingDate := DateTools.stringToDateObje(manufacturingDate) ; 
+    self.status := status ; 
+ );
+
+
+   static operation newCar( carID : int, carModel : String, chassisNumber : String, carNumber : String, manufacturingDate : OclDate, addedDate : OclDate, status : int) : Car
+  pre: true
+  post: true
+  activity:
+  ( var self : Car ;
+    self := createCar();
+    self.initialise(carID, carModel,chassisNumber,carNumber,manufacturingDate,addedDate,status);
+    return self );
+
+  operation initialise( carID : int, carModel : String, chassisNumber : String, carNumber : String, manufacturingDate : OclDate, addedDate : OclDate, status : int) : void
+  pre: true  post: true
+  activity: (     self.carID := carID ; 
+     self.carModel := carModel ; 
+    self.chassisNumber := chassisNumber ; 
+    self.carNumber := carNumber ; 
+    self.manufacturingDate := manufacturingDate ; 
+    self.addedDate := addedDate ; 
+    self.status := status ; 
+ );
+
+
+   operation setCarModel( carModel : String) : void
+  pre: true
+  post: true
+  activity: (     self.carModel := carModel );
+
+   operation setChassisNumber( chassisNumber : String) : void
+  pre: true
+  post: true
+  activity: (     self.chassisNumber := chassisNumber );
+
+   operation setCarNumber( carNumber : String) : void
+  pre: true
+  post: true
+  activity: (     self.carNumber := carNumber );
+
+   operation setManufacturingDate( manufacturingDate : OclDate) : void
+  pre: true
+  post: true
+  activity: (     self.manufacturingDate := manufacturingDate );
+
+   operation setAddedDate( addedDate : OclDate) : void
+  pre: true
+  post: true
+  activity: (     self.addedDate := addedDate );
+
+   operation setStatus( status : int) : void
+  pre: true
+  post: true
+  activity: (     self.status := status );
+
+   operation getCarID() : int
+  pre: true
+  post: true
+  activity: (     return carID );
+
+   operation getCarModel() : String
+  pre: true
+  post: true
+  activity: (     return carModel );
+
+   operation getChassisNumber() : String
+  pre: true
+  post: true
+  activity: (     return chassisNumber );
+
+   operation getCarNumber() : String
+  pre: true
+  post: true
+  activity: (     return carNumber );
+
+   operation getManufacturingDate() : String
+  pre: true
+  post: true
+  activity: (     OclFile["System.out"].println("Date: " + manufacturingDate) ; 
+     return DateTools.dateToString(manufacturingDate, "yyyy-MM-dd") );
+
+   operation getAddedDate() : String
+  pre: true
+  post: true
+  activity: (     return DateTools.dateToString(addedDate, "yyyy-MM-dd") );
+
+   operation getStatus() : int
+  pre: true
+  post: true
+  activity: (     return status );
+
+   operation updateCarInfo( carModel : String, chassisNumber : String, carNumber : String, manufacturingDate : String, status : int) : void
+  pre: true
+  post: true
+  activity: (     self.carModel := carModel ; 
+     self.chassisNumber := chassisNumber ; 
+    self.carNumber := carNumber ; 
+    self.manufacturingDate := DateTools.stringToDateObje(manufacturingDate) ; 
+    self.status := status ; 
+    execute update() ; 
+ );
+
+   operation addCarInfo() : void
+  pre: true
+  post: true
+  activity: (     var sql : String ; sql := "INSERT INTO carInfo VALUES (" + (DataTools.getID("carModels") - 1) + ", '" + carModel + "', '" + chassisNumber + "', '" + carNumber + "', '" + DateTools.dateToString(manufacturingDate, "yyyy-MM-dd") + "', '" + DateTools.getNow() + "', " + status + ")" ;
+     OclFile["System.out"].println(sql) ; 
+     SQL.execute(sql) );
+
+   operation update() : void
+  pre: true
+  post: true
+  activity: (     var sql : String ; sql := "UPDATE carInfo SET carModel = '" + carModel + "', chassisNumber = '" + chassisNumber + "', carNumber = '" + carNumber + "', manufacturingDate = '" + DateTools.dateToString(manufacturingDate, "yyyy-MM-dd") + "', status = " + status + " WHERE carID = " + carID ;
+     SQL.execute(sql) );
+
+   operation delete() : void
+  pre: true
+  post: true
+  activity: (     var sql : String ; sql := "DELETE FROM carInfo WHERE carID = " + carID ;
+     SQL.execute(sql) ; 
+     OclFile["System.out"].println("done") );
+
+}
+
+class NewCar {
+   attribute carModel : String;
+
+   attribute chassisNumber : String;
+
+   attribute carNumber : String;
+
+   attribute manufacturingDate : String;
+
+   attribute price : String;
+
+   attribute seatNumber : String;
+
+   attribute gearType : String;
+
+   attribute carBrand : String;
+
+   attribute gradientDark : String;
+
+   attribute gradientLight : String;
+
+   attribute imageUrl : String;
+
+   attribute newCarImage : Image;
+
+   static operation newNewCar( carModel : String, chassisNumber : String, carNumber : String, manufacturingDate : String, price : String, seatNumber : String, gearType : String, carBrand : String, gradientDark : String, gradientLight : String, imageUrl : String, newCarImage : Image) : NewCar
+  pre: true
+  post: true
+  activity:
+  ( var self : NewCar ;
+    self := createNewCar();
+    self.initialise(carModel, chassisNumber,carNumber,manufacturingDate,price,seatNumber,gearType,carBrand,gradientDark,gradientLight,imageUrl,newCarImage);
+    return self );
+
+  operation initialise( carModel : String, chassisNumber : String, carNumber : String, manufacturingDate : String, price : String, seatNumber : String, gearType : String, carBrand : String, gradientDark : String, gradientLight : String, imageUrl : String, newCarImage : Image) : void
+  pre: true  post: true
+  activity: (     self.carModel := carModel ; 
+     self.chassisNumber := chassisNumber ; 
+    self.carNumber := carNumber ; 
+    self.manufacturingDate := manufacturingDate ; 
+    self.price := price ; 
+    self.seatNumber := seatNumber ; 
+    self.gearType := gearType ; 
+    self.carBrand := carBrand ; 
+    self.gradientDark := gradientDark ; 
+    self.gradientLight := gradientLight ; 
+    self.imageUrl := imageUrl ; 
+    self.newCarImage := newCarImage ; 
+ );
+
+
+   operation getCarModel() : String
+  pre: true
+  post: true
+  activity: (     return carModel );
+
+   operation setCarModel( carModel : String) : void
+  pre: true
+  post: true
+  activity: (     self.carModel := carModel );
+
+   operation getChassisNumber() : String
+  pre: true
+  post: true
+  activity: (     return chassisNumber );
+
+   operation setChassisNumber( chassisNumber : String) : void
+  pre: true
+  post: true
+  activity: (     self.chassisNumber := chassisNumber );
+
+   operation getCarNumber() : String
+  pre: true
+  post: true
+  activity: (     return carNumber );
+
+   operation setCarNumber( carNumber : String) : void
+  pre: true
+  post: true
+  activity: (     self.carNumber := carNumber );
+
+   operation getManufacturingDate() : String
+  pre: true
+  post: true
+  activity: (     return manufacturingDate );
+
+   operation setManufacturingDate( manufacturingDate : String) : void
+  pre: true
+  post: true
+  activity: (     self.manufacturingDate := manufacturingDate );
+
+   operation getPrice() : String
+  pre: true
+  post: true
+  activity: (     return price );
+
+   operation setPrice( price : String) : void
+  pre: true
+  post: true
+  activity: (     self.price := price );
+
+   operation getSeatNumber() : String
+  pre: true
+  post: true
+  activity: (     return seatNumber );
+
+   operation setSeatNumber( seatNumber : String) : void
+  pre: true
+  post: true
+  activity: (     self.seatNumber := seatNumber );
+
+   operation getGearType() : String
+  pre: true
+  post: true
+  activity: (     return gearType );
+
+   operation setGearType( gearType : String) : void
+  pre: true
+  post: true
+  activity: (     self.gearType := gearType );
+
+   operation getCarBrand() : String
+  pre: true
+  post: true
+  activity: (     return carBrand );
+
+   operation setCarBrand( carBrand : String) : void
+  pre: true
+  post: true
+  activity: (     self.carBrand := carBrand );
+
+   operation getGradientDark() : String
+  pre: true
+  post: true
+  activity: (     return gradientDark );
+
+   operation setGradientDark( gradientDark : String) : void
+  pre: true
+  post: true
+  activity: (     self.gradientDark := gradientDark );
+
+   operation getGradientLight() : String
+  pre: true
+  post: true
+  activity: (     return gradientLight );
+
+   operation setGradientLight( gradientLight : String) : void
+  pre: true
+  post: true
+  activity: (     self.gradientLight := gradientLight );
+
+   operation getImageUrl() : String
+  pre: true
+  post: true
+  activity: (     return imageUrl );
+
+   operation setImageUrl( imageUrl : String) : void
+  pre: true
+  post: true
+  activity: (     self.imageUrl := imageUrl );
+
+   operation getNewCarImage() : Image
+  pre: true
+  post: true
+  activity: (     return newCarImage );
+
+   operation setNewCarImage( newCarImage : Image) : void
+  pre: true
+  post: true
+  activity: (     self.newCarImage := newCarImage );
+
+   operation clearProperty() : void
+  pre: true
+  post: true
+  activity: (     self.carModel := null ; 
+     self.chassisNumber := null ; 
+    self.carNumber := null ; 
+    self.manufacturingDate := null ; 
+    self.price := null ; 
+    self.seatNumber := null ; 
+    self.gearType := null ; 
+    self.carBrand := null ; 
+    self.gradientDark := null ; 
+    self.gradientLight := null ; 
+    self.imageUrl := null ; 
+    self.newCarImage := null ; 
+    OclFile["System.out"].println("draft deleted") ; 
+ );
+
+   operation checkAllNull() : boolean
+  pre: true
+  post: true
+  activity: (     var fields : Sequence(OclAttribute) ; fields := self->oclType().getDeclaredFields() ;
+     for (field : fields) do ( (     field.setAccessible(true) ; 
+     if (field->at(self+1) /= null) then (     if (field.getName() = "gradientDark" or field.getName() = "gradientLight") then (     continue ) else skip ; 
+     return false ) else skip )  ) ; 
+     return true );
+
+}
+
+class CarModel {
+   attribute modelID : int;
+
+   attribute carModel : String;
+
+   attribute seats : int;
+
+   attribute price : int;
+
+   attribute gearType : String;
+
+   attribute darkColor : String;
+
+   attribute lightColor : String;
+
+   attribute carBrand : String;
+
+   attribute star : double;
+
+   attribute speed : int;
+
+   attribute power : double;
+
+   attribute imageURL : String;
+
+   static operation newCarModel() : CarModel
+  pre: true
+  post: true
+  activity:
+  ( var self : CarModel ;
+    self := createCarModel();
+    self.initialise();
+    return self );
+
+  operation initialise() : void
+  pre: true  post: true
+  activity: skip;
+
+
+   static operation newCarModel( modelID : int) : CarModel
+  pre: true
+  post: true
+  activity:
+  ( var self : CarModel ;
+    self := createCarModel();
+    self.initialise(modelID);
+    return self );
+
+  operation initialise( modelID : int) : void
+  pre: true  post: true
+  activity: (     self.modelID := modelID ; 
+     execute initData("modelID") );
+
+
+   static operation newCarModel( carModel : String) : CarModel
+  pre: true
+  post: true
+  activity:
+  ( var self : CarModel ;
+    self := createCarModel();
+    self.initialise(carModel);
+    return self );
+
+  operation initialise( carModel : String) : void
+  pre: true  post: true
+  activity: (     self.carModel := carModel ; 
+     execute initData("carModel") );
+
+
+   operation initData( type : String) : void
+  pre: true
+  post: true
+  activity: (     var sql : String ;
+     if (Objects = type, "modelID") then (     sql := "SELECT * FROM carModels WHERE " + type + " = " + modelID ) else     if (Objects = type, "carModel") then (     sql := "SELECT * FROM carModels WHERE " + type + " = " + "'" + carModel + "'" ) else (     error IllegalArgumentException.newIllegalArgumentException("type must be modelID or carModel") ) ;  ;  
+    var data : Sequence(Sequence(String)) ; data := SQL.query(sql) ;
+    if (data->size() = 0) then (     return ) else skip ; 
+    var carModelInfo : Sequence(String) ; carModelInfo := data->at(0+1) ;
+    modelID := (carModelInfo[0+1])->toInteger() ; 
+    carModel := carModelInfo[1+1] ; 
+    seats := (carModelInfo[2+1])->toInteger() ; 
+    price := (carModelInfo[3+1])->toInteger() ; 
+    gearType := carModelInfo[4+1] ; 
+    darkColor := carModelInfo[5+1] ; 
+    lightColor := carModelInfo[6+1] ; 
+    carBrand := carModelInfo[7+1] ; 
+    star := (carModelInfo[8+1])->toReal() ; 
+    speed := (carModelInfo[9+1])->toInteger() ; 
+    power := (carModelInfo[10+1])->toReal() ; 
+    imageURL := "file:src/main/resources/com/example/car_rental_sys/image/cars/" + carModel + ".png" ; 
+ );
+
+   static operation newCarModel( carModel : String, seats : int, price : int, gearType : String, darkColor : String, lightColor : String, carBrand : String, imageURL : String) : CarModel
+  pre: true
+  post: true
+  activity:
+  ( var self : CarModel ;
+    self := createCarModel();
+    self.initialise(carModel, seats,price,gearType,darkColor,lightColor,carBrand,imageURL);
+    return self );
+
+  operation initialise( carModel : String, seats : int, price : int, gearType : String, darkColor : String, lightColor : String, carBrand : String, imageURL : String) : void
+  pre: true  post: true
+  activity: (     self.carModel := carModel ; 
+     self.seats := seats ; 
+    self.price := price ; 
+    self.gearType := gearType ; 
+    self.darkColor := darkColor ; 
+    self.lightColor := lightColor ; 
+    self.carBrand := carBrand ; 
+    self.imageURL := imageURL ; 
+ );
+
+
+   static operation newCarModel( modelID : int, carModel : String, seats : int, price : int, gearType : String, darkColor : String, lightColor : String, carBrand : String, star : double, speed : int, power : double) : CarModel
+  pre: true
+  post: true
+  activity:
+  ( var self : CarModel ;
+    self := createCarModel();
+    self.initialise(modelID, carModel,seats,price,gearType,darkColor,lightColor,carBrand,star,speed,power);
+    return self );
+
+  operation initialise( modelID : int, carModel : String, seats : int, price : int, gearType : String, darkColor : String, lightColor : String, carBrand : String, star : double, speed : int, power : double) : void
+  pre: true  post: true
+  activity: (     self.modelID := modelID ; 
+     self.carModel := carModel ; 
+    self.seats := seats ; 
+    self.price := price ; 
+    self.gearType := gearType ; 
+    self.darkColor := darkColor ; 
+    self.lightColor := lightColor ; 
+    self.carBrand := carBrand ; 
+    self.star := star ; 
+    self.speed := speed ; 
+    self.power := power ; 
+ );
+
+
+   operation getModelID() : int
+  pre: true
+  post: true
+  activity: (     return modelID );
+
+   operation setModelID( modelID : int) : void
+  pre: true
+  post: true
+  activity: (     self.modelID := modelID );
+
+   operation getCarModel() : String
+  pre: true
+  post: true
+  activity: (     return carModel );
+
+   operation setCarModel( carModel : String) : void
+  pre: true
+  post: true
+  activity: (     self.carModel := carModel );
+
+   operation getSeats() : int
+  pre: true
+  post: true
+  activity: (     return seats );
+
+   operation setSeats( seats : int) : void
+  pre: true
+  post: true
+  activity: (     self.seats := seats );
+
+   operation getPrice() : int
+  pre: true
+  post: true
+  activity: (     return price );
+
+   operation setPrice( price : int) : void
+  pre: true
+  post: true
+  activity: (     self.price := price );
+
+   operation getGearType() : String
+  pre: true
+  post: true
+  activity: (     return gearType );
+
+   operation setGearType( gearType : String) : void
+  pre: true
+  post: true
+  activity: (     self.gearType := gearType );
+
+   operation getDarkColor() : String
+  pre: true
+  post: true
+  activity: (     return darkColor );
+
+   operation setDarkColor( darkColor : String) : void
+  pre: true
+  post: true
+  activity: (     self.darkColor := darkColor );
+
+   operation getLightColor() : String
+  pre: true
+  post: true
+  activity: (     return lightColor );
+
+   operation setLightColor( lightColor : String) : void
+  pre: true
+  post: true
+  activity: (     self.lightColor := lightColor );
+
+   operation getCarBrand() : String
+  pre: true
+  post: true
+  activity: (     return carBrand );
+
+   operation setCarBrand( carBrand : String) : void
+  pre: true
+  post: true
+  activity: (     self.carBrand := carBrand );
+
+   operation getStar() : double
+  pre: true
+  post: true
+  activity: (     return star );
+
+   operation setStar( star : double) : void
+  pre: true
+  post: true
+  activity: (     self.star := star );
+
+   operation getSpeed() : int
+  pre: true
+  post: true
+  activity: (     return speed );
+
+   operation setSpeed( speed : int) : void
+  pre: true
+  post: true
+  activity: (     self.speed := speed );
+
+   operation getPower() : double
+  pre: true
+  post: true
+  activity: (     return power );
+
+   operation setPower( power : double) : void
+  pre: true
+  post: true
+  activity: (     self.power := power );
+
+   operation getImageURL() : String
+  pre: true
+  post: true
+  activity: (     return imageURL );
+
+   operation setImageURL( imageURL : String) : void
+  pre: true
+  post: true
+  activity: (     self.imageURL := imageURL );
+
+   operation updateCarModel( carModel : String, seats : int, price : int, gearType : String, darkColor : String, lightColor : String) : void
+  pre: true
+  post: true
+  activity: (     self.carModel := carModel ; 
+     self.seats := seats ; 
+    self.price := price ; 
+    self.gearType := gearType ; 
+    self.darkColor := darkColor ; 
+    self.lightColor := lightColor ; 
+    execute update() ; 
+ );
+
+   operation addCarModel() : void
+  pre: true
+  post: true
+  activity: (     var values : String ; values := DataTools.getID("carModels") + ",'" + carModel + "'," + seats + "," + price + ",'" + gearType + "','" + darkColor + "','" + lightColor + "','" + carBrand + "'," + DataTools.getCarStar() + "," + DataTools.getCarSpeed() + "," + DataTools.getCarPower() ;
+     var sql : String ; sql := "INSERT INTO carModels VALUES (" + values + ")" ;
+    OclFile["System.out"].println(sql) ; 
+    SQL.execute(sql) ; 
+    OclFile["System.out"].println(imageURL) ; 
+    ImageTools.renameCarImage(imageURL, carModel) ; 
+ );
+
+   operation update() : void
+  pre: true
+  post: true
+  activity: (     var sql : String ; sql := "UPDATE carModels SET carModel = '" + carModel + "', seats = " + seats + ", price = " + price + ", gearType = '" + gearType + "', darkColor = '" + darkColor + "', lightColor = '" + lightColor + "' WHERE modelID = " + modelID ;
+     OclFile["System.out"].println(sql) ; 
+     var process : boolean ; process := SQL.execute(sql) ;
+     OclFile["System.out"].println(process) );
+
+   operation delete() : void
+  pre: true
+  post: true
+  activity: (     var sql : String ; sql := "DELETE FROM carModels WHERE modelID = " + modelID ;
+     SQL.execute(sql) ; 
+     OclFile["System.out"].println("done") ; 
+     ImageTools.deleteFile(imageURL) );
+
+}
+
+class Order {
+   attribute orderID : int;
+
+   attribute carID : int;
+
+   attribute orderTime : OclDate := null;
+
+   attribute pickUpTime : OclDate := null;
+
+   attribute returnTime : OclDate := null;
+
+   attribute pickUpLocation : String := "";
+
+   attribute parkingLocation : String := "";
+
+   attribute userID : int := 0;
+
+   attribute price : int := 0;
+
+   attribute paymentMethod : String := "";
+
+   attribute account : String := "";
+
+   attribute status : int := -1;
+
+   attribute star : int := 0;
+
+   attribute invoiceNo : String := "";
+
+   static operation newOrder() : Order
+  pre: true
+  post: true
+  activity:
+  ( var self : Order ;
+    self := createOrder();
+    self.initialise();
+    return self );
+
+  operation initialise() : void
+  pre: true  post: true
+  activity: skip;
+
+
+   static operation newOrder( orderID : int) : Order
+  pre: true
+  post: true
+  activity:
+  ( var self : Order ;
+    self := createOrder();
+    self.initialise(orderID);
+    return self );
+
+  operation initialise( orderID : int) : void
+  pre: true  post: true
+  activity: (     self.orderID := orderID ; 
+     execute initOrder() );
+
+
+   operation initOrder() : void
+  pre: true
+  post: true
+  activity: (     var sql : String ; sql := "select * from orders where orderID = " + orderID ;
+     var result : Sequence(Sequence(String)) ; result := SQL.query(sql) ;
+     if (result->size() = 0) then (     OclFile["System.out"].println("Order: " + self.orderID + "not found") ) else (     var orderInfo : Sequence(String) ; orderInfo := result->at(0+1) ;
+     self.carID := (orderInfo[1+1])->toInteger() ; 
+    self.orderTime := DateTools.stringToDateObje(orderInfo[2+1]) ; 
+    self.pickUpTime := DateTools.stringToDateObje(orderInfo[3+1]) ; 
+    self.returnTime := DateTools.stringToDateObje(orderInfo[4+1]) ; 
+    self.pickUpLocation := orderInfo[5+1] ; 
+    self.parkingLocation := orderInfo[6+1] ; 
+    self.userID := (orderInfo[7+1])->toInteger() ; 
+    self.price := (orderInfo[8+1])->toInteger() ; 
+    self.paymentMethod := orderInfo[9+1] ; 
+    self.account := orderInfo[10+1] ; 
+    self.status := (orderInfo[11+1])->toInteger() ; 
+    self.star := (orderInfo[12+1])->toInteger() ; 
+    self.invoiceNo := DataTools.generateRandomInvoiceNo(self.orderID) ; 
+ ) );
+
+   operation getOrderID() : int
+  pre: true
+  post: true
+  activity: (     return orderID );
+
+   operation getCarID() : int
+  pre: true
+  post: true
+  activity: (     return carID );
+
+   operation getOrderTime() : OclDate
+  pre: true
+  post: true
+  activity: (     return orderTime );
+
+   operation getOrderTimeStr() : String
+  pre: true
+  post: true
+  activity: (     return DateTools.getSpecFormatDateTime(orderTime) );
+
+   operation getPickUpTime() : OclDate
+  pre: true
+  post: true
+  activity: (     return pickUpTime );
+
+   operation getPickUpTimeStr() : String
+  pre: true
+  post: true
+  activity: (     return DateTools.getSpecFormatDateTime(pickUpTime) );
+
+   operation getReturnTime() : OclDate
+  pre: true
+  post: true
+  activity: (     return returnTime );
+
+   operation getReturnTimeStr() : String
+  pre: true
+  post: true
+  activity: (     return DateTools.getSpecFormatDateTime(returnTime) );
+
+   operation getUserID() : int
+  pre: true
+  post: true
+  activity: (     return userID );
+
+   operation getPrice() : int
+  pre: true
+  post: true
+  activity: (     return price );
+
+   operation getPaymentMethod() : String
+  pre: true
+  post: true
+  activity: (     return paymentMethod );
+
+   operation getAccount() : String
+  pre: true
+  post: true
+  activity: (     return account );
+
+   operation getStatus() : int
+  pre: true
+  post: true
+  activity: (     return status );
+
+   operation getStar() : int
+  pre: true
+  post: true
+  activity: (     return star );
+
+   operation setOrderID( orderID : int) : void
+  pre: true
+  post: true
+  activity: (     self.orderID := orderID );
+
+   operation setCarID( carID : int) : void
+  pre: true
+  post: true
+  activity: (     self.carID := carID );
+
+   operation setOrderTime( orderTime : OclDate) : void
+  pre: true
+  post: true
+  activity: (     self.orderTime := orderTime );
+
+   operation setPickUpTime( pickUpTime : OclDate) : void
+  pre: true
+  post: true
+  activity: (     self.pickUpTime := pickUpTime );
+
+   operation setReturnTime( returnTime : OclDate) : void
+  pre: true
+  post: true
+  activity: (     self.returnTime := returnTime );
+
+   operation setUserID( userID : int) : void
+  pre: true
+  post: true
+  activity: (     self.userID := userID );
+
+   operation setPrice( price : int) : void
+  pre: true
+  post: true
+  activity: (     self.price := price );
+
+   operation setPaymentMethod( paymentMethod : String) : void
+  pre: true
+  post: true
+  activity: (     self.paymentMethod := paymentMethod );
+
+   operation setAccount( account : String) : void
+  pre: true
+  post: true
+  activity: (     self.account := account );
+
+   operation setStatus( status : int) : void
+  pre: true
+  post: true
+  activity: (     self.status := status );
+
+   operation setStar( star : int) : void
+  pre: true
+  post: true
+  activity: (     self.star := star );
+
+   operation getPickUpLocation() : String
+  pre: true
+  post: true
+  activity: (     return pickUpLocation );
+
+   operation setPickUpLocation( pickUpLocation : String) : void
+  pre: true
+  post: true
+  activity: (     self.pickUpLocation := pickUpLocation );
+
+   operation getParkingLocation() : String
+  pre: true
+  post: true
+  activity: (     return parkingLocation );
+
+   operation setParkingLocation( parkingLocation : String) : void
+  pre: true
+  post: true
+  activity: (     self.parkingLocation := parkingLocation );
+
+   operation getInvoiceNo() : String
+  pre: true
+  post: true
+  activity: (     return invoiceNo );
+
+   operation setInvoiceNo( invoiceNo : String) : void
+  pre: true
+  post: true
+  activity: (     self.invoiceNo := invoiceNo );
+
+      operation toString() : String
+  pre: true
+  post: true
+  activity: (     return "Order{" + "orderID=" + orderID + ", carID=" + carID + ", orderTime=" + orderTime + ", pickUpTime=" + pickUpTime + ", returnTime=" + returnTime + ", userID=" + userID + ", price=" + price + ", paymentMethod='" + paymentMethod + '\'' + ", account='" + account + '\'' + ", status=" + status + ", star=" + star + ", invoiceNo='" + invoiceNo + '\'' + '}' );
+
+}
+
+class Comment {
+   attribute commentID : int;
+
+   attribute type : String;
+
+   attribute payload : String;
+
+   attribute posterID : int;
+
+   attribute comment : String;
+
+   attribute relevantCommentID : int;
+
+   attribute commentDateTime : String;
+
+   attribute like : int;
+
+   attribute star : int;
+
+   static operation newComment( commentID : int, type : String, payload : String, posterID : int, comment : String, relevantCommentID : int, commentDateTime : String, like : int, star : int) : Comment
+  pre: true
+  post: true
+  activity:
+  ( var self : Comment ;
+    self := createComment();
+    self.initialise(commentID, type,payload,posterID,comment,relevantCommentID,commentDateTime,like,star);
+    return self );
+
+  operation initialise( commentID : int, type : String, payload : String, posterID : int, comment : String, relevantCommentID : int, commentDateTime : String, like : int, star : int) : void
+  pre: true  post: true
+  activity: (     self.commentID := commentID ; 
+     self.type := type ; 
+    self.payload := payload ; 
+    self.posterID := posterID ; 
+    self.comment := comment ; 
+    self.relevantCommentID := relevantCommentID ; 
+    self.commentDateTime := commentDateTime ; 
+    self.like := like ; 
+    self.star := star ; 
+ );
+
+
+}
+
+class Card {
+   attribute userID : int;
+
+   attribute cardType : String;
+
+   attribute cardName : String;
+
+   attribute cardBankName : String;
+
+   attribute cardHolderName : String;
+
+   attribute cardValidDate : String;
+
+   attribute cardNumber : String;
+
+   attribute cardBillingAddress : String;
+
+   attribute cardBalance : String;
+
+   attribute cardTheme : Sequence(String);
+
+  static   attribute instance : Card;
+
+   static operation newCard() : Card
+  pre: true
+  post: true
+  activity:
+  ( var self : Card ;
+    self := createCard();
+    self.initialise();
+    return self );
+
+  operation initialise() : void
+  pre: true  post: true
+  activity: (     instance := self );
+
+
+   operation getCardDetails( userID : int, cardNumber : String) : Sequence(String)
+  pre: true
+  post: true
+  activity: (     var query : String ; query := "SELECT * FROM bankCardInfo WHERE userID = " + userID + " AND cardNumber = " + cardNumber + ";" ;
+     var cardDetails : Sequence(Sequence(String)) ; cardDetails := SQL.query(query) ;
+     return cardDetails->at(0+1) );
+
+   static operation newCard( userID : int, cardNumber : String) : Card
+  pre: true
+  post: true
+  activity:
+  ( var self : Card ;
+    self := createCard();
+    self.initialise(userID, cardNumber);
+    return self );
+
+  operation initialise( userID : int, cardNumber : String) : void
+  pre: true  post: true
+  activity: (     var cardDetails : Sequence(String) ; cardDetails := getCardDetails(userID, cardNumber) ;
+     self.userID := (cardDetails[0+1])->toInteger() ; 
+    self.cardType := cardDetails[1+1] ; 
+    self.cardName := cardDetails[2+1] ; 
+    self.cardBankName := cardDetails[3+1] ; 
+    self.cardHolderName := cardDetails[4+1] ; 
+    self.cardValidDate := cardDetails[5+1] ; 
+    self.cardNumber := cardDetails[6+1] ; 
+    self.cardBillingAddress := cardDetails[7+1] ; 
+    self.cardTheme := cardDetails[8+1]->split(",") ; 
+    self.cardBalance := cardDetails[9+1] ; 
+ );
+
+
+   static operation newCard( userID : int, cardType : String, cardName : String, cardBankName : String, cardHolderName : String, cardValidDate : String, cardNumber : String, cardBillingAddress : String, cardTheme : Sequence(String)) : Card
+  pre: true
+  post: true
+  activity:
+  ( var self : Card ;
+    self := createCard();
+    self.initialise(userID, cardType,cardName,cardBankName,cardHolderName,cardValidDate,cardNumber,cardBillingAddress,cardTheme);
+    return self );
+
+  operation initialise( userID : int, cardType : String, cardName : String, cardBankName : String, cardHolderName : String, cardValidDate : String, cardNumber : String, cardBillingAddress : String, cardTheme : Sequence(String)) : void
+  pre: true  post: true
+  activity: (     self.userID := userID ; 
+     self.cardType := cardType ; 
+    self.cardName := cardName ; 
+    self.cardBankName := cardBankName ; 
+    self.cardHolderName := cardHolderName ; 
+    self.cardValidDate := cardValidDate ; 
+    self.cardNumber := cardNumber ; 
+    self.cardBillingAddress := cardBillingAddress ; 
+    self.cardTheme := cardTheme ; 
+ );
+
+
+   operation getUserID() : int
+  pre: true
+  post: true
+  activity: (     return userID );
+
+   operation setUserID( userID : int) : void
+  pre: true
+  post: true
+  activity: (     self.userID := userID );
+
+   operation getCardType() : String
+  pre: true
+  post: true
+  activity: (     return cardType );
+
+   operation setCardType( cardType : String) : void
+  pre: true
+  post: true
+  activity: (     self.cardType := cardType );
+
+   operation getCardName() : String
+  pre: true
+  post: true
+  activity: (     return cardName );
+
+   operation setCardName( cardName : String) : void
+  pre: true
+  post: true
+  activity: (     self.cardName := cardName );
+
+   operation getCardBankName() : String
+  pre: true
+  post: true
+  activity: (     return cardBankName );
+
+   operation setCardBankName( cardBankName : String) : void
+  pre: true
+  post: true
+  activity: (     self.cardBankName := cardBankName );
+
+   operation getCardHolderName() : String
+  pre: true
+  post: true
+  activity: (     return cardHolderName );
+
+   operation setCardHolderName( cardHolderName : String) : void
+  pre: true
+  post: true
+  activity: (     self.cardHolderName := cardHolderName );
+
+   operation getCardValidDate() : String
+  pre: true
+  post: true
+  activity: (     return cardValidDate );
+
+   operation setCardValidDate( cardValidDate : String) : void
+  pre: true
+  post: true
+  activity: (     self.cardValidDate := cardValidDate );
+
+   operation getCardNumber() : String
+  pre: true
+  post: true
+  activity: (     return cardNumber );
+
+   operation setCardNumber( cardNumber : String) : void
+  pre: true
+  post: true
+  activity: (     self.cardNumber := cardNumber );
+
+   operation getCardBillingAddress() : String
+  pre: true
+  post: true
+  activity: (     return cardBillingAddress );
+
+   operation setCardBillingAddress( cardBillingAddress : String) : void
+  pre: true
+  post: true
+  activity: (     self.cardBillingAddress := cardBillingAddress );
+
+   operation getCardTheme() : Sequence(String)
+  pre: true
+  post: true
+  activity: (     return cardTheme );
+
+   operation setCardTheme( cardTheme : Sequence(String)) : void
+  pre: true
+  post: true
+  activity: (     self.cardTheme := cardTheme );
+
+   operation getCardBalance() : String
+  pre: true
+  post: true
+  activity: (     return cardBalance );
+
+   operation setCardBalance( cardBalance : String) : void
+  pre: true
+  post: true
+  activity: (     self.cardBalance := cardBalance );
+
+   operation update() : void
+  pre: true
+  post: true
+  activity: (     var query : String ; query := "UPDATE bankCardInfo SET cardName = '" + self.cardName + "', billingAddress = '" + self.cardBillingAddress + "' WHERE userID = " + self.userID + " AND cardNumber = " + self.cardNumber + ";" ;
+     SQL.execute(query) );
+
+   operation delete() : void
+  pre: true
+  post: true
+  activity: (     var query : String ; query := "DELETE FROM bankCardInfo WHERE userID = " + self.userID + " AND cardNumber = " + self.cardNumber + ";" ;
+     SQL.execute(query) );
+
+}
+
+
