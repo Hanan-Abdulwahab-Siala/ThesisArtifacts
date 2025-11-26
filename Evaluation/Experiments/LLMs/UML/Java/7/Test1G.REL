@@ -1,0 +1,12 @@
+[
+    {
+        "Relationship": "Association",
+        "Source": "Vehicle",
+        "Target": "PowerUnit",
+        "Multiplicity1": "0..*",
+        "Role1": "powerUnits",
+        "Multiplicity2": "",
+        "Role2": "",
+        "Flag": false
+    }
+]

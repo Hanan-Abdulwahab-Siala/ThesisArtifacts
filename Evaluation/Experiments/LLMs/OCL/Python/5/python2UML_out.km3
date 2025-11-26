@@ -1,0 +1,18 @@
+
+ class FromPython {
+
+
+
+
+  operation initialise()
+  pre: true post: true
+  activity:     var input_file : OclFile := OclFile.newOclFile_Write(OclFile.newOclFile('MyFile')) ;
+    var file_content : String := input_file.readAll() ;
+    input_file.closeFile() ;
+    var output_file : OclFile := OclFile.newOclFile_Write(OclFile.newOclFile('MyFile')) ;
+    output_file.write(file_content) ;
+    output_file.closeFile();
+
+
+}
+

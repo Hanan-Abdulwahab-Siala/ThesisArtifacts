@@ -1,0 +1,32 @@
+[
+    {
+        "Relationship": "Inheritance",
+        "Source": "LaserPrinter",
+        "Target": "Device",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": "",
+        "Flag": false
+    },
+    {
+        "Relationship": "Realization",
+        "Source": "LaserPrinter",
+        "Target": "Printer",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": "",
+        "Flag": false
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "Main",
+        "Target": "LaserPrinter",
+        "Multiplicity1": "",
+        "Role1": "printer",
+        "Multiplicity2": "",
+        "Role2": "",
+        "Flag": true
+    }
+]

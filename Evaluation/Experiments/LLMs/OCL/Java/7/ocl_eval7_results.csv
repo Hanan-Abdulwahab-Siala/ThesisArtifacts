@@ -1,0 +1,23 @@
+Type,Tool_OCL,GroundTruth_OCL
+TP,class NumberChecker {,class NumberChecker {
+TP,operation calculateDigitProduct( num : int) : int,operation calculateDigitProduct( num : int) : int
+TP,pre: true,pre: true
+TP,post: true,post: true
+TP,activity: (     var digitSum : int ; digitSum := 0 ;,activity: (     var digitSum : int ; digitSum := 0 ;
+TP,while (num > 0) do (     digitSum := digitSum+(num mod 10) ;,while (num > 0) do (     digitSum := digitSum+(num mod 10) ;
+TP,num := num/(10) ) ;,num := num/(10) ) ;
+TP,var reversedSum : int ; reversedSum := 0 ;,var reversedSum : int ; reversedSum := 0 ;
+TP,var temp : int ; temp := digitSum ;,var temp : int ; temp := digitSum ;
+TP,while (temp > 0) do (     reversedSum := reversedSum * 10 + temp mod 10 ;,while (temp > 0) do (     reversedSum := reversedSum * 10 + temp mod 10 ;
+TP,temp := temp/(10) ) ;,temp := temp/(10) ) ;
+TP,return digitSum * reversedSum,return digitSum * reversedSum
+TP,);,);
+TP,operation checkNumber() : void,operation checkNumber() : void
+TP,activity: (     var number : int ; number := 1729 ;,activity: (     var number : int ; number := 1729 ;
+TP,var result : int ; result := calculateDigitProduct(number) ;,var result : int ; result := calculateDigitProduct(number) ;
+TP,"if (number = result) then (     OclFile[""System.out""].println(""Yes"") ) else (     OclFile[""System.out""].println(""No"") ) );","if (number = result) then (     OclFile[""System.out""].println(""Yes"") ) else (     OclFile[""System.out""].println(""No"") ) );"
+TP,static   operation main( args : Sequence(String)) : void,static   operation main( args : Sequence(String)) : void
+TP,activity: (     var checker : NumberChecker ; checker := NumberChecker.newNumberChecker() ;,activity: (     var checker : NumberChecker ; checker := NumberChecker.newNumberChecker() ;
+TP,checker.checkNumber() );,checker.checkNumber() );
+TP,},}
+TP,<EOF>,<EOF>

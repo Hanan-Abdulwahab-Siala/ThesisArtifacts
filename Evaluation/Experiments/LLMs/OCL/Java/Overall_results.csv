@@ -1,0 +1,15 @@
+AgileUML_path,LLM4Models_path,filename,tp,fp,fn,precision,recall,f1
+C:\Users\PC\Desktop\Temp\aaa\1\cgJava2UML_out.km3,C:\Users\PC\Desktop\Temp\aaa\1\LLM4Models.txt,1,14,0,0,1.0,1.0,1.0
+C:\Users\PC\Desktop\Temp\aaa\2\cgJava2UML_out.km3,C:\Users\PC\Desktop\Temp\aaa\2\LLM4Models.txt,2,16,0,0,1.0,1.0,1.0
+C:\Users\PC\Desktop\Temp\aaa\3\cgJava2UML_out.km3,C:\Users\PC\Desktop\Temp\aaa\3\LLM4Models.txt,3,18,0,0,1.0,1.0,1.0
+C:\Users\PC\Desktop\Temp\aaa\4\cgJava2UML_out.km3,C:\Users\PC\Desktop\Temp\aaa\4\LLM4Models.txt,4,20,0,0,1.0,1.0,1.0
+C:\Users\PC\Desktop\Temp\aaa\5\cgJava2UML_out.km3,C:\Users\PC\Desktop\Temp\aaa\5\LLM4Models.txt,5,10,0,0,1.0,1.0,1.0
+C:\Users\PC\Desktop\Temp\aaa\6\cgJava2UML_out.km3,C:\Users\PC\Desktop\Temp\aaa\6\LLM4Models.txt,6,14,0,0,1.0,1.0,1.0
+C:\Users\PC\Desktop\Temp\aaa\7\cgJava2UML_out.km3,C:\Users\PC\Desktop\Temp\aaa\7\LLM4Models.txt,7,22,0,0,1.0,1.0,1.0
+C:\Users\PC\Desktop\Temp\aaa\8\cgJava2UML_out.km3,C:\Users\PC\Desktop\Temp\aaa\8\LLM4Models.txt,8,15,0,0,1.0,1.0,1.0
+C:\Users\PC\Desktop\Temp\aaa\9\cgJava2UML_out.km3,C:\Users\PC\Desktop\Temp\aaa\9\LLM4Models.txt,9,16,0,0,1.0,1.0,1.0
+C:\Users\PC\Desktop\Temp\aaa\10\cgJava2UML_out.km3,C:\Users\PC\Desktop\Temp\aaa\10\LLM4Models.txt,10,16,0,0,1.0,1.0,1.0
+C:\Users\PC\Desktop\Temp\aaa\11\cgJava2UML_out.km3,C:\Users\PC\Desktop\Temp\aaa\11\LLM4Models.txt,11,13,2,2,0.87,0.87,0.87
+C:\Users\PC\Desktop\Temp\aaa\12\cgJava2UML_out.km3,C:\Users\PC\Desktop\Temp\aaa\12\LLM4Models.txt,12,14,0,0,1.0,1.0,1.0
+C:\Users\PC\Desktop\Temp\aaa\13\cgJava2UML_out.km3,C:\Users\PC\Desktop\Temp\aaa\13\LLM4Models.txt,13,14,0,0,1.0,1.0,1.0
+AVERAGE,,,15.538461538461538,0.15384615384615385,0.15384615384615385,0.99,0.99,0.99

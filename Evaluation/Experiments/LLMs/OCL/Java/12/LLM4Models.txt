@@ -1,0 +1,14 @@
+class Main {
+  static   operation main( args : Sequence(String)) : void
+  pre: true
+  post: true
+  activity: (     var activation : double ; activation := MathLib.random() ;
+     var checkpoint : double ; checkpoint := 0.0 ;
+    OclFile["System.out"].println("Forward pass: " + activation) ;
+    var checkpointingEnabled : boolean ; checkpointingEnabled := true ;
+    if (checkpointingEnabled) then (     checkpoint := activation ) else skip ;
+    if (checkpointingEnabled) then (     activation := checkpoint - 0.05 ) else (     activation := activation-(0.05) ) ;
+    OclFile["System.out"].println("Updated activation: " + activation) ;
+ );
+}
+ <EOF>

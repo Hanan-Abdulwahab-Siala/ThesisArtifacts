@@ -1,0 +1,11 @@
+[
+    {
+        "Relationship": "Aggregation",
+        "Source": "Compensation",
+        "Target": "Worker",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    }
+]

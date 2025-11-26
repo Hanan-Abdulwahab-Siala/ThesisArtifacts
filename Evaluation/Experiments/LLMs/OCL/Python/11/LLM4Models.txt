@@ -1,0 +1,9 @@
+class FromPython {
+  operation initialise()
+  pre: true post: true
+  activity:     var text_original : String := "Hello World" ;
+    var text_capitalized : String := StringLib.capitalise(text_original) ;
+    var text_modified : String := text_original.replace(" ", "*") ;
+    execute (text_capitalized)->display() ;
+    execute (text_modified)->display();
+}

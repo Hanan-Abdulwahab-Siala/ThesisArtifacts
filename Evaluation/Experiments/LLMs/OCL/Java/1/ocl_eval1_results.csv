@@ -1,0 +1,15 @@
+Type,Tool_OCL,GroundTruth_OCL
+TP,class AlgorithmAnalysis {,class AlgorithmAnalysis {
+TP,"static   operation findElement( elements : Sequence(int), size : int, target : int) : int","static   operation findElement( elements : Sequence(int), size : int, target : int) : int"
+TP,pre: true,pre: true
+TP,post: true,post: true
+TP,activity: (     var index : int ;,activity: (     var index : int ;
+TP,index := 0 ; while index < size do ( (     if (elements[index+1] = target) then (     return index ) else skip )  ;     index := index + 1 ) ;,index := 0 ; while index < size do ( (     if (elements[index+1] = target) then (     return index ) else skip )  ;     index := index + 1 ) ;
+TP,return -1 );,return -1 );
+TP,static   operation main( args : Sequence(String)) : void,static   operation main( args : Sequence(String)) : void
+TP,"activity: (     var numbers : Sequence(int) ; numbers := Sequence{10,20,30,40,50} ;","activity: (     var numbers : Sequence(int) ; numbers := Sequence{10,20,30,40,50} ;"
+TP,var target : int ; target := 30 ;,var target : int ; target := 30 ;
+TP,"var result : int ; result := findElement(numbers, numbers->size(), target) ;","var result : int ; result := findElement(numbers, numbers->size(), target) ;"
+TP,"if (result /= -1) then (     OclFile[""System.out""].println(""Element found at index: "" + result) ) else (     OclFile[""System.out""].println(""Element not found."") ) );","if (result /= -1) then (     OclFile[""System.out""].println(""Element found at index: "" + result) ) else (     OclFile[""System.out""].println(""Element not found."") ) );"
+TP,},}
+TP,<EOF>,<EOF>

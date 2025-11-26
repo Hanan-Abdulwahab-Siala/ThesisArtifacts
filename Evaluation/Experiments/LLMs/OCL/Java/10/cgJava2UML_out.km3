@@ -1,0 +1,23 @@
+ class ModuloFactorialCalculator {
+  static   operation computeModuloFactorial( n : int, p : int) : int
+  pre: true
+  post: true
+  activity: (     if (n >= p) then (     OclFile["System.out"].println("Factorial modulo operation cannot be performed as n >= p.") ; 
+     return 0 ) else skip ; 
+     var result : int ; result := 1 ;
+        var i : int ; i := 1 ; while i <= n do ( (     result := (result * i) mod p )  ;     i := i + 1 ) ; 
+    OclFile["System.out"].println("Computed factorial modulo p successfully.") ; 
+    return result 
+ );
+
+  static   operation main( args : Sequence(String)) : void
+  pre: true
+  post: true
+  activity: (     var number : int ; number := 5 ;
+     var modulo : int ; modulo := 7 ;
+     var result : int ; result := computeModuloFactorial(number, modulo) ;
+     OclFile["System.out"].println("Result: " + result) );
+
+}
+
+

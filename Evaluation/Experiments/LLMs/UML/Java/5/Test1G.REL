@@ -1,0 +1,22 @@
+[
+    {
+        "Relationship": "Composition",
+        "Source": "DataPoint",
+        "Target": "Person",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "",
+        "Flag": false
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "Person",
+        "Target": "DataPoint",
+        "Multiplicity1": "",
+        "Role1": "dp",
+        "Multiplicity2": "",
+        "Role2": "",
+        "Flag": true
+    }
+]

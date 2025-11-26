@@ -1,0 +1,18 @@
+Type,Tool_OCL,GroundTruth_OCL
+TP,class Main {,class Main {
+TP,static   operation main( args : Sequence(String)) : void,static   operation main( args : Sequence(String)) : void
+TP,pre: true,pre: true
+TP,post: true,post: true
+TP,"activity: (     var activations : Sequence(double) ; activations := Integer.subrange(1,10)->collect(0.0) ;","activity: (     var activations : Sequence(double) ; activations := Integer.subrange(1,10)->collect(0.0) ;"
+TP,"var checkpoints : Sequence(double) ; checkpoints := Integer.subrange(1,10)->collect(0.0) ;","var checkpoints : Sequence(double) ; checkpoints := Integer.subrange(1,10)->collect(0.0) ;"
+TP,var i : int ; i := 0 ; while i < 10 do ( (     activations[i+1] := MathLib.random() )  ;     i := i + 1 ) ;,var i : int ; i := 0 ; while i < 10 do ( (     activations[i+1] := MathLib.random() )  ;     i := i + 1 ) ;
+TP,var useCheckpointing : boolean ; useCheckpointing := true ;,var useCheckpointing : boolean ; useCheckpointing := true ;
+TP,var i : int ; i := 0 ; while i < 10 do ( (     var source : Sequence(double) ; source := if useCheckpointing then checkpoints else activations endif ;,var i : int ; i := 0 ; while i < 10 do ( (     var source : Sequence(double) ; source := if useCheckpointing then checkpoints else activations endif ;
+TP,activations[i+1] := source[i+1] - 0.1 )  ;     i := i + 1 ) ;,activations[i+1] := source[i+1] - 0.1 )  ;     i := i + 1 ) ;
+TP,);,);
+TP,},}
+TP,<EOF>,<EOF>
+FP,"if (useCheckpointing) then (     for _x : Integer.subrange(0,10) do checkpoints[0 + _x] := activations[0 + _x] ; ) else skip ;",
+FP,"OclFile[""System.out""].println((activations + """")) ;",
+FN,,"if (useCheckpointing) then (     for _x : Integer.subrange(1,10) do checkpoints[0 + _x] := activations[0 + _x] ) else skip ;"
+FN,,"OclFile[""System.out""].println(java.util.Arrays.toString(activations)) ;"
