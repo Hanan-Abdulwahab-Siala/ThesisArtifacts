@@ -1,0 +1,38 @@
+class Animal {
+  static operation newAnimal() : Animal
+  pre: true
+  post: Animal->exists( _x | result = _x );
+  operation sound()
+  pre: true post: true
+  activity:
+    execute ("Animals make different sounds")->display();
+}
+class Dog extends Animal {
+  static operation newDog() : Dog
+  pre: true
+  post: Dog->exists( _x | result = _x );
+  operation sound()
+  pre: true post: true
+  activity:
+    execute ("Dogs bark")->display();
+}
+class Cat extends Animal, Dog {
+  static operation newCat() : Cat
+  pre: true
+  post: Cat->exists( _x | result = _x );
+  operation initialise()
+    pre: true post: true
+    activity:
+    skip;
+}
+ class FromPython {
+  operation initialise()
+  pre: true post: true
+  activity:     skip ;
+    skip ;
+    skip ;
+    var pet : Cat := (OclType["Cat"]).newOclType["Cat"]() ;
+    pet.sound() ;
+    execute ("This code demonstrates multiple inheritance in Python.")->display() ;
+    execute ("The method resolution order determines which method is executed.")->display();
+}

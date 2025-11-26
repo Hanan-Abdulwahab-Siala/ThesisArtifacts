@@ -1,0 +1,15 @@
+class SeriesSumCalculator {
+  static   operation calculateSum( terms : int) : double
+  pre: true
+  post: true
+  activity: (     return 0.666 * (1 - 1 / 10->pow(terms)) );
+
+  static   operation main( args : Sequence(String)) : void
+  pre: true
+  post: true
+  activity: (     var n : int ; n := 5 ;
+     OclFile["System.out"].println("Sum for " + n + " terms: " + calculateSum(n)) );
+
+}
+
+ <EOF>

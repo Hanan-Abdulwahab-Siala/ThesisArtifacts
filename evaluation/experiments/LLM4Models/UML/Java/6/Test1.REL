@@ -1,0 +1,20 @@
+[
+    {
+        "Relationship": "Association",
+        "Source": "Car",
+        "Target": "Engine",
+        "Multiplicity1": "0..1",
+        "Role1": "engine",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Driver",
+        "Target": "Car",
+        "Multiplicity1": "0..1",
+        "Role1": "car",
+        "Multiplicity2": "",
+        "Role2": ""
+    }
+]

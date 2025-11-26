@@ -1,0 +1,17 @@
+Type,Tool_OCL,GroundTruth_OCL
+TP,class FromPython {,class FromPython {
+TP,operation initialise(),operation initialise()
+TP,pre: true post: true,pre: true post: true
+TP,activity:     var number : int := 11 ;,activity:     var number : int := 11 ;
+TP,if number > 10 then  (,if number > 10 then  (
+TP,var result : int := number * number,var result : int := number * number
+TP,),)
+TP,else (if number > 0 then,else (if number > 0 then
+TP,(,(
+TP,result := number * number * number,result := number * number * number
+TP,else (,else (
+TP,result := -number,result := -number
+TP,)    ),)    )
+TP,;,;
+TP,"execute (""Final result:"")->display();","execute (""Final result:"")->display();"
+TP,},}

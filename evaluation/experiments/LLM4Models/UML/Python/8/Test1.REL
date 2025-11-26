@@ -1,0 +1,11 @@
+[
+    {
+        "Relationship": "Composition",
+        "Source": "Item",
+        "Target": "Container",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    }
+]

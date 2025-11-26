@@ -1,0 +1,11 @@
+[
+    {
+        "Relationship": "Realization",
+        "Source": "Square",
+        "Target": "GeometricFigure",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    }
+]
