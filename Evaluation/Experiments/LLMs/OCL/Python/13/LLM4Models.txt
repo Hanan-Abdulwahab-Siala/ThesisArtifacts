@@ -1,9 +1,0 @@
-class FromPython {
-  operation initialise()
-  pre: true post: true
-  activity:     skip ;
-    var data : Map := ((OclFile["Data/Data1.csv"]).readAll()).collect( _x | ((Sequence{_x})->collect( _x | (OclType["int"])->apply(_x) )) ) ;
-    var marks_column : OclAny := data->at("Marks") ;
-    var average_marks : double := marks_column->mean() ;
-    execute (StringLib.formattedString("The average marks are: {average_marks}"))->display();
-}
