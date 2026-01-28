@@ -78,14 +78,14 @@ Before starting the inferring process for abstracting UML and OCL representation
 
 #### **2. Inferring Stage**
 1. Place your program in:
-   - **`Test1.java`** for Java programs.  
-   - **`Test1.py`** for Python programs.  
+   - **`Test1.java`** for Java code.  
+   - **`Test1.py`** for Python code.  
 2. The output will be saved in **`LLM4Models.txt`**.  
 3. Set the **`What_I_Want`** variable:
-   - `1` → Abstract UML from Java.  
-   - `2` → Abstract UML from Python.  
-   - `3` → Abstract OCL from Java.  
-   - `4` → Abstract OCL from Python.  
+   - `1` → Abstract UML class diagrams from Java code.  
+   - `2` → Abstract UML class diagrams from Python code.  
+   - `3` → Abstract OCL specifications from Java code.  
+   - `4` → Abstract OCL specifications from Python code.  
 4. Set **`Full_Model = True`** to use the full model, or **`Full_Model = False`** to use a LoRA adapter.  
 5. Choose **`version = 1`** or **`version = 2`**.
 
@@ -94,9 +94,9 @@ Before starting the inferring process for abstracting UML and OCL representation
 #### **3. Post-Processing Stage**
 
 **a) UML Class Diagrams**
-- Apply post-processing to the output of **`LLM4Models`** using:
+- Apply post-processing to the output of **`LLM4Models`** LLM using:
   1. **`PostprocessingUML`** Python script — splits LLM output into two files in JSON format (`Test1.UML` and `Test1.REL`).  
-  2. **`DrawingClassDiagram`** Python script — generates UML diagrams from the two JSON files using the **Graphviz** tool and saves them as `Test1.png`. Please install the Graphviz tool before running the script.
+  2. **`DrawingClassDiagram`** Python script — generates a UML class diagram from the two JSON files using the **Graphviz** tool and saves it as `Test1.png`. Please install the Graphviz tool before running the script.
 
 **Method display options:**
 - Methods with parameters’ names and types.  
