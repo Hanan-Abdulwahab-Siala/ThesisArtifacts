@@ -45,8 +45,8 @@ Contains training datasets.
 ├── src                     
 │   ├── dataset                 # Scripts to construct the training datasets
 │   ├── fine-tuning             # Scripts to fine-tune Mistral-7B LLM   
-│   ├── inference               # Scripts for inferring UML class diagrams and OCL specification
-│   ├── parsers                 # Java2JSON Parser and Python2JSON Parser
+│   ├── inference               # Scripts for inferring UML class diagrams and OCL specifications
+│   ├── parsers                 # Java2JSON and Python2JSON parsers/abstractors
 ├── training-datasets
 │   ├── Java-OCL
 │   ├── Java-UML                
