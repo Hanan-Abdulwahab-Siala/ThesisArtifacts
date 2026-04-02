@@ -1,7 +1,7 @@
 """
 Author: Hanan Abdulwahab Siala
 University: King's College London
-Date: 2020-10-25
+Date: 17-02-2026
 
 Description:
     Python2JSON parser/abstractor. 
@@ -398,7 +398,7 @@ def IsRelationshipFound(Relationship, Source, Target, Data):
             return True
    return False
 # ------------------------------------------------------------------------------
-def ConstructRelationshipsBetweenClassesAndInterfaces(Data):
+def ConstructRelationshipsBetweenClassesAndInterfaces(Data, CompositionInfo):
    ClassInfo = []
    for item in Data:
       if item["ClassInterface"] in ["Class","Interface"]:
@@ -431,7 +431,6 @@ def ConstructRelationshipsBetweenClassesAndInterfaces(Data):
                     if not IsRelationshipFound("Inheritance", Name, superclass, ClassInfo):
                        ClassData = {"Relationship": "Inheritance", "Source": Name, "Target": interface, "Multiplicity1": "", "Role1":"", "Multiplicity2": "", "Role2":"","Deleted": False,"Flag": False}
                        ClassInfo.append(ClassData)
-
             variables = item['variables']
             if variables:   
                for variable in variables:
@@ -490,10 +489,17 @@ def EnhancingRelationship(item, Data):
             x['Deleted'] = True
          if (x['Source'] == ClassInterface1 and x['Target'] == ClassInterface2) and (x["Relationship"] == 'Association') and not x['Deleted']:
             x['Deleted'] = True
+         if (x['Source'] == ClassInterface2 and x['Target'] == ClassInterface1) and (x["Relationship"] == 'Dependency') and not x['Deleted']:
+            x['Deleted'] = True
       Data[:] = [
       {**x, **item} if (x['Source'] == ClassInterface1 and x['Target'] == ClassInterface2) and (x["Relationship"] == 'Aggregation') else x
       for x in Data
       ]
+      if not item['Deleted']:
+         Data[:] = [
+         {**x, 'Deleted': True} if (((x['Source'] == ClassInterface1 and x['Target'] == ClassInterface2) or (x['Source'] == ClassInterface2 and x['Target'] == ClassInterface1)) and (x["Relationship"] == 'Dependency')) else x
+         for x in Data
+         ]
 # ------------------------------------------------------------------------------
    if item["Relationship"] == 'Association':
       for x in Data:
@@ -504,6 +510,8 @@ def EnhancingRelationship(item, Data):
          if (x['Source'] == ClassInterface1 and x['Target'] == ClassInterface2) and (x["Relationship"] == 'Association') and not x['Deleted']:
             x=item
          if ((x['Source'] == ClassInterface2 and x['Target'] == ClassInterface1) and (x["Relationship"] == 'Association')) and not x['Flag']:
+            x['Deleted']= True
+         if (((x['Source'] == ClassInterface1 and x['Target'] == ClassInterface2) or (x['Source'] == ClassInterface2 and x['Target'] == ClassInterface1)) and (x["Relationship"] == 'Dependency')):
             x['Deleted']= True
 # ------------------------------------------------------------------------------
    if item["Relationship"] == 'Dependency':
@@ -760,10 +768,10 @@ def CheckInterfaceAndAbstractClasses(UMLInfo):
             item['IsAbstract']="abstract"
    return UMLInfo
 # ------------------------------------------------------------------------------
-def ConstructRelationships(UMLInfo, variables, AggregationInfo, OuterMethodCalls):
+def ConstructRelationships(UMLInfo, variables, AggregationInfo, OuterMethodCalls, CompositionInfo):
    UMLInfo=CheckInheritance(UMLInfo) 
    UMLInfo=CheckInterfaceAndAbstractClasses(UMLInfo) 
-   Info=ConstructRelationshipsBetweenClassesAndInterfaces(UMLInfo)
+   Info=ConstructRelationshipsBetweenClassesAndInterfaces(UMLInfo, CompositionInfo)
    RELResult= CheckingAggregationAssociation(AggregationInfo, variables, UMLInfo, OuterMethodCalls)
 
    for item in Info:  
@@ -888,6 +896,7 @@ def ParsePythonCode(PythonCode):
    ClassInfo =[]
    variables=[]
    AggregationInfo=[]
+   CompositionInfo=[]
    OuterMethodCalls=[]
    for node in ast.walk(tree):
       if isinstance(node, ast.ClassDef):
@@ -1153,7 +1162,19 @@ def ParsePythonCode(PythonCode):
                               "typeprint": TypeL
                            }
                            MethodData["localVariables"].append(Variable)
-
+               for subnode in ast.walk(BodyNode): 
+               
+                  if isinstance(subnode, ast.Call):
+                     if isinstance(subnode.func, ast.Attribute): 
+                        if subnode.func.attr == "append": 
+                           if subnode.args:
+                              arg = subnode.args[0]
+                              if isinstance(arg, ast.Call):
+                                 if isinstance(arg.func, ast.Name): 
+                                    source_class = arg.func.id 
+                                    if not IsRelationshipFound("Aggregation", source_class,node.name, AggregationInfo):
+                                       RelationData = {"Relationship": "Aggregation", "Source": source_class, "Target": node.name, "Multiplicity1": "1", "Role1":"", "Multiplicity2": "0..*", "Role2":"", "Deleted": False,"Flag": False } 
+                                       AggregationInfo.append(RelationData)
                ClassData["methods"].append(MethodData)
          ClassInfo.append(ClassData)
 
@@ -1247,7 +1268,7 @@ def ParsePythonCode(PythonCode):
                    OuterMethodCall["Arguments"].append(Arguments)
              if OuterMethodCall["Arguments"]!=[] and CountArgClass < 2: 
                 OuterMethodCalls.append(OuterMethodCall)
-   return ClassInfo, variables, AggregationInfo, OuterMethodCalls
+   return ClassInfo, variables, AggregationInfo, OuterMethodCalls, CompositionInfo
 
 # ------------------------------------------------------------------------------
 # Processing Directories Containing Many Python Files
@@ -1263,8 +1284,8 @@ def ReadPythonFiles(Directory):
             with open(Program, 'r') as file:
                PythonCode = file.read()
               
-            UMLInfo, variables, AggregationInfo, OuterMethodCalls = ParsePythonCode(PythonCode)
-            UMLData, RELData= ConstructRelationships(UMLInfo, variables, AggregationInfo, OuterMethodCalls)
+            UMLInfo, variables, AggregationInfo, OuterMethodCalls, CompositionInfo = ParsePythonCode(PythonCode)
+            UMLData, RELData= ConstructRelationships(UMLInfo, variables, AggregationInfo, OuterMethodCalls, CompositionInfo)
 
             tree = ast.parse(PythonCode)
             MethodSignatures = CollectMethodSignatures(tree)
@@ -1318,7 +1339,6 @@ def ReadPythonFile(Path, File):
 if IWantOnlyOneProgram:
    File="Test1.py"
    Path = ####
-   File="Test1.py"   
    ReadPythonFile(Path, File)
 else:
    PythonDir = ####

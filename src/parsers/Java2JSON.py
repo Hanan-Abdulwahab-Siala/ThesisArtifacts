@@ -1,7 +1,7 @@
 """
 Author: Hanan Abdulwahab Siala
 University: King's College London
-Date: 2020-10-25
+Date: 17-02-2026
 
 Description:
     Java2JSON parser/abstractor. 
@@ -11,6 +11,8 @@ import os
 import re
 import json
 import javalang
+import random
+import string
 # ------------------------------------------------------------------------------
 # I need to choose whether only one program or directory contains many programs.
 IWantOnlyOneProgram=False
@@ -24,10 +26,12 @@ def CleanJavaCode(JavaCode, AllCleaning):
       JavaCode = re.sub(r'\s+', ' ', JavaCode)
    return JavaCode
 # ------------------------------------------------------------------------------
-def IsRelationshipFound(Relationship, Source, Target, Data):
+def IsRelationshipFound(Relationship, Source, Target, R1, R2, Data):
    for x in Data:
       if 'Relationship' in x and 'Source' in x and 'Target' in x:
-         if x['Relationship'] == Relationship and x['Source'] == Source and x['Target'] == Target:
+         if Relationship in ['Inheritance','Realization', 'Dependency'] and x['Relationship'] == Relationship and x['Source'] == Source and x['Target'] == Target:
+            return True
+         elif Relationship in ['Association', 'Aggregation', 'Composition'] and x['Relationship'] == Relationship and x['Source'] == Source and x['Target'] == Target and x['Role1'] == R1 and x['Role2'] == R2:
             return True
    return False
 # ------------------------------------------------------------------------------
@@ -40,7 +44,7 @@ def ConstructTypePrint(names):
    End=""
    Complex=False
    for Name in reversed(names):
-      if Name in ["ArrayList","HashSet", "List", "HashMap"]: 
+      if Name in ["ArrayList","HashSet", "List", "HashMap", "Map"]: 
          if Name in ["ArrayList", "List"]:
             typp="Sequence" 
          elif Name=="HashSet" :
@@ -234,6 +238,23 @@ def ProcessStatements(statements, variables, ParamNames, ParamTypes, Context):
             else:
                var["IsParameterMethod"] = True
 # ------------------------------------------------------------------------------
+def AddNew2LocalVariable(AllClasses, class_name, method_name, Destination):
+   LocalVariable = {
+      "name": "", 
+      "type": Destination,
+      "type2": "",
+      "type3": "",
+      "typeprint": Destination
+      }
+
+   for class_data in AllClasses:
+      if class_data["name"] == class_name:
+         for method in class_data["methods"]:
+            if method["name"] == method_name:
+               method["localVariables"].append(LocalVariable)
+               return True
+   return False  
+# ------------------------------------------------------------------------------
 # Parsing Java Files
 # ------------------------------------------------------------------------------
 def ParseJavaCode(JavaCode):
@@ -400,7 +421,20 @@ def ParseJavaCode(JavaCode):
                ProcessStatements(member.body, ClassData["variables"], ParamNames, ParamTypes, "Method")
 
          ClassInfo.append(ClassData)
-         
+      
+      if isinstance(node, javalang.tree.MethodDeclaration):
+         class_name = None
+         for p in path:
+            if isinstance(p, javalang.tree.ClassDeclaration):
+               class_name = p.name
+               break
+         if class_name is None:
+            continue
+         if node.body is not None:
+            for _, stmt in node:
+               if isinstance(stmt, javalang.tree.ClassCreator):
+                  AddNew2LocalVariable(ClassInfo, class_name, node.name, stmt.type.name)
+            
       if isinstance(node, javalang.tree.InterfaceDeclaration):
          ClassData = {"ClassInterface": "Interface", "name": node.name, "Visibility": "", "IsStatic": "", "IsAbstract": "", "superclass": None, "variables": [], "methods": []}
          if node.modifiers:
@@ -485,6 +519,8 @@ def ParseJavaCode(JavaCode):
                         "typeprint": GetUMLTypes(typeprint)
                      }
                      MethodData["parameters"].append(ParameterData)
+                     
+                     
                if member.body:
                   for statement in member.body:
                      if isinstance(statement, javalang.tree.LocalVariableDeclaration):
@@ -520,7 +556,7 @@ def ConstructRelationshipsBetweenClassesAndInterfaces(Data):
          Name = item["name"]
          if item["ClassInterface"] == "Class":
             if item["superclass"] is not None:
-               if not IsRelationshipFound("Inheritance", Name, item["superclass"], ClassInfo):
+               if not IsRelationshipFound("Inheritance", Name, item["superclass"], "", "", ClassInfo):
                   ClassData = {"Relationship": "Inheritance", "Source": Name, "Target": item["superclass"], "Multiplicity1": "", "Role1":"", "Multiplicity2": "", "Role2":"","Deleted": False,"Flag": False}
                   ClassInfo.append(ClassData)
 
@@ -529,7 +565,7 @@ def ConstructRelationshipsBetweenClassesAndInterfaces(Data):
                for interface in interfaces:
                   ClassData = {"Relationship": "Realization", "Source": Name, "Target": "", "Multiplicity1": "", "Role1":"", "Multiplicity2": "", "Role2":"", "Deleted": False,"Flag": False }
                   ClassData["Target"] = interface
-                  if not IsRelationshipFound("Realization", Name, interface, ClassInfo):
+                  if not IsRelationshipFound("Realization", Name, interface, "", "", ClassInfo):
                      ClassInfo.append(ClassData)
 
             variables = item['variables']
@@ -550,7 +586,7 @@ def ConstructRelationshipsBetweenClassesAndInterfaces(Data):
 
                      ClassData["Role1"] = variable["name"]
                      if variable["IsNew"] and variable["WhereNew"]!="" and variable["IsParameterConstructor"]==False and (variable["AssignedInConstructor"] or variable["AssignedInMethod"]) and (variable["IsParameterMethod"]==False or (variable["IsParameterMethod"] and variable["IsSetter"])): 
-                        if not IsRelationshipFound("Composition", variable["type"], Name, ClassInfo):    
+                        if not IsRelationshipFound("Composition", variable["type"], Name, "", variable["name"], ClassInfo):    
                            ClassData["Relationship"] ="Composition"                         
                            ClassData["Source"] = variable["type"] 
                            ClassData["Target"] = Name
@@ -563,51 +599,61 @@ def ConstructRelationshipsBetweenClassesAndInterfaces(Data):
                            ClassData["Role2"] = variable["name"]
                            ClassInfo.append(ClassData) 
                      elif variable["IsParameterConstructor"]==True or (variable["IsParameterMethod"] and variable["AssignedInMethod"] and variable["IsSetter"]):                       
-                        if not IsRelationshipFound("Aggregation", variable["type"], Name, ClassInfo):    
+                        if not IsRelationshipFound("Aggregation", variable["type"], Name, "", variable["name"], ClassInfo): 
                            ClassData["Relationship"] ="Aggregation" 
                            ClassData["Source"] = variable["type"] 
                            ClassData["Target"] = Name
                            ClassData["Multiplicity1"] = ""
                            ClassData["Role1"] = ""
+                           ClassData["Role2"] = variable["name"] 
+                           
                            if variable["IsArray"]:
                               ClassData["Multiplicity2"] = "0..*"
                            else:
                               ClassData["Multiplicity2"] = "0..1" 
-                           ClassData["Role2"] = variable["name"] 
-                           ClassInfo.append(ClassData)   
+                              
+                           ClassInfo.append(ClassData)
                      else:
-                        if not IsRelationshipFound("Association", ClassData["Source"], ClassData["Target"], ClassInfo):
+                        if not IsRelationshipFound("Association", ClassData["Source"], ClassData["Target"], ClassData["Role1"], ClassData["Role2"], ClassInfo):
                            ClassInfo.append(ClassData)
                      
                   elif IsClassOrInterface(variable["type2"], Data): 
                      ClassData["Source"] = variable["type2"] 
                      ClassData["Target"] = Name
                      ClassData["Multiplicity2"] = "0..*"
+                     ClassData["Role1"] = ""  
                      ClassData["Role2"] = variable["name"]
                      if variable["IsNew"] and variable["WhereNew"]!="" and variable["IsParameterConstructor"]==False and (variable["AssignedInConstructor"] or variable["AssignedInMethod"]) and (variable["IsParameterMethod"]==False or (variable["IsParameterMethod"] and variable["IsSetter"])): 
-                        if not IsRelationshipFound("Composition", ClassData["Source"], ClassData["Target"], ClassInfo):
+                        if not IsRelationshipFound("Composition", ClassData["Source"], ClassData["Target"], ClassData["Role1"], ClassData["Role2"], ClassInfo):
                            ClassData["Relationship"] ="Composition"
                            ClassInfo.append(ClassData) 
                      elif variable["IsParameterConstructor"]==True or (variable["IsParameterMethod"] and variable["AssignedInMethod"] and variable["IsSetter"]): 
-                        if not IsRelationshipFound("Aggregation", ClassData["Source"], ClassData["Target"], ClassInfo):
+                        if not IsRelationshipFound("Aggregation", ClassData["Source"], ClassData["Target"], ClassData["Role1"], ClassData["Role2"], ClassInfo):
                            ClassData["Relationship"] ="Aggregation" 
                            ClassInfo.append(ClassData)   
                      else:
-                        if not IsRelationshipFound("Association", ClassData["Source"], ClassData["Target"], ClassInfo):
+                        if not IsRelationshipFound("Association", ClassData["Source"], ClassData["Target"], ClassData["Role1"], ClassData["Role2"], ClassInfo):
+                           ClassData["Role1"] = ClassData["Role2"] 
+                           ClassData["Multiplicity1"] = ClassData["Multiplicity2"] 
+                           ClassData["Role2"] = "" 
+                           ClassData["Multiplicity2"] = "" 
+                           te=ClassData["Source"] 
+                           ClassData["Source"]=ClassData["Target"] 
+                           ClassData["Target"]=te 
                            ClassInfo.append(ClassData)
 
             methods = item['methods']
             if methods:
                for method in methods:
                   if IsClassOrInterface(method["returnType"], Data):
-                     if not IsRelationshipFound("Dependency", Name, method["returnType"], ClassInfo):
+                     if not IsRelationshipFound("Dependency", Name, method["returnType"], "", "", ClassInfo):
                         ClassData = {"Relationship": "Dependency", "Source": "", "Target": "", "Multiplicity1": "", "Role1":"", "Multiplicity2": "", "Role2":"", "Deleted": False,"Flag": False }
                         ClassData["Source"] = Name
                         ClassData["Target"] = method["returnType"]
                         ClassData["Role1"] = ""
                         ClassInfo.append(ClassData)
                   if method["returnType2"] !="" and IsClassOrInterface(method["returnType2"], Data):
-                     if not IsRelationshipFound("Dependency", Name, method["returnType2"], ClassInfo):
+                     if not IsRelationshipFound("Dependency", Name, method["returnType2"], "", "", ClassInfo):
                         ClassData = {"Relationship": "Dependency", "Source": "", "Target": "", "Multiplicity1": "", "Role1":"", "Multiplicity2": "", "Role2":"", "Deleted": False,"Flag": False }
                         ClassData["Source"] = Name
                         ClassData["Target"] = method["returnType2"]
@@ -616,14 +662,14 @@ def ConstructRelationshipsBetweenClassesAndInterfaces(Data):
                   if 'parameters' in method:
                      for parameter in method['parameters']:
                         if parameter["type"] and IsClassOrInterface(parameter["type"], Data):
-                           if not IsRelationshipFound("Dependency", Name, parameter["type"], ClassInfo):
+                           if not IsRelationshipFound("Dependency", Name, parameter["type"], "", "", ClassInfo):
                               ClassData = {"Relationship": "Dependency", "Source": "", "Target": "", "Multiplicity1": "", "Role1":"", "Multiplicity2": "", "Role2":"", "Deleted": False,"Flag": False }
                               ClassData["Source"] = Name
                               ClassData["Target"] = parameter["type"]
                               ClassData["Role1"] = parameter["name"]
                               ClassInfo.append(ClassData)
                         if not parameter["type"] and parameter["type2"] and IsClassOrInterface(parameter["type2"], Data):
-                           if not IsRelationshipFound("Dependency", Name, parameter["type2"], ClassInfo):
+                           if not IsRelationshipFound("Dependency", Name, parameter["type2"], "", "", ClassInfo):
                               ClassData = {"Relationship": "Dependency", "Source": "", "Target": "", "Multiplicity1": "", "Role1":"", "Multiplicity2": "", "Role2":"", "Deleted": False,"Flag": False }
                               ClassData["Source"] = Name
                               ClassData["Target"] = parameter["type2"]
@@ -633,14 +679,14 @@ def ConstructRelationshipsBetweenClassesAndInterfaces(Data):
                   if 'localVariables' in method:
                      for localVariable in method['localVariables']:
                         if IsClassOrInterface(localVariable["type"], Data):
-                           if not IsRelationshipFound("Dependency", Name, localVariable["type"], ClassInfo):
+                           if not IsRelationshipFound("Dependency", Name, localVariable["type"], "", "", ClassInfo):
                               ClassData = {"Relationship": "Dependency", "Source": "", "Target": "", "Multiplicity1": "", "Role1":"", "Multiplicity2": "", "Role2":"", "Deleted": False,"Flag": False }
                               ClassData["Source"] = Name
                               ClassData["Target"] = localVariable["type"]
                               ClassData["Role1"] = localVariable["name"]
                               ClassInfo.append(ClassData)
                         elif IsClassOrInterface(localVariable["type2"], Data):
-                           if not IsRelationshipFound("Dependency", Name, localVariable["type2"], ClassInfo):
+                           if not IsRelationshipFound("Dependency", Name, localVariable["type2"], "", "", ClassInfo):
                               ClassData = {"Relationship": "Dependency", "Source": "", "Target": "", "Multiplicity1": "", "Role1":"", "Multiplicity2": "", "Role2":"", "Deleted": False,"Flag": False }
                               ClassData["Source"] = Name
                               ClassData["Target"] = localVariable["type2"]
@@ -652,6 +698,9 @@ def ConstructRelationshipsBetweenClassesAndInterfaces(Data):
 def EnhancingRelationship(item, Data):
    ClassInterface1 = item['Source']
    ClassInterface2 = item['Target']
+   ClassInterfaceR1 = item['Role1']
+   ClassInterfaceR2 = item['Role2']
+   
 # ------------------------------------------------------------------------------
    if item["Relationship"] == 'Composition':
       for x in Data:
@@ -674,10 +723,17 @@ def EnhancingRelationship(item, Data):
             item['Multiplicity1'] = x['Multiplicity1']
             item['Role1'] = x['Role1']
             x['Deleted'] = True
+         if (x['Source'] == ClassInterface2 and x['Target'] == ClassInterface1) and (x["Relationship"] == 'Dependency') and not x['Deleted']: 
+            x['Deleted'] = True 
       Data[:] = [
-      {**x, **item} if (x['Source'] == ClassInterface1 and x['Target'] == ClassInterface2) and (x["Relationship"] == 'Composition') else x
+      {**x, **item} if (x['Source'] == ClassInterface1 and x['Target'] == ClassInterface2) and (x["Relationship"] == 'Composition') and (x['Role1']==ClassInterfaceR1) and (x['Role2']==ClassInterfaceR2) else x
       for x in Data
       ]
+      if not item['Deleted']: 
+         Data[:] = [
+         {**x, 'Deleted': True} if (((x['Source'] == ClassInterface1 and x['Target'] == ClassInterface2) or (x['Source'] == ClassInterface2 and x['Target'] == ClassInterface1)) and (x["Relationship"] == 'Dependency')) else x
+         for x in Data
+         ]      
 # ------------------------------------------------------------------------------
    if item["Relationship"] == 'Aggregation':
       for x in Data:
@@ -690,26 +746,33 @@ def EnhancingRelationship(item, Data):
             item['Multiplicity1'] = x['Multiplicity1']
             item['Role1'] = x['Role1']
             x['Deleted'] = True
+         if (x['Source'] == ClassInterface2 and x['Target'] == ClassInterface1) and (x["Relationship"] == 'Dependency') and not x['Deleted']:
+            x['Deleted'] = True
       Data[:] = [
-      {**x, **item} if (x['Source'] == ClassInterface1 and x['Target'] == ClassInterface2) and (x["Relationship"] == 'Aggregation') else x
+      {**x, **item} if (x['Source'] == ClassInterface1 and x['Target'] == ClassInterface2) and (x["Relationship"] == 'Aggregation') and (x['Role1']==ClassInterfaceR1) and (x['Role2']==ClassInterfaceR2) else x
       for x in Data
       ]
+      if not item['Deleted']:
+         Data[:] = [
+         {**x, 'Deleted': True} if (((x['Source'] == ClassInterface1 and x['Target'] == ClassInterface2) or (x['Source'] == ClassInterface2 and x['Target'] == ClassInterface1)) and (x["Relationship"] == 'Dependency')) else x
+         for x in Data
+         ]
 # ------------------------------------------------------------------------------
    if item["Relationship"] == 'Association':
       for x in Data:
          if (x['Source'] == ClassInterface2 and x['Target'] == ClassInterface1) and (x["Relationship"] == 'Association') and not x['Flag']:
-            item['Multiplicity2'] = x['Multiplicity1']
-            item['Role2'] = x['Role1']
+            if (ClassInterface2 != ClassInterface1): 
+               item['Multiplicity2'] = x['Multiplicity1']
+               item['Role2'] = x['Role1']
             item['Flag'] = True
+            
       for x in Data:
-         if (x['Source'] == ClassInterface1 and x['Target'] == ClassInterface2) and (x["Relationship"] == 'Association') and not x['Deleted']:
+         if (x['Source'] == ClassInterface1 and x['Target'] == ClassInterface2) and (x["Relationship"] == 'Association') and (x['Role1']==ClassInterfaceR1) and (x['Role2']==ClassInterfaceR2) and not x['Deleted']:
             x=item
-         if ((x['Source'] == ClassInterface2 and x['Target'] == ClassInterface1) and (x["Relationship"] == 'Association')) and not x['Flag']:
+         if ((x['Source'] == ClassInterface2 and x['Target'] == ClassInterface1) and (x["Relationship"] == 'Association') ) and not x['Flag']:
             x['Deleted']= True
-         if x['Source'] == x['Target'] : 
-            item['Multiplicity2']=''
-            item['Role2']=''
-            item['Flag'] = False 
+         if (((x['Source'] == ClassInterface1 and x['Target'] == ClassInterface2) or (x['Source'] == ClassInterface2 and x['Target'] == ClassInterface1)) and (x["Relationship"] == 'Dependency')):
+            x['Deleted']= True
    
 # ------------------------------------------------------------------------------
    if item["Relationship"] == 'Dependency':
@@ -766,13 +829,12 @@ def ReadJavaFiles(Directory):
             ccount+=1
             JavaCode = JavaCode.replace('#//', '_HASH_') 
             print("Number of program: ", ccount)
-            print("File=",File)
             UMLInfo = ParseJavaCode(CleanJavaCode(JavaCode, True))
             RELInfo=CheckingAggregation(CleanJavaCode(JavaCode, False))
             Info = ConstructRelationshipsBetweenClassesAndInterfaces(UMLInfo)
             RELResult=[]
             for item in RELInfo:  
-               if IsRelationshipFound("Association", item["Target"], item["Source"], Info):
+               if IsRelationshipFound("Association", item["Target"], item["Source"], item["Role1"], item["Role2"], Info):
                   RELResult.append(item)
                elif item["Flag"]:
                   item["Flag"]=False
@@ -784,7 +846,6 @@ def ReadJavaFiles(Directory):
             Data=RELResult
             for item in Data:
                Data = EnhancingRelationship(item, Data)
-
             UMLData = json.dumps(UMLInfo, indent=4)
             with open(Root+"\\"+File[:-4]+"UML", 'w') as Outfile1:
                Outfile1.write(UMLData)
@@ -821,7 +882,7 @@ def ReadJavaFile(Directory, File):
          Info=ConstructRelationshipsBetweenClassesAndInterfaces(UMLInfo)
          RELResult=[]
          for item in RELInfo:  
-            if IsRelationshipFound("Association", item["Target"], item["Source"], Info):
+            if IsRelationshipFound("Association", item["Target"], item["Source"], item["Role1"], item["Role2"], Info):
                RELResult.append(item)
             elif item["Flag"]:
                item["Flag"]=False

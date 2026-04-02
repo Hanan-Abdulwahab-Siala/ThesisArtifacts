@@ -1,7 +1,7 @@
 """
 Author: Hanan Abdulwahab Siala
 University: King's College London
-Date: 2020-10-05
+Date: 17-02-2026
 
 Description:
     This program removes extra elements from JSON files like type2, type3, and others that are listed below. 
