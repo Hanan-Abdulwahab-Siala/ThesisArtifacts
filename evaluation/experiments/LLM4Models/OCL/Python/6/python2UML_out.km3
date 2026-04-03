@@ -1,0 +1,14 @@
+
+ class FromPython {
+
+
+
+
+  operation initialise()
+  pre: true post: true
+  activity:     var letters_to_numbers : Map := Map{ "X" |-> 21 }->union(Map{ "Y" |-> 22 }->union(Map{ "Z" |-> 23 })) ;
+    for letter : letters_to_numbers.keys() do (    execute ("Letter:")->display());
+
+
+}
+

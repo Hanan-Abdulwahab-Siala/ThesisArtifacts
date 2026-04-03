@@ -1,0 +1,13 @@
+class FromPython {
+  operation initialise()
+  pre: true post: true
+  activity:     skip ;
+    var items_list : Sequence := Sequence{"AAA"}->union(Sequence{"BBB"}->union(Sequence{"CCC"}->union(Sequence{ "DDD" }))) ;
+    var list_length : int := (items_list)->size() ;
+    var sine_value : double := (5.0)->sin() ;
+    var cosine_value : double := (5.0)->cos() ;
+    var power_result : double := ((list_length))->pow(2) ;
+    execute (sine_value)->display() ;
+    execute (cosine_value)->display() ;
+    execute (power_result)->display();
+}

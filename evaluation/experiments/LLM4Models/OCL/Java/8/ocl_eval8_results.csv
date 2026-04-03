@@ -1,0 +1,16 @@
+Type,Tool_OCL,GroundTruth_OCL
+TP,class ConeVolumeCalculator {,class ConeVolumeCalculator {
+TP,static   operation calculateVolume( surfaceArea : double) : double,static   operation calculateVolume( surfaceArea : double) : double
+TP,pre: true,pre: true
+TP,post: true,post: true
+TP,activity: (     if (surfaceArea < 0) then     return -1 else skip ;,activity: (     if (surfaceArea < 0) then     return -1 else skip ;
+TP,var radius : double ; radius := (surfaceArea * (2)->sqrt())->oclAsType(double) / 3 ;,var radius : double ; radius := (surfaceArea * (2)->sqrt())->oclAsType(double) / 3 ;
+TP,var height : double ; height := (2 * surfaceArea) / 3 ;,var height : double ; height := (2 * surfaceArea) / 3 ;
+TP,var volume : double ; volume := (3.14 * radius->pow(2) * height)->oclAsType(double) ;,var volume : double ; volume := (3.14 * radius->pow(2) * height)->oclAsType(double) ;
+TP,return volume,return volume
+TP,);,);
+TP,static   operation main( args : Sequence(String)) : void,static   operation main( args : Sequence(String)) : void
+TP,activity: (     var surfaceArea : double ; surfaceArea := 5 ;,activity: (     var surfaceArea : double ; surfaceArea := 5 ;
+TP,"OclFile[""System.out""].println(calculateVolume(surfaceArea)) );","OclFile[""System.out""].println(calculateVolume(surfaceArea)) );"
+TP,},}
+TP,<EOF>,<EOF>

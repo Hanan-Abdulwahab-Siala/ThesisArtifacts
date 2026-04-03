@@ -1,0 +1,13 @@
+class FromPython {
+  operation initialise()
+  pre: true post: true
+  activity:     var product : int := 15 * 3 ;
+    var value : int := 12 ;
+    product := product + 10 ;
+    value := value * 12 ;
+    execute ("Updated product:")->display() ;
+    execute ("Updated value:")->display() ;
+    var numbers : Sequence := Sequence{11}->union(Sequence{12}->union(Sequence{13}->union(Sequence{14}->union(Sequence{ 15 })))) ;
+    var squared_result : Map := numbers->select(num | true)->collect(num | Map{num |-> num * num})->unionAll() ;
+    execute ("Squared numbers:")->display();
+}

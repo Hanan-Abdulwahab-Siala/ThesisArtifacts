@@ -1,0 +1,20 @@
+[
+    {
+        "Relationship": "Inheritance",
+        "Source": "Gamma",
+        "Target": "Alpha",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Inheritance",
+        "Source": "Gamma",
+        "Target": "Beta",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    }
+]

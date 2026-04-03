@@ -1,0 +1,10 @@
+Type,Tool_OCL,GroundTruth_OCL
+TP,class FromPython {,class FromPython {
+TP,operation initialise(),operation initialise()
+TP,pre: true post: true,pre: true post: true
+TP,activity:     var num : double := -54.3 ;,activity:     var num : double := -54.3 ;
+TP,var absolute_value : double := (num)->abs() ;,var absolute_value : double := (num)->abs() ;
+TP,execute (absolute_value)->display() ;,execute (absolute_value)->display() ;
+TP,var rounded_value : double := (num)->round() ;,var rounded_value : double := (num)->round() ;
+TP,execute (rounded_value)->display();,execute (rounded_value)->display();
+TP,},}
