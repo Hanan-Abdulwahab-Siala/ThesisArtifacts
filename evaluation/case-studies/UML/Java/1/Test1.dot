@@ -1,0 +1,47 @@
+digraph G {
+    edge [fontname="Helvetica",fontsize=10,labelfontname="arial",labelfontsize=7,color="red"];
+    node [fontname="Helvetica",fontsize=10,shape=record,style=filled,fillcolor="white",color="red"];
+
+    graph [ rankdir=BT ]
+    node [ shape=none ]
+ 
+
+    Car [ label=<        
+        <table border="0" cellborder="1" cellspacing="0">
+            <tr><td><b>\N</b></td></tr>
+            <tr><td align="left"> - carId : String  <br align="left"/> - brand : String  <br align="left"/> - model : String  <br align="left"/> - basePricePerDay : Real  <br align="left"/> - isAvailable : Boolean <br align="left"/></td></tr>
+            <tr><td align="left"> + Car(carId:String,brand:String,model:String,basePricePerDay:Real) <br align="left"/> + getCarId(): String <br align="left"/> + getBrand(): String <br align="left"/> + getModel(): String <br align="left"/> + calculatePrice(rentalDays:Integer): Real <br align="left"/> + isAvailable(): Boolean <br align="left"/> + rent(): OclVoid <br align="left"/> + returnCar(): OclVoid <br align="left"/></td></tr>
+        </table>> ]
+    Customer [ label=<        
+        <table border="0" cellborder="1" cellspacing="0">
+            <tr><td><b>\N</b></td></tr>
+            <tr><td align="left"> - customerId : String  <br align="left"/> - name : String <br align="left"/></td></tr>
+            <tr><td align="left"> + Customer(customerId:String,name:String) <br align="left"/> + getCustomerId(): String <br align="left"/> + getName(): String <br align="left"/></td></tr>
+        </table>> ]
+    Rental [ label=<        
+        <table border="0" cellborder="1" cellspacing="0">
+            <tr><td><b>\N</b></td></tr>
+            <tr><td align="left"> - days : Integer <br align="left"/></td></tr>
+            <tr><td align="left"> + Rental(car:Car,customer:Customer,days:Integer) <br align="left"/> + getCar(): Car <br align="left"/> + getCustomer(): Customer <br align="left"/> + getDays(): Integer <br align="left"/></td></tr>
+        </table>> ]
+    CarRentalSystem [ label=<        
+        <table border="0" cellborder="1" cellspacing="0">
+            <tr><td><b>\N</b></td></tr>
+            <tr><td align="left"></td></tr>
+            <tr><td align="left"> + CarRentalSystem() <br align="left"/> + addCar(car:Car): OclVoid <br align="left"/> + addCustomer(customer:Customer): OclVoid <br align="left"/> + rentCar(car:Car,customer:Customer,days:Integer): OclVoid <br align="left"/> + returnCar(car:Car): OclVoid <br align="left"/> + menu(): OclVoid <br align="left"/></td></tr>
+        </table>> ]
+    Main [ label=<        
+        <table border="0" cellborder="1" cellspacing="0">
+            <tr><td><b>+\N</b></td></tr>
+            <tr><td align="left"></td></tr>
+            <tr><td align="left"><u> + main(args:String): OclVoid </u><br align="left"/></td></tr>
+        </table>> ]
+
+    Car -> Rental [headlabel="", taillabel="car    0..1", label="", arrowhead="odiamond", arrowtail="empty", style="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="red"];
+    Customer -> Rental [headlabel="", taillabel="customer    0..1", label="", arrowhead="odiamond", arrowtail="empty", style="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="red"];
+    Car -> CarRentalSystem [headlabel="", taillabel="cars    0..*", label="", arrowhead="diamond", arrowtail="empty", style="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="red"];
+    Customer -> CarRentalSystem [headlabel="", taillabel="customers    0..*", label="", arrowhead="diamond", arrowtail="empty", style="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="red"];
+    Rental -> CarRentalSystem [headlabel="", taillabel="rentals    0..*", label="", arrowhead="diamond", arrowtail="empty", style="", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="red"];
+    Main -> CarRentalSystem [headlabel="rentalSystem    ", taillabel="", label="", arrowhead="vee", arrowtail="empty", style="dashed", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="red"];
+    Main -> Car [headlabel="car1    ", taillabel="", label="", arrowhead="vee", arrowtail="empty", style="dashed", fontname="Helvetica", fontcolor="black", fontsize=10.0, color="red"];
+}

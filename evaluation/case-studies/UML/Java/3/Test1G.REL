@@ -1,0 +1,74 @@
+[
+    {
+        "Relationship": "Inheritance",
+        "Source": "Admin",
+        "Target": "User",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "UserFactory",
+        "Target": "User",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Inheritance",
+        "Source": "Driver",
+        "Target": "User",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Inheritance",
+        "Source": "Customer",
+        "Target": "User",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Card",
+        "Target": "Card",
+        "Multiplicity1": "0..1",
+        "Role1": "instance",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "UserFactory",
+        "Target": "Admin",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "UserFactory",
+        "Target": "Driver",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "UserFactory",
+        "Target": "Customer",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    }
+]

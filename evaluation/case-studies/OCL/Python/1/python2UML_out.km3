@@ -1,0 +1,125 @@
+
+ class FromPython {
+
+
+
+
+  operation initialise()
+  pre: true post: true
+  activity:     skip ;
+    skip ;
+    skip ;
+    skip ;
+    skip ;
+    skip ;
+    skip;
+
+  operation comp(date_str : OclAny) : OclAny
+  pre: true post: true
+  activity:
+    return date_str.split('/');
+
+
+  operation year(date_str : OclAny) : OclAny
+  pre: true post: true
+  activity:
+    return ("" + ((comp(date_str)->last())))->toInteger();
+
+  operation month(date_str : OclAny) : OclAny
+  pre: true post: true
+  activity:
+    return ("" + ((comp(date_str)->front()->last())))->toInteger();
+
+  operation day(date_str : OclAny) : OclAny
+  pre: true post: true
+  activity:
+    return ("" + ((comp(date_str)->reverse()->at(-(-3)))))->toInteger();
+
+  operation MaxDate(Date1 : OclAny, Date2 : OclAny) : OclAny
+  pre: true post: true
+  activity:
+    var day1 : OclAny := null;
+    var month1 : OclAny := null;
+    var year1 : OclAny := null;
+    Sequence{day1,month1,year1} := Sequence{day(Date1),month(Date1),year(Date1)} ;
+    var day2 : OclAny := null;
+    var month2 : OclAny := null;
+    var year2 : OclAny := null;
+    Sequence{day2,month2,year2} := Sequence{day(Date2),month(Date2),year(Date2)} ;
+    if (year1->compareTo(year2)) > 0 then  (
+      return Date1
+    )
+    else (if (year1->compareTo(year2)) < 0 then
+   (
+      return Date2    
+)
+    else (
+      if (month1->compareTo(month2)) > 0 then  (
+      return Date1
+    )
+    else (if (month1->compareTo(month2)) < 0 then
+   (
+      return Date2    
+)
+    else (
+      if (day1->compareTo(day2)) >= 0 then  (
+      return Date1
+    )
+    else (
+      return Date2
+      )
+      )    )
+
+      )    )
+;
+
+  operation Prevd(D : OclAny, p : OclAny) : OclAny
+  pre: true post: true
+  activity:
+    if (month(D) - p) <= 0 then  (
+      var dd : String := ("" + ((day(D)))) ;
+    var mm : String := ("" + (((12 - (p - month(D)))))) ;
+    var yy : String := ("" + ((year(D) - 1))) ;
+    if (day(D) < 10) then (
+      dd := '0' + dd
+    ) else skip ;
+    if (12 - (p - month(D)) < 10) then (
+      mm := '0' + mm
+    ) else skip
+    )
+    else (
+      dd := ("" + ((day(D)))) ;
+    mm := ("" + (((month(D) - p)))) ;
+    yy := ("" + ((year(D)))) ;
+    if (day(D) < 10) then (
+      dd := '0' + dd
+    ) else skip ;
+    if ((month(D) - p) < 10) then (
+      mm := '0' + mm
+    ) else skip
+      ) ;
+    return dd + '/' + mm + '/' + yy;
+
+  operation Nextd(D : OclAny, p : OclAny) : OclAny
+  pre: true post: true
+  activity:
+    if (month(D) + p) > 12 then  (
+      dd := ("" + ((day(D)))) ;
+    mm := ("" + (((month(D) + p) mod 12))) ;
+    yy := ("" + ((year(D) + 1))) ;
+    if (day(D) < 10) then (
+      dd := '0' + dd
+    ) else skip ;
+    if (((month(D) + p) mod 12) < 10) then (
+      mm := '0' + mm
+    ) else skip
+    )
+    else (
+      dd := ("" + ((day(D)))) ;
+    mm := ("" + ((month(D) + p))) ;
+    yy := ("" + ((year(D))))
+      ) ;
+    return dd + '/' + mm + '/' + yy;
+
+}
+

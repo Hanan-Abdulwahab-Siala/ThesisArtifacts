@@ -1,0 +1,92 @@
+[
+    {
+        "Relationship": "Inheritance",
+        "Source": "ReturnStatement",
+        "Target": "Statement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "ReturnStatement",
+        "Target": "Expression",
+        "Multiplicity1": "",
+        "Role1": "beta",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "ReturnStatement",
+        "Target": "BasicExpression",
+        "Multiplicity1": "",
+        "Role1": "ref",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "ReturnStatement",
+        "Target": "Statement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "ReturnStatement",
+        "Target": "ModelSpecification",
+        "Multiplicity1": "",
+        "Role1": "sigma",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "ReturnStatement",
+        "Target": "ModelState",
+        "Multiplicity1": "",
+        "Role1": "beta",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "ReturnStatement",
+        "Target": "BehaviouralFeature",
+        "Multiplicity1": "",
+        "Role1": "op",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "ReturnStatement",
+        "Target": "Entity",
+        "Multiplicity1": "",
+        "Role1": "ent",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "ReturnStatement",
+        "Target": "BStatement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "ReturnStatement",
+        "Target": "Type",
+        "Multiplicity1": "",
+        "Role1": "propType",
+        "Multiplicity2": "",
+        "Role2": ""
+    }
+]

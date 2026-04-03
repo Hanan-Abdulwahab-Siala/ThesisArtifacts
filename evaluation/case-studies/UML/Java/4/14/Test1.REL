@@ -1,0 +1,128 @@
+[
+    {
+        "Relationship": "Inheritance",
+        "Source": "TryStatement",
+        "Target": "Statement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Aggregation",
+        "Source": "Statement",
+        "Target": "TryStatement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..1",
+        "Role2": "body"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "TryStatement",
+        "Target": "Vector",
+        "Multiplicity1": "0..*",
+        "Role1": "catchClauses",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Aggregation",
+        "Source": "Statement",
+        "Target": "TryStatement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..1",
+        "Role2": "endStatement"
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "TryStatement",
+        "Target": "Statement",
+        "Multiplicity1": "",
+        "Role1": "stat",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "TryStatement",
+        "Target": "SequenceStatement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "TryStatement",
+        "Target": "InvocationStatement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "TryStatement",
+        "Target": "FinalStatement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "TryStatement",
+        "Target": "CatchStatement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "TryStatement",
+        "Target": "Expression",
+        "Multiplicity1": "",
+        "Role1": "expr",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "TryStatement",
+        "Target": "BasicExpression",
+        "Multiplicity1": "",
+        "Role1": "var",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "TryStatement",
+        "Target": "Expression",
+        "Multiplicity1": "",
+        "Role1": "newE",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "TryStatement",
+        "Target": "BehaviouralFeature",
+        "Multiplicity1": "",
+        "Role1": "bf",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "TryStatement",
+        "Target": "Entity",
+        "Multiplicity1": "",
+        "Role1": "ent",
+        "Multiplicity2": "",
+        "Role2": ""
+    }
+]

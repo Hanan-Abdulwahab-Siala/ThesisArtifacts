@@ -1,0 +1,47 @@
+class Mapper {
+   static operation newMapper<T,V>( array : T, item : V) : Mapper<T,V>
+  pre: true
+  post: true
+  activity:
+  ( var self : Mapper<T,V> ;
+    self := createMapper<T,V>();
+    self.initialise<T,V>(array, item);
+    return self );
+
+  operation initialise<T,V>( array : T, item : V) : void
+  pre: true  post: true
+  activity: skip;
+
+
+  static   operation contains<T,V>( item : T, arr : Sequence(V)) : boolean
+  pre: true
+  post: true
+  activity: (     for (currentItem : arr) do ( (     if (item = currentItem) then (     return true ) else skip )  ) ; 
+     return false );
+
+}
+
+ interface Expandable<T> {
+   operation addItem( item : T) : void
+  pre: true
+  post: true;
+
+}
+
+class Array<T> implements Expandable<T> {
+   operation addItem( item : T) : void
+  pre: true
+  post: true
+  activity: skip;
+
+}
+
+class IntegerArray implements Expandable<int> {
+   operation addItem( item : int) : void
+  pre: true
+  post: true
+  activity: skip;
+
+}
+
+

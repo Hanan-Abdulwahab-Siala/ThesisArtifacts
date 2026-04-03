@@ -1,0 +1,74 @@
+[
+    {
+        "Relationship": "Inheritance",
+        "Source": "ErrorStatement",
+        "Target": "Statement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Aggregation",
+        "Source": "Expression",
+        "Target": "ErrorStatement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..1",
+        "Role2": "thrownObject"
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "ErrorStatement",
+        "Target": "Statement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "ErrorStatement",
+        "Target": "BasicExpression",
+        "Multiplicity1": "",
+        "Role1": "var",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "ErrorStatement",
+        "Target": "BehaviouralFeature",
+        "Multiplicity1": "",
+        "Role1": "bf",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "ErrorStatement",
+        "Target": "BStatement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "ErrorStatement",
+        "Target": "Entity",
+        "Multiplicity1": "",
+        "Role1": "ent",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "ErrorStatement",
+        "Target": "Type",
+        "Multiplicity1": "",
+        "Role1": "propType",
+        "Multiplicity2": "",
+        "Role2": ""
+    }
+]

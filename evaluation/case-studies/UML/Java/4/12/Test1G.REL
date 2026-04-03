@@ -1,0 +1,47 @@
+[
+    {
+        "Relationship": "Inheritance",
+        "Source": "AssertStatement",
+        "Target": "Statement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Expression",
+        "Target": "AssertStatement",
+        "Multiplicity1": "0..1",
+        "Role1": "condition",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Expression",
+        "Target": "AssertStatement",
+        "Multiplicity1": "0..1",
+        "Role1": "message",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "AssertStatement",
+        "Target": "BasicExpression",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "AssertStatement",
+        "Target": "BehaviouralFeature",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    }
+]

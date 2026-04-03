@@ -1,0 +1,74 @@
+[
+    {
+        "Relationship": "Inheritance",
+        "Source": "FinalStatement",
+        "Target": "Statement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Aggregation",
+        "Source": "Statement",
+        "Target": "FinalStatement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..1",
+        "Role2": "body"
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "FinalStatement",
+        "Target": "BStatement",
+        "Multiplicity1": "",
+        "Role1": "ifstat",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "FinalStatement",
+        "Target": "Expression",
+        "Multiplicity1": "",
+        "Role1": "expr",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "FinalStatement",
+        "Target": "Entity",
+        "Multiplicity1": "",
+        "Role1": "ent",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "FinalStatement",
+        "Target": "BasicExpression",
+        "Multiplicity1": "",
+        "Role1": "v",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "FinalStatement",
+        "Target": "BehaviouralFeature",
+        "Multiplicity1": "",
+        "Role1": "bf",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "FinalStatement",
+        "Target": "Type",
+        "Multiplicity1": "",
+        "Role1": "propType",
+        "Multiplicity2": "",
+        "Role2": ""
+    }
+]

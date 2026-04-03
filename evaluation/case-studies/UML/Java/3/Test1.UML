@@ -1,0 +1,2971 @@
+[
+    {
+        "ClassInterface": "Class",
+        "name": "User",
+        "Visibility": "public",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "User",
+                "Visibility": "public",
+                "parameters": []
+            },
+            {
+                "name": "User",
+                "Visibility": "public",
+                "parameters": [
+                    {
+                        "typeprint": "String",
+                        "name": "email"
+                    }
+                ]
+            },
+            {
+                "name": "User",
+                "Visibility": "public",
+                "parameters": [
+                    {
+                        "typeprint": "String",
+                        "name": "userFirstName"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "userLastName"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "password"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "userGroup"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "post"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "securityProblem"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "securityAnswer"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "birthday"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "gender"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "country"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "DLNumber"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "phone"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "email"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "address"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "about"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "regTime"
+                    }
+                ]
+            }
+        ],
+        "variables": [
+            {
+                "name": "userID",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": "protected"
+            },
+            {
+                "name": "userName",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "protected"
+            },
+            {
+                "name": "userFirstName",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "protected"
+            },
+            {
+                "name": "userLastName",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "protected"
+            },
+            {
+                "name": "password",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "protected"
+            },
+            {
+                "name": "userGroup",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "protected"
+            },
+            {
+                "name": "post",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "protected"
+            },
+            {
+                "name": "securityProblem",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "protected"
+            },
+            {
+                "name": "securityAnswer",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "protected"
+            },
+            {
+                "name": "birthday",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "protected"
+            },
+            {
+                "name": "gender",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "protected"
+            },
+            {
+                "name": "country",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "protected"
+            },
+            {
+                "name": "DLNumber",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "protected"
+            },
+            {
+                "name": "phone",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "protected"
+            },
+            {
+                "name": "email",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "protected"
+            },
+            {
+                "name": "address",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "protected"
+            },
+            {
+                "name": "about",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "protected"
+            },
+            {
+                "name": "regTime",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "protected"
+            },
+            {
+                "name": "avatar",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Image",
+                "Visibility": "protected"
+            }
+        ],
+        "methods": [
+            {
+                "name": "initUser",
+                "Visibility": "private",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": []
+            },
+            {
+                "name": "getUserID",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Integer",
+                "parameters": []
+            },
+            {
+                "name": "setUserID",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "userID",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "getUserName",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setUserName",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "userName",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getUserFirstName",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setUserFirstName",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "userFirstName",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getUserLastName",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setUserLastName",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "userLastName",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getPassword",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setPassword",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "password",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getUserGroup",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setUserGroup",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "userGroup",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getPost",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setPost",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "post",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getSecurityProblem",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setSecurityProblem",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "newSecurityProblem",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getSecurityAnswer",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setSecurityAnswer",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "newSecurityAnswer",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getBirthday",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setBirthday",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "birthday",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getGender",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setGender",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "gender",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getCountry",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setCountry",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "country",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getDLNumber",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setDLNumber",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "DLNumber",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getPhone",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setPhone",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "phone",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getEmail",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setEmail",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getAddress",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setAddress",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "address",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getAbout",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setAbout",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "about",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getRegTime",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setRegTime",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "regTime",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getAvatar",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Image",
+                "parameters": []
+            },
+            {
+                "name": "setAvatar",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "avatar",
+                        "typeprint": "Image"
+                    }
+                ]
+            },
+            {
+                "name": "toString",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "updateUserInfo",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": []
+            },
+            {
+                "name": "updateSecurityProblem",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "newSecurityProblem",
+                        "typeprint": "String"
+                    },
+                    {
+                        "name": "newSecurityAnswer",
+                        "typeprint": "String"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Admin",
+        "Visibility": "public",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "Admin",
+                "Visibility": "public",
+                "parameters": [
+                    {
+                        "typeprint": "String",
+                        "name": "email"
+                    }
+                ]
+            }
+        ],
+        "variables": [],
+        "methods": []
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "UserFactory",
+        "Visibility": "public",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [],
+        "variables": [],
+        "methods": [
+            {
+                "name": "getUser",
+                "Visibility": "public",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "User",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getUser",
+                "Visibility": "public",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "User",
+                "parameters": [
+                    {
+                        "name": "userID",
+                        "typeprint": "Integer"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Driver",
+        "Visibility": "public",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "Driver",
+                "Visibility": "public",
+                "parameters": [
+                    {
+                        "typeprint": "String",
+                        "name": "email"
+                    }
+                ]
+            }
+        ],
+        "variables": [],
+        "methods": []
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Customer",
+        "Visibility": "public",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "Customer",
+                "Visibility": "public",
+                "parameters": [
+                    {
+                        "typeprint": "String",
+                        "name": "email"
+                    }
+                ]
+            },
+            {
+                "name": "Customer",
+                "Visibility": "public",
+                "parameters": [
+                    {
+                        "typeprint": "String",
+                        "name": "userFirstName"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "userLastName"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "password"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "userGroup"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "post"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "securityProblem"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "securityAnswer"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "birthday"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "gender"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "country"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "DLNumber"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "phone"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "email"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "address"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "about"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "regTime"
+                    }
+                ]
+            }
+        ],
+        "variables": [
+            {
+                "name": "orderNum",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": "private"
+            },
+            {
+                "name": "bankCardList",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "bankCardData",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "ArrayList",
+                "Visibility": "private"
+            },
+            {
+                "name": "vipBadge",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Image",
+                "Visibility": "private"
+            },
+            {
+                "name": "vipCard",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Image",
+                "Visibility": "private"
+            }
+        ],
+        "methods": [
+            {
+                "name": "initCustomerData",
+                "Visibility": "private",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": []
+            },
+            {
+                "name": "getOrderNum",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Integer",
+                "parameters": []
+            },
+            {
+                "name": "setOrderNum",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "orderNum",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "getAvatar",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Image",
+                "parameters": []
+            },
+            {
+                "name": "setAvatar",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "avatar",
+                        "typeprint": "Image"
+                    }
+                ]
+            },
+            {
+                "name": "getVipBadge",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Image",
+                "parameters": []
+            },
+            {
+                "name": "setVipBadge",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "vipBadge",
+                        "typeprint": "Image"
+                    }
+                ]
+            },
+            {
+                "name": "getVipCard",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Image",
+                "parameters": []
+            },
+            {
+                "name": "setVipCard",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "vipCard",
+                        "typeprint": "Image"
+                    }
+                ]
+            },
+            {
+                "name": "storeCustomerInfo",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Boolean",
+                "parameters": []
+            },
+            {
+                "name": "getBankCardData",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "ArrayList",
+                "parameters": []
+            },
+            {
+                "name": "setBankCardData",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "bankCardData",
+                        "typeprint": "ArrayList"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Car",
+        "Visibility": "public",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "Car",
+                "Visibility": "public",
+                "parameters": [
+                    {
+                        "typeprint": "Integer",
+                        "name": "carID"
+                    }
+                ]
+            },
+            {
+                "name": "Car",
+                "Visibility": "public",
+                "parameters": [
+                    {
+                        "typeprint": "Integer",
+                        "name": "carID"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "carModel"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "chassisNumber"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "carNumber"
+                    },
+                    {
+                        "typeprint": "Date",
+                        "name": "manufacturingDate"
+                    },
+                    {
+                        "typeprint": "Integer",
+                        "name": "status"
+                    }
+                ]
+            },
+            {
+                "name": "Car",
+                "Visibility": "public",
+                "parameters": [
+                    {
+                        "typeprint": "String",
+                        "name": "carModel"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "chassisNumber"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "carNumber"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "manufacturingDate"
+                    },
+                    {
+                        "typeprint": "Integer",
+                        "name": "status"
+                    }
+                ]
+            },
+            {
+                "name": "Car",
+                "Visibility": "public",
+                "parameters": [
+                    {
+                        "typeprint": "Integer",
+                        "name": "carID"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "carModel"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "chassisNumber"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "carNumber"
+                    },
+                    {
+                        "typeprint": "Date",
+                        "name": "manufacturingDate"
+                    },
+                    {
+                        "typeprint": "Date",
+                        "name": "addedDate"
+                    },
+                    {
+                        "typeprint": "Integer",
+                        "name": "status"
+                    }
+                ]
+            }
+        ],
+        "variables": [
+            {
+                "name": "carID",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": "private"
+            },
+            {
+                "name": "carModel",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "chassisNumber",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "carNumber",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "manufacturingDate",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Date",
+                "Visibility": "private"
+            },
+            {
+                "name": "addedDate",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Date",
+                "Visibility": "private"
+            },
+            {
+                "name": "status",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": "private"
+            }
+        ],
+        "methods": [
+            {
+                "name": "initData",
+                "Visibility": "private",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": []
+            },
+            {
+                "name": "setCarModel",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "carModel",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "setChassisNumber",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "chassisNumber",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "setCarNumber",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "carNumber",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "setManufacturingDate",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "manufacturingDate",
+                        "typeprint": "Date"
+                    }
+                ]
+            },
+            {
+                "name": "setAddedDate",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "addedDate",
+                        "typeprint": "Date"
+                    }
+                ]
+            },
+            {
+                "name": "setStatus",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "status",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "getCarID",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Integer",
+                "parameters": []
+            },
+            {
+                "name": "getCarModel",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "getChassisNumber",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "getCarNumber",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "getManufacturingDate",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "getAddedDate",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "getStatus",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Integer",
+                "parameters": []
+            },
+            {
+                "name": "updateCarInfo",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "carModel",
+                        "typeprint": "String"
+                    },
+                    {
+                        "name": "chassisNumber",
+                        "typeprint": "String"
+                    },
+                    {
+                        "name": "carNumber",
+                        "typeprint": "String"
+                    },
+                    {
+                        "name": "manufacturingDate",
+                        "typeprint": "String"
+                    },
+                    {
+                        "name": "status",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "addCarInfo",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": []
+            },
+            {
+                "name": "update",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": []
+            },
+            {
+                "name": "delete",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "NewCar",
+        "Visibility": "public",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "NewCar",
+                "Visibility": "public",
+                "parameters": [
+                    {
+                        "typeprint": "String",
+                        "name": "carModel"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "chassisNumber"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "carNumber"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "manufacturingDate"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "price"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "seatNumber"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "gearType"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "carBrand"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "gradientDark"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "gradientLight"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "imageUrl"
+                    },
+                    {
+                        "typeprint": "Image",
+                        "name": "newCarImage"
+                    }
+                ]
+            }
+        ],
+        "variables": [
+            {
+                "name": "carModel",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "chassisNumber",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "carNumber",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "manufacturingDate",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "price",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "seatNumber",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "gearType",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "carBrand",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "gradientDark",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "gradientLight",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "imageUrl",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "newCarImage",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Image",
+                "Visibility": "private"
+            }
+        ],
+        "methods": [
+            {
+                "name": "checkAllNull",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Boolean",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "CarModel",
+        "Visibility": "public",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "CarModel",
+                "Visibility": "public",
+                "parameters": []
+            },
+            {
+                "name": "CarModel",
+                "Visibility": "public",
+                "parameters": [
+                    {
+                        "typeprint": "Integer",
+                        "name": "modelID"
+                    }
+                ]
+            },
+            {
+                "name": "CarModel",
+                "Visibility": "public",
+                "parameters": [
+                    {
+                        "typeprint": "String",
+                        "name": "carModel"
+                    }
+                ]
+            },
+            {
+                "name": "CarModel",
+                "Visibility": "public",
+                "parameters": [
+                    {
+                        "typeprint": "String",
+                        "name": "carModel"
+                    },
+                    {
+                        "typeprint": "Integer",
+                        "name": "seats"
+                    },
+                    {
+                        "typeprint": "Integer",
+                        "name": "price"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "gearType"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "darkColor"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "lightColor"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "carBrand"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "imageURL"
+                    }
+                ]
+            },
+            {
+                "name": "CarModel",
+                "Visibility": "public",
+                "parameters": [
+                    {
+                        "typeprint": "Integer",
+                        "name": "modelID"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "carModel"
+                    },
+                    {
+                        "typeprint": "Integer",
+                        "name": "seats"
+                    },
+                    {
+                        "typeprint": "Integer",
+                        "name": "price"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "gearType"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "darkColor"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "lightColor"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "carBrand"
+                    },
+                    {
+                        "typeprint": "Real",
+                        "name": "star"
+                    },
+                    {
+                        "typeprint": "Integer",
+                        "name": "speed"
+                    },
+                    {
+                        "typeprint": "Real",
+                        "name": "power"
+                    }
+                ]
+            }
+        ],
+        "variables": [
+            {
+                "name": "modelID",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": "private"
+            },
+            {
+                "name": "carModel",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "seats",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": "private"
+            },
+            {
+                "name": "price",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": "private"
+            },
+            {
+                "name": "gearType",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "darkColor",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "lightColor",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "carBrand",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "star",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Real",
+                "Visibility": "private"
+            },
+            {
+                "name": "speed",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": "private"
+            },
+            {
+                "name": "power",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Real",
+                "Visibility": "private"
+            },
+            {
+                "name": "imageURL",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            }
+        ],
+        "methods": [
+            {
+                "name": "initData",
+                "Visibility": "private",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "type",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getModelID",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Integer",
+                "parameters": []
+            },
+            {
+                "name": "setModelID",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "modelID",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "getCarModel",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setCarModel",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "carModel",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getSeats",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Integer",
+                "parameters": []
+            },
+            {
+                "name": "setSeats",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "seats",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "getPrice",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Integer",
+                "parameters": []
+            },
+            {
+                "name": "setPrice",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "price",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "getGearType",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setGearType",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "gearType",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getDarkColor",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setDarkColor",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "darkColor",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getLightColor",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setLightColor",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "lightColor",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getCarBrand",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setCarBrand",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "carBrand",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getStar",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Real",
+                "parameters": []
+            },
+            {
+                "name": "setStar",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "star",
+                        "typeprint": "Real"
+                    }
+                ]
+            },
+            {
+                "name": "getSpeed",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Integer",
+                "parameters": []
+            },
+            {
+                "name": "setSpeed",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "speed",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "getPower",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Real",
+                "parameters": []
+            },
+            {
+                "name": "setPower",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "power",
+                        "typeprint": "Real"
+                    }
+                ]
+            },
+            {
+                "name": "getImageURL",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setImageURL",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "imageURL",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "updateCarModel",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "carModel",
+                        "typeprint": "String"
+                    },
+                    {
+                        "name": "seats",
+                        "typeprint": "Integer"
+                    },
+                    {
+                        "name": "price",
+                        "typeprint": "Integer"
+                    },
+                    {
+                        "name": "gearType",
+                        "typeprint": "String"
+                    },
+                    {
+                        "name": "darkColor",
+                        "typeprint": "String"
+                    },
+                    {
+                        "name": "lightColor",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "addCarModel",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": []
+            },
+            {
+                "name": "update",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": []
+            },
+            {
+                "name": "delete",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Order",
+        "Visibility": "public",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "Order",
+                "Visibility": "public",
+                "parameters": []
+            },
+            {
+                "name": "Order",
+                "Visibility": "public",
+                "parameters": [
+                    {
+                        "typeprint": "Integer",
+                        "name": "orderID"
+                    }
+                ]
+            }
+        ],
+        "variables": [
+            {
+                "name": "orderID",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": "private"
+            },
+            {
+                "name": "carID",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": "private"
+            },
+            {
+                "name": "orderTime",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Date",
+                "Visibility": "private"
+            },
+            {
+                "name": "pickUpTime",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Date",
+                "Visibility": "private"
+            },
+            {
+                "name": "returnTime",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Date",
+                "Visibility": "private"
+            },
+            {
+                "name": "pickUpLocation",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "parkingLocation",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "userID",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": "private"
+            },
+            {
+                "name": "price",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": "private"
+            },
+            {
+                "name": "paymentMethod",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "account",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "status",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": "private"
+            },
+            {
+                "name": "star",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": "private"
+            },
+            {
+                "name": "invoiceNo",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            }
+        ],
+        "methods": [
+            {
+                "name": "initOrder",
+                "Visibility": "private",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": []
+            },
+            {
+                "name": "getOrderID",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Integer",
+                "parameters": []
+            },
+            {
+                "name": "getCarID",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Integer",
+                "parameters": []
+            },
+            {
+                "name": "getOrderTime",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Date",
+                "parameters": []
+            },
+            {
+                "name": "getOrderTimeStr",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "getPickUpTime",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Date",
+                "parameters": []
+            },
+            {
+                "name": "getPickUpTimeStr",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "getReturnTime",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Date",
+                "parameters": []
+            },
+            {
+                "name": "getReturnTimeStr",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "getUserID",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Integer",
+                "parameters": []
+            },
+            {
+                "name": "getPrice",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Integer",
+                "parameters": []
+            },
+            {
+                "name": "getPaymentMethod",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "getAccount",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "getStatus",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Integer",
+                "parameters": []
+            },
+            {
+                "name": "getStar",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Integer",
+                "parameters": []
+            },
+            {
+                "name": "setOrderID",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "orderID",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "setCarID",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "carID",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "setOrderTime",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "orderTime",
+                        "typeprint": "Date"
+                    }
+                ]
+            },
+            {
+                "name": "setPickUpTime",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "pickUpTime",
+                        "typeprint": "Date"
+                    }
+                ]
+            },
+            {
+                "name": "setReturnTime",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "returnTime",
+                        "typeprint": "Date"
+                    }
+                ]
+            },
+            {
+                "name": "setUserID",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "userID",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "setPrice",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "price",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "setPaymentMethod",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "paymentMethod",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "setAccount",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "account",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "setStatus",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "status",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "setStar",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "star",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "getPickUpLocation",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setPickUpLocation",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "pickUpLocation",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getParkingLocation",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setParkingLocation",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "parkingLocation",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getInvoiceNo",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setInvoiceNo",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "invoiceNo",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "toString",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Comment",
+        "Visibility": "public",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "Comment",
+                "Visibility": "public",
+                "parameters": [
+                    {
+                        "typeprint": "Integer",
+                        "name": "commentID"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "type"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "payload"
+                    },
+                    {
+                        "typeprint": "Integer",
+                        "name": "posterID"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "comment"
+                    },
+                    {
+                        "typeprint": "Integer",
+                        "name": "relevantCommentID"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "commentDateTime"
+                    },
+                    {
+                        "typeprint": "Integer",
+                        "name": "like"
+                    },
+                    {
+                        "typeprint": "Integer",
+                        "name": "star"
+                    }
+                ]
+            }
+        ],
+        "variables": [
+            {
+                "name": "commentID",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": "private"
+            },
+            {
+                "name": "type",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "payload",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "posterID",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": "private"
+            },
+            {
+                "name": "comment",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "relevantCommentID",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": "private"
+            },
+            {
+                "name": "commentDateTime",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "like",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": "private"
+            },
+            {
+                "name": "star",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": "private"
+            }
+        ],
+        "methods": []
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Card",
+        "Visibility": "public",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "Card",
+                "Visibility": "public",
+                "parameters": []
+            },
+            {
+                "name": "Card",
+                "Visibility": "public",
+                "parameters": [
+                    {
+                        "typeprint": "Integer",
+                        "name": "userID"
+                    },
+                    {
+                        "typeprint": "String",
+                        "name": "cardNumber"
+                    }
+                ]
+            }
+        ],
+        "variables": [
+            {
+                "name": "userID",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": "private"
+            },
+            {
+                "name": "cardType",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "cardName",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "cardBankName",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "cardHolderName",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "cardValidDate",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "cardNumber",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "cardBillingAddress",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "cardBalance",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            },
+            {
+                "name": "cardTheme",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": "private"
+            }
+        ],
+        "methods": [
+            {
+                "name": "getCardDetails",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": [
+                    {
+                        "name": "userID",
+                        "typeprint": "Integer"
+                    },
+                    {
+                        "name": "cardNumber",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getUserID",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Integer",
+                "parameters": []
+            },
+            {
+                "name": "setUserID",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "userID",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "getCardType",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setCardType",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "cardType",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getCardName",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setCardName",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "cardName",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getCardBankName",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setCardBankName",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "cardBankName",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getCardHolderName",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setCardHolderName",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "cardHolderName",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getCardValidDate",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setCardValidDate",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "cardValidDate",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getCardNumber",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setCardNumber",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "cardNumber",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getCardBillingAddress",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setCardBillingAddress",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "cardBillingAddress",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getCardTheme",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setCardTheme",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "cardTheme",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "getCardBalance",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "String",
+                "parameters": []
+            },
+            {
+                "name": "setCardBalance",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "cardBalance",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "update",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": []
+            },
+            {
+                "name": "delete",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": []
+            }
+        ]
+    }
+]

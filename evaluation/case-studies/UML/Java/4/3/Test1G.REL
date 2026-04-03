@@ -1,0 +1,92 @@
+[
+    {
+        "Relationship": "Inheritance",
+        "Source": "BreakStatement",
+        "Target": "Statement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "BreakStatement",
+        "Target": "ModelSpecification",
+        "Multiplicity1": "",
+        "Role1": "sigma",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "BreakStatement",
+        "Target": "ModelState",
+        "Multiplicity1": "",
+        "Role1": "beta",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "BreakStatement",
+        "Target": "Expression",
+        "Multiplicity1": "",
+        "Role1": "expr",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "BreakStatement",
+        "Target": "BStatement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "BreakStatement",
+        "Target": "Statement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "BreakStatement",
+        "Target": "BehaviouralFeature",
+        "Multiplicity1": "",
+        "Role1": "op",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "BreakStatement",
+        "Target": "BasicExpression",
+        "Multiplicity1": "",
+        "Role1": "ref",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "BreakStatement",
+        "Target": "Entity",
+        "Multiplicity1": "",
+        "Role1": "ent",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "BreakStatement",
+        "Target": "Type",
+        "Multiplicity1": "",
+        "Role1": "propType",
+        "Multiplicity2": "",
+        "Role2": ""
+    }
+]

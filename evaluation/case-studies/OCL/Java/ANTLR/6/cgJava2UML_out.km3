@@ -1,0 +1,16 @@
+class Foo0 { }
+
+ class Foo1 {
+ class Bar { }
+
+
+  static   operation inner_class_constructor() : void
+  pre: true
+  post: true
+  activity: (     var foo : Foo1 ; foo := Foo1.newFoo1() ;
+     var fooBar1 : Bar ; fooBar1 := (foo).newBar() ;
+     var fooBar2 : Bar ; fooBar2 := (Foo1.newFoo1()).newBar() );
+
+}
+
+

@@ -1,0 +1,2542 @@
+[
+    {
+        "Relationship": "Composition",
+        "Source": "Currency",
+        "Target": "Currency",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Currency",
+        "Target": "Reservation",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": "0..*"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Currency",
+        "Target": "ShoppingQuery",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "QueryHashSet",
+        "Role2": "0..*"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Currency",
+        "Target": "Fare",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "FareHashSet",
+        "Role2": "0..*"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Currency",
+        "Target": "Country",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "Country",
+        "Role2": "0..*"
+    },
+    {
+        "Relationship": "Composition",
+        "Source": "Reservation",
+        "Target": "Reservation",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Reservation",
+        "Target": "Currency",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Reservation",
+        "Target": "Passenger",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Reservation",
+        "Target": "Trip",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Composition",
+        "Source": "ItinerarySegment",
+        "Target": "ItinerarySegment",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ItinerarySegment",
+        "Target": "Fare",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "AvailableFares"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ItinerarySegment",
+        "Target": "Fare",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Fare"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ItinerarySegment",
+        "Target": "BookingStatus",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "BookingStatus"
+    },
+    {
+        "Relationship": "Composition",
+        "Source": "Distance",
+        "Target": "Distance",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Distance",
+        "Target": "ItineraryRoute",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Composition",
+        "Source": "Amenity",
+        "Target": "Amenity",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Amenity",
+        "Target": "ItineraryRoute",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Composition",
+        "Source": "Schedule",
+        "Target": "Schedule",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Schedule",
+        "Target": "ItineraryRoute",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Schedule",
+        "Target": "RouteTimeDetails",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Schedule",
+        "Target": "TimePeriod",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Composition",
+        "Source": "ItineraryRoute",
+        "Target": "ItineraryRoute",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ItineraryRoute",
+        "Target": "Distance",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Distance"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ItineraryRoute",
+        "Target": "Amenity",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Amenities"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ItineraryRoute",
+        "Target": "Schedule",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Schedules"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ItineraryRoute",
+        "Target": "GeoCoordinates",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ItineraryRoute",
+        "Target": "Datasource",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Inheritance",
+        "Source": "Passenger",
+        "Target": "Person",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Passenger",
+        "Target": "Passenger",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Passenger_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Passenger",
+        "Target": "Reservation",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Reservations"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Passenger",
+        "Target": "LoyaltyCard",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Passenger",
+        "Target": "PassengerCategory",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Passenger",
+        "Target": "SpecialRequirement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Passenger",
+        "Target": "CreditCard",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Passenger",
+        "Target": "Pet",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Passenger",
+        "Target": "PostalAddress",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Passenger",
+        "Target": "DiscountCard",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Composition",
+        "Source": "Trip",
+        "Target": "Trip",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Trip",
+        "Target": "Reservation",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Reservation"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Trip",
+        "Target": "Person",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Trip",
+        "Target": "ShoppingResponse",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Trip",
+        "Target": "ShoppingQuery",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Trip",
+        "Target": "Leg",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Trip",
+        "Target": "Leg",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Trip",
+        "Target": "PointOfInterest",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Trip",
+        "Target": "Photograph",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Trip",
+        "Target": "Person",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Trip",
+        "Target": "Note",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Trip",
+        "Target": "UserBookings",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Trip",
+        "Target": "TripDetailsResponse",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Trip",
+        "Target": "TripDetailsResponse",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Composition",
+        "Source": "IntermodalConnection",
+        "Target": "IntermodalConnection",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Composition",
+        "Source": "GeoCoordinates",
+        "Target": "GeoCoordinates",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "GeoCoordinates",
+        "Target": "ItineraryRoute",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "GeoCoordinates",
+        "Target": "Location",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "GeoCoordinates",
+        "Target": "Country",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "GeoCoordinates",
+        "Target": "City",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "GeoCoordinates",
+        "Target": "Photograph",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "GeoCoordinates",
+        "Target": "UrbanLocationPair",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "GeoCoordinates",
+        "Target": "GraphSearchData",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "GeoCoordinates",
+        "Target": "ShoppingQuery",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "GeoCoordinates",
+        "Target": "UrbanLocationPair",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Composition",
+        "Source": "Fare",
+        "Target": "Fare",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Fare",
+        "Target": "Currency",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Currency"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Fare",
+        "Target": "ItinerarySegment",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "ItinerarySegment_1"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Fare",
+        "Target": "ItinerarySegment",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "ItinerarySegment"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Fare",
+        "Target": "Charge",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Fare",
+        "Target": "FareType",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Fare",
+        "Target": "Datasource",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": "0..*"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Fare",
+        "Target": "AccomodationDetails",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Fare",
+        "Target": "Leg",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Fare",
+        "Target": "OnBoardDetails",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Composition",
+        "Source": "Datasource",
+        "Target": "Datasource",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Datasource",
+        "Target": "Fare",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Datasource",
+        "Target": "ItineraryRoute",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Datasource",
+        "Target": "Location",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Datasource",
+        "Target": "Organization",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Datasource",
+        "Target": "WebService",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "BookingStatus",
+        "Target": "BookingStatus",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "BookingStatus_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "BookingStatus",
+        "Target": "ItinerarySegment",
+        "Multiplicity1": "0..1",
+        "Role1": "ItinerarySegment",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Composition",
+        "Source": "TreeNode",
+        "Target": "TreeNode",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Composition",
+        "Source": "TreeNode",
+        "Target": "TreeNode",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "parentNode"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "TreeNode",
+        "Target": "MarineSegment",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "TreeNode",
+        "Target": "RailSegment",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "TreeNode",
+        "Target": "FlightSegment",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "TreeNode",
+        "Target": "UrbanSegment",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "TreeNode",
+        "Target": "Solution",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Inheritance",
+        "Source": "MarineSegment",
+        "Target": "ItinerarySegment",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "MarineSegment",
+        "Target": "MarineSegment",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "MarineSegment_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "MarineSegment",
+        "Target": "TreeNode",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "MarineSegment",
+        "Target": "Solution",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "MarineSegment",
+        "Target": "MarineRoute",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "MarineSegment",
+        "Target": "AccomodationDetails",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "MarineSegment",
+        "Target": "OnBoardDetails",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "MarineSegment",
+        "Target": "Vehicle",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "MarineSegment",
+        "Target": "ShipFacilities",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Inheritance",
+        "Source": "RailSegment",
+        "Target": "ItinerarySegment",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "RailSegment",
+        "Target": "RailSegment",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "RailSegment_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "RailSegment",
+        "Target": "TreeNode",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "RailSegment",
+        "Target": "Solution",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "RailSegment",
+        "Target": "RailRoute",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Inheritance",
+        "Source": "FlightSegment",
+        "Target": "ItinerarySegment",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "FlightSegment",
+        "Target": "FlightSegment",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "FlightSegment_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "FlightSegment",
+        "Target": "TreeNode",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "FlightSegment",
+        "Target": "Solution",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "FlightSegment",
+        "Target": "ClassOfService",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "FlightSegment",
+        "Target": "ClassOfService",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "ChosenClassOfService"
+    },
+    {
+        "Relationship": "Inheritance",
+        "Source": "UrbanSegment",
+        "Target": "ItinerarySegment",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "UrbanSegment",
+        "Target": "UrbanSegment",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "UrbanSegment_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "UrbanSegment",
+        "Target": "TreeNode",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "UrbanSegment",
+        "Target": "Station",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Origin"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "UrbanSegment",
+        "Target": "Station",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Destination"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "UrbanSegment",
+        "Target": "UrbanTrip",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..1",
+        "Role2": "UrbanTrip"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "UrbanSegment",
+        "Target": "Solution",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Composition",
+        "Source": "Solution",
+        "Target": "Solution",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Solution",
+        "Target": "TreeNode",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "TreeNode"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Solution",
+        "Target": "MarineSegment",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "MarineSegments"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "FlightSegment",
+        "Target": "FlightSegment",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "FlightSegments"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Solution",
+        "Target": "RailSegment",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "RailSegments"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Solution",
+        "Target": "UrbanSegment",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "UrbanSegments"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Solution",
+        "Target": "Leg",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Solution",
+        "Target": "GetSolutionDetailsResponse",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Solution",
+        "Target": "Leg",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Solution",
+        "Target": "UrbanLocationPair",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "UrbanStart"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Solution",
+        "Target": "UrbanLocationPair",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "UrbanEnd"
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "Solution",
+        "Target": "ItinerarySegment",
+        "Multiplicity1": "",
+        "Role1": "result",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Country",
+        "Target": "Country",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Country_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Country",
+        "Target": "GeoCoordinates",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Country",
+        "Target": "Currency",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Country",
+        "Target": "Person",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ShoppingQuery",
+        "Target": "ShoppingQuery",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "ShoppingQuery_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ShoppingQuery",
+        "Target": "Currency",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ShoppingQuery",
+        "Target": "Trip",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ShoppingQuery",
+        "Target": "GeoCoordinates",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ShoppingResponse",
+        "Target": "ShoppingResponse",
+        "Multiplicity1": "0..*",
+        "Role1": "ShoppingResponse_allInstances",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ShoppingResponse",
+        "Target": "Currency",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Currency"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ShoppingResponse",
+        "Target": "Trip",
+        "Multiplicity1": "0..*",
+        "Role1": "Trip",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "RouteTimeDetails",
+        "Target": "RouteTimeDetails",
+        "Multiplicity1": "0..*",
+        "Role1": "RouteTimeDetails_allInstances",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "RouteTimeDetails",
+        "Target": "Schedule",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Schedule"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "TimePeriod",
+        "Target": "TimePeriod",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "TimePeriod_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "TimePeriod",
+        "Target": "Schedule",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "BookingQuery",
+        "Target": "BookingQuery",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "BookingQuery_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "BookingQuery",
+        "Target": "Person",
+        "Multiplicity1": "0..*",
+        "Role1": "Person",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Person",
+        "Target": "Person",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Person_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Person",
+        "Target": "Trip",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "BookedTrips"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Person",
+        "Target": "BookingQuery",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "BookingQuery_3"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Person",
+        "Target": "Country",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Nationality"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Person",
+        "Target": "Transaction",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Person",
+        "Target": "LogEntity",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Person",
+        "Target": "ServiceMetric",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Person",
+        "Target": "PointOfInterest",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Person",
+        "Target": "PointOfInterest",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Person",
+        "Target": "Trip",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "LikedTrips"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Person",
+        "Target": "Identification",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Identification"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Person",
+        "Source": "Prefixes",
+        "Target": "Person",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Person",
+        "Source": "Suffixes",
+        "Target": "Person",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Person",
+        "Target": "ContactInformation",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Person",
+        "Target": "Device",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Person",
+        "Target": "PlanningQuery",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Person",
+        "Target": "Photograph",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Person",
+        "Target": "Photograph",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Person",
+        "Target": "Photograph",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Person",
+        "Target": "Note",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "LoyaltyCard",
+        "Target": "LoyaltyCard",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "LoyaltyCard_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "LoyaltyCard",
+        "Target": "Passenger",
+        "Multiplicity1": "0..*",
+        "Role1": "Passenger",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "PassengerCategory",
+        "Target": "PassengerCategory",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "PassengerCategory_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "PassengerCategory",
+        "Target": "Passenger",
+        "Multiplicity1": "0..*",
+        "Role1": "Passenger",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "PostalAddress",
+        "Target": "PostalAddress",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "PostalAddress_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "PostalAddress",
+        "Target": "Passenger",
+        "Multiplicity1": "0..*",
+        "Role1": "Passenger",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "DiscountCard",
+        "Target": "DiscountCard",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "DiscountCard_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "DiscountCard",
+        "Target": "Passenger",
+        "Multiplicity1": "0..*",
+        "Role1": "Passenger",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "SpecialRequirement",
+        "Target": "SpecialRequirement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "SpecialRequirement_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "SpecialRequirement",
+        "Target": "Passenger",
+        "Multiplicity1": "0..*",
+        "Role1": "Passenger",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "CreditCard",
+        "Target": "CreditCard",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "CreditCard_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "CreditCard",
+        "Target": "Passenger",
+        "Multiplicity1": "0..*",
+        "Role1": "Passenger",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Pet",
+        "Target": "Pet",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Pet_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Pet",
+        "Target": "Passenger",
+        "Multiplicity1": "0..*",
+        "Role1": "Passenger",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Identification",
+        "Target": "Identification",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Identification_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Identification",
+        "Target": "Person",
+        "Multiplicity1": "0..1",
+        "Role1": "Person",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Prefixes",
+        "Target": "Prefixes",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Prefixes_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Prefixes",
+        "Target": "Person",
+        "Multiplicity1": "0..*",
+        "Role1": "Person",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Suffixes",
+        "Target": "Suffixes",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Suffixes_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Suffixes",
+        "Target": "Person",
+        "Multiplicity1": "0..*",
+        "Role1": "Person",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ContactInformation",
+        "Target": "ContactInformation",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "ContactInformation_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ContactInformation",
+        "Target": "Person",
+        "Multiplicity1": "0..*",
+        "Role1": "Person",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Transaction",
+        "Target": "Transaction",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Transaction_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Transaction",
+        "Target": "Person",
+        "Multiplicity1": "0..*",
+        "Role1": "Person",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "LogEntity",
+        "Target": "LogEntity",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "LogEntity_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "LogEntity",
+        "Target": "Person",
+        "Multiplicity1": "0..*",
+        "Role1": "User",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ServiceMetric",
+        "Target": "ServiceMetric",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "ServiceMetric_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ServiceMetric",
+        "Target": "Person",
+        "Multiplicity1": "0..*",
+        "Role1": "CreatedBy",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Device",
+        "Target": "Device",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Device_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Device",
+        "Target": "Person",
+        "Multiplicity1": "0..*",
+        "Role1": "Person",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "PlanningQuery",
+        "Target": "PlanningQuery",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "PlanningQuery_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "PlanningQuery",
+        "Target": "Person",
+        "Multiplicity1": "0..*",
+        "Role1": "Person",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Photograph",
+        "Target": "Photograph",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Photograph_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Photograph",
+        "Target": "Trip",
+        "Multiplicity1": "0..*",
+        "Role1": "Trip",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Photograph",
+        "Target": "GeoCoordinates",
+        "Multiplicity1": "0..*",
+        "Role1": "GeoCoordinates",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Photograph",
+        "Target": "Person",
+        "Multiplicity1": "0..*",
+        "Role1": "TaggedPeople",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Photograph",
+        "Target": "Person",
+        "Multiplicity1": "0..*",
+        "Role1": "TakenBy",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Photograph",
+        "Target": "Person",
+        "Multiplicity1": "0..*",
+        "Role1": "LikedBy",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "PointOfInterest",
+        "Target": "PointOfInterest",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "PointOfInterest_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "PointOfInterest",
+        "Target": "Trip",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Trip"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "PointOfInterest",
+        "Target": "Person",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "LikedBy"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "PointOfInterest",
+        "Target": "Person",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "UploadedBy"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Note",
+        "Target": "Note",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Note_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Note",
+        "Target": "Person",
+        "Multiplicity1": "0..*",
+        "Role1": "CreatedBy",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Note",
+        "Target": "Trip",
+        "Multiplicity1": "0..*",
+        "Role1": "Trip",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ApplicationUser",
+        "Target": "ApplicationUser",
+        "Multiplicity1": "0..*",
+        "Role1": "ApplicationUser_allInstances",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ApplicationUser",
+        "Target": "ApplicationPermission",
+        "Multiplicity1": "0..*",
+        "Role1": "Permissions",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ApplicationUser",
+        "Target": "ApplicationRole",
+        "Multiplicity1": "0..*",
+        "Role1": "Roles",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ApplicationUser",
+        "Target": "ApplicationUserLogin",
+        "Multiplicity1": "0..*",
+        "Role1": "Logins",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ApplicationUser",
+        "Target": "ApplicationClient",
+        "Multiplicity1": "0..*",
+        "Role1": "Clients",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ApplicationUser",
+        "Target": "ApplicationUserClaim",
+        "Multiplicity1": "0..*",
+        "Role1": "Claims",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ApplicationUser",
+        "Target": "Profile",
+        "Multiplicity1": "0..*",
+        "Role1": "Profile",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ApplicationPermission",
+        "Target": "ApplicationPermission",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "ApplicationPermission_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ApplicationPermission",
+        "Target": "ApplicationUser",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Users"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ApplicationRole",
+        "Target": "ApplicationRole",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "ApplicationRole_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ApplicationRole",
+        "Target": "ApplicationUser",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Users"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ApplicationClient",
+        "Target": "ApplicationClient",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "ApplicationClient_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ApplicationClient",
+        "Target": "ApplicationUser",
+        "Multiplicity1": "0..1",
+        "Role1": "User",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ApplicationUserLogin",
+        "Target": "ApplicationUserLogin",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "ApplicationUserLogin_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ApplicationUserLogin",
+        "Target": "ApplicationUser",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "User"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ApplicationUserClaim",
+        "Target": "ApplicationUserClaim",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "ApplicationUserClaim_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ApplicationUserClaim",
+        "Target": "ApplicationUser",
+        "Multiplicity1": "0..1",
+        "Role1": "User",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Profile",
+        "Target": "Profile",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Profile_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Profile",
+        "Target": "ApplicationUser",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "ApplicationUser"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Leg",
+        "Target": "Leg",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Leg_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Leg",
+        "Target": "Trip",
+        "Multiplicity1": "0..*",
+        "Role1": "Trip",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Leg",
+        "Target": "Solution",
+        "Multiplicity1": "0..*",
+        "Role1": "Solutions",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Leg",
+        "Target": "Fare",
+        "Multiplicity1": "0..*",
+        "Role1": "Fare",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Leg",
+        "Target": "Solution",
+        "Multiplicity1": "0..1",
+        "Role1": "ChosenSolution",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "UserBookings",
+        "Target": "UserBookings",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "UserBookings_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "UserBookings",
+        "Target": "Trip",
+        "Multiplicity1": "0..*",
+        "Role1": "Trips",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "TripDetailsResponse",
+        "Target": "TripDetailsResponse",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "TripDetailsResponse_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "TripDetailsResponse",
+        "Target": "Trip",
+        "Multiplicity1": "0..*",
+        "Role1": "Trips",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "TripDetailsResponse",
+        "Target": "Trip",
+        "Multiplicity1": "0..*",
+        "Role1": "Trip",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Location",
+        "Target": "Location",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Location_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Location",
+        "Target": "GeoCoordinates",
+        "Multiplicity1": "0..*",
+        "Role1": "GeoCoordinates",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Location",
+        "Target": "Datasource",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Datasources"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "City",
+        "Target": "City",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "City_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "City",
+        "Target": "GeoCoordinates",
+        "Multiplicity1": "0..*",
+        "Role1": "GeoCoordinates",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "UrbanLocationPair",
+        "Target": "UrbanLocationPair",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "UrbanLocationPair_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "UrbanLocationPair",
+        "Target": "GeoCoordinates",
+        "Multiplicity1": "0..1",
+        "Role1": "DestinationLocation",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "UrbanLocationPair",
+        "Target": "GeoCoordinates",
+        "Multiplicity1": "0..1",
+        "Role1": "OriginLocation",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "UrbanLocationPair",
+        "Target": "Solution",
+        "Multiplicity1": "0..*",
+        "Role1": "SolutionHashSet<Solution>",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "UrbanLocationPair",
+        "Target": "Solution",
+        "Multiplicity1": "0..*",
+        "Role1": "Solution_3",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "GraphSearchData",
+        "Target": "GraphSearchData",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "GraphSearchData_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "GraphSearchData",
+        "Target": "GeoCoordinates",
+        "Multiplicity1": "0..*",
+        "Role1": "AlgorithmOptimalPathParameters",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Charge",
+        "Target": "Charge",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Charge_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Charge",
+        "Target": "Fare",
+        "Multiplicity1": "0..*",
+        "Role1": "Fare",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "FareType",
+        "Target": "FareType",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "FareType_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "FareType",
+        "Target": "Fare",
+        "Multiplicity1": "0..*",
+        "Role1": "Fare",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "AccomodationDetails",
+        "Target": "AccomodationDetails",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "AccomodationDetails_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "AccomodationDetails",
+        "Target": "Fare",
+        "Multiplicity1": "0..*",
+        "Role1": "Fare",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "AccomodationDetails",
+        "Target": "MarineSegment",
+        "Multiplicity1": "0..*",
+        "Role1": "MarineSegment",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "OnBoardDetails",
+        "Target": "OnBoardDetails",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "OnBoardDetails_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "OnBoardDetails",
+        "Target": "Fare",
+        "Multiplicity1": "0..*",
+        "Role1": "Fare",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "OnBoardDetails",
+        "Target": "MarineSegment",
+        "Multiplicity1": "0..*",
+        "Role1": "MarineSegment",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Organization",
+        "Target": "Organization",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Organization_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Organization",
+        "Target": "Datasource",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Datasources"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "WebService",
+        "Target": "WebService",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "WebService_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "WebService",
+        "Target": "Datasource",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..1",
+        "Role2": "Datasource"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "MarineRoute",
+        "Target": "MarineRoute",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "MarineRoute_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "MarineRoute",
+        "Target": "MarineSegment",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "MarineSegment"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Vehicle",
+        "Target": "Vehicle",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Vehicle_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Vehicle",
+        "Target": "MarineSegment",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "MarineSegment"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ShipFacilities",
+        "Target": "ShipFacilities",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "ShipFacilities_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ShipFacilities",
+        "Target": "MarineSegment",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "MarineSegment"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "RailRoute",
+        "Target": "RailRoute",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "RailRoute_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "RailRoute",
+        "Target": "RailSegment",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "RailSegment"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "FlightRoute",
+        "Target": "FlightRoute",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "FlightRoute_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "FlightRoute",
+        "Target": "FlightSegment",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "FlightSegments"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ClassOfService",
+        "Target": "ClassOfService",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "ClassOfService_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "ClassOfService",
+        "Target": "FlightSegment",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "FlightSegment"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Station",
+        "Target": "Station",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "Station_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Station",
+        "Target": "UrbanSegment",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "UrbanSegment"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "UrbanTrip",
+        "Target": "UrbanTrip",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "UrbanTrip_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "UrbanTrip",
+        "Target": "UrbanSegment",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "UrbanSegment_1"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "GetSolutionDetailsResponse",
+        "Target": "GetSolutionDetailsResponse",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "GetSolutionDetailsResponse_allInstances"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "GetSolutionDetailsResponse",
+        "Target": "Solution",
+        "Multiplicity1": "0..*",
+        "Role1": "Solution",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "DateTime",
+        "Target": "DateTime",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "DateTime_allInstances"
+    }
+]

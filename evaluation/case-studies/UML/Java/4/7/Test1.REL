@@ -1,0 +1,74 @@
+[
+    {
+        "Relationship": "Inheritance",
+        "Source": "WhileStatement",
+        "Target": "Statement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Aggregation",
+        "Source": "Expression",
+        "Target": "WhileStatement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..1",
+        "Role2": "loopTest"
+    },
+    {
+        "Relationship": "Aggregation",
+        "Source": "Statement",
+        "Target": "WhileStatement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..1",
+        "Role2": "body"
+    },
+    {
+        "Relationship": "Aggregation",
+        "Source": "Expression",
+        "Target": "WhileStatement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..1",
+        "Role2": "invariant"
+    },
+    {
+        "Relationship": "Aggregation",
+        "Source": "Expression",
+        "Target": "WhileStatement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..1",
+        "Role2": "variant"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Expression",
+        "Target": "WhileStatement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..1",
+        "Role2": "loopVar"
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Expression",
+        "Target": "WhileStatement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..1",
+        "Role2": "loopRange"
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "WhileStatement",
+        "Target": "Entity",
+        "Multiplicity1": "",
+        "Role1": "e",
+        "Multiplicity2": "",
+        "Role2": ""
+    }
+]

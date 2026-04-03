@@ -1,0 +1,47 @@
+[
+    {
+        "Relationship": "Inheritance",
+        "Source": "CreationStatement",
+        "Target": "Statement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "CreationStatement",
+        "Target": "Type",
+        "Multiplicity1": "0..1",
+        "Role1": "instanceType",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "CreationStatement",
+        "Target": "Type",
+        "Multiplicity1": "0..1",
+        "Role1": "elementType",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "CreationStatement",
+        "Target": "Expression",
+        "Multiplicity1": "0..1",
+        "Role1": "initialExpression",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "CreationStatement",
+        "Target": "Attribute",
+        "Multiplicity1": "0..1",
+        "Role1": "variable",
+        "Multiplicity2": "",
+        "Role2": ""
+    }
+]

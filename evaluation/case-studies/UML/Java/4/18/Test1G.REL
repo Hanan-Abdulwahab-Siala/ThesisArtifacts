@@ -1,0 +1,137 @@
+[
+    {
+        "Relationship": "Inheritance",
+        "Source": "ConditionalStatement",
+        "Target": "Statement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "ConditionalStatement",
+        "Target": "Expression",
+        "Multiplicity1": "",
+        "Role1": "testc",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "ConditionalStatement",
+        "Target": "BStatement",
+        "Multiplicity1": "",
+        "Role1": "ifstat",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "ConditionalStatement",
+        "Target": "Entity",
+        "Multiplicity1": "",
+        "Role1": "ent",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "ConditionalStatement",
+        "Target": "BasicExpression",
+        "Multiplicity1": "",
+        "Role1": "v",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "ConditionalStatement",
+        "Target": "BehaviouralFeature",
+        "Multiplicity1": "",
+        "Role1": "bf",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "ConditionalStatement",
+        "Target": "Type",
+        "Multiplicity1": "",
+        "Role1": "propType",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Aggregation",
+        "Source": "Expression",
+        "Target": "ConditionalStatement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..1",
+        "Role2": "test"
+    },
+    {
+        "Relationship": "Aggregation",
+        "Source": "Statement",
+        "Target": "ConditionalStatement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..1",
+        "Role2": "ifPart"
+    },
+    {
+        "Relationship": "Aggregation",
+        "Source": "Statement",
+        "Target": "ConditionalStatement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..1",
+        "Role2": "elsePart"
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "ConditionalStatement",
+        "Target": "Statement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "ConditionalStatement",
+        "Target": "SequenceStatement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "ConditionalStatement",
+        "Target": "InvocationStatement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "ConditionalStatement",
+        "Target": "ModelSpecification",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "ConditionalStatement",
+        "Target": "ModelState",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    }
+]

@@ -1,0 +1,38 @@
+Type,Tool_OCL,GroundTruth_OCL
+TP,class HelloWorld {,class HelloWorld {
+TP,static   operation main( args : Sequence(String)) : void,static   operation main( args : Sequence(String)) : void
+TP,pre: true,pre: true
+TP,post: true,post: true
+TP,activity: (         var i : int ; i := 0 ;,activity: (         var i : int ; i := 0 ;
+TP,var j : int ; j := 9 ; while i < 10 do ( (     execute doSomething() )  ;     i := i + 1 ;     j := j-(3) ) ;,var j : int ; j := 9 ; while i < 10 do ( (     execute doSomething() )  ;     i := i + 1 ;     j := j-(3) ) ;
+TP,while true do ( (     execute doSomething() ) ) ;,while true do ( (     execute doSomething() )  ) ;
+TP,for (i : intArray) do ( (     execute doSomething(i) )  ) ;,for (i : intArray) do ( (     execute doSomething(i) )  ) ;
+TP,execute someMethod() ;,execute someMethod() ;
+TP,var i : int ; i := 0 ; while i < 10 do ( (     while (true) do (     break ) )  ;     i := i + 1 ) ;,var i : int ; i := 0 ; while i < 10 do ( (     while (true) do (     break ) )  ;     i := i + 1 ) ;
+TP,var ch : int ;,var ch : int ;
+TP,for (ch : strChars) do ( (     if (ch = ' ') then (     continue ) else skip ;,for (ch : strChars) do ( (     if (ch = ' ') then (     continue ) else skip ;
+TP,execute doSomething(ch) )  ) )  ) ;,execute doSomething(ch) )  ) )  ) ;
+TP,if (streamClosed) then (     return ) else skip ;,if (streamClosed) then (     return ) else skip ;
+TP,execute readFromStream() ;,execute readFromStream() ;
+TP,var result : int ; result := a + b ;,var result : int ; result := a + b ;
+TP,return result,return result
+TP,);,);
+TP,},}
+TP,<EOF>,<EOF>
+FP,"for _x : Integer.subrange(1,1) do",
+FP,( var _switchval : OclAny ;,
+FP,_switchval := (start) ;,
+FP,"if _switchval = ""someMethod"" then",
+FP,break,
+FP,else skip ;,
+FP,if true then,
+FP,continue,
+FP,),
+FP,while (ch = getChar()) do ( (     if (ch = ' ') then (     continue ) else skip ;,
+FP,execute doSomething() )  ) ;,
+FP,var str : String ;,
+FP,for str : stringsArr do ( (     var strChars : Sequence(String) ; strChars := str->characters() ;,
+FN,,ch := getChar() ;
+FN,,while (ch) do (    ch := getChar() ; (     if (ch = ' ') then (     continue ) else skip ;
+FN,,execute doSomething() ) ;     ch := getChar() ;
+FN,,for (str : stringsArr) do ( (     var strChars : Sequence(String) ; strChars := str->characters() ;

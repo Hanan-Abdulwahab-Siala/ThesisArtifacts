@@ -1,0 +1,200 @@
+[
+    {
+        "Relationship": "Inheritance",
+        "Source": "InvocationStatement",
+        "Target": "Statement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "InvocationStatement",
+        "Target": "Expression",
+        "Multiplicity1": "",
+        "Role1": "callee",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "InvocationStatement",
+        "Target": "BehaviouralFeature",
+        "Multiplicity1": "",
+        "Role1": "bf",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "InvocationStatement",
+        "Target": "BasicExpression",
+        "Multiplicity1": "",
+        "Role1": "calle",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "InvocationStatement",
+        "Target": "BasicExpression",
+        "Multiplicity1": "",
+        "Role1": "be",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "InvocationStatement",
+        "Target": "Expression",
+        "Multiplicity1": "",
+        "Role1": "be",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "InvocationStatement",
+        "Target": "Entity",
+        "Multiplicity1": "",
+        "Role1": "ent",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "InvocationStatement",
+        "Target": "ModelSpecification",
+        "Multiplicity1": "",
+        "Role1": "sigma",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "InvocationStatement",
+        "Target": "ModelState",
+        "Multiplicity1": "",
+        "Role1": "beta",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "InvocationStatement",
+        "Target": "Expression",
+        "Multiplicity1": "",
+        "Role1": "cexpr",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "InvocationStatement",
+        "Target": "Attribute",
+        "Multiplicity1": "",
+        "Role1": "att",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "InvocationStatement",
+        "Target": "Entity",
+        "Multiplicity1": "",
+        "Role1": "ospec",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "InvocationStatement",
+        "Target": "Expression",
+        "Multiplicity1": "",
+        "Role1": "selfobject",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "InvocationStatement",
+        "Target": "BasicExpression",
+        "Multiplicity1": "",
+        "Role1": "cexp",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "InvocationStatement",
+        "Target": "Expression",
+        "Multiplicity1": "",
+        "Role1": "parval",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "InvocationStatement",
+        "Target": "ModelState",
+        "Multiplicity1": "",
+        "Role1": "opstackframe",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "InvocationStatement",
+        "Target": "Expression",
+        "Multiplicity1": "",
+        "Role1": "newE",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "InvocationStatement",
+        "Target": "BasicExpression",
+        "Multiplicity1": "",
+        "Role1": "ref",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "InvocationStatement",
+        "Target": "Expression",
+        "Multiplicity1": "",
+        "Role1": "mut",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "InvocationStatement",
+        "Target": "Entity",
+        "Multiplicity1": "",
+        "Role1": "ent",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "InvocationStatement",
+        "Target": "BExpression",
+        "Multiplicity1": "",
+        "Role1": "uf",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "InvocationStatement",
+        "Target": "BOperationCall",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    }
+]

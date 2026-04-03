@@ -1,0 +1,20 @@
+[
+    {
+        "Relationship": "Realization",
+        "Source": "Statement",
+        "Target": "Cloneable",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Association",
+        "Source": "Statement",
+        "Target": "Entity",
+        "Multiplicity1": "0..1",
+        "Role1": "entity",
+        "Multiplicity2": "",
+        "Role2": ""
+    }
+]

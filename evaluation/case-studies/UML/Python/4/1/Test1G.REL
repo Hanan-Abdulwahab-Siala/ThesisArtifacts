@@ -1,0 +1,20 @@
+[
+    {
+        "Relationship": "Aggregation",
+        "Source": "BinaryTree",
+        "Target": "TreeManager",
+        "Multiplicity1": "1",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Aggregation",
+        "Source": "Tree",
+        "Target": "TreeManager",
+        "Multiplicity1": "1",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": ""
+    }
+]

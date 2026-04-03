@@ -1,0 +1,47 @@
+[
+    {
+        "Relationship": "Inheritance",
+        "Source": "ConditionalStatement",
+        "Target": "Statement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Aggregation",
+        "Source": "Expression",
+        "Target": "ConditionalStatement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..1",
+        "Role2": "test"
+    },
+    {
+        "Relationship": "Aggregation",
+        "Source": "Statement",
+        "Target": "ConditionalStatement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..1",
+        "Role2": "ifPart"
+    },
+    {
+        "Relationship": "Aggregation",
+        "Source": "Statement",
+        "Target": "ConditionalStatement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..1",
+        "Role2": "elsePart"
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "ConditionalStatement",
+        "Target": "Statement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    }
+]

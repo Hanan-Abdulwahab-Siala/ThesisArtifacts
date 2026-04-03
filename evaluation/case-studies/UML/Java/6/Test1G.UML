@@ -1,0 +1,3347 @@
+[
+    {
+        "ClassInterface": "Class",
+        "name": "Currency",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "Currency",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [
+            {
+                "name": "Id",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": ""
+            },
+            {
+                "name": "Name",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            },
+            {
+                "name": "ISO4217Code",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            },
+            {
+                "name": "Symbol",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            },
+            {
+                "name": "QueryHashSet",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Set(ShoppingQuery)",
+                "Visibility": ""
+            },
+            {
+                "name": "ShoppingResponse_1",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Set(ShoppingResponse)",
+                "Visibility": ""
+            },
+            {
+                "name": "FareHashSet",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Set(Fare)",
+                "Visibility": ""
+            },
+            {
+                "name": "Country",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Set(Country)",
+                "Visibility": ""
+            }
+        ],
+        "methods": [
+            {
+                "name": "createCurrency",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Currency",
+                "parameters": []
+            },
+            {
+                "name": "createByPKCurrency",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Currency",
+                "parameters": [
+                    {
+                        "name": "Idx",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "killCurrency",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "Idx",
+                        "typeprint": "Integer"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Reservation",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "Reservation",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [
+            {
+                "name": "Id",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": ""
+            },
+            {
+                "name": "ReceiptID",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            },
+            {
+                "name": "ReceiptText",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            },
+            {
+                "name": "Status",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            },
+            {
+                "name": "AgentReferenceID",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            },
+            {
+                "name": "Price",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Real",
+                "Visibility": ""
+            },
+            {
+                "name": "CreationDate",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "DateTime",
+                "Visibility": ""
+            },
+            {
+                "name": "Iteration",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": ""
+            }
+        ],
+        "methods": [
+            {
+                "name": "createReservation",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Reservation",
+                "parameters": []
+            },
+            {
+                "name": "createByPKReservation",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Reservation",
+                "parameters": [
+                    {
+                        "name": "Idx",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "killReservation",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "Idx",
+                        "typeprint": "Integer"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "ItinerarySegment",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "abstract",
+        "constructors": [
+            {
+                "name": "ItinerarySegment",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [
+            {
+                "name": "Id",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": ""
+            },
+            {
+                "name": "DateBooked",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "DateTime",
+                "Visibility": ""
+            },
+            {
+                "name": "DateCancelled",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "DateTime",
+                "Visibility": ""
+            },
+            {
+                "name": "Status",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "ItineraryStatus",
+                "Visibility": ""
+            },
+            {
+                "name": "TermsAndConditions",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            },
+            {
+                "name": "ItinerarySequenceNumber",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": ""
+            },
+            {
+                "name": "ExternalIdentifier",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            },
+            {
+                "name": "UpdatedAt",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "DateTime",
+                "Visibility": ""
+            },
+            {
+                "name": "DepartureDateTime",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "DateTime",
+                "Visibility": ""
+            },
+            {
+                "name": "ArrivalDateTime",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "DateTime",
+                "Visibility": ""
+            },
+            {
+                "name": "TravelTime",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": ""
+            },
+            {
+                "name": "AvailableFares",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Set(Fare)",
+                "Visibility": ""
+            },
+            {
+                "name": "Fare",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Set(Fare)",
+                "Visibility": ""
+            },
+            {
+                "name": "BookingStatus",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Set(BookingStatus)",
+                "Visibility": ""
+            }
+        ],
+        "methods": [
+            {
+                "name": "createByPKItinerarySegment",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "ItinerarySegment",
+                "parameters": [
+                    {
+                        "name": "Idx",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "killItinerarySegment",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "Idx",
+                        "typeprint": "Integer"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Distance",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "Distance",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [
+            {
+                "name": "Id",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": ""
+            },
+            {
+                "name": "Value",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": ""
+            },
+            {
+                "name": "Direction",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            }
+        ],
+        "methods": [
+            {
+                "name": "createDistance",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Distance",
+                "parameters": []
+            },
+            {
+                "name": "createByPKDistance",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Distance",
+                "parameters": [
+                    {
+                        "name": "Idx",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "killDistance",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "Idx",
+                        "typeprint": "Integer"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Amenity",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "Amenity",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [
+            {
+                "name": "Id",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": ""
+            },
+            {
+                "name": "Type",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            },
+            {
+                "name": "Description",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            },
+            {
+                "name": "UnitPrice",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Real",
+                "Visibility": ""
+            },
+            {
+                "name": "Quantity",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": ""
+            },
+            {
+                "name": "Mandatory",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Boolean",
+                "Visibility": ""
+            },
+            {
+                "name": "ReferenceID",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            },
+            {
+                "name": "TermsAndConditions",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            }
+        ],
+        "methods": [
+            {
+                "name": "createAmenity",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Amenity",
+                "parameters": []
+            },
+            {
+                "name": "createByPKAmenity",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Amenity",
+                "parameters": [
+                    {
+                        "name": "Idx",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "killAmenity",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "Idx",
+                        "typeprint": "Integer"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Schedule",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "Schedule",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [
+            {
+                "name": "Id",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": ""
+            },
+            {
+                "name": "OperatingOnMonday",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Boolean",
+                "Visibility": ""
+            },
+            {
+                "name": "OperatingOnTuesday",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Boolean",
+                "Visibility": ""
+            },
+            {
+                "name": "OperatingOnWednesday",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Boolean",
+                "Visibility": ""
+            },
+            {
+                "name": "OperatingOnThursday",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Boolean",
+                "Visibility": ""
+            },
+            {
+                "name": "OperatingOnFriday",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Boolean",
+                "Visibility": ""
+            },
+            {
+                "name": "OperatingOnSaturday",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Boolean",
+                "Visibility": ""
+            },
+            {
+                "name": "OperatingOnSunday",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Boolean",
+                "Visibility": ""
+            },
+            {
+                "name": "IsException",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Boolean",
+                "Visibility": ""
+            },
+            {
+                "name": "GTFSId",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            },
+            {
+                "name": "RouteTimeDetails",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Set(RouteTimeDetails)",
+                "Visibility": ""
+            },
+            {
+                "name": "TimePeriod",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Set(TimePeriod)",
+                "Visibility": ""
+            }
+        ],
+        "methods": [
+            {
+                "name": "createSchedule",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Schedule",
+                "parameters": []
+            },
+            {
+                "name": "createByPKSchedule",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Schedule",
+                "parameters": [
+                    {
+                        "name": "Idx",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "killSchedule",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "Idx",
+                        "typeprint": "Integer"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "ItineraryRoute",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "ItineraryRoute",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [
+            {
+                "name": "Id",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": ""
+            },
+            {
+                "name": "Duration",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": ""
+            },
+            {
+                "name": "ETicketability",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Boolean",
+                "Visibility": ""
+            },
+            {
+                "name": "Remarks",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            },
+            {
+                "name": "Active",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Boolean",
+                "Visibility": ""
+            },
+            {
+                "name": "OnTimePercentage",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Real",
+                "Visibility": ""
+            },
+            {
+                "name": "UpdatedAt",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            },
+            {
+                "name": "CO2Emissions",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": ""
+            },
+            {
+                "name": "LuggageAvailability",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            },
+            {
+                "name": "LuggageDimensions",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            },
+            {
+                "name": "LuggageTermsOfService",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            },
+            {
+                "name": "PriceRangeMin",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Real",
+                "Visibility": ""
+            },
+            {
+                "name": "PriceRangeMax",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Real",
+                "Visibility": ""
+            },
+            {
+                "name": "ExternalIdentifier",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            },
+            {
+                "name": "Datasource",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Set(Datasource)",
+                "Visibility": ""
+            }
+        ],
+        "methods": [
+            {
+                "name": "createItineraryRoute",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "ItineraryRoute",
+                "parameters": []
+            },
+            {
+                "name": "createByPKItineraryRoute",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "ItineraryRoute",
+                "parameters": [
+                    {
+                        "name": "Idx",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "killItineraryRoute",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "Idx",
+                        "typeprint": "Integer"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Passenger",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "Passenger",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [
+            {
+                "name": "Accompanied",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Boolean",
+                "Visibility": ""
+            },
+            {
+                "name": "LoyaltyCards",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Set(LoyaltyCard)",
+                "Visibility": ""
+            },
+            {
+                "name": "SpecialRequirements",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Set(SpecialRequirement)",
+                "Visibility": ""
+            },
+            {
+                "name": "CreditCards",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Set(CreditCard)",
+                "Visibility": ""
+            },
+            {
+                "name": "Pets",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Set(Pet)",
+                "Visibility": ""
+            },
+            {
+                "name": "PostalAddress",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Set(PostalAddress)",
+                "Visibility": ""
+            },
+            {
+                "name": "DiscountCards",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Set(DiscountCard)",
+                "Visibility": ""
+            }
+        ],
+        "methods": [
+            {
+                "name": "createPassenger",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Passenger",
+                "parameters": []
+            },
+            {
+                "name": "IsInRole",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Boolean",
+                "parameters": [
+                    {
+                        "name": "roleName",
+                        "typeprint": "String"
+                    }
+                ]
+            },
+            {
+                "name": "HasPermission",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Boolean",
+                "parameters": [
+                    {
+                        "name": "permission",
+                        "typeprint": "String"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Trip",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "Trip",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [
+            {
+                "name": "Id",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": ""
+            },
+            {
+                "name": "TripCode",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            },
+            {
+                "name": "Name",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            },
+            {
+                "name": "Description",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            },
+            {
+                "name": "NumberOfAdults",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": ""
+            },
+            {
+                "name": "NumberOfChildren",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": ""
+            },
+            {
+                "name": "NumberOfInfants",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": ""
+            },
+            {
+                "name": "BookedBy",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Set(Person)",
+                "Visibility": ""
+            },
+            {
+                "name": "ShoppingResponseHashSet",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Set(ShoppingResponse)",
+                "Visibility": ""
+            },
+            {
+                "name": "ShoppingQueries",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Set(ShoppingQuery)",
+                "Visibility": ""
+            },
+            {
+                "name": "Legs",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Set(Leg)",
+                "Visibility": ""
+            },
+            {
+                "name": "PointsOfInterest",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Set(PointOfInterest)",
+                "Visibility": ""
+            },
+            {
+                "name": "Photographs",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Set(Photograph)",
+                "Visibility": ""
+            },
+            {
+                "name": "LikedBy",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Set(Person)",
+                "Visibility": ""
+            },
+            {
+                "name": "Notes",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Set(Note)",
+                "Visibility": ""
+            },
+            {
+                "name": "UserBookings",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Set(UserBookings)",
+                "Visibility": ""
+            }
+        ],
+        "methods": [
+            {
+                "name": "createTrip",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Trip",
+                "parameters": []
+            },
+            {
+                "name": "createByPKTrip",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Trip",
+                "parameters": [
+                    {
+                        "name": "Idx",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "killTrip",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "Idx",
+                        "typeprint": "Integer"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "IntermodalConnection",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "IntermodalConnection",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [
+            {
+                "name": "Id",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": ""
+            }
+        ],
+        "methods": [
+            {
+                "name": "createIntermodalConnection",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "IntermodalConnection",
+                "parameters": []
+            },
+            {
+                "name": "createByPKIntermodalConnection",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "IntermodalConnection",
+                "parameters": [
+                    {
+                        "name": "Idx",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "killIntermodalConnection",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "Idx",
+                        "typeprint": "Integer"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "GeoCoordinates",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "GeoCoordinates",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [
+            {
+                "name": "Id",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": ""
+            },
+            {
+                "name": "Latitude",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Real",
+                "Visibility": ""
+            },
+            {
+                "name": "Longitude",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Real",
+                "Visibility": ""
+            },
+            {
+                "name": "Elevation",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Real",
+                "Visibility": ""
+            },
+            {
+                "name": "Accuracy",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Real",
+                "Visibility": ""
+            },
+            {
+                "name": "GTFSId",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            },
+            {
+                "name": "Place",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Set(Location)",
+                "Visibility": ""
+            },
+            {
+                "name": "Country_1",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Set(Country)",
+                "Visibility": ""
+            },
+            {
+                "name": "CityHashSet",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Set(City)",
+                "Visibility": ""
+            },
+            {
+                "name": "Photograph",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Set(Photograph)",
+                "Visibility": ""
+            },
+            {
+                "name": "UrbanLocationPair",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Set(UrbanLocationPair)",
+                "Visibility": ""
+            },
+            {
+                "name": "GraphSearchData",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Set(GraphSearchData)",
+                "Visibility": ""
+            },
+            {
+                "name": "Query_4",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Set(ShoppingQuery)",
+                "Visibility": ""
+            },
+            {
+                "name": "StartLocation",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Set(UrbanLocationPair)",
+                "Visibility": ""
+            }
+        ],
+        "methods": [
+            {
+                "name": "createGeoCoordinates",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "GeoCoordinates",
+                "parameters": []
+            },
+            {
+                "name": "createByPKGeoCoordinates",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "GeoCoordinates",
+                "parameters": [
+                    {
+                        "name": "Idx",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "killGeoCoordinates",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "Idx",
+                        "typeprint": "Integer"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Fare",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "Fare",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [
+            {
+                "name": "Id",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": ""
+            },
+            {
+                "name": "TotalPrice",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Real",
+                "Visibility": ""
+            },
+            {
+                "name": "Description",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            },
+            {
+                "name": "TaxAmount",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Real",
+                "Visibility": ""
+            },
+            {
+                "name": "BasePrice",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Real",
+                "Visibility": ""
+            }
+        ],
+        "methods": [
+            {
+                "name": "createFare",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Fare",
+                "parameters": []
+            },
+            {
+                "name": "createByPKFare",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Fare",
+                "parameters": [
+                    {
+                        "name": "Idx",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "killFare",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "Idx",
+                        "typeprint": "Integer"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Datasource",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "Datasource",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [
+            {
+                "name": "Id",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": ""
+            },
+            {
+                "name": "Name",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            }
+        ],
+        "methods": [
+            {
+                "name": "createDatasource",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Datasource",
+                "parameters": []
+            },
+            {
+                "name": "createByPKDatasource",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Datasource",
+                "parameters": [
+                    {
+                        "name": "Idx",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "killDatasource",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "Idx",
+                        "typeprint": "Integer"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "BookingStatus",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "BookingStatus",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [
+            {
+                "name": "status",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Boolean",
+                "Visibility": ""
+            },
+            {
+                "name": "message",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            }
+        ],
+        "methods": [
+            {
+                "name": "createBookingStatus",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "BookingStatus",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "TreeNode",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "TreeNode",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [
+            {
+                "name": "responseLevel",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": ""
+            }
+        ],
+        "methods": [
+            {
+                "name": "createTreeNode",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "TreeNode",
+                "parameters": []
+            },
+            {
+                "name": "AddChild",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "TreeNode",
+                "parameters": [
+                    {
+                        "name": "node",
+                        "typeprint": "TreeNode"
+                    }
+                ]
+            },
+            {
+                "name": "GetLeafs",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Sequence(TreeNode)",
+                "parameters": [
+                    {
+                        "name": "nodes",
+                        "typeprint": "Sequence(TreeNode)"
+                    },
+                    {
+                        "name": "lowerLimitLevel",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "GetLeafsInner",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Sequence(TreeNode)",
+                "parameters": [
+                    {
+                        "name": "node",
+                        "typeprint": "TreeNode"
+                    },
+                    {
+                        "name": "nodes",
+                        "typeprint": "Sequence(TreeNode)"
+                    },
+                    {
+                        "name": "level",
+                        "typeprint": "Integer"
+                    },
+                    {
+                        "name": "lowerLimitLevel",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "AddResponseList",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Sequence(TreeNode)",
+                "parameters": [
+                    {
+                        "name": "treeNode",
+                        "typeprint": "TreeNode"
+                    },
+                    {
+                        "name": "level",
+                        "typeprint": "Integer"
+                    },
+                    {
+                        "name": "nodes",
+                        "typeprint": "Sequence(TreeNode)"
+                    }
+                ]
+            },
+            {
+                "name": "ParseTree",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Sequence(TreeNode)",
+                "parameters": [
+                    {
+                        "name": "nodes",
+                        "typeprint": "Sequence(TreeNode)"
+                    }
+                ]
+            },
+            {
+                "name": "TreeParseInner",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Sequence(TreeNode)",
+                "parameters": [
+                    {
+                        "name": "t",
+                        "typeprint": "TreeNode"
+                    },
+                    {
+                        "name": "nodes",
+                        "typeprint": "Sequence(TreeNode)"
+                    },
+                    {
+                        "name": "level",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "GetLowerLeaves",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Sequence(TreeNode)",
+                "parameters": [
+                    {
+                        "name": "nodes",
+                        "typeprint": "Sequence(TreeNode)"
+                    }
+                ]
+            },
+            {
+                "name": "GetLeavesLevels",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Integer",
+                "parameters": [
+                    {
+                        "name": "maxLeafLevel",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "GetLeavesLevelInner",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Integer",
+                "parameters": [
+                    {
+                        "name": "node",
+                        "typeprint": "TreeNode"
+                    },
+                    {
+                        "name": "level",
+                        "typeprint": "Integer"
+                    },
+                    {
+                        "name": "maxLeafLevel",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "GetLeavesPaths",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Sequence(Sequence(TreeNode))",
+                "parameters": [
+                    {
+                        "name": "lowerleaves",
+                        "typeprint": "Boolean"
+                    },
+                    {
+                        "name": "paths",
+                        "typeprint": "Sequence(Sequence(TreeNode))"
+                    }
+                ]
+            },
+            {
+                "name": "TreeParsePathReverse",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Sequence(TreeNode)",
+                "parameters": []
+            },
+            {
+                "name": "initNode",
+                "Visibility": "public",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "TreeNode",
+                "parameters": [
+                    {
+                        "name": "solution",
+                        "typeprint": "Solution"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "MarineSegment",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "MarineSegment",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createMarineSegment",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "MarineSegment",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "RailSegment",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "RailSegment",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [
+            {
+                "name": "TrainNumber",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            },
+            {
+                "name": "RequiresCrossBorderDocuments",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Boolean",
+                "Visibility": ""
+            }
+        ],
+        "methods": [
+            {
+                "name": "createRailSegment",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "RailSegment",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "FlightSegment",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "FlightSegment",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [
+            {
+                "name": "FlightTime",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": ""
+            },
+            {
+                "name": "DepartureDateTimeString",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            },
+            {
+                "name": "ArrivalDateTimeString",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            }
+        ],
+        "methods": [
+            {
+                "name": "createFlightSegment",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "FlightSegment",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "UrbanSegment",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "UrbanSegment",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createUrbanSegment",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "UrbanSegment",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Solution",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "Solution",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [
+            {
+                "name": "Id",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "Integer",
+                "Visibility": ""
+            },
+            {
+                "name": "Source",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "typeprint": "String",
+                "Visibility": ""
+            }
+        ],
+        "methods": [
+            {
+                "name": "createSolution",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Solution",
+                "parameters": []
+            },
+            {
+                "name": "createByPKSolution",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Solution",
+                "parameters": [
+                    {
+                        "name": "Idx",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "killSolution",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "OclVoid",
+                "parameters": [
+                    {
+                        "name": "Idx",
+                        "typeprint": "Integer"
+                    }
+                ]
+            },
+            {
+                "name": "IsEmpty",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "Boolean",
+                "parameters": []
+            },
+            {
+                "name": "GetFirst",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "ItinerarySegment",
+                "parameters": []
+            },
+            {
+                "name": "GetLast",
+                "Visibility": "public",
+                "IsStatic": "",
+                "IsAbstract": "",
+                "returnType": "ItinerarySegment",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Country",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "Country",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createCountry",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Country",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "ShoppingQuery",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "ShoppingQuery",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createShoppingQuery",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "ShoppingQuery",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "ShoppingResponse",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "ShoppingResponse",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createShoppingResponse",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "ShoppingResponse",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "RouteTimeDetails",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "RouteTimeDetails",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createRouteTimeDetails",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "RouteTimeDetails",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "TimePeriod",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "TimePeriod",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createTimePeriod",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "TimePeriod",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "BookingQuery",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "BookingQuery",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createBookingQuery",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "BookingQuery",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Person",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "abstract",
+        "constructors": [
+            {
+                "name": "Person",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": []
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "LoyaltyCard",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "LoyaltyCard",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createLoyaltyCard",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "LoyaltyCard",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "PassengerCategory",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "PassengerCategory",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createPassengerCategory",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "PassengerCategory",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "PostalAddress",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "PostalAddress",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createPostalAddress",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "PostalAddress",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "DiscountCard",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "DiscountCard",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createDiscountCard",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "DiscountCard",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "SpecialRequirement",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "SpecialRequirement",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createSpecialRequirement",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "SpecialRequirement",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "CreditCard",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "CreditCard",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createCreditCard",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "CreditCard",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Pet",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "Pet",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createPet",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Pet",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Identification",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "Identification",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createIdentification",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Identification",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Prefixes",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "Prefixes",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createPrefixes",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Prefixes",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Suffixes",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "Suffixes",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createSuffixes",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Suffixes",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "ContactInformation",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "ContactInformation",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createContactInformation",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "ContactInformation",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Transaction",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "Transaction",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createTransaction",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Transaction",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "LogEntity",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "LogEntity",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createLogEntity",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "LogEntity",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "ServiceMetric",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "ServiceMetric",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createServiceMetric",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "ServiceMetric",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Device",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "Device",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createDevice",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Device",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "PlanningQuery",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "PlanningQuery",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createPlanningQuery",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "PlanningQuery",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Photograph",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "Photograph",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createPhotograph",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Photograph",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "PointOfInterest",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "PointOfInterest",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createPointOfInterest",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "PointOfInterest",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Note",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "Note",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createNote",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Note",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "ApplicationUser",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "ApplicationUser",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createApplicationUser",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "ApplicationUser",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "ApplicationPermission",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "ApplicationPermission",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createApplicationPermission",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "ApplicationPermission",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "ApplicationRole",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "ApplicationRole",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createApplicationRole",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "ApplicationRole",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "ApplicationClient",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "ApplicationClient",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createApplicationClient",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "ApplicationClient",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "ApplicationUserLogin",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "ApplicationUserLogin",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createApplicationUserLogin",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "ApplicationUserLogin",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "ApplicationUserClaim",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "ApplicationUserClaim",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createApplicationUserClaim",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "ApplicationUserClaim",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Profile",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "Profile",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createProfile",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Profile",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Leg",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "Leg",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createLeg",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Leg",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "UserBookings",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "UserBookings",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createUserBookings",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "UserBookings",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "TripDetailsResponse",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "TripDetailsResponse",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createTripDetailsResponse",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "TripDetailsResponse",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Location",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "Location",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createLocation",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Location",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "City",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "City",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createCity",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "City",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "UrbanLocationPair",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "UrbanLocationPair",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createUrbanLocationPair",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "UrbanLocationPair",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "GraphSearchData",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "GraphSearchData",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createGraphSearchData",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "GraphSearchData",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Charge",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "Charge",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createCharge",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Charge",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "FareType",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "FareType",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createFareType",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "FareType",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "AccomodationDetails",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "AccomodationDetails",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createAccomodationDetails",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "AccomodationDetails",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "OnBoardDetails",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "OnBoardDetails",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createOnBoardDetails",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "OnBoardDetails",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Organization",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "Organization",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createOrganization",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Organization",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "WebService",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "WebService",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createWebService",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "WebService",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "MarineRoute",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "MarineRoute",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createMarineRoute",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "MarineRoute",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Vehicle",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "Vehicle",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createVehicle",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Vehicle",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "ShipFacilities",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "ShipFacilities",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createShipFacilities",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "ShipFacilities",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "RailRoute",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "RailRoute",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createRailRoute",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "RailRoute",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "FlightRoute",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "FlightRoute",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createFlightRoute",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "FlightRoute",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "ClassOfService",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "ClassOfService",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createClassOfService",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "ClassOfService",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "Station",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "Station",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createStation",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "Station",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "UrbanTrip",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "UrbanTrip",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createUrbanTrip",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "UrbanTrip",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "GetSolutionDetailsResponse",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "GetSolutionDetailsResponse",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createGetSolutionDetailsResponse",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "GetSolutionDetailsResponse",
+                "parameters": []
+            }
+        ]
+    },
+    {
+        "ClassInterface": "Class",
+        "name": "DateTime",
+        "Visibility": "",
+        "IsStatic": "",
+        "IsAbstract": "",
+        "constructors": [
+            {
+                "name": "DateTime",
+                "Visibility": "",
+                "parameters": []
+            }
+        ],
+        "variables": [],
+        "methods": [
+            {
+                "name": "createDateTime",
+                "Visibility": "",
+                "IsStatic": "static",
+                "IsAbstract": "",
+                "returnType": "DateTime",
+                "parameters": []
+            }
+        ]
+    }
+]

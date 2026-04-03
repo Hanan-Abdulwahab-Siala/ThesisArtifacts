@@ -1,0 +1,128 @@
+
+ class FromPython {
+
+
+
+
+  operation initialise()
+  pre: true post: true
+  activity:     skip ;
+    skip ;
+    skip ;
+    skip ;
+    skip ;
+    S0 := 36 ;
+    K := 40 ;
+    T := 2.0 ;
+    r := 0.06 ;
+    sigma := 0.2 ;
+    M := 60000 ;
+    N := 100 ;
+    basis := 'herm' ;
+    o := 2 ;
+    op_type := -1 ;
+    execute ("Option Price" + op_val(S0, K, T, r, sigma, M, N, 'mon', o, op_type))->display();
+
+  operation monomial(n : OclAny, x : OclAny, i : OclAny, k : OclAny) : OclAny
+  pre: true post: true
+  activity:
+    var m_ial : Sequence := MatrixLib.singleValueMatrix(Sequence{MatrixLib.shape(x)->first(), k + 1}, 0.0) ;
+    for j : Integer.subrange(0, k + 1-1) do (    m_ial->collect( _r | _r[j+1] ) := MatrixLib.elementwisePower(x->collect( _r | _r[i+1] ),j)) ;
+    return m_ial;
+
+
+  operation associated_legendre_polynomials(n : OclAny, x : OclAny, i : OclAny) : OclAny
+  pre: true post: true
+  activity:
+    var assoc_legendre_P : Sequence := MatrixLib.singleValueMatrix(Sequence{(x)->size(), n + 1}, 0.0) ;
+    assoc_legendre_P->collect( _r | _r->first() ) := 1.0 ;
+    assoc_legendre_P->collect( _r | _r[1+1] ) := x->collect( _r | _r[i+1] ) ;
+    for m : Integer.subrange(2, n + 1-1) do (    var P0 : Sequence := assoc_legendre_P->collect( _r | _r[(m - 2) + 1] ) ;
+    var P1 : Sequence := assoc_legendre_P->collect( _r | _r[(m - 1) + 1] ) ;
+    var P2 : Sequence := MatrixLib.elementwiseDivide((MatrixLib.matrixSubtraction(MatrixLib.dotProduct(MatrixLib.elementwiseMult(x->collect( _r | _r[i+1] ), (2 * m - 1)),P1), MatrixLib.elementwiseMult(P0, (m - 1)))), m) ;
+    assoc_legendre_P->collect( _r | _r[m+1] ) := P2) ;
+    return assoc_legendre_P;
+
+  operation weighted_laguerre_polynomials(n : OclAny, x : OclAny, i : OclAny) : OclAny
+  pre: true post: true
+  activity:
+    var weighted_L : Sequence := MatrixLib.singleValueMatrix(Sequence{MatrixLib.shape(x)->first(), n + 1}, 0.0) ;
+    weighted_L->collect( _r | _r->first() ) := 1 ;
+    weighted_L->collect( _r | _r[1+1] ) := (MatrixLib.elementwiseMult(MatrixLib.elementwiseSubtract(x->collect( _r | _r[i+1] ), 1), -1.0)) ;
+    for i : Integer.subrange(2, n + 1-1) do (    weighted_L->collect( _r | _r[i+1] ) := MatrixLib.elementwiseDivide((MatrixLib.matrixSubtraction(MatrixLib.dotProduct((MatrixLib.elementwiseMult(MatrixLib.elementwiseSubtract(x->collect( _r | _r[i+1] ), 2 * (i - 1) + 1), -1.0)),weighted_L->collect( _r | _r[(i - 1) + 1] )), MatrixLib.elementwiseMult(weighted_L->collect( _r | _r[(i - 2) + 1] ), (i - 1)))), i)) ;
+    weighted_L := MatrixLib.einsum('i,ij->ij', MatrixLib.elementwiseApply(MatrixLib.elementwiseDivide(-x->collect( _r | _r[i+1] ), 2), lambda _x : double in (_x->exp())), weighted_L) ;
+    return weighted_L;
+
+  operation hermite_polynomials(n : OclAny, x : OclAny, i : OclAny) : OclAny
+  pre: true post: true
+  activity:
+    var hermite_H : Sequence := MatrixLib.singleValueMatrix(Sequence{MatrixLib.shape(x)->first(), n + 1}, 0.0) ;
+    hermite_H->collect( _r | _r->first() ) := 1 ;
+    hermite_H->collect( _r | _r[1+1] ) := MatrixLib.elementwiseMult(x->collect( _r | _r[i+1] ), 2) ;
+    for i : Integer.subrange(2, n + 1-1) do (    hermite_H->collect( _r | _r[i+1] ) := MatrixLib.matrixSubtraction(MatrixLib.dotProduct(MatrixLib.elementwiseMult(x->collect( _r | _r[i+1] ), 2),hermite_H->collect( _r | _r[(i - 1) + 1] )), MatrixLib.elementwiseMult(hermite_H->collect( _r | _r[(i - 2) + 1] ), 2 * (i - 1)))) ;
+    var weighted_H : Sequence := MatrixLib.einsum('i,ij->ij', MatrixLib.elementwiseApply(MatrixLib.elementwiseDivide(-x->collect( _r | _r[i+1] ), 2), lambda _x : double in (_x->exp())), hermite_H) ;
+    return weighted_H;
+
+  operation op_val(S0 : OclAny, K : OclAny, T : OclAny, r : OclAny, sigma : OclAny, M : OclAny, N : OclAny, basis : OclAny, o : OclAny, op_type : OclAny) : OclAny
+  pre: true post: true
+  activity:
+    OclRandom.setSeed(1) ;
+    var dt : double := T / N ;
+    var z : Sequence := OclRandom.randomValuesMatrix(M, N) ;
+    var z1 : Sequence := MatrixLib.elementwiseMult(z->copy(), -1) ;
+    var z2 : Sequence := (Sequence{z}->union(Sequence{ z1 }))->concatenateAll() ;
+    M := (z2)->size() ;
+    var S : Sequence := MatrixLib.singleValueMatrix(Sequence{M, N + 1}, 0.0) ;
+    S->collect( _r | _r->first() ) := S0 ;
+    for i : Integer.subrange(1, N + 1-1) do (    S->collect( _r | _r[i+1] ) := MatrixLib.dotProduct(S->collect( _r | _r[(i - 1) + 1] ),MatrixLib.elementwiseApply((r - 0.5 * (sigma)->pow(2)) * dt + MatrixLib.dotProduct(MatrixLib.elementwiseMult(MatrixLib.elementwiseApply(dt, lambda _x : double in (_x->sqrt())), sigma),z2->collect( _r | _r[(i - 1) + 1] )), lambda _x : double in (_x->exp())))) ;
+    var payoff : Sequence := MatrixLib.matrixMaximum(MatrixLib.elementwiseMult((S - K), op_type), 0) ;
+    var dis_cfl : Sequence := MatrixLib.singleValueMatrix(Sequence{M, N + 1}, 0.0) ;
+    dis_cfl->collect( _r | _r[N+1] ) := payoff->collect( _r | _r[N+1] ) ;
+    var exercise_flag : Sequence := MatrixLib.singleValueMatrix(Sequence{M, N}, 0.0) ;
+    if (op_type = -1) then  (
+      var cond : Sequence := MatrixLib.elementwiseLess(S->collect( _r | _r->last() ),K)
+    )
+    else (
+      cond := MatrixLib.elementwiseGreater(S->collect( _r | _r->last() ),K)
+      ) ;
+    exercise_flag->restrict(cond)->last() := 1 ;
+    for i : Integer.subrange(0 + 1, N - 1)->reverse() do (    if (op_type = -1) then  (
+      cond := MatrixLib.elementwiseLess(S->collect( _r | _r[i+1] ),K)
+    )
+    else (
+      cond := MatrixLib.elementwiseGreater(S->collect( _r | _r[i+1] ),K)
+      ) ;
+    if (basis = 'mon') then  (
+      var X : OclAny := monomial(M, S, i, o)
+    )
+    else (if (basis = 'wlag') then
+   (
+      X := weighted_laguerre_polynomials(o, S, i)    
+)
+    else (if (basis = 'herm') then
+   (
+      X := hermite_polynomials(o, S, i)    
+)
+    else (
+      X := associated_legendre_polynomials(o, S, i)
+      )    )
+    )
+ ;
+    var cond_x : Sequence := X->restrict(cond) ;
+    var Y : Sequence := MatrixLib.elementwiseMult(MatrixLib.elementwiseApply(-r * dt, lambda _x : double in (_x->exp())), dis_cfl->restrict(cond)[(i + 1) + 1]) ;
+    var beta : OclAny := np.linalg.lstsq(cond_x, Y, rcond)->first() ;
+    var continue_val : Sequence := MatrixLib.dotProduct(X, beta) ;
+    continue_val->restrict(MatrixLib.elementwiseNot(cond)->collect(_ind | _ind+1)) := 0 ;
+    var cond_exercise : Sequence := MatrixLib.matrixGreater(payoff->collect( _r | _r[i+1] ),continue_val) ;
+    exercise_flag->restrict(cond_exercise)[(i - 1) + 1] := 1 ;
+    dis_cfl->collect( _r | _r[i+1] ) := MatrixLib.dotProduct(MatrixLib.elementwiseApply(-r * dt, lambda _x : double in (_x->exp())),dis_cfl->collect( _r | _r[(i + 1) + 1] )) ;
+    dis_cfl->restrict(cond_exercise)[i+1] := payoff->restrict(cond_exercise)[i+1]) ;
+    var stopping_criteria : Sequence := MatrixLib.argmax(exercise_flag, MatrixLib.AXIS1) ;
+    var actual_exercise : Sequence := MatrixLib.singleValueMatrix(MatrixLib.shape(exercise_flag), 0.0) ;
+    actual_exercise->restrict(MathLib.numericRange(0, (M), 1))->restrict(stopping_criteria) := exercise_flag->restrict(MathLib.numericRange(0, (M), 1))->restrict(stopping_criteria) ;
+    var discount : OclAny := (MatrixLib.dotProduct(MatrixLib.singleValueMatrix(Sequence{M, N}, 1.0),MatrixLib.elementwiseApply(-r * dt, lambda _x : double in (_x->exp()))))->cumulativeProduct((MatrixLib.AXIS1))->reverse() ;
+    var exp_payoff : double := (MatrixLib.elementwiseMult(MatrixLib.dotProduct(actual_exercise,payoff->collect( _r | _r->tail() )), discount))->flatten()->sum() / M ;
+    return exp_payoff;
+
+}
+

@@ -1,0 +1,245 @@
+[
+    {
+        "Relationship": "Inheritance",
+        "Source": "CatchStatement",
+        "Target": "Statement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Aggregation",
+        "Source": "BasicExpression",
+        "Target": "CatchStatement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..1",
+        "Role2": "t"
+    },
+    {
+        "Relationship": "Aggregation",
+        "Source": "Type",
+        "Target": "CatchStatement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..1",
+        "Role2": "t"
+    },
+    {
+        "Relationship": "Aggregation",
+        "Source": "BinaryExpression",
+        "Target": "CatchStatement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..1",
+        "Role2": "t"
+    },
+    {
+        "Relationship": "Aggregation",
+        "Source": "SequenceStatement",
+        "Target": "CatchStatement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..1",
+        "Role2": "action"
+    },
+    {
+        "Relationship": "Aggregation",
+        "Source": "Expression",
+        "Target": "CatchStatement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..1",
+        "Role2": "caughtObject"
+    },
+    {
+        "Relationship": "Aggregation",
+        "Source": "Statement",
+        "Target": "CatchStatement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..1",
+        "Role2": "action"
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "CatchStatement",
+        "Target": "Expression",
+        "Multiplicity1": "",
+        "Role1": "expr",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "CatchStatement",
+        "Target": "Expression",
+        "Multiplicity1": "",
+        "Role1": "var",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "CatchStatement",
+        "Target": "Type",
+        "Multiplicity1": "",
+        "Role1": "t",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "CatchStatement",
+        "Target": "BasicExpression",
+        "Multiplicity1": "",
+        "Role1": "skip",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "CatchStatement",
+        "Target": "CatchStatement",
+        "Multiplicity1": "",
+        "Role1": "newCatch",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "CatchStatement",
+        "Target": "Expression",
+        "Multiplicity1": "",
+        "Role1": "expr",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "CatchStatement",
+        "Target": "Expression",
+        "Multiplicity1": "",
+        "Role1": "var",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "CatchStatement",
+        "Target": "Expression",
+        "Multiplicity1": "",
+        "Role1": "cobj",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "CatchStatement",
+        "Target": "Statement",
+        "Multiplicity1": "",
+        "Role1": "cact",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "CatchStatement",
+        "Target": "BasicExpression",
+        "Multiplicity1": "",
+        "Role1": "var",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "CatchStatement",
+        "Target": "Expression",
+        "Multiplicity1": "",
+        "Role1": "newE",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "CatchStatement",
+        "Target": "BehaviouralFeature",
+        "Multiplicity1": "",
+        "Role1": "bf",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "CatchStatement",
+        "Target": "Expression",
+        "Multiplicity1": "",
+        "Role1": "qf",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "CatchStatement",
+        "Target": "Expression",
+        "Multiplicity1": "",
+        "Role1": "qf",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "CatchStatement",
+        "Target": "Expression",
+        "Multiplicity1": "",
+        "Role1": "post",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "CatchStatement",
+        "Target": "Expression",
+        "Multiplicity1": "",
+        "Role1": "inv",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "CatchStatement",
+        "Target": "Expression",
+        "Multiplicity1": "",
+        "Role1": "post",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "CatchStatement",
+        "Target": "Expression",
+        "Multiplicity1": "",
+        "Role1": "inv",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "CatchStatement",
+        "Target": "Expression",
+        "Multiplicity1": "",
+        "Role1": "post",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "CatchStatement",
+        "Target": "Expression",
+        "Multiplicity1": "",
+        "Role1": "inv",
+        "Multiplicity2": "",
+        "Role2": ""
+    }
+]

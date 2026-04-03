@@ -1,0 +1,65 @@
+[
+    {
+        "Relationship": "Inheritance",
+        "Source": "IfStatement",
+        "Target": "Statement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Composition",
+        "Source": "IfCase",
+        "Target": "IfStatement",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "0..*",
+        "Role2": "cases"
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "IfStatement",
+        "Target": "Expression",
+        "Multiplicity1": "",
+        "Role1": "lhs",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "IfStatement",
+        "Target": "BasicExpression",
+        "Multiplicity1": "",
+        "Role1": "lhs",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "IfStatement",
+        "Target": "BehaviouralFeature",
+        "Multiplicity1": "",
+        "Role1": "lhs",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "IfStatement",
+        "Target": "BIfStatement",
+        "Multiplicity1": "",
+        "Role1": "lhs",
+        "Multiplicity2": "",
+        "Role2": ""
+    },
+    {
+        "Relationship": "Dependency",
+        "Source": "IfStatement",
+        "Target": "Entity",
+        "Multiplicity1": "",
+        "Role1": "",
+        "Multiplicity2": "",
+        "Role2": ""
+    }
+]
