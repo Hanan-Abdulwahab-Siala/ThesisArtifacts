@@ -1,6 +1,0 @@
-input_file = open('MyFile', 'r')  
-file_content = input_file.read()  
-input_file.close()  
-output_file = open('MyFile', 'a')  
-output_file.write(file_content)  
-output_file.close()  
