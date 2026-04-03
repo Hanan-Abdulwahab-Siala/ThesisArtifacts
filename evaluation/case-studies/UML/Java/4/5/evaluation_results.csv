@@ -1,6 +1,0 @@
-Section,Precision,Recall,F1
-classes,1.0,1.0,1.0
-attributes,1.0,1.0,1.0
-constructors,1.0,0.875,0.9333333333333333
-methods,0.9852941176470589,0.9436619718309859,0.9640287769784172
-relationships,1.0,1.0,1.0

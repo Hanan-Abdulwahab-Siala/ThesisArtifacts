@@ -1,3 +1,0 @@
-AgileUML_path,LLM4Models_path,filename,tp,fp,fn,precision,recall,f1
-C:\Users\PC\Desktop\Temp\aaa\1\cgJava2UML_out.km3,C:\Users\PC\Desktop\Temp\aaa\1\LLM4Models.txt,1,541,97,141,0.85,0.79,0.82
-AVERAGE,,,541.0,97.0,141.0,0.85,0.79,0.82
