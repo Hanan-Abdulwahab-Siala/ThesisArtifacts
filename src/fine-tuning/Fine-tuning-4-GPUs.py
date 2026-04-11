@@ -1,7 +1,7 @@
 """
 Based on: Philipp Schmid's code (https://github.com/philschmid/deep-learning-pytorch-huggingface/blob/main/training/scripts/run_fsdp_qlora.py)
 Modified by: Hanan Abdulwahab Siala, King's College London
-Date: 2020-10-05
+Date: 17-02-2026
 
 Description:
     This program fine-tunes on 4 GPUs to construct OCL specifications from both Java and Python programs.
