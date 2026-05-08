@@ -928,20 +928,19 @@ def ClassifyRelationship(annotation):
    return None, None
 # ------------------------------------------------------------------------------
 def GetName(node):
-    if isinstance(node, ast.Name):
-        return node.id
-    if isinstance(node, ast.Attribute):
-        return node.attr
-    return None
-
+   if isinstance(node, ast.Name):
+      return node.id
+   if isinstance(node, ast.Attribute):
+      return node.attr
+   return None
+# ------------------------------------------------------------------------------
 def IsSelfAttribute(target):
-    return (
-        isinstance(target, ast.Attribute)
-        and isinstance(target.value, ast.Name)
-        and target.value.id == "self"
-    )
-
-
+   return (
+      isinstance(target, ast.Attribute)
+      and isinstance(target.value, ast.Name)
+      and target.value.id == "self"
+   )
+# ------------------------------------------------------------------------------
 def GetAttributeName(target):
    if isinstance(target, ast.Attribute):
       return target.attr
@@ -1387,46 +1386,46 @@ def ParsePythonCode(PythonCode):
 
       if isinstance(node, ast.Call):
          if isinstance(node.func, ast.Attribute) and isinstance(node.func.value, ast.Name):
-             ObjectName=node.func.value.id
-             MethodName=node.func.attr
-             Arguments=[arg.id for arg in node.args if isinstance(arg, ast.Name)]
-             OuterMethodCall = {"name": ObjectName, "type": "", "method": MethodName, "Arguments":[]}
-             type=""
-             temp=ObjectName
-             if temp.find('(') != -1:
-                i=temp.index('(')
-                temp=temp[:i]
-             if IsClassOrInterface(temp, ClassInfo) in ['Class', 'Interface']:
-                type= temp
-             else:
-                type = next((item.get('type') for item in variables if item.get('name') == temp), "")
-             OuterMethodCall['type']=type           
-             if type != "":
-                CountArgClass=0 
-                for arg in Arguments:
-                   type=""
-                   temp=arg
-                   if temp.find('(') != -1:
-                      i=temp.index('(')
-                      temp=temp[:i]
-                   if IsClassOrInterface(temp, ClassInfo) in ['Class', 'Interface']:
-                      type=temp
-                   else:
-                      type = next((item.get('type') for item in variables if item.get('name') == temp), "")
-                      CountArgClass+=1 
-                   if type=="":
-                      Arguments={
-                         "name":arg,
-                         "type":"unknown"
-                      }
-                   else:
-                      Arguments={
-                         "name":arg,
-                         "type":type
-                      }
-                   OuterMethodCall["Arguments"].append(Arguments)
-             if OuterMethodCall["Arguments"]!=[] and CountArgClass < 2: 
-                OuterMethodCalls.append(OuterMethodCall)
+            ObjectName=node.func.value.id
+            MethodName=node.func.attr
+            Arguments=[arg.id for arg in node.args if isinstance(arg, ast.Name)]
+            OuterMethodCall = {"name": ObjectName, "type": "", "method": MethodName, "Arguments":[]}
+            type=""
+            temp=ObjectName
+            if temp.find('(') != -1:
+               i=temp.index('(')
+               temp=temp[:i]
+            if IsClassOrInterface(temp, ClassInfo) in ['Class', 'Interface']:
+               type= temp
+            else:
+               type = next((item.get('type') for item in variables if item.get('name') == temp), "")
+            OuterMethodCall['type']=type           
+            if type != "":
+               CountArgClass=0 
+               for arg in Arguments:
+                  type=""
+                  temp=arg
+                  if temp.find('(') != -1:
+                     i=temp.index('(')
+                     temp=temp[:i]
+                  if IsClassOrInterface(temp, ClassInfo) in ['Class', 'Interface']:
+                     type=temp
+                  else:
+                     type = next((item.get('type') for item in variables if item.get('name') == temp), "")
+                     CountArgClass+=1 
+                  if type=="":
+                     Arguments={
+                        "name":arg,
+                        "type":"unknown"
+                     }
+                  else:
+                     Arguments={
+                        "name":arg,
+                        "type":type
+                     }
+                  OuterMethodCall["Arguments"].append(Arguments)
+            if OuterMethodCall["Arguments"]!=[] and CountArgClass < 2: 
+               OuterMethodCalls.append(OuterMethodCall)
    return ClassInfo, variables, AggregationInfo, OuterMethodCalls, CompositionInfo, AssociationInfo
 
 # ------------------------------------------------------------------------------
