@@ -42,4 +42,8 @@ The models are hosted on the Hugging Face Hub. Below are the available versions:
 
 👉 [https://huggingface.co/HA-Siala/Java-UML-full-v0.3](https://huggingface.co/HA-Siala/Java-UML-full-v0.3)
 
+### Version 4 - Merged
+
+👉 [https://huggingface.co/HA-Siala/Java-UML-full-v0.4](https://huggingface.co/HA-Siala/Java-UML-full-v0.4)
+
 ---
