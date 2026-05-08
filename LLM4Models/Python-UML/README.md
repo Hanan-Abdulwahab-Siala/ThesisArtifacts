@@ -21,6 +21,9 @@ The models are hosted on the Hugging Face Hub. Below are the available versions:
 
 👉 [https://huggingface.co/HA-Siala/Python-UML-v0.3](https://huggingface.co/HA-Siala/Python-UML-v0.3)
 
+### Version 4
+
+👉 [https://huggingface.co/HA-Siala/Python-UML-v0.4](https://huggingface.co/HA-Siala/Python-UML-v0.4)
 ---
 
 ## 🚀 Ready-to-Use Models (Adapter + Base Model)
@@ -38,6 +41,9 @@ The models are hosted on the Hugging Face Hub. Below are the available versions:
 
 👉 [https://huggingface.co/HA-Siala/Python-UML-full-v0.3](https://huggingface.co/HA-Siala/Python-UML-full-v0.3)
 
+### Version 4 - Merged
+
+👉 [https://huggingface.co/HA-Siala/Python-UML-full-v0.4](https://huggingface.co/HA-Siala/Python-UML-full-v0.4)
 ---
 
 
