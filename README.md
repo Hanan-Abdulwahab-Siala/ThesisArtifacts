@@ -87,7 +87,8 @@ Before starting the inferring process for abstracting UML and OCL representation
    - `3` → Abstract OCL specifications from Java code.  
    - `4` → Abstract OCL specifications from Python code.  
 4. Set **`Full_Model = True`** to use the full model, or **`Full_Model = False`** to use a LoRA adapter.  
-5. Choose **`version = 1`** or **`version = 2`**.
+5. Choose **`version = 1`** or **`version = 2`** or **`version = 3`** or **`version = 4`** for UML abstraction.
+5. Choose **`version = 1`** or **`version = 2`** for OCL abstraction.
 
 ---
 
