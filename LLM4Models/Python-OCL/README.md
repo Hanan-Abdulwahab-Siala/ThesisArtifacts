@@ -18,7 +18,7 @@ The models are hosted on the Hugging Face Hub. Below are the available versions:
 
 ---
 
-## 🚀 Adapter + Base Model
+## 🚀 (Adapter + Base Model) Models
 *Use these for immediate inference without needing to merge*
 
 ### Version 1 
