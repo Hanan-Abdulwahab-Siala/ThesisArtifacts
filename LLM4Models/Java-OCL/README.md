@@ -18,14 +18,14 @@ The models are hosted on the Hugging Face Hub. Below are the available versions:
 
 ---
 
-## 🚀 Ready-to-Use Models (Adapter + Base Model)
+## 🚀 (Adapter + Base Model) Models
 *Use these for immediate inference without needing to merge*
 
-### Version 1 - Merged
+### Version 1 
 
 👉 [https://huggingface.co/HA-Siala/Java-OCL-full-v0.1](https://huggingface.co/HA-Siala/Java-OCL-full-v0.1)
 
-### Version 2 - Merged
+### Version 2 
 
 👉 [https://huggingface.co/HA-Siala/Java-OCL-full-v0.2](https://huggingface.co/HA-Siala/Java-OCL-full-v0.2)
 
