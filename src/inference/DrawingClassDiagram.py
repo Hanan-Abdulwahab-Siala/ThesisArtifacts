@@ -304,10 +304,26 @@ if Choice in ['1','2']:
 if DrawDiagram:
    if not Path.endswith('\\') and not Path.endswith('/'):
       Path+= '\\'
-   Command = 'dot -Tpng "{}{}.dot" -o "{}{}.png"'.format(Path, File, Path, File)
-   subprocess.run(Command, shell=True)
-   print(Path + File + '.png')
-   Image(filename=Path + File + '.png')
+      
+   print("1: PNG, 2: PDF, 3: SVG")
+   UserInput = input("Choice (Default 1): ").strip()
+
+   ch = {"1": 1, "2": 2, "3": 3}.get(UserInput, 1)
+   if ch==1:
+      Command = 'dot -Tpng "{}{}.dot" -o "{}{}.png"'.format(Path, File, Path, File)
+      subprocess.run(Command, shell=True)
+      print(Path + File + '.png')
+      Image(filename=Path + File + '.png')
+   elif ch==2:    
+      Command = 'dot -Tpdf "{}{}.dot" -o "{}{}.pdf"'.format(Path, File, Path, File)
+      subprocess.run(Command, shell=True)
+      os.startfile(Path + File + '.pdf')      
+   else:
+      from IPython.display import Image, SVG, display
+      import subprocess
+      Command = 'dot -Tsvg "{}{}.dot" -o "{}{}.svg"'.format(Path, File, Path, File)
+      subprocess.run(Command, shell=True)
+      display(SVG(filename=Path + File + '.svg')) 
 else:
    print("No Class Diagram Found ...") 
 # ------------------------------------------------------------------------------
