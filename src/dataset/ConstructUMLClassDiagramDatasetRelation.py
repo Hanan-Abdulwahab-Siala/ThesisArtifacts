@@ -28,26 +28,26 @@ def CleanJavaCode(JavaCode, AllCleaning):
    return CleanedFile
 # ------------------------------------------------------------------------------
 def CleanPythonCode(PythonCode, AllCleaning):
-    # Remove single-line comments except those containing #@@
-    PythonCode = re.sub(r'^(?!.*#@@).*#.*', '', PythonCode, flags=re.MULTILINE)
-    PythonCode = re.sub(r'(\'\'\'[\s\S]*?\'\'\'|\"\"\"[\s\S]*?\"\"\")', '', PythonCode)  
-    CleanedLines = []
-    Lines = PythonCode.split('\n')
+   # Remove single-line comments except those containing #@@
+   PythonCode = re.sub(r'^(?!.*#@@).*#.*', '', PythonCode, flags=re.MULTILINE)
+   PythonCode = re.sub(r'(\'\'\'[\s\S]*?\'\'\'|\"\"\"[\s\S]*?\"\"\")', '', PythonCode)  
+   CleanedLines = []
+   Lines = PythonCode.split('\n')
     
-    for line in Lines:
-       if line.endswith('='):
-          line += '\"String\"'
-          CleanedLines.append(line)  
-       if not line.strip():
-          continue
-       LeadingSpaces = len(line) - len(line.lstrip())
-       if AllCleaning:
-          CleanedLines.append(line.strip())
-       else:
-          CleanedLines.append(' ' * LeadingSpaces + line.strip())
+   for line in Lines:
+      if line.endswith('='):
+         line += '\"String\"'
+         CleanedLines.append(line)  
+      if not line.strip():
+         continue
+      LeadingSpaces = len(line) - len(line.lstrip())
+      if AllCleaning:
+         CleanedLines.append(line.strip())
+      else:
+         CleanedLines.append(' ' * LeadingSpaces + line.strip())
     
-    CleanedFile = '\n'.join(CleanedLines)
-    return CleanedFile
+   CleanedFile = '\n'.join(CleanedLines)
+   return CleanedFile
 # ------------------------------------------------------------------------------
 def CheckFileEmpty(File):
    if os.path.getsize(File) == 0:
