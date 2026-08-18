@@ -275,8 +275,8 @@ if Choice in ['1','2']:
    if os.path.exists(Path):
       if Choice=='1':
          print("Select How to Display Methods:")
-         print("1. Methods with Parameters' Names and Types")
-         print("2. Methods with Parameters' Types")
+         print("1. Methods with Parameter Names and Types")
+         print("2. Methods with Parameter Types")
          print("3: Methods Only (Default)")
 
          ChoiceM = input("Enter your choice (1-3): ")
