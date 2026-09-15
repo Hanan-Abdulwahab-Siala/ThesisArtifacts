@@ -114,6 +114,46 @@ Before starting the inferring process for abstracting UML and OCL representation
 
 ---
 
+## Requirements
+
+To run the provided inference programs locally, you need:
+
+- Python 3.10+
+- An NVIDIA GPU with CUDA support
+- A GPU compatible with `bfloat16`
+- PyTorch 2.2.2
+- The Python dependencies listed in [`requirements.txt`](requirements.txt)
+
+### Installation
+
+Install the required Python packages with:
+
+```bash
+pip install -r requirements.txt
+```
+
+The programs use Hugging Face Transformers and PEFT to load the Mistral or DeepSeek-Coder models and their fine-tuned adapters.
+
+> **Note:** Running the models locally requires sufficient GPU memory. The required GPU memory depends on whether you use the full model or the LoRA adapter version.
+---
+
+## Available Programs
+
+The repository provides inference programs for:
+
+- **Extracting UML Class diagrams from Java and Python programs**
+- **Extracting UML OCL specifications from Java and Python programs**  
+- **Mistral-based** fine-tuned models
+- **LoRA adapter** and **full-model** inference
+
+For the LoRA versions, the base model is downloaded automatically from Hugging Face, and the corresponding fine-tuned adapter is loaded.
+
+For the full-model versions, the fine-tuned model is loaded directly from Hugging Face.
+
+## Gradio Interface
+
+For users who prefer a graphical interface, a Gradio-based interface is also available in the related GitHub repository, [LLM4Models](https://github.com/HA-Siala/LLM4Models).
+
 ## Citation
 
 If you use this repository or reference the thesis, please cite:
