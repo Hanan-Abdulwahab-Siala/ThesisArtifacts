@@ -10,22 +10,19 @@ Description:
 import re
 # ------------------------------------------------------------------------------
 def CleanOCL(lines):
-   text = '\n'.join(lines)
+   text = "".join(lines)
    while True:
       oldText = text
-      text = re.sub(r';\s*;', ';', text)           # ";;" -> ";"
-      text = re.sub(r';\s*else', 'else', text)     # "; else" -> "else"
-      text = re.sub(r';\s*skip', '', text)         # "; skip" -> remove
-      text = re.sub(r'skip\s*;', '', text)         # "skip ;" -> remove
-      text = re.sub(r'\(\s*skip\s*;', '(', text)   # "( skip ;" -> "("
-      text = re.sub(r'skip\s*;\s*\(', '(', text)   # "skip ; (" -> "("
-      text = re.sub(r';\s*\)', ')', text)          # "; )" -> ")"
-
-      text = re.sub(r'[ \t]+', ' ', text)          # clean extra spaces  
-      text = re.sub(r'\n\s+', '\n', text)
+      text = re.sub(r';[ \t]*;', ';', text)               # ";;" → ";"
+      text = re.sub(r';[ \t]*else', 'else', text)         # "; else" → "else"
+      text = re.sub(r';[ \t]*skip', '', text)             # "; skip" → remove
+      text = re.sub(r'skip[ \t]*;', '', text)             # "skip ;" → remove
+      text = re.sub(r'\([ \t]*skip[ \t]*;', '(', text)    # "( skip ;" → "("
+      text = re.sub(r'skip[ \t]*;[ \t]*\(', '(', text)    # "skip ; (" → "("
+      text = re.sub(r';[ \t]*\)', ')', text)              # "; )" → ")" 
       if text == oldText:
          break
-   return text.strip()
+   return text.strip()    
 # ------------------------------------------------------------------------------
 def ProcessFile(input_file, output_file):
    with open(input_file, 'r') as f:
